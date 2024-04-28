@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="description" content="My Portfolio website" />
+    <meta name="keywords" content="web design, html, css, js" />
+    <title>Portfolio Website</title>
+  </head>
+  <body>
+    <header class="header container">
+      <nav>
+        <ul class="header__menu">
+          <li>
+            <a class="header__link" href="#about">Sobre</a>
+          </li>
+          <li>
+            <a class="header__link" href="#featured">Trabalho</a>
+          </li>
+          <li>
+            <a class="header__link" href="#contact">Contato</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="https://www.linkedin.com/in/enzo-bellussi/" target="_blank">Linkedin</a>
+          </li>
+          <li class="header__line"></li>
+          <li>
+            <button
+              aria-label="theme-toggle btn"
+              id="theme-toggle"
+              class="header__sun"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a class="header__resume btn" href="#">Currículo</a>
+          </li>
+        </ul>
+        <button aria-label="mobile nav button" class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li>
+            <a class="mobile-nav__link" href="#about">Sobre</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="#featured">Trabalho</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="#contact">Contato</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="https://www.linkedin.com/in/enzo-bellussi/" target="_blank">Linkedin</a>
+          </li>
+          <li class="mobile-nav__link-line"></li>
+          <li>
+            <button
+              aria-label="theme-toggle btn"
+              id="theme-toggle"
+              class="mobile-nav__sun"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a class="mobile-nav__btn btn" href="#">Currículo</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End of Mobile Navigation -->
+    <main>
+      <section class="hero container">
+        <img class="hero__img" src="/hero1.jpeg" alt="Profile picture" />
+        <h2 class="hero__subtitle">Olá, eu sou o Bellussi 👋</h2>
+        <h1 class="hero__title">
+          FRONT-END <br />
+          WEB DEVELOPER.
+        </h1>
+        <p class="hero__description">
+          Um apaixonado <strong>Frontend</strong> web
+          developer e entusiasta de <strong>UI/UX</strong>
+          especializado na construção de sites/aplicativos interativos impressionantes com pixel-perfect.
+        </p>
+        <a class="hero__btn btn" href="#">Entre em contato</a>
+      </section>
+      <section id="about" class="about container section">
+        <div class="about__content">
+          <h2 class="about__title">Sobre mim</h2>
+          <p class="about__description">
+            Olá! Me chamo Enzo Bellussi. </p>
+          <p class="about__description">Um 
+            <strong>Frontend Developer </strong> com paixão pelo desenvolvimento de componentes reutilizáveis, e consciente de como o design de interfaces pode aprimorar a experiência do usuário, busco criar soluções que sejam tanto funcionais quanto visualmente agradáveis.
+          </p>
+          <p class="about__description">
+            
+            Quem me conhece diz que sou obcecado, e estão certos. Sou altamente motivado e adoro aprender coisas novas. 🌟
+          </p>
+          
+          <hr class="about__hr" />
+          <h3 class="about__subtitle">Tecnologias</h3>
+          <div class="about__ul-container">
+            <ul class="about__ul">
+              <li class="about__list">JavaScript (ES6+)</li>
+              <li class="about__list">CSS</li>
+              <li class="about__list">HTML</li>
+            </ul>
+            <ul class="about__ul">
+              <li class="about__list">VueJS</li>
+              <li class="about__list">ReactJS</li>
+              <li class="about__list">NextJS</li>
+            </ul>
+          </div>
+        </div>
+        
+      </section>
+     
+      <section class="work container section">
+        <h2 class="work__title">Projetos</h2>
+        <p class="work__description">
+          Tenho desenvolvido diversos projetos, desde landing pages até pequenos componentes, como telas de login. Minhas aplicações sempre refletem minha criatividade.        </p>
+        <div class="work__container">
+          <!-- Project 1 -->
+          <h3 class="work__project-title">Camp</h3>
+          <div class="work__img-wrapper work__image1">
+            <img
+              class="lazy loading"
+              src="https://via.placeholder.com/900"
+              data-src="/camp.png"
+              alt="Wax Motif website"
+            />
+          </div>
+          <div class="work__project work__content1">
+            <h3 class="work__project-subtitle">Camp</h3>
+            <p class="work__project-description1">
+              Landing page minimalista e moderna de reserva de área para acampamento.
+            </p>
+            <p class="work__project-description2">
+              Desenvolvido com HTML, CSS e Javascript Vanilla, utiliza flexbox e a metodologia mobile-first, animações de intro ao carregar o site para interface mais agradável.
+            </p>
+            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/camp-landing-page">Repositório</a>
+          </div>
+          <!-- Project 2 -->
+          <h3 class="work__project-title">Dashboard</h3>
+          <div class="work__img-wrapper work__image2">
+            <img
+              class="lazy loading"
+              src="https://via.placeholder.com/900"
+              data-src="/dashboard.png"
+              alt="Draze Force website"
+            />
+          </div>
+          <div class="work__project work__content2">
+            <h3 class="work__project-subtitle">Dashboard</h3>
+            <p class="work__project-description1">
+             Dashboard e Analytics
+            </p>
+            <p class="work__project-description2">
+              Website de dashboard/analytics com escolha de tema claro ou escuro, dsenvolvido com HTML, CSS e Javascript Vanilla. Escolha de cores com bom contraste melhorando o quão intuitivo é a aplicação
+            </p>
+            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/dashboard-theme">Repositório</a>
+          </div>
+          <!-- Project 3 -->
+          <h3 class="work__project-title">Login Moderno</h3>
+          <div class="work__img-wrapper work__image3">
+            <img
+              class="lazy loading"
+              src="https://via.placeholder.com/900"
+              data-src="/modernlogin.jpg"
+              alt="Artren website"
+            />
+          </div>
+          <div class="work__project work__content3">
+            <h3 class="work__project-subtitle">Login Moderno</h3>
+            <p class="work__project-description1">
+              Tela de Login Moderna
+            </p>
+            <p class="work__project-description2">
+              Desenvolvido com HTML, CSS e Javascript. Interface simples mas agradável, com animações e transições ao escolher opção de criar um cadastro ou fazer login com um já existente.
+            </p>
+            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/modern-login">Repositório</a>
+          </div>
+          <!-- Project 4 -->
+          <h3 class="work__project-title">Login Responsivo</h3>
+          <div class="work__img-wrapper work__image4">
+            <img
+              class="lazy loading"
+              src="https://via.placeholder.com/900"
+              data-src="/responsivelogin.png"
+              alt="Platform Pro website"
+            />
+          </div>
+          <div class="work__project work__content4">
+            <h3 class="work__project-subtitle">Login Responsivo</h3>
+            <p class="work__project-description1">
+              Tela de Login Responsiva
+            </p>
+            <p class="work__project-description2">
+              Desenvolvido com HTML, CSS e Javascript. Interface simples responsiva que se adapta para a tela do usúario.
+
+            </p>
+            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/responsive-login">Repositório</a>
+          </div>
+          <!-- Project 5 -->
+          <h3 class="work__project-title">Restaurant</h3>
+          <div class="work__img-wrapper work__image5">
+            <img
+              class="lazy loading"
+              src="https://via.placeholder.com/900"
+              data-src="/restaurant.png"
+              alt="Wallys Vegan website"
+            />
+          </div>
+          <div class="work__project work__content5">
+            <h3 class="work__project-subtitle">Restaurant</h3>
+            <p class="work__project-description1">
+              Landing Page para restaurante.
+            </p>
+            <p class="work__project-description2">
+              Desenvolvido com HTML, CSS e Javascript. Uma landing page usando tons terrosos para representar a temática saúdavel do restaurante proposto.
+
+            </p>
+            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/restaurant-app">Repositório</a>
+          </div>
+          <!-- Project 6 -->
+          <h3 class="work__project-title">Cryptoverse</h3>
+          <div class="work__img-wrapper work__image6">
+            <img
+              class="lazy loading"
+              src="https://via.placeholder.com/900"
+              data-src="/cryptoverse.png"
+              alt="Portfolio website"
+            />
+          </div>
+          <div class="work__project work__content6">
+            <h3 class="work__project-subtitle">Cryptoverse</h3>
+            <p class="work__project-description1">
+              Cotação de Cryptoativos e Principais notícias
+            </p>
+            <p class="work__project-description2">
+              Desenvolvido com HTML, CSS e Javascript, ReactJS e utilizando APIs livres da RapidAPI, é uma aplicação que você pode verificar cotações de cryptomoedas e se redirecionar para as principais notícias atuais do meio.
+
+            </p>
+            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/cryptoverse">Repositório</a>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="contact" class="contact container section">
+        <h2 class="contact__title">Gostou do que viu?</h2>
+        <p class="contact__description">
+          Se você está iniciando um projeto, tem dúvidas comerciais ou simplesmente quer dizer oi, minha caixa de entrada está sempre aberta. Sinta-se à vontade para entrar em contato, e eu retornarei o mais rápido possível.
+          📧👋
+        </p>
+        <a
+          class="contact__btn btn"
+          href="mailto:enzobellussifam@gmail.com"
+          target="_blank"
+          >Entre em contato</a
+        >
+      </section>
+    </main>
+    <footer class="footer container section">
+      <h3 class="footer__title">~ Enzo Bellussi ~</h3>
+    </footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
