@@ -11,6 +11,72 @@
     <meta name="description" content="My Portfolio website" />
     <meta name="keywords" content="web design, html, css, js" />
     <title>Bellussi</title>
+    <style>
+      .tech-logo {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        vertical-align: middle;
+        display: inline-block;
+      }
+      
+      .about__list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .work__links {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      
+      .work__project-full {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .work__image-full {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      
+      .work__image-full img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      
+      .work__project-content {
+        text-align: center;
+        max-width: 90%;
+      }
+      
+      .work__project-description1 {
+        color: var(--clr-slate600);
+        max-width: 60ch;
+        font-size: var(--fs-sm);
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      
+      .work__project-description2 {
+        color: var(--clr-slate400);
+        max-width: 60ch;
+        font-size: var(--fs-sm);
+        margin-bottom: 1.5rem;
+      }
+      
+      .work__links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+    </style>
   </head>
   <body>
     <header class="header container">
@@ -24,6 +90,9 @@
           </li>
           <li>
             <a class="header__link" href="#contact">Contato</a>
+          </li>
+          <li>
+            <a class="header__link" href="https://github.com/bellussi1" target="_blank">GitHub</a>
           </li>
           <li>
             <a class="mobile-nav__link" href="https://www.linkedin.com/in/enzo-bellussi/" target="_blank">Linkedin</a>
@@ -80,6 +149,9 @@
           </li>
           <li>
             <a class="mobile-nav__link" href="https://www.linkedin.com/in/enzo-bellussi/" target="_blank">Linkedin</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="https://github.com/bellussi1" target="_blank">GitHub</a>
           </li>
           <li class="mobile-nav__link-line"></li>
           <li>
@@ -139,14 +211,22 @@
           <h3 class="about__subtitle">Tecnologias</h3>
           <div class="about__ul-container">
             <ul class="about__ul">
-              <li class="about__list">JavaScript (ES6+)</li>
-              <li class="about__list">CSS</li>
-              <li class="about__list">HTML</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="tech-logo" /> JavaScript</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" class="tech-logo" /> TypeScript</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" class="tech-logo" /> Next/React</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo" class="tech-logo" /> Angular 13+</li>
             </ul>
             <ul class="about__ul">
-              <li class="about__list">VueJS</li>
-              <li class="about__list">ReactJS</li>
-              <li class="about__list">NextJS</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue logo" class="tech-logo" /> Vue</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind logo" class="tech-logo" /> Tailwind</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Scss logo" class="tech-logo" /> Scss</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" class="tech-logo" /> Bootstrap</li>
+            </ul>
+            <ul class="about__ul">
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" class="tech-logo" /> Git</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="Photoshop logo" class="tech-logo" /> Photoshop</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-line.svg" alt="Illustrator logo" class="tech-logo" /> Illustrator</li>
+              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma logo" class="tech-logo" /> Figma</li>
             </ul>
           </div>
         </div>
@@ -159,127 +239,29 @@
           Tenho desenvolvido diversos projetos, desde landing pages até pequenos componentes, como telas de login. Minhas aplicações sempre refletem minha criatividade.        </p>
         <div class="work__container">
           <!-- Project 1 -->
-          <h3 class="work__project-title">Camp</h3>
-          <div class="work__img-wrapper work__image1">
-            <img
-              class="lazy loading"
-              src="https://via.placeholder.com/900"
-              data-src="/camp.png"
-              alt="Wax Motif website"
-            />
-          </div>
-          <div class="work__project work__content1">
-            <h3 class="work__project-subtitle">Camp</h3>
-            <p class="work__project-description1">
-              Landing page minimalista e moderna de reserva de área para acampamento.
-            </p>
-            <p class="work__project-description2">
-              Desenvolvido com HTML, CSS e Javascript Vanilla, utiliza flexbox e a metodologia mobile-first, animações de intro ao carregar o site para interface mais agradável.
-            </p>
-            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/camp-landing-page">Repositório</a>
-          </div>
-          <!-- Project 2 -->
-          <h3 class="work__project-title">Dashboard</h3>
-          <div class="work__img-wrapper work__image2">
-            <img
-              class="lazy loading"
-              src="https://via.placeholder.com/900"
-              data-src="/dashboard.png"
-              alt="Draze Force website"
-            />
-          </div>
-          <div class="work__project work__content2">
-            <h3 class="work__project-subtitle">Dashboard</h3>
-            <p class="work__project-description1">
-             Dashboard e Analytics
-            </p>
-            <p class="work__project-description2">
-              Website de dashboard/analytics com escolha de tema claro ou escuro, dsenvolvido com HTML, CSS e Javascript Vanilla. Escolha de cores com bom contraste melhorando o quão intuitivo é a aplicação
-            </p>
-            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/dashboard-theme">Repositório</a>
-          </div>
-          <!-- Project 3 -->
-          <h3 class="work__project-title">Login Moderno</h3>
-          <div class="work__img-wrapper work__image3">
-            <img
-              class="lazy loading"
-              src="https://via.placeholder.com/900"
-              data-src="/modernlogin.jpg"
-              alt="Artren website"
-            />
-          </div>
-          <div class="work__project work__content3">
-            <h3 class="work__project-subtitle">Login Moderno</h3>
-            <p class="work__project-description1">
-              Tela de Login Moderna
-            </p>
-            <p class="work__project-description2">
-              Desenvolvido com HTML, CSS e Javascript. Interface simples mas agradável, com animações e transições ao escolher opção de criar um cadastro ou fazer login com um já existente.
-            </p>
-            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/modern-login">Repositório</a>
-          </div>
-          <!-- Project 4 -->
-          <h3 class="work__project-title">Login Responsivo</h3>
-          <div class="work__img-wrapper work__image4">
-            <img
-              class="lazy loading"
-              src="https://via.placeholder.com/900"
-              data-src="/responsivelogin.png"
-              alt="Platform Pro website"
-            />
-          </div>
-          <div class="work__project work__content4">
-            <h3 class="work__project-subtitle">Login Responsivo</h3>
-            <p class="work__project-description1">
-              Tela de Login Responsiva
-            </p>
-            <p class="work__project-description2">
-              Desenvolvido com HTML, CSS e Javascript. Interface simples responsiva que se adapta para a tela do usúario.
-
-            </p>
-            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/responsive-login">Repositório</a>
-          </div>
-          <!-- Project 5 -->
-          <h3 class="work__project-title">Restaurant</h3>
-          <div class="work__img-wrapper work__image5">
-            <img
-              class="lazy loading"
-              src="https://via.placeholder.com/900"
-              data-src="/restaurant.png"
-              alt="Wallys Vegan website"
-            />
-          </div>
-          <div class="work__project work__content5">
-            <h3 class="work__project-subtitle">Restaurant</h3>
-            <p class="work__project-description1">
-              Landing Page para restaurante.
-            </p>
-            <p class="work__project-description2">
-              Desenvolvido com HTML, CSS e Javascript. Uma landing page usando tons terrosos para representar a temática saúdavel do restaurante proposto.
-
-            </p>
-            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/restaurant-app">Repositório</a>
-          </div>
-          <!-- Project 6 -->
-          <h3 class="work__project-title">Cryptoverse</h3>
-          <div class="work__img-wrapper work__image6">
-            <img
-              class="lazy loading"
-              src="https://via.placeholder.com/900"
-              data-src="/cryptoverse.png"
-              alt="Portfolio website"
-            />
-          </div>
-          <div class="work__project work__content6">
-            <h3 class="work__project-subtitle">Cryptoverse</h3>
-            <p class="work__project-description1">
-              Cotação de Cryptoativos e Principais notícias
-            </p>
-            <p class="work__project-description2">
-              Desenvolvido com HTML, CSS e Javascript, ReactJS e utilizando APIs livres da RapidAPI, é uma aplicação que você pode verificar cotações de cryptomoedas e se redirecionar para as principais notícias atuais do meio.
-
-            </p>
-            <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/cryptoverse">Repositório</a>
+          <div class="work__project-full">
+            <h3 class="work__project-title">Comandinha</h3>
+            <div class="work__img-wrapper work__image-full">
+              <img
+                class="lazy loading"
+                src="https://via.placeholder.com/900"
+                data-src="/comandinha.webp"
+                alt="Comandinha - Sistema de Comandas Digitais"
+              />
+            </div>
+            <div class="work__project-content">
+              <h3 class="work__project-subtitle">Comandinha</h3>
+              <p class="work__project-description1">
+                Sistema de Comandas Digitais para Restaurantes
+              </p>
+              <p class="work__project-description2">
+                Aplicação web moderna para digitalizar o processo de pedidos em restaurantes, oferecendo acesso instantâneo via QR Code, cardápio digital interativo, divisão de conta simplificada e painel administrativo. Desenvolvido com Next.js, TypeScript e Tailwind CSS.
+              </p>
+              <div class="work__links">
+                <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/comandinha">Repositório</a>
+                <a class="btn work__project-btn" target="_blank" href="https://barao-comandinha.vercel.app">Demo Live</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
