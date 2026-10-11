@@ -1,290 +1,484 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#141412" />
+    <meta
+      name="description"
+      content="Enzo Bellussi, Software Engineer com foco em front-end. Experiência em aplicações corporativas, Angular, React, TypeScript e modernização de sistemas."
+    />
+    <meta property="og:title" content="Enzo Bellussi — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Do detalhe visual à arquitetura. Conheça minha trajetória e experiência em engenharia front-end."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bellussi.vercel.app/" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://bellussi.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <meta name="description" content="My Portfolio website" />
-    <meta name="keywords" content="web design, html, css, js" />
-    <title>Bellussi</title>
-    <style>
-      .tech-logo {
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        vertical-align: middle;
-        display: inline-block;
+    <title>Enzo Bellussi — Software Engineer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Enzo Bellussi",
+        "jobTitle": "Front-end Developer",
+        "url": "https://bellussi.vercel.app/",
+        "sameAs": [
+          "https://github.com/bellussi1",
+          "https://www.linkedin.com/in/enzo-bellussi/"
+        ]
       }
-      
-      .about__list {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-      
-      .work__links {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-      }
-      
-      .work__project-full {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .work__image-full {
-        width: 100%;
-        margin-bottom: 2rem;
-      }
-      
-      .work__image-full img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-      
-      .work__project-content {
-        text-align: center;
-        max-width: 90%;
-      }
-      
-      .work__project-description1 {
-        color: var(--clr-slate600);
-        max-width: 60ch;
-        font-size: var(--fs-sm);
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-      
-      .work__project-description2 {
-        color: var(--clr-slate400);
-        max-width: 60ch;
-        font-size: var(--fs-sm);
-        margin-bottom: 1.5rem;
-      }
-      
-      .work__links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-    </style>
+    </script>
   </head>
   <body>
-    <header class="header container">
-      <nav>
-        <ul class="header__menu">
-          <li>
-            <a class="header__link" href="#about">Sobre</a>
-          </li>
-          <li>
-            <a class="header__link" href="#featured">Trabalho</a>
-          </li>
-          <li>
-            <a class="header__link" href="#contact">Contato</a>
-          </li>
-          <li>
-            <a class="header__link" href="https://github.com/bellussi1" target="_blank">GitHub</a>
-          </li>
-          <li>
-            <a class="mobile-nav__link" href="https://www.linkedin.com/in/enzo-bellussi/" target="_blank">Linkedin</a>
-          </li>
-          <li class="header__line"></li>
-          <li>
-            <button
-              aria-label="theme-toggle btn"
-              id="theme-toggle"
-              class="header__sun"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
-                />
-              </svg>
-            </button>
-          </li>
-          <li>
-            <a class="header__resume btn" href="./curriculo.pdf">Currículo</a>
-          </li>
-        </ul>
-        <button aria-label="mobile nav button" class="header__bars">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
+    <a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Enzo Bellussi, início"
+          ><span class="monogram">eb<span>·</span></span
+          ><span class="brand-name">Enzo Bellussi</span></a
+        >
+        <nav
+          class="navigation"
+          id="navigation"
+          aria-label="Navegação principal"
+        >
+          <a href="#experience" data-i18n="navExperience">Experiência</a
+          ><a href="#approach" data-i18n="navApproach">Abordagem</a
+          ><a href="#about" data-i18n="navAbout">Sobre</a
+          ><a href="#contact" data-i18n="navContact"
+            >Contato <span aria-hidden="true">↗</span></a
           >
-            <path
-              fill-rule="evenodd"
-              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-      </nav>
-    </header>
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-      <nav>
-        <ul class="mobile-nav__menu">
-          <li>
-            <a class="mobile-nav__link" href="#about">Sobre</a>
-          </li>
-          <li>
-            <a class="mobile-nav__link" href="#featured">Trabalho</a>
-          </li>
-          <li>
-            <a class="mobile-nav__link" href="#contact">Contato</a>
-          </li>
-          <li>
-            <a class="mobile-nav__link" href="https://www.linkedin.com/in/enzo-bellussi/" target="_blank">Linkedin</a>
-          </li>
-          <li>
-            <a class="mobile-nav__link" href="https://github.com/bellussi1" target="_blank">GitHub</a>
-          </li>
-          <li class="mobile-nav__link-line"></li>
-          <li>
+        </nav>
+        <div class="header-controls">
+          <div
+            class="language-control"
+            role="group"
+            aria-label="Idioma / Language"
+          >
             <button
-              aria-label="theme-toggle btn"
-              id="theme-toggle"
-              class="mobile-nav__sun"
+              type="button"
+              data-language="pt"
+              aria-label="Português"
+              aria-pressed="true"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
-                />
-              </svg>
+              PT</button
+            ><span aria-hidden="true">/</span
+            ><button
+              type="button"
+              data-language="en"
+              aria-label="English"
+              aria-pressed="false"
+            >
+              EN
             </button>
-          </li>
-          <li>
-            <a class="mobile-nav__btn btn" href="./curriculo.pdf">Currículo</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <!-- End of Mobile Navigation -->
-    <main>
-      <section class="hero container">
-        <img class="hero__img" src="/hero1.jpeg" alt="Profile picture" />
-        <h2 class="hero__subtitle">Olá, eu sou o Bellussi 👋</h2>
-        <h1 class="hero__title">
-          FRONT-END <br />
-          WEB DEVELOPER.
-        </h1>
-        <p class="hero__description">
-          Um apaixonado <strong>Frontend</strong> web
-          developer e entusiasta de <strong>UI/UX</strong>
-          especializado na construção de sites/aplicativos interativos impressionantes com pixel-perfect.
-        </p>
-        <a class="hero__btn btn" href="mailto:enzobellussifam@gmail.com"
-          target="_blank">Entre em contato</a>
-      </section>
-      <section id="about" class="about container section">
-        <div class="about__content">
-          <h2 class="about__title">Sobre mim</h2>
-          <p class="about__description">
-            Olá! Me chamo Enzo Bellussi. </p>
-          <p class="about__description">Um 
-            <strong>Frontend Developer </strong> com paixão pelo desenvolvimento de componentes reutilizáveis, e consciente de como o design de interfaces pode aprimorar a experiência do usuário, busco criar soluções que sejam tanto funcionais quanto visualmente agradáveis.
+          </div>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-controls="navigation"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero container" id="home" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow hero-intro">
+            <span class="status-dot" aria-hidden="true"></span>SOFTWARE ENGINEER
+            · FRONT-END
           </p>
-          <p class="about__description">
-            
-            Quem me conhece diz que sou obcecado, e estão certos. Sou altamente motivado e adoro aprender coisas novas. 🌟
+          <h1 id="hero-title">
+            <span data-i18n="heroFirst">Do detalhe visual</span><br /><span
+              data-i18n="heroSecond"
+              >à </span
+            ><em data-i18n="heroAccent">arquitetura.</em>
+          </h1>
+          <p class="hero-description" data-i18n="heroDescription">
+            Construo e evoluo aplicações web para contextos em que usabilidade,
+            performance e manutenção importam. Experiência em produção, do
+            ambiente bancário à consultoria.
           </p>
-          
-          <hr class="about__hr" />
-          <h3 class="about__subtitle">Tecnologias</h3>
-          <div class="about__ul-container">
-            <ul class="about__ul">
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="tech-logo" /> JavaScript</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" class="tech-logo" /> TypeScript</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" class="tech-logo" /> Next/React</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo" class="tech-logo" /> Angular 13+</li>
-            </ul>
-            <ul class="about__ul">
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue logo" class="tech-logo" /> Vue</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind logo" class="tech-logo" /> Tailwind</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Scss logo" class="tech-logo" /> Scss</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" class="tech-logo" /> Bootstrap</li>
-            </ul>
-            <ul class="about__ul">
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" class="tech-logo" /> Git</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="Photoshop logo" class="tech-logo" /> Photoshop</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-line.svg" alt="Illustrator logo" class="tech-logo" /> Illustrator</li>
-              <li class="about__list"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma logo" class="tech-logo" /> Figma</li>
-            </ul>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#experience"
+              ><span data-i18n="heroCta">Conheça minha experiência</span
+              ><span aria-hidden="true">↘</span></a
+            ><a class="text-link" href="/curriculo-pt.pdf" data-resume download
+              ><span data-i18n="resume">Baixar currículo</span
+              ><span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <div class="hero-footnote">
+            <span data-i18n="location">São Paulo, Brasil</span
+            ><span class="tiny-rule" aria-hidden="true"></span
+            ><span data-i18n="since">Construindo para a web desde 2022</span>
           </div>
         </div>
-        
-      </section>
-     
-      <section class="work container section">
-        <h2 class="work__title">Projetos</h2>
-        <p class="work__description">
-          Tenho desenvolvido diversos projetos, desde landing pages até pequenos componentes, como telas de login. Minhas aplicações sempre refletem minha criatividade.        </p>
-        <div class="work__container">
-          <!-- Project 1 -->
-          <div class="work__project-full">
-            <h3 class="work__project-title">Comandinha</h3>
-            <div class="work__img-wrapper work__image-full">
-              <img
-                class="lazy loading"
-                src="https://via.placeholder.com/900"
-                data-src="/comandinha.webp"
-                alt="Comandinha - Sistema de Comandas Digitais"
-              />
+        <div class="engineering-visual" aria-hidden="true">
+          <div class="visual-grid"></div>
+          <div class="visual-caption">
+            <span>01 / FRONT-END ENGINEERING</span><span>EB.</span>
+          </div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="system-window">
+            <div class="window-bar">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <span>interface.tsx</span><span>↗</span>
             </div>
-            <div class="work__project-content">
-              <h3 class="work__project-subtitle">Comandinha</h3>
-              <p class="work__project-description1">
-                Sistema de Comandas Digitais para Restaurantes
-              </p>
-              <p class="work__project-description2">
-                Aplicação web moderna para digitalizar o processo de pedidos em restaurantes, oferecendo acesso instantâneo via QR Code, cardápio digital interativo, divisão de conta simplificada e painel administrativo. Desenvolvido com Next.js, TypeScript e Tailwind CSS.
-              </p>
-              <div class="work__links">
-                <a class="btn work__project-btn" target="_blank" href="https://github.com/bellussi1/comandinha">Repositório</a>
-                <a class="btn work__project-btn" target="_blank" href="https://barao-comandinha.vercel.app">Demo Live</a>
+            <div class="window-content">
+              <div class="ui-sidebar">
+                <b>eb.</b><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="ui-main">
+                <div class="ui-heading"><span></span><i></i></div>
+                <div class="ui-chart">
+                  <span></span><span></span><span></span><span></span
+                  ><span></span><span></span><span></span>
+                </div>
+                <div class="ui-lines"><i></i><i></i><i></i></div>
               </div>
             </div>
+            <div class="window-footer">
+              <span><i></i>reusable components</span><span>TypeScript</span>
+            </div>
+          </div>
+          <div class="code-fragment">
+            <span class="code-line">&lt;<b>Interface</b></span
+            ><span class="code-line code-indent"
+              >experience=<em>"thoughtful"</em></span
+            ><span class="code-line code-indent"
+              >architecture=<em>"maintainable"</em></span
+            ><span class="code-line">/&gt;</span>
+          </div>
+          <div class="visual-tag">
+            <span class="tag-symbol">✳</span
+            ><span>DESIGN → CODE → PRODUCTION</span>
           </div>
         </div>
       </section>
-
-
-
-      <section id="contact" class="contact container section">
-        <h2 class="contact__title">Gostou do que viu?</h2>
-        <p class="contact__description">
-          Se você está iniciando um projeto, tem dúvidas comerciais ou simplesmente quer dizer oi, minha caixa de entrada está sempre aberta. Sinta-se à vontade para entrar em contato, e eu retornarei o mais rápido possível.
-          📧👋
+      <div class="credential-strip container">
+        <p data-i18n="trajectoryLabel">Experiência em contextos reais</p>
+        <div>
+          <span>MarketData</span
+          ><span class="credential-separator" aria-hidden="true">/</span
+          ><span>Banco do Brasil</span
+          ><span class="credential-note" data-i18n="credentialNote"
+            >Sistemas corporativos. Responsabilidade técnica.</span
+          >
+        </div>
+      </div>
+      <section
+        class="section container"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-heading reveal">
+          <p class="eyebrow">
+            <span>01</span><span data-i18n="experienceLabel">EXPERIÊNCIA</span>
+          </p>
+          <div>
+            <h2 id="experience-title" data-i18n="experienceTitle">
+              Código que chega<br />à produção.
+            </h2>
+            <p class="section-description" data-i18n="experienceIntro">
+              Meu trabalho envolve construir interfaces, entender sistemas
+              existentes e tomar decisões que continuem fazendo sentido depois
+              do deploy.
+            </p>
+          </div>
+        </div>
+        <article class="experience-row reveal">
+          <div class="experience-meta">
+            <span class="role-number">01 /</span>
+            <h3>MarketData</h3>
+            <p data-i18n="marketPeriod">Ago. 2024 — atual</p>
+            <span class="role-pill" data-i18n="marketPill"
+              >Consultoria · múltiplos clientes</span
+            >
+          </div>
+          <div class="experience-content">
+            <p class="role-label" data-i18n="marketRole">
+              DESENVOLVEDOR FRONT-END
+            </p>
+            <h4 data-i18n="marketTitle">
+              Da interface à responsabilidade técnica.
+            </h4>
+            <p data-i18n="marketDescription">
+              Desenvolvimento e sustentação de aplicações com Angular, React e
+              TypeScript. Responsável técnico pelos projetos Dexco e RecargaPay,
+              com atuação em arquitetura, manutenção e entrega em produção.
+            </p>
+            <ul class="outcome-list">
+              <li data-i18n="marketBullet1">
+                Integração com APIs REST e back-ends em ASP.NET MVC.
+              </li>
+              <li data-i18n="marketBullet2">
+                Interfaces responsivas e acessíveis, com atenção a SEO técnico.
+              </li>
+              <li data-i18n="marketBullet3">
+                Modernização gradual de sistemas legados e acompanhamento de
+                pipelines no GitLab.
+              </li>
+            </ul>
+            <div class="tech-tags">
+              <span>Angular</span><span>React</span><span>TypeScript</span
+              ><span>REST APIs</span><span>AWS S3</span
+              ><span>GitLab CI/CD</span>
+            </div>
+            <details class="experience-details">
+              <summary>
+                <span data-i18n="marketDetailsLabel">Mais sobre o contexto</span
+                ><span class="details-icon" aria-hidden="true">+</span>
+              </summary>
+              <p data-i18n="marketDetails">
+                Atuação em projetos para clientes de diferentes setores,
+                incluindo Natura, Nissan e Dexco. Trabalho com Tailwind CSS e
+                SASS, armazenamento de assets no AWS S3 e migração gradual de
+                jQuery para frameworks modernos.
+              </p>
+            </details>
+          </div>
+        </article>
+        <article class="experience-row reveal">
+          <div class="experience-meta">
+            <span class="role-number">02 /</span>
+            <h3>Banco do Brasil</h3>
+            <p data-i18n="bankPeriod">Out. 2022 — ago. 2024</p>
+            <span class="role-pill" data-i18n="bankPill"
+              >Tecnologia · operações internacionais</span
+            >
+          </div>
+          <div class="experience-content">
+            <p class="role-label" data-i18n="bankRole">
+              ESTÁGIO EM DESENVOLVIMENTO FRONT-END
+            </p>
+            <h4 data-i18n="bankTitle">Uma nova base para um sistema legado.</h4>
+            <p data-i18n="bankDescription">
+              Atuação no portal interno da Unidade de Negócios Internacionais.
+              Refatoração do sistema legado em Vue.js, com uma arquitetura
+              voltada à reutilização e à manutenção.
+            </p>
+            <ul class="outcome-list">
+              <li data-i18n="bankBullet1">
+                Criação de componentes reutilizáveis e manutenção de Design
+                System interno.
+              </li>
+              <li data-i18n="bankBullet2">
+                Integração com microsserviços Node.js e tratamento de dados na
+                interface.
+              </li>
+              <li data-i18n="bankBullet3">
+                Otimização de carregamento, compatibilidade entre navegadores e
+                revisão de código.
+              </li>
+            </ul>
+            <div class="tech-tags">
+              <span>Vue.js</span><span>Node.js</span><span>Design System</span
+              ><span>Code Review</span><span>Scrum</span>
+            </div>
+          </div>
+        </article>
+        <p class="confidentiality-note reveal" data-i18n="confidentiality">
+          Os trabalhos acima fazem parte da minha experiência profissional.
+          Código e sistemas internos pertencem às respectivas empresas.
         </p>
-        <a
-          class="contact__btn btn"
-          href="mailto:enzobellussifam@gmail.com"
-          target="_blank"
-          >Entre em contato</a
-        >
+      </section>
+      <section
+        class="approach-section"
+        id="approach"
+        aria-labelledby="approach-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">
+              <span>02</span><span data-i18n="approachLabel">ABORDAGEM</span>
+            </p>
+            <div>
+              <h2 id="approach-title" data-i18n="approachTitle">
+                Uma boa interface<br />começa antes do CSS.
+              </h2>
+              <p class="section-description" data-i18n="approachIntro">
+                Combino cuidado visual com decisões de engenharia para construir
+                aplicações que as pessoas consigam usar e os times consigam
+                evoluir.
+              </p>
+            </div>
+          </div>
+          <div class="approach-grid">
+            <article class="approach-card reveal">
+              <span class="approach-icon" aria-hidden="true">⌘</span
+              ><span class="card-index">01</span>
+              <h3 data-i18n="approach1Title">Arquitetura que acompanha.</h3>
+              <p data-i18n="approach1Description">
+                Componentes reutilizáveis, Design Systems e gerenciamento de
+                estado. Uma base consistente para evoluir interfaces sem
+                multiplicar complexidade.
+              </p>
+              <div class="card-bottom">React · Angular · Vue · TypeScript</div>
+            </article>
+            <article class="approach-card reveal">
+              <span class="approach-icon" aria-hidden="true">↗</span
+              ><span class="card-index">02</span>
+              <h3 data-i18n="approach2Title">Experiência que funciona.</h3>
+              <p data-i18n="approach2Description">
+                Responsividade, acessibilidade, performance e SEO técnico.
+                Atenção ao comportamento real da aplicação, em diferentes telas
+                e navegadores.
+              </p>
+              <div class="card-bottom">WCAG · Web Vitals · Responsive UI</div>
+            </article>
+            <article class="approach-card reveal">
+              <span class="approach-icon" aria-hidden="true">⟷</span
+              ><span class="card-index">03</span>
+              <h3 data-i18n="approach3Title">Integração de ponta a ponta.</h3>
+              <p data-i18n="approach3Description">
+                APIs REST, microsserviços e dados na interface. Vivência com
+                Node.js, PostgreSQL, AWS S3 e pipelines de entrega.
+              </p>
+              <div class="card-bottom">Node.js · REST · AWS · CI/CD</div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section container about-section"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="about-intro reveal">
+          <p class="eyebrow">
+            <span>03</span><span data-i18n="aboutLabel">SOBRE MIM</span>
+          </p>
+          <h2 id="about-title">
+            <span data-i18n="aboutTitle">Prazer,</span><br /><em>Enzo.</em>
+          </h2>
+          <p class="about-location" data-i18n="aboutLocation">
+            São Paulo, Brasil.<br />Curiosidade como ponto de partida.
+          </p>
+        </div>
+        <div class="about-content reveal">
+          <p class="about-lead" data-i18n="aboutLead">
+            Gosto de conectar o que as pessoas veem ao que faz o software
+            funcionar.
+          </p>
+          <p data-i18n="aboutBody">
+            Sou engenheiro de software com foco em front-end. Desde 2022, atuo
+            em aplicações corporativas, passando por ambiente bancário e
+            consultoria. Meu interesse vai do detalhe da interação à organização
+            do código que sustenta a experiência.
+          </p>
+          <p data-i18n="aboutLearning">
+            Também exploro back-end, infraestrutura e ferramentas para
+            desenvolvedores, além do uso de IA como apoio à engenharia de
+            software.
+          </p>
+          <div class="about-facts">
+            <div>
+              <span class="fact-label" data-i18n="educationLabel"
+                >FORMAÇÃO</span
+              >
+              <h3 data-i18n="educationTitle">Ciência da Computação</h3>
+              <p data-i18n="educationDetails">Universidade FAM · 2022–2025</p>
+            </div>
+            <div>
+              <span class="fact-label" data-i18n="languagesLabel">IDIOMAS</span>
+              <h3 data-i18n="languagesTitle">Português & inglês</h3>
+              <p data-i18n="languagesDetails">
+                Português nativo · Inglês avançado
+              </p>
+            </div>
+          </div>
+          <a
+            class="text-link"
+            href="https://www.linkedin.com/in/enzo-bellussi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span data-i18n="linkedinCta"
+              >Veja minha trajetória no LinkedIn</span
+            ><span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <section
+        class="contact-section container reveal"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="contact-top">
+          <p class="eyebrow">
+            <span>04</span><span data-i18n="contactLabel">PRÓXIMO PASSO</span>
+          </p>
+          <span class="contact-note" data-i18n="contactNote"
+            >Aberto a conversar sobre oportunidades.</span
+          >
+        </div>
+        <h2 id="contact-title">
+          <span data-i18n="contactFirst">Vamos construir</span><br /><em
+            data-i18n="contactAccent"
+            >o próximo capítulo?</em
+          >
+        </h2>
+        <p data-i18n="contactDescription">
+          Se você procura alguém que combine desenvolvimento front-end, atenção
+          à experiência e vivência em produção, vamos conversar.
+        </p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:enzobellussi3@gmail.com"
+            ><span data-i18n="emailCta">Entre em contato</span
+            ><span aria-hidden="true">↗</span></a
+          ><a class="text-link" href="/curriculo-pt.pdf" data-resume download
+            ><span data-i18n="resume">Baixar currículo</span
+            ><span aria-hidden="true">↓</span></a
+          >
+        </div>
+        <div class="email-line">
+          <a href="mailto:enzobellussi3@gmail.com">enzobellussi3@gmail.com</a
+          ><button class="copy-email" type="button" aria-label="Copiar e-mail">
+            <span data-i18n="copyEmail">Copiar</span
+            ><span aria-hidden="true">⧉</span></button
+          ><span class="sr-only" role="status" id="copy-status"></span>
+        </div>
       </section>
     </main>
-    <footer class="footer container section">
-      <h3 class="footer__title">~ Enzo Bellussi ~</h3>
+    <footer class="site-footer container">
+      <a
+        class="brand footer-brand"
+        href="#home"
+        aria-label="Enzo Bellussi, início"
+        ><span class="monogram">eb<span>·</span></span></a
+      >
+      <p>© <span id="year">2026</span> Enzo Bellussi</p>
+      <div class="footer-links">
+        <a
+          href="https://github.com/bellussi1"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub ↗</a
+        ><a
+          href="https://www.linkedin.com/in/enzo-bellussi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn ↗</a
+        ><a href="/curriculo-pt.pdf" download>CV PT ↓</a
+        ><a href="/curriculo-en.pdf" download>CV EN ↓</a>
+      </div>
     </footer>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
