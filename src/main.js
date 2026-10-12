@@ -1,6 +1,7 @@
 import "../styles/modern-normalize.css";
 import "../styles/style.css";
 import "../styles/components/projects.css";
+import "../styles/components/premium.css";
 import { english } from "./translations.js";
 import { initParallax } from "./utils/parallax.js";
 
@@ -14,6 +15,7 @@ const portuguese = Object.fromEntries(
   ]),
 );
 let language = "pt";
+let languageTransition;
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
 
@@ -32,6 +34,7 @@ function updateMenuLabel() {
 }
 
 function setLanguage(nextLanguage) {
+  const previousLanguage = language;
   language = nextLanguage === "en" ? "en" : "pt";
   root.lang = language === "en" ? "en" : "pt-BR";
   const content = language === "en" ? english : portuguese;
@@ -74,6 +77,19 @@ function setLanguage(nextLanguage) {
       ? "Enzo Bellussi, Software Engineer focused on front-end. Experience with enterprise applications, Angular, React, TypeScript and legacy modernization."
       : "Enzo Bellussi, Software Engineer com foco em front-end. Experiência em aplicações corporativas, Angular, React, TypeScript e modernização de sistemas.";
   updateMenuLabel();
+  languageTransition?.cancel();
+  if (
+    previousLanguage !== language &&
+    !matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    languageTransition = document
+      .querySelector("main")
+      .animate?.([{ opacity: 0.45 }, { opacity: 1 }], {
+        duration: 220,
+        easing: "ease-out",
+      });
+  }
+  requestAnimationFrame(updateNavigationIndicator);
   try {
     localStorage.setItem("portfolio-language", language);
   } catch {
@@ -150,7 +166,26 @@ function setupMotion() {
 }
 setupMotion();
 reducedMotion.addEventListener("change", setupMotion);
+reducedMotion.addEventListener("change", () => {
+  if (reducedMotion.matches) languageTransition?.cancel();
+});
 initParallax();
+
+const navigationIndicator = document.createElement("span");
+navigationIndicator.className = "navigation-indicator";
+navigationIndicator.setAttribute("aria-hidden", "true");
+navigation.append(navigationIndicator);
+function updateNavigationIndicator() {
+  const current = navigation.querySelector('a[aria-current="location"]');
+  const indicator = navigation.querySelector(".navigation-indicator");
+  if (!indicator) return;
+  indicator.style.opacity = current ? "1" : "0";
+  if (!current) return;
+  indicator.style.width = `${current.offsetWidth}px`;
+  indicator.style.transform = `translateX(${current.offsetLeft}px)`;
+}
+window.addEventListener("resize", updateNavigationIndicator);
+document.fonts?.ready.then(updateNavigationIndicator);
 
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(
@@ -162,6 +197,7 @@ if ("IntersectionObserver" in window) {
             link.setAttribute("aria-current", "location");
           else link.removeAttribute("aria-current");
         });
+        updateNavigationIndicator();
       }),
     { rootMargin: "-15% 0px -55% 0px" },
   );
@@ -173,6 +209,9 @@ if ("IntersectionObserver" in window) {
 const progress = document.querySelector(".scroll-progress");
 let scrollScheduled = false;
 function updateProgress() {
+  document
+    .querySelector(".site-header")
+    .classList.toggle("is-scrolled", window.scrollY > 24);
   const scrollable = root.scrollHeight - window.innerHeight;
   progress.style.transform = `scaleX(${scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0})`;
   scrollScheduled = false;

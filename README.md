@@ -28,11 +28,14 @@ npm run preview
 - `src/main.js`: idioma, menu, navegação, animações e cópia do contato.
 - `src/utils/parallax.js`: profundidade de scroll nas camadas visuais, com deslocamento limitado e suavização por frame.
 - `styles/style.css`: tokens visuais, componentes, composição responsiva e movimento reduzido.
+- `styles/components/premium.css`: contraste editorial, entradas por linhas, revelação coordenada, terminais e microinterações.
 - `public/curriculo-pt.pdf` e `public/curriculo-en.pdf`: currículos para download.
 
 O site usa HTML, CSS e JavaScript com Vite, sem framework de interface ou biblioteca de animação. Os textos principais continuam presentes no HTML sem depender do JavaScript. As animações respeitam `prefers-reduced-motion`.
 
 O parallax mantém a rolagem nativa, preserva os transforms existentes e reduz a intensidade em telas de até 760px. O loop para ao estabilizar e é cancelado quando a página fica oculta ou o usuário ativa movimento reduzido. Os testes cobrem os limites, a estabilização e a mudança dessa preferência.
+
+A abertura entra por linhas; títulos, descrições e comandos aparecem em sequência nas seções. O menu sinaliza a seção ativa com um indicador deslizante. A troca PT/EN usa uma transição curta, com os textos atualizados imediatamente. Conteúdo e comandos permanecem disponíveis sem JavaScript e com movimento reduzido.
 
 ## Atualização de conteúdo
 

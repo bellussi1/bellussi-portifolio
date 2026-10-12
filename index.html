@@ -105,10 +105,12 @@
             · FRONT-END
           </p>
           <h1 id="hero-title">
-            <span data-i18n="heroFirst">Do detalhe visual</span><br /><span
-              data-i18n="heroSecond"
-              >à </span
-            ><em data-i18n="heroAccent">arquitetura.</em>
+            <span class="hero-line"
+              ><span data-i18n="heroFirst">Do detalhe visual</span></span
+            ><span class="hero-line"
+              ><span data-i18n="heroSecond">à&nbsp;</span
+              ><em data-i18n="heroAccent">arquitetura.</em></span
+            >
           </h1>
           <p class="hero-description" data-i18n="heroDescription">
             Construo e evoluo aplicações web para contextos em que usabilidade,
@@ -300,44 +302,143 @@
           Código e sistemas internos pertencem às respectivas empresas.
         </p>
       </section>
-      <section class="section container projects-section" id="projects" aria-labelledby="projects-title">
+      <section
+        class="section container projects-section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
         <div class="section-heading reveal">
-          <p class="eyebrow"><span>02</span><span data-i18n="projectsLabel">PROJETOS OPEN SOURCE</span></p>
-          <div><h2 id="projects-title" data-i18n="projectsTitle">Ferramentas pequenas.<br />Problemas concretos.</h2>
-          <p class="section-description" data-i18n="projectsIntro">Além das interfaces, construo ferramentas para o dia a dia de quem desenvolve. Três projetos autorais com código aberto, testes e documentação para você explorar.</p></div>
+          <p class="eyebrow">
+            <span>02</span
+            ><span data-i18n="projectsLabel">PROJETOS OPEN SOURCE</span>
+          </p>
+          <div>
+            <h2 id="projects-title" data-i18n="projectsTitle">
+              Ferramentas pequenas.<br />Problemas concretos.
+            </h2>
+            <p class="section-description" data-i18n="projectsIntro">
+              Além das interfaces, construo ferramentas para o dia a dia de quem
+              desenvolve. Três projetos autorais com código aberto, testes e
+              documentação para você explorar.
+            </p>
+          </div>
         </div>
         <article class="project-row reveal" aria-labelledby="preflight-title">
           <div class="project-content">
             <p class="project-category"><span>01 /</span> DEPLOY / CI</p>
             <h3 id="preflight-title">Deploy Preflight</h3>
-            <h4 data-i18n="preflightTitle">Configuração validada antes do deploy.</h4>
-            <p data-i18n="preflightDescription">Variáveis ausentes, arquivos inacessíveis e URLs inválidas podem interromper uma entrega. Uma CLI que reúne essas verificações em um relatório para o terminal ou pipeline.</p>
-            <p class="project-decision" data-i18n="preflightDecision">Validação tipada, probes HTTP opcionais e códigos de saída para CI. Valores de ambiente ficam fora dos relatórios.</p>
-            <div class="tech-tags"><span>TypeScript</span><span>Node.js</span><span>HTTP</span><span>GitHub Actions</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/bellussi1/deploy-preflight" target="_blank" rel="noopener noreferrer"><span data-i18n="projectCode">Explorar código</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/bellussi1/deploy-preflight/actions" target="_blank" rel="noopener noreferrer"><span data-i18n="projectTests">Ver testes e CI</span><span aria-hidden="true">↗</span></a></div>
+            <h4 data-i18n="preflightTitle">
+              Configuração validada antes do deploy.
+            </h4>
+            <p data-i18n="preflightDescription">
+              Variáveis ausentes, arquivos inacessíveis e URLs inválidas podem
+              interromper uma entrega. Uma CLI que reúne essas verificações em
+              um relatório para o terminal ou pipeline.
+            </p>
+            <p class="project-decision" data-i18n="preflightDecision">
+              Validação tipada, probes HTTP opcionais e códigos de saída para
+              CI. Valores de ambiente ficam fora dos relatórios.
+            </p>
+            <div class="tech-tags">
+              <span>TypeScript</span><span>Node.js</span><span>HTTP</span
+              ><span>GitHub Actions</span>
+            </div>
+            <div class="project-links">
+              <a
+                class="text-link"
+                href="https://github.com/bellussi1/deploy-preflight"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span data-i18n="projectCode">Explorar código</span
+                ><span aria-hidden="true">↗</span></a
+              ><a
+                class="text-link"
+                href="https://github.com/bellussi1/deploy-preflight/actions"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span data-i18n="projectTests">Ver testes e CI</span
+                ><span aria-hidden="true">↗</span></a
+              >
+            </div>
           </div>
           <div class="project-demo">
-            <div class="project-terminal-bar"><span aria-hidden="true">● ● ●</span><span data-i18n="projectExample">EXEMPLO DE USO</span></div>
+            <div class="project-terminal-bar">
+              <span aria-hidden="true">● ● ●</span
+              ><span data-i18n="projectExample">EXEMPLO DE USO</span>
+            </div>
             <pre><code><span class="terminal-prompt" aria-hidden="true">$ </span>deploy-preflight check --json</code></pre>
-            <p data-i18n="preflightDemo">Variável obrigatória ausente → exit 1. Configuração corrigida → exit 0.</p>
-            <a class="text-link" href="https://github.com/bellussi1/deploy-preflight#runnable-example" target="_blank" rel="noopener noreferrer"><span data-i18n="projectDemo">Reproduzir a demo</span><span aria-hidden="true">↗</span></a>
+            <p data-i18n="preflightDemo">
+              Variável obrigatória ausente → exit 1. Configuração corrigida →
+              exit 0.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/bellussi1/deploy-preflight#runnable-example"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span data-i18n="projectDemo">Reproduzir a demo</span
+              ><span aria-hidden="true">↗</span></a
+            >
           </div>
         </article>
         <article class="project-row reveal" aria-labelledby="recorder-title">
           <div class="project-content">
-            <p class="project-category"><span>02 /</span> BACKEND / INTEGRATIONS</p>
+            <p class="project-category">
+              <span>02 /</span> BACKEND / INTEGRATIONS
+            </p>
             <h3 id="recorder-title">Local Webhook Recorder</h3>
-            <h4 data-i18n="recorderTitle">Um evento. Quantos testes precisar.</h4>
-            <p data-i18n="recorderDescription">Reproduzir uma integração não deveria depender de disparar o evento de novo. Captura webhooks locais, permite inspecionar o payload e reenviá-lo após ajustar o handler.</p>
-            <p class="project-decision" data-i18n="recorderDecision">Persistência em SQLite, preservação dos bytes e replay explícito para endpoints locais. Limites de payload e retenção.</p>
-            <div class="tech-tags"><span>TypeScript</span><span>Node.js</span><span>SQLite</span><span>Webhooks</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/bellussi1/local-webhook-recorder" target="_blank" rel="noopener noreferrer"><span data-i18n="projectCode">Explorar código</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/bellussi1/local-webhook-recorder/actions" target="_blank" rel="noopener noreferrer"><span data-i18n="projectTests">Ver testes e CI</span><span aria-hidden="true">↗</span></a></div>
+            <h4 data-i18n="recorderTitle">
+              Um evento. Quantos testes precisar.
+            </h4>
+            <p data-i18n="recorderDescription">
+              Reproduzir uma integração não deveria depender de disparar o
+              evento de novo. Captura webhooks locais, permite inspecionar o
+              payload e reenviá-lo após ajustar o handler.
+            </p>
+            <p class="project-decision" data-i18n="recorderDecision">
+              Persistência em SQLite, preservação dos bytes e replay explícito
+              para endpoints locais. Limites de payload e retenção.
+            </p>
+            <div class="tech-tags">
+              <span>TypeScript</span><span>Node.js</span><span>SQLite</span
+              ><span>Webhooks</span>
+            </div>
+            <div class="project-links">
+              <a
+                class="text-link"
+                href="https://github.com/bellussi1/local-webhook-recorder"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span data-i18n="projectCode">Explorar código</span
+                ><span aria-hidden="true">↗</span></a
+              ><a
+                class="text-link"
+                href="https://github.com/bellussi1/local-webhook-recorder/actions"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span data-i18n="projectTests">Ver testes e CI</span
+                ><span aria-hidden="true">↗</span></a
+              >
+            </div>
           </div>
           <div class="project-demo">
-            <div class="project-terminal-bar"><span aria-hidden="true">● ● ●</span><span data-i18n="projectExample">EXEMPLO DE USO</span></div>
+            <div class="project-terminal-bar">
+              <span aria-hidden="true">● ● ●</span
+              ><span data-i18n="projectExample">EXEMPLO DE USO</span>
+            </div>
             <pre><code><span class="terminal-prompt" aria-hidden="true">$ </span>webhook-recorder list --json</code></pre>
-            <p data-i18n="recorderDemo">Capture um pedido e reproduza duas vezes: o handler de exemplo identifica a duplicata.</p>
-            <a class="text-link" href="https://github.com/bellussi1/local-webhook-recorder#replay-and-idempotency-demo" target="_blank" rel="noopener noreferrer"><span data-i18n="projectDemo">Reproduzir a demo</span><span aria-hidden="true">↗</span></a>
+            <p data-i18n="recorderDemo">
+              Capture um pedido e reproduza duas vezes: o handler de exemplo
+              identifica a duplicata.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/bellussi1/local-webhook-recorder#replay-and-idempotency-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span data-i18n="projectDemo">Reproduzir a demo</span
+              ><span aria-hidden="true">↗</span></a
+            >
           </div>
         </article>
         <article class="project-row reveal" aria-labelledby="doctor-title">
@@ -345,16 +446,55 @@
             <p class="project-category"><span>03 /</span> INFRA / DOCKER</p>
             <h3 id="doctor-title">Compose Doctor</h3>
             <h4 data-i18n="doctorTitle">Entenda o estado do seu ambiente.</h4>
-            <p data-i18n="doctorDescription">Um container em execução pode ter um healthcheck falhando. Diagnóstico de serviços Docker Compose com estado, reinícios, portas e sugestões de investigação.</p>
-            <p class="project-decision" data-i18n="doctorDecision">Consultas somente de leitura, subprocessos com limites e projeção de metadados. Relatórios em texto ou JSON.</p>
-            <div class="tech-tags"><span>TypeScript</span><span>Docker Compose</span><span>Healthchecks</span><span>CLI</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/bellussi1/compose-doctor" target="_blank" rel="noopener noreferrer"><span data-i18n="projectCode">Explorar código</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/bellussi1/compose-doctor/actions" target="_blank" rel="noopener noreferrer"><span data-i18n="projectTests">Ver testes e CI</span><span aria-hidden="true">↗</span></a></div>
+            <p data-i18n="doctorDescription">
+              Um container em execução pode ter um healthcheck falhando.
+              Diagnóstico de serviços Docker Compose com estado, reinícios,
+              portas e sugestões de investigação.
+            </p>
+            <p class="project-decision" data-i18n="doctorDecision">
+              Consultas somente de leitura, subprocessos com limites e projeção
+              de metadados. Relatórios em texto ou JSON.
+            </p>
+            <div class="tech-tags">
+              <span>TypeScript</span><span>Docker Compose</span
+              ><span>Healthchecks</span><span>CLI</span>
+            </div>
+            <div class="project-links">
+              <a
+                class="text-link"
+                href="https://github.com/bellussi1/compose-doctor"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span data-i18n="projectCode">Explorar código</span
+                ><span aria-hidden="true">↗</span></a
+              ><a
+                class="text-link"
+                href="https://github.com/bellussi1/compose-doctor/actions"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span data-i18n="projectTests">Ver testes e CI</span
+                ><span aria-hidden="true">↗</span></a
+              >
+            </div>
           </div>
           <div class="project-demo">
-            <div class="project-terminal-bar"><span aria-hidden="true">● ● ●</span><span data-i18n="projectExample">EXEMPLO DE USO</span></div>
+            <div class="project-terminal-bar">
+              <span aria-hidden="true">● ● ●</span
+              ><span data-i18n="projectExample">EXEMPLO DE USO</span>
+            </div>
             <pre><code><span class="terminal-prompt" aria-hidden="true">$ </span>compose-doctor check --json</code></pre>
-            <p data-i18n="doctorDemo">Healthcheck apontando para a rota errada → unhealthy. Overlay de correção → ready.</p>
-            <a class="text-link" href="https://github.com/bellussi1/compose-doctor#real-demo-unhealthy--ready" target="_blank" rel="noopener noreferrer"><span data-i18n="projectDemo">Reproduzir a demo</span><span aria-hidden="true">↗</span></a>
+            <p data-i18n="doctorDemo">
+              Healthcheck apontando para a rota errada → unhealthy. Overlay de
+              correção → ready.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/bellussi1/compose-doctor#real-demo-unhealthy--ready"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span data-i18n="projectDemo">Reproduzir a demo</span
+              ><span aria-hidden="true">↗</span></a
+            >
           </div>
         </article>
       </section>

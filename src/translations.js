@@ -26,7 +26,7 @@ export const english = {
   navAbout: "About",
   navContact: 'Contact <span aria-hidden="true">↗</span>',
   heroFirst: "From visual detail",
-  heroSecond: "to ",
+  heroSecond: "to&nbsp;",
   heroAccent: "architecture.",
   heroDescription:
     "I build and evolve web applications where usability, performance and maintainability matter. Production experience across banking and consulting environments.",

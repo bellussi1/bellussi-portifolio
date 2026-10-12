@@ -1,0 +1,289 @@
+/* Warm editorial surfaces, with cool accents reserved for technical content. */
+:root {
+  --text: #f4f1e8;
+  --muted: #b4b2a7;
+  --surface: #20211e;
+  --raised: #292b26;
+  --technical: #91b5cc;
+}
+.site-header {
+  background: rgb(20 20 18 / 0.76);
+  border-color: #36363080;
+  transition:
+    background 0.4s,
+    border-color 0.4s,
+    box-shadow 0.4s;
+}
+.site-header.is-scrolled {
+  background: rgb(20 20 18 / 0.96);
+  border-color: var(--line);
+  box-shadow: 0 10px 40px #0002;
+}
+.navigation {
+  position: relative;
+}
+.navigation-indicator {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--accent);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    transform 0.5s var(--ease),
+    width 0.5s var(--ease),
+    opacity 0.25s;
+}
+.navigation a[aria-current]::after {
+  transform: scaleX(0);
+}
+.hero-line {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.hero-line > span,
+.hero-line > em {
+  display: inline-block;
+}
+.hero h1 {
+  letter-spacing: -0.055em;
+}
+.hero-content {
+  animation: none;
+}
+.hero-intro {
+  animation: editorial-enter 0.65s var(--ease) both;
+}
+.hero-line > span,
+.hero-line > em {
+  animation: title-enter 1s 0.12s var(--ease) both;
+}
+.hero-line:nth-child(2) > span,
+.hero-line:nth-child(2) > em {
+  animation-delay: 0.26s;
+}
+.hero-description {
+  animation: editorial-enter 0.85s 0.42s var(--ease) both;
+}
+.hero-actions {
+  animation: editorial-enter 0.85s 0.52s var(--ease) both;
+}
+.hero-footnote {
+  animation: editorial-enter 0.85s 0.62s var(--ease) both;
+}
+.engineering-visual {
+  animation-delay: 0.25s;
+}
+.button-primary {
+  background: linear-gradient(110deg, #f6d09b 0%, #e9ae61 55%, #f4c386 100%);
+  background-size: 200% 100%;
+  transition:
+    background-position 0.5s var(--ease),
+    transform 0.3s var(--ease),
+    box-shadow 0.3s;
+}
+.button-primary:hover,
+.button-primary:focus-visible {
+  background-image: linear-gradient(
+    110deg,
+    #f6d09b 0%,
+    #e9ae61 55%,
+    #f4c386 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  box-shadow:
+    0 12px 30px #0004,
+    0 0 0 4px #e9ae6112;
+}
+.button-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+.text-link:hover span:last-child {
+  transform: translate(3px, -3px);
+}
+.tech-tags span {
+  color: #b9d2e0;
+  background: #91b5cc0a;
+  border-color: #91b5cc30;
+}
+.experience-meta {
+  position: relative;
+  padding-left: 22px;
+}
+.experience-meta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  left: 0;
+  background: linear-gradient(var(--accent), #e9ae6120);
+  transform-origin: top;
+}
+html[data-motion="enabled"] .experience-row .experience-meta::before {
+  transform: scaleY(0);
+  transition: transform 1.2s 0.2s var(--ease);
+}
+html[data-motion="enabled"]
+  .experience-row.is-visible
+  .experience-meta::before {
+  transform: scaleY(1);
+}
+.project-demo {
+  background: linear-gradient(135deg, #292d29, #1c201e 70%);
+  border-color: #4a5149;
+  box-shadow: 0 20px 55px #0003;
+  transition:
+    border-color 0.4s,
+    box-shadow 0.4s;
+}
+.project-terminal-bar {
+  background: #ffffff03;
+  border-color: #4a514980;
+  color: #bdc2b7;
+}
+.project-demo pre {
+  color: #d8e8f0;
+}
+.project-demo > p {
+  border-color: #4a514980;
+  color: #c0c3b8;
+}
+.project-category {
+  color: var(--technical);
+}
+.project-demo .text-link {
+  border-color: #91b5cc40;
+}
+.project-demo .text-link:hover {
+  color: var(--technical);
+  border-color: var(--technical);
+}
+.project-row:focus-within .project-demo {
+  border-color: var(--accent);
+}
+@media (hover: hover) and (pointer: fine) {
+  .project-row:hover .project-demo {
+    border-color: var(--accent);
+    box-shadow:
+      0 24px 60px #0004,
+      0 0 0 1px #e9ae6118;
+  }
+  .project-content h3 {
+    transition: color 0.35s;
+  }
+  .project-row:hover .project-content h3 {
+    color: #f6cf99;
+  }
+}
+html[data-motion="enabled"] .section-heading.reveal {
+  opacity: 1;
+  transform: none;
+}
+html[data-motion="enabled"]
+  .section-heading.reveal
+  :is(.eyebrow, h2, .section-description) {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.85s var(--ease),
+    transform 0.85s var(--ease);
+}
+html[data-motion="enabled"]
+  .section-heading.reveal.is-visible
+  :is(.eyebrow, h2, .section-description) {
+  opacity: 1;
+  transform: none;
+}
+html[data-motion="enabled"] .section-heading h2 {
+  transition-delay: 0.08s !important;
+}
+html[data-motion="enabled"] .section-heading .section-description {
+  transition-delay: 0.18s !important;
+}
+html[data-motion="enabled"] .project-row .project-demo pre code {
+  display: block;
+  clip-path: inset(0 100% 0 0);
+}
+html[data-motion="enabled"] .project-row.is-visible .project-demo pre code {
+  animation: command-enter 0.85s 0.2s steps(24, end) both;
+}
+html[data-motion="enabled"] .project-row .project-demo > p {
+  opacity: 0;
+  transition: opacity 0.65s 0.8s;
+}
+html[data-motion="enabled"] .project-row.is-visible .project-demo > p {
+  opacity: 1;
+}
+@keyframes title-enter {
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes editorial-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes command-enter {
+  to {
+    clip-path: inset(0);
+  }
+}
+@media (max-width: 760px) {
+  .navigation {
+    position: absolute;
+  }
+  .navigation-indicator {
+    display: none;
+  }
+  .navigation a[aria-current]::after {
+    transform: scaleX(1);
+  }
+  .hero-line {
+    overflow: visible;
+  }
+  .hero-line > span,
+  .hero-line > em {
+    animation-name: editorial-enter;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro,
+  .hero-line > span,
+  .hero-line > em,
+  .hero-description,
+  .hero-actions,
+  .hero-footnote {
+    animation: none;
+  }
+  html[data-motion="enabled"]
+    .section-heading.reveal
+    :is(.eyebrow, h2, .section-description),
+  html[data-motion="enabled"] .project-row .project-demo > p {
+    opacity: 1;
+    transform: none;
+  }
+  html[data-motion="enabled"] .project-row .project-demo pre code {
+    clip-path: none;
+    animation: none;
+  }
+  html[data-motion="enabled"] .experience-row .experience-meta::before {
+    transform: none;
+  }
+  .button-primary:active {
+    transform: none;
+  }
+}
