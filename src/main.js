@@ -1,5 +1,6 @@
 import "../styles/modern-normalize.css";
 import "../styles/style.css";
+import "../styles/components/projects.css";
 import { english } from "./translations.js";
 
 const root = document.documentElement;
