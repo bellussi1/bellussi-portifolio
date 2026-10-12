@@ -27,6 +27,7 @@ npm run preview
 - `src/translations.js`: versão em inglês dos textos.
 - `src/main.js`: idioma, menu, navegação, animações e cópia do contato.
 - `src/utils/parallax.js`: profundidade de scroll nas camadas visuais, com deslocamento limitado e suavização por frame.
+- `src/utils/smooth-scroll.js`: desaceleração curta da rodinha com limites, resposta à inversão de direção e preservação de interações nativas.
 - `styles/style.css`: tokens visuais, componentes, composição responsiva e movimento reduzido.
 - `styles/components/premium.css`: contraste editorial, entradas por linhas, revelação coordenada, terminais e microinterações.
 - `public/curriculo-pt.pdf` e `public/curriculo-en.pdf`: currículos para download.
@@ -34,6 +35,8 @@ npm run preview
 O site usa HTML, CSS e JavaScript com Vite, sem framework de interface ou biblioteca de animação. Os textos principais continuam presentes no HTML sem depender do JavaScript. As animações respeitam `prefers-reduced-motion`.
 
 O parallax mantém a rolagem nativa, preserva os transforms existentes e reduz a intensidade em telas de até 760px. O loop para ao estabilizar e é cancelado quando a página fica oculta ou o usuário ativa movimento reduzido. Os testes cobrem os limites, a estabilização e a mudança dessa preferência.
+
+A suavização da rodinha usa a posição real do documento, sem wrapper de scroll virtual. É aplicada somente com ponteiro preciso e hover; toque, zoom, campos editáveis, rolagem horizontal e áreas com scroll próprio mantêm seu comportamento nativo. Teclado, cliques, toque e movimento reduzido cancelam a inércia. O deslocamento pendente é limitado a 1,5 tela para manter resposta em gestos rápidos. Os testes cobrem desaceleração, inversão, limites e cancelamento.
 
 A abertura entra por linhas; títulos, descrições e comandos aparecem em sequência nas seções. O menu sinaliza a seção ativa com um indicador deslizante. A troca PT/EN usa uma transição curta, com os textos atualizados imediatamente. Conteúdo e comandos permanecem disponíveis sem JavaScript e com movimento reduzido.
 

@@ -4,6 +4,7 @@ import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import { english } from "./translations.js";
 import { initParallax } from "./utils/parallax.js";
+import { initSmoothScroll } from "./utils/smooth-scroll.js";
 
 const root = document.documentElement;
 root.classList.add("js");
@@ -170,6 +171,7 @@ reducedMotion.addEventListener("change", () => {
   if (reducedMotion.matches) languageTransition?.cancel();
 });
 initParallax();
+initSmoothScroll();
 
 const navigationIndicator = document.createElement("span");
 navigationIndicator.className = "navigation-indicator";
