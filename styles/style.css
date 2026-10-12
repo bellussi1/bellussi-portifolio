@@ -983,6 +983,9 @@ ul {
 }
 
 /* Motion is progressive enhancement: content is visible without JavaScript. */
+:is(.visual-grid, .orbit, .system-window, .code-fragment, .visual-tag, .project-demo) {
+  translate: 0 var(--parallax-y, 0px);
+}
 html[data-motion="enabled"] .reveal {
   opacity: 0;
   transform: translateY(26px);
@@ -1416,6 +1419,9 @@ html[data-motion="enabled"] .reveal.is-visible {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  :is(.visual-grid, .orbit, .system-window, .code-fragment, .visual-tag, .project-demo) {
+    translate: none;
+  }
   html {
     scroll-behavior: auto;
   }

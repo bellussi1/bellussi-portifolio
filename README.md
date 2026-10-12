@@ -16,6 +16,7 @@ npm run dev
 Para validar e visualizar o build de produção:
 
 ```sh
+npm test
 npm run build
 npm run preview
 ```
@@ -25,10 +26,13 @@ npm run preview
 - `index.html`: conteúdo em português, semântica, metadados e estrutura das seções.
 - `src/translations.js`: versão em inglês dos textos.
 - `src/main.js`: idioma, menu, navegação, animações e cópia do contato.
+- `src/utils/parallax.js`: profundidade de scroll nas camadas visuais, com deslocamento limitado e suavização por frame.
 - `styles/style.css`: tokens visuais, componentes, composição responsiva e movimento reduzido.
 - `public/curriculo-pt.pdf` e `public/curriculo-en.pdf`: currículos para download.
 
 O site usa HTML, CSS e JavaScript com Vite, sem framework de interface ou biblioteca de animação. Os textos principais continuam presentes no HTML sem depender do JavaScript. As animações respeitam `prefers-reduced-motion`.
+
+O parallax mantém a rolagem nativa, preserva os transforms existentes e reduz a intensidade em telas de até 760px. O loop para ao estabilizar e é cancelado quando a página fica oculta ou o usuário ativa movimento reduzido. Os testes cobrem os limites, a estabilização e a mudança dessa preferência.
 
 ## Atualização de conteúdo
 

@@ -2,6 +2,7 @@ import "../styles/modern-normalize.css";
 import "../styles/style.css";
 import "../styles/components/projects.css";
 import { english } from "./translations.js";
+import { initParallax } from "./utils/parallax.js";
 
 const root = document.documentElement;
 root.classList.add("js");
@@ -149,6 +150,7 @@ function setupMotion() {
 }
 setupMotion();
 reducedMotion.addEventListener("change", setupMotion);
+initParallax();
 
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(
