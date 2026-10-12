@@ -1199,6 +1199,7 @@ html[data-motion="enabled"] .reveal.is-visible {
     min-height: 400px;
     justify-self: center;
     margin-block: 20px 0;
+    overflow: clip;
   }
   .system-window {
     width: calc(100% - 35px);
