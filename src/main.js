@@ -3,6 +3,7 @@ import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import { english } from "./translations.js";
+import { syncPageMetadata } from "./utils/page-metadata.js";
 import { initParallax } from "./utils/parallax.js";
 import { initSmoothScroll } from "./utils/smooth-scroll.js";
 
@@ -37,7 +38,7 @@ function updateMenuLabel() {
 function setLanguage(nextLanguage) {
   const previousLanguage = language;
   language = nextLanguage === "en" ? "en" : "pt";
-  root.lang = language === "en" ? "en" : "pt-BR";
+  syncPageMetadata(document, language);
   const content = language === "en" ? english : portuguese;
   // Both translation dictionaries contain only local, trusted strings.
   translatedElements.forEach((element) => {
@@ -73,10 +74,6 @@ function setLanguage(nextLanguage) {
         language === "en" ? "Enzo Bellussi, home" : "Enzo Bellussi, início",
       ),
     );
-  document.querySelector('meta[name="description"]').content =
-    language === "en"
-      ? "Enzo Bellussi, Software Engineer focused on front-end. Experience with enterprise applications, Angular, React, TypeScript and legacy modernization."
-      : "Enzo Bellussi, Software Engineer com foco em front-end. Experiência em aplicações corporativas, Angular, React, TypeScript e modernização de sistemas.";
   updateMenuLabel();
   languageTransition?.cancel();
   if (

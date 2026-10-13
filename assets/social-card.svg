@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#141412"/>
+  <rect x="24" y="24" width="1152" height="582" rx="2" fill="none" stroke="#39362f"/>
+  <path d="M800 24v582M840 24v582M880 24v582M920 24v582M960 24v582M1000 24v582M1040 24v582M1080 24v582M1120 24v582M24 118h1152M24 550h1152" stroke="#39362f" stroke-width="1" opacity=".45"/>
+  <rect x="70" y="75" width="4" height="24" fill="#e9ae61"/>
+  <text x="92" y="94" fill="#e9ae61" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="3">SOFTWARE ENGINEER · FRONT-END</text>
+  <text x="70" y="290" fill="#f2eee5" font-family="Georgia, 'Times New Roman', serif" font-size="76" letter-spacing="-2">Enzo Bellussi</text>
+  <text x="74" y="352" fill="#c7c0b4" font-family="Arial, Helvetica, sans-serif" font-size="25">Interfaces cuidadosas. Sistemas feitos para evoluir.</text>
+  <text x="74" y="397" fill="#c7c0b4" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="1">ANGULAR  /  REACT  /  TYPESCRIPT</text>
+  <circle cx="985" cy="322" r="150" fill="none" stroke="#e9ae61" stroke-width="1" opacity=".48"/>
+  <circle cx="985" cy="322" r="118" fill="none" stroke="#e9ae61" stroke-width="1" opacity=".22"/>
+  <path d="M985 172v-42M1135 322h42M985 472v42M835 322h-42" stroke="#e9ae61" stroke-width="2" opacity=".72"/>
+  <circle cx="985" cy="172" r="4" fill="#e9ae61"/>
+  <circle cx="1135" cy="322" r="4" fill="#e9ae61"/>
+  <text x="985" y="348" text-anchor="middle" fill="#e9ae61" font-family="Georgia, 'Times New Roman', serif" font-size="104">eb.</text>
+  <path d="M70 493h1060" stroke="#e9ae61" stroke-width="1" opacity=".6"/>
+  <text x="74" y="545" fill="#f2eee5" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">MARKETDATA</text>
+  <circle cx="220" cy="539" r="3" fill="#e9ae61"/>
+  <text x="242" y="545" fill="#f2eee5" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">BANCO DO BRASIL</text>
+  <text x="1126" y="545" text-anchor="end" fill="#c7c0b4" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="2">PORTFOLIO 2026</text>
+</svg>

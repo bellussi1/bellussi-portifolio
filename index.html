@@ -4,19 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#141412" />
+    <meta name="author" content="Enzo Bellussi" />
     <meta
       name="description"
-      content="Enzo Bellussi, Software Engineer com foco em front-end. Experiência em aplicações corporativas, Angular, React, TypeScript e modernização de sistemas."
+      content="Enzo Bellussi, Software Engineer com foco em front-end. Experiência na MarketData e no Banco do Brasil, com Angular, React e TypeScript."
     />
-    <meta property="og:title" content="Enzo Bellussi — Software Engineer" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta
+      property="og:title"
+      content="Enzo Bellussi | Software Engineer com foco em Front-end"
+    />
     <meta
       property="og:description"
-      content="Do detalhe visual à arquitetura. Conheça minha trajetória e experiência em engenharia front-end."
+      content="Enzo Bellussi, Software Engineer com foco em front-end. Experiência na MarketData e no Banco do Brasil, com Angular, React e TypeScript."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bellussi.vercel.app/" />
+    <meta property="og:site_name" content="Enzo Bellussi — Portfólio" />
     <meta property="og:locale" content="pt_BR" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content="https://bellussi.vercel.app/og-image.png" />
+    <meta
+      property="og:image:secure_url"
+      content="https://bellussi.vercel.app/og-image.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Enzo Bellussi — Software Engineer com foco em Front-end, em um cartão grafite com detalhes âmbar."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Enzo Bellussi | Software Engineer com foco em Front-end"
+    />
+    <meta
+      name="twitter:description"
+      content="Enzo Bellussi, Software Engineer com foco em front-end. Experiência na MarketData e no Banco do Brasil, com Angular, React e TypeScript."
+    />
+    <meta name="twitter:image" content="https://bellussi.vercel.app/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Enzo Bellussi — Software Engineer com foco em Front-end, em um cartão grafite com detalhes âmbar."
+    />
     <link rel="canonical" href="https://bellussi.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,17 +57,56 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <title>Enzo Bellussi — Software Engineer</title>
+    <title>Enzo Bellussi | Software Engineer com foco em Front-end</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Enzo Bellussi",
-        "jobTitle": "Front-end Developer",
-        "url": "https://bellussi.vercel.app/",
-        "sameAs": [
-          "https://github.com/bellussi1",
-          "https://www.linkedin.com/in/enzo-bellussi/"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://bellussi.vercel.app/#website",
+            "url": "https://bellussi.vercel.app/",
+            "name": "Portfólio de Enzo Bellussi",
+            "inLanguage": ["pt-BR", "en"],
+            "publisher": { "@id": "https://bellussi.vercel.app/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://bellussi.vercel.app/#profile",
+            "url": "https://bellussi.vercel.app/",
+            "name": "Enzo Bellussi | Software Engineer com foco em Front-end",
+            "description": "Enzo Bellussi, Software Engineer com foco em front-end. Experiência na MarketData e no Banco do Brasil, com Angular, React e TypeScript.",
+            "inLanguage": "pt-BR",
+            "isPartOf": { "@id": "https://bellussi.vercel.app/#website" },
+            "mainEntity": { "@id": "https://bellussi.vercel.app/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://bellussi.vercel.app/#person",
+            "name": "Enzo Bellussi",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer com foco em front-end, experiência em aplicações corporativas, arquitetura de interfaces e modernização de sistemas.",
+            "url": "https://bellussi.vercel.app/",
+            "worksFor": { "@type": "Organization", "name": "MarketData" },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidade FAM"
+            },
+            "knowsAbout": [
+              "Front-end engineering",
+              "Angular",
+              "React",
+              "TypeScript",
+              "Web accessibility",
+              "Web performance",
+              "REST APIs",
+              "Node.js"
+            ],
+            "sameAs": [
+              "https://github.com/bellussi1",
+              "https://www.linkedin.com/in/enzo-bellussi/"
+            ]
+          }
         ]
       }
     </script>
