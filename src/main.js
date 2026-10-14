@@ -1,13 +1,40 @@
 import "../styles/modern-normalize.css";
+import "lenis/dist/lenis.css";
 import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
+import "../styles/concepts/pixel-index.css";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
+import { initPixelIndex } from "./visuals/pixel-index.js";
 import { initParallax } from "./utils/parallax.js";
 import { initSmoothScroll } from "./utils/smooth-scroll.js";
+import { renderPortfolioSections } from "./content/render-portfolio.js";
 
 const root = document.documentElement;
+let language = "pt";
+let motionInitialized = false;
+let cleanupParallax = () => {};
+
+function syncPortfolioContent() {
+  const sections = renderPortfolioSections({
+    concept: root.dataset.concept,
+    language,
+  });
+  document.querySelector('[data-portfolio-content="experience"]').innerHTML =
+    sections.experience;
+  document.querySelector('[data-portfolio-content="products"]').innerHTML =
+    sections.products;
+  document.querySelector('[data-portfolio-content="projects"]').innerHTML =
+    sections.projects;
+  if (!motionInitialized) return;
+  setupMotion();
+  cleanupParallax();
+  cleanupParallax = initParallax();
+}
+
+initPixelIndex({ root });
+syncPortfolioContent();
 root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
@@ -23,7 +50,6 @@ const portugueseAlt = Object.fromEntries(
     element.alt,
   ]),
 );
-let language = "pt";
 let languageTransition;
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
@@ -56,6 +82,7 @@ function setLanguage(nextLanguage) {
     element.alt =
       content[element.dataset.i18nAlt] ?? portugueseAlt[element.dataset.i18nAlt];
   });
+  syncPortfolioContent();
   document
     .querySelectorAll("[data-language]")
     .forEach((button) =>
@@ -174,11 +201,12 @@ function setupMotion() {
   root.dataset.motion = "enabled";
 }
 setupMotion();
+motionInitialized = true;
 reducedMotion.addEventListener("change", setupMotion);
 reducedMotion.addEventListener("change", () => {
   if (reducedMotion.matches) languageTransition?.cancel();
 });
-initParallax();
+cleanupParallax = initParallax();
 initSmoothScroll();
 
 const navigationIndicator = document.createElement("span");

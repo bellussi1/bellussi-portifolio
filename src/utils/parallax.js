@@ -6,6 +6,10 @@ export function initParallax(view = window, page = document) {
     [".visual-grid", ".engineering-visual", 0.035, 22],
     [".orbit-one", ".engineering-visual", -0.075, 44],
     [".orbit-two", ".engineering-visual", 0.09, 52],
+    [".field-orbit", ".field-hero-visual", 0.035, 24],
+    [".pixel-index-preview", ".engineering-visual", -0.045, 24],
+    [".index-ornament", ".engineering-visual", 0.06, 18],
+    [".portfolio-product-visual", ".field-product-case", 0.025, 18],
     [".system-window", ".engineering-visual", 0.045, 28],
     [".code-fragment", ".engineering-visual", -0.06, 36],
     [".visual-tag", ".engineering-visual", 0.025, 16],
@@ -25,6 +29,7 @@ export function initParallax(view = window, page = document) {
     .filter((layer) => layer.anchor);
   let frame = 0;
   let previousTime;
+  let disposed = false;
 
   function enabled() {
     return !reduced.matches && !page.hidden;
@@ -40,6 +45,7 @@ export function initParallax(view = window, page = document) {
   }
   function render(time) {
     frame = 0;
+    if (disposed) return;
     if (!enabled()) {
       reset();
       return;
@@ -65,6 +71,7 @@ export function initParallax(view = window, page = document) {
     else previousTime = undefined;
   }
   function update() {
+    if (disposed) return;
     if (!enabled()) {
       reset();
       return;
@@ -90,4 +97,14 @@ export function initParallax(view = window, page = document) {
   reduced.addEventListener("change", update);
   mobile.addEventListener("change", update);
   update();
+  return () => {
+    if (disposed) return;
+    disposed = true;
+    view.removeEventListener("scroll", update);
+    view.removeEventListener("resize", update);
+    page.removeEventListener("visibilitychange", update);
+    reduced.removeEventListener("change", update);
+    mobile.removeEventListener("change", update);
+    reset();
+  };
 }

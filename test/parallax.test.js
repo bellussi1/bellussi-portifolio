@@ -28,15 +28,20 @@ function harness({ mobile = false, reduced = false } = {}) {
     querySelectorAll: (selector) =>
       selector === ".project-demo" ? [element] : [],
     addEventListener: (name, fn) => listeners.set(name, fn),
+    removeEventListener: (name) => listeners.delete(name),
   };
   const window = {
     innerHeight: 800,
     addEventListener: (name, fn) => listeners.set(name, fn),
+    removeEventListener: (name) => listeners.delete(name),
     matchMedia(query) {
       const value = {
         matches: query.includes("reduce") ? reduced : mobile,
         addEventListener: (_, fn) => {
           value.change = fn;
+        },
+        removeEventListener: (_, fn) => {
+          if (value.change === fn) delete value.change;
         },
       };
       media.set(query, value);
@@ -89,5 +94,18 @@ test("reduced motion disables offsets and cancels scheduled frames when changed"
   preference.matches = true;
   preference.change();
   assert.equal(h.frames.size, 0);
+  assert.equal(h.element.style.value, "");
+});
+
+test("parallax cleanup detaches listeners and cancels scheduled frames", () => {
+  const h = harness();
+  const cleanup = initParallax(h.window, h.document);
+  assert.equal(typeof cleanup, "function");
+  assert.ok(h.frames.size > 0);
+  cleanup();
+  assert.equal(h.frames.size, 0);
+  assert.equal(h.listeners.size, 0);
+  assert.equal(h.media.get("(prefers-reduced-motion: reduce)").change, undefined);
+  assert.equal(h.media.get("(max-width: 760px)").change, undefined);
   assert.equal(h.element.style.value, "");
 });
