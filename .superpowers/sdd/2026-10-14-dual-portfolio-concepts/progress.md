@@ -13,7 +13,7 @@
 - [x] Task 2: Replace custom wheel inertia with Lenis
 - [x] Task 3: Deep Field hero and atmosphere
 - [x] Task 4: Pixel Index texture and pointer treatment
-- [ ] Task 5: Responsive shared sections and accessibility integration
+- [x] Task 5: Responsive shared sections and accessibility integration
 - [ ] Task 6: Production build and final review
 
 ## Pre-flight interface scan
@@ -43,3 +43,5 @@
 ## Task 4
 - Ruling: add `test/pixel-index.test.js` for fine-pointer gating, reduced-motion behavior, visibility, and cleanup — the concept introduces its own live pointer listeners and CSS state that must not leak into Deep Field or touch interaction, and the selected executor requires TDD — cost if wrong: one focused event harness to maintain.
 - Result: Pixel Index texture, palette, hero index graphic, and pointer controller complete; targeted tests passed 3/3, `npm test` passed 23/23, and `npm run build` succeeded. Desktop concept preview reviewed; touch and live preference review remain in Task 6.
+## Task 5
+- Result: shared sections now use the two concept systems; mobile controls and section stacks are adjusted, and Deep Field draws at a lower cadence on narrow screens. `npm test` passed 23/23 and `npm run build` succeeded. Both themes reviewed at desktop width; each hero and mobile menu reviewed at 390px. Full touch-only, history/language, reduced-motion, contrast, and fallback checks continue in Task 6.

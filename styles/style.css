@@ -1129,7 +1129,12 @@ html[data-motion="enabled"] .reveal.is-visible {
     font-size: 31px;
   }
   .header-controls {
-    gap: 22px;
+    gap: 12px;
+  }
+  .language-control button {
+    min-width: 32px;
+    min-height: 44px;
+    padding: 0 3px;
   }
   .navigation {
     position: absolute;
@@ -1152,10 +1157,13 @@ html[data-motion="enabled"] .reveal.is-visible {
   }
   .js .menu-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 6px;
-    padding: 10px 0;
-    width: 24px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
   }
   .menu-toggle > span {
     display: block;
@@ -1415,6 +1423,11 @@ html[data-motion="enabled"] .reveal.is-visible {
   }
   .contact-section h2 {
     font-size: 35px;
+  }
+}
+@media (min-width: 381px) and (max-width: 430px) {
+  .brand-name {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

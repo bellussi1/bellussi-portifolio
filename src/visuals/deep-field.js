@@ -119,6 +119,7 @@ export function initDeepField(canvas, { view = window } = {}) {
   let frame = null;
   let running = false;
   let disposed = false;
+  let lastRenderedAt = 0;
   let pointerX = 0.5;
   let pointerY = 0.5;
   let easedX = pointerX;
@@ -169,6 +170,15 @@ export function initDeepField(canvas, { view = window } = {}) {
       stop();
       return;
     }
+    if (
+      mobileViewport.matches &&
+      lastRenderedAt &&
+      timestamp - lastRenderedAt < 32
+    ) {
+      frame = view.requestAnimationFrame(render);
+      return;
+    }
+    lastRenderedAt = timestamp;
     draw(timestamp / 1000, true);
     frame = view.requestAnimationFrame(render);
   }
@@ -176,11 +186,13 @@ export function initDeepField(canvas, { view = window } = {}) {
   function start() {
     if (running || !canAnimate()) return;
     running = true;
+    lastRenderedAt = 0;
     frame = view.requestAnimationFrame(render);
   }
 
   function stop() {
     running = false;
+    lastRenderedAt = 0;
     if (frame !== null) view.cancelAnimationFrame(frame);
     frame = null;
     if (!disposed) draw(0, false);

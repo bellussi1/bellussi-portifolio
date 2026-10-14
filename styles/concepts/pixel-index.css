@@ -156,8 +156,8 @@ html[data-concept="index"] .pixel-cursor {
   z-index: 100;
   top: var(--index-pointer-y, -80px);
   left: var(--index-pointer-x, -80px);
-  width: 34px;
-  height: 34px;
+  width: 16px;
+  height: 16px;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -170,19 +170,19 @@ html[data-concept="index"] .pixel-cursor[data-active="true"] {
 
 html[data-concept="index"] .pixel-cursor span {
   position: absolute;
-  inset: 4px;
-  border: 2px solid var(--index-black);
-  background: var(--index-lime);
-  box-shadow: 4px 4px 0 var(--accent);
+  inset: 3px;
+  border: 1px solid var(--accent);
+  background: #c6ed5b42;
+  box-shadow: 2px 2px 0 var(--accent);
   image-rendering: pixelated;
 }
 
 html[data-concept="index"] .pixel-cursor i {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  width: 6px;
-  height: 6px;
+  top: 7px;
+  left: 7px;
+  width: 2px;
+  height: 2px;
   background: var(--index-black);
 }
 
@@ -244,5 +244,208 @@ html[data-concept="index"] .pixel-cursor[data-pressed="true"] {
   html[data-concept="index"] .pixel-cursor {
     display: none;
     transition: none;
+  }
+}
+
+/* Reframe every section as a field note in the same modular index. */
+html[data-concept="index"] .section-heading > .eyebrow,
+html[data-concept="index"] .project-category,
+html[data-concept="index"] .fact-label {
+  color: #39499f;
+}
+
+html[data-concept="index"] .section-heading > .eyebrow > span:first-child,
+html[data-concept="index"] .role-number,
+html[data-concept="index"] .role-label,
+html[data-concept="index"] .project-category span {
+  color: var(--accent);
+}
+
+html[data-concept="index"] .experience-row,
+html[data-concept="index"] .product-case,
+html[data-concept="index"] .project-row {
+  border-color: #1719152b;
+}
+
+html[data-concept="index"] .role-pill {
+  border-color: #3150e75c;
+  background: #3150e70a;
+  color: #263887;
+}
+
+html[data-concept="index"] .tech-tags span {
+  border-color: #3150e72b;
+  background: #3150e70b;
+  color: #263887;
+}
+
+html[data-concept="index"] .experience-content > p:not(.role-label),
+html[data-concept="index"] .outcome-list li,
+html[data-concept="index"] .product-case-copy > .product-detail {
+  color: #4d5149;
+}
+
+html[data-concept="index"] .product-case-copy > .product-detail {
+  border-left-color: var(--accent);
+}
+
+html[data-concept="index"] .product-status {
+  border-color: #3150e755;
+  background: #3150e70a;
+  color: #263887;
+}
+
+html[data-concept="index"] .product-status::before {
+  background: var(--index-lime);
+  box-shadow: 1px 1px 0 var(--index-black);
+}
+
+html[data-concept="index"] .product-visual {
+  border-color: #17191542;
+  background: #e5e1d4;
+  box-shadow: 8px 8px 0 #3150e71a;
+}
+
+html[data-concept="index"] .product-visual img {
+  filter: saturate(0.92);
+}
+
+html[data-concept="index"] .product-visual figcaption {
+  color: #4d5149;
+}
+
+html[data-concept="index"] .product-visual figcaption span:first-child {
+  color: #2b43bc;
+}
+
+html[data-concept="index"] .project-demo {
+  border-color: #171915;
+  background: #20241e;
+  box-shadow: 8px 8px 0 #c6ed5b;
+}
+
+html[data-concept="index"] .project-demo .text-link {
+  border-color: #f5f4e652;
+  color: #f4f3eb;
+}
+
+html[data-concept="index"] .project-demo .text-link:hover {
+  border-color: var(--index-lime);
+  color: var(--index-lime);
+}
+
+html[data-concept="index"] .approach-section {
+  border-color: #1719152b;
+  background:
+    linear-gradient(90deg, #3150e706 1px, transparent 1px),
+    linear-gradient(#3150e706 1px, transparent 1px),
+    #e9e7dc;
+  background-size: 26px 26px;
+}
+
+html[data-concept="index"] .approach-card {
+  border-color: #17191547;
+  background: #f4f2e9;
+}
+
+html[data-concept="index"] .approach-card:hover {
+  border-color: var(--index-black);
+  background: var(--index-lime);
+  box-shadow: 6px 6px 0 var(--accent);
+  transform: translate(-3px, -3px);
+}
+
+html[data-concept="index"] .approach-icon {
+  color: var(--accent);
+}
+
+html[data-concept="index"] .about-section {
+  position: relative;
+  border-bottom: 1px solid #1719152b;
+}
+
+html[data-concept="index"] .about-intro h2 em {
+  color: var(--accent);
+}
+
+html[data-concept="index"] .about-facts {
+  border-color: #1719152b;
+}
+
+html[data-concept="index"] .contact-section {
+  border: 2px solid var(--index-black);
+  background: var(--accent);
+  box-shadow: 10px 10px 0 var(--index-lime);
+  color: #f8f7f1;
+}
+
+html[data-concept="index"] .contact-section h2 em {
+  color: var(--index-lime);
+}
+
+html[data-concept="index"] .contact-section .contact-note,
+html[data-concept="index"] .contact-section > p,
+html[data-concept="index"] .contact-section .email-line {
+  color: #e8eaff;
+}
+
+html[data-concept="index"] .contact-section .copy-email {
+  color: var(--index-lime);
+}
+
+html[data-concept="index"] .contact-section .button-primary {
+  border: 1px solid var(--index-black);
+  background: var(--index-lime);
+  color: var(--index-black);
+}
+
+html[data-concept="index"] .contact-section .button-primary:hover,
+html[data-concept="index"] .contact-section .button-primary:focus-visible {
+  background: #d8ff79;
+  box-shadow: 4px 4px 0 var(--index-black);
+}
+
+html[data-concept="index"] .contact-section::after {
+  color: #c6ed5b30;
+}
+
+html[data-concept="index"] .site-footer {
+  border-top: 1px solid #1719152b;
+}
+
+html[data-concept="index"] .button-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+html[data-concept="index"] .button-primary:hover,
+html[data-concept="index"] .button-primary:focus-visible {
+  background: #4d67ef;
+  box-shadow: 5px 5px 0 var(--index-lime);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html[data-concept="index"] .project-row:hover .project-demo {
+    border-color: var(--index-black);
+    box-shadow: 12px 12px 0 var(--index-lime);
+  }
+  html[data-concept="index"] .project-row:hover .project-content h3 {
+    color: #3048d0;
+  }
+  html[data-concept="index"] .product-visual:hover img {
+    filter: saturate(1.08);
+  }
+}
+
+@media (max-width: 760px) {
+  html[data-concept="index"] .approach-section {
+    padding-block: 76px;
+  }
+  html[data-concept="index"] .approach-card {
+    margin: 0;
+    padding: 25px 22px;
+  }
+  html[data-concept="index"] .contact-section {
+    padding: 32px 24px 36px;
   }
 }

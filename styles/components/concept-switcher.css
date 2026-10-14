@@ -31,3 +31,10 @@
 .concept-control > span {
   color: var(--line);
 }
+
+@media (max-width: 760px) {
+  .concept-control button {
+    min-height: 36px;
+    padding-inline: 10px;
+  }
+}
