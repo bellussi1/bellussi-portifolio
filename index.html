@@ -126,7 +126,8 @@
           aria-label="Navegação principal"
         >
           <a href="#experience" data-i18n="navExperience">Experiência</a
-          ><a href="#projects" data-i18n="navProjects">Projetos</a
+          ><a href="#products" data-i18n="navProducts">Produtos</a
+          ><a href="#projects" data-i18n="navProjects">Open source</a
           ><a href="#approach" data-i18n="navApproach">Abordagem</a
           ><a href="#about" data-i18n="navAbout">Sobre</a
           ><a href="#contact" data-i18n="navContact"
@@ -374,13 +375,131 @@
         </p>
       </section>
       <section
+        class="section container products-section"
+        id="products"
+        aria-labelledby="products-title"
+      >
+        <div class="section-heading reveal">
+          <p class="eyebrow">
+            <span>02</span><span data-i18n="productsLabel">PRODUTOS</span>
+          </p>
+          <div>
+            <h2 id="products-title" data-i18n="productsTitle">
+              Produtos em construção.<br />Problemas do mundo real.
+            </h2>
+            <p class="section-description" data-i18n="productsIntro">
+              Além das ferramentas abertas, participo de produtos com contextos
+              e desafios próprios. Aqui, explico o problema, a etapa atual e as
+              decisões de engenharia.
+            </p>
+          </div>
+        </div>
+
+        <article class="product-case product-case-comandinha reveal" aria-labelledby="comandinha-title">
+          <div class="product-case-copy">
+            <p class="project-category"><span>01 /</span> RESTAURANT OPERATIONS</p>
+            <div class="product-title-row">
+              <h3 id="comandinha-title">Comandinha</h3>
+              <span class="product-status" data-i18n="comandinhaStatus">Migração em andamento</span>
+            </div>
+            <h4 data-i18n="comandinhaHeadline">Um salão inteiro no mesmo ritmo.</h4>
+            <p data-i18n="comandinhaDescription">
+              Plataforma de operação para restaurantes, com catálogo digital,
+              mesas, pedidos e cardápio por QR. Estou reconstruindo a base como
+              um monorepo, preservando o produto legado enquanto os novos
+              fluxos amadurecem.
+            </p>
+            <p class="product-detail" data-i18n="comandinhaDetails">
+              Next.js e React na web, NestJS na API, PostgreSQL e Prisma. O
+              catálogo e o fluxo QR já têm uma base integrada; a migração ainda
+              não está pronta para produção.
+            </p>
+            <div class="tech-tags" aria-label="Tecnologias">
+              <span>Next.js</span><span>React</span><span>NestJS</span>
+              <span>PostgreSQL</span><span>Prisma</span><span>TypeScript</span>
+            </div>
+            <a
+              class="text-link product-repo-link"
+              href="https://github.com/bellussi1/comandinha"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span data-i18n="comandinhaLink">Explorar repositório público</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="product-visuals product-visuals-comandinha">
+            <figure class="product-visual product-visual-admin">
+              <img
+                src="/comandinha-admin-concept.svg"
+                alt="Visual conceitual do catálogo administrativo do Comandinha, com categorias e produtos de exemplo."
+                width="1440"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption><span>01</span><span data-i18n="comandinhaAdminCaption">Painel de catálogo · conceito</span></figcaption>
+            </figure>
+            <figure class="product-visual product-visual-menu">
+              <img
+                src="/comandinha-menu-concept.svg"
+                alt="Visual conceitual mobile do cardápio QR do Comandinha, com navegação por categorias e itens de exemplo."
+                width="540"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption><span>02</span><span data-i18n="comandinhaMenuCaption">Cardápio QR · conceito</span></figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="product-case product-case-black-market reveal" aria-labelledby="black-market-title">
+          <figure class="product-visual product-visual-market">
+            <img
+              src="/black-market-concept.svg"
+              alt="Ilustração conceitual do Black Market: inventário de jogo, conferência manual e uma árvore de receitas."
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>03</span><span data-i18n="blackMarketCaption">Inventário e receitas · conceito</span></figcaption>
+          </figure>
+          <div class="product-case-copy">
+            <p class="project-category"><span>02 /</span> GAME COMPANION · PRIVATE SAAS</p>
+            <div class="product-title-row">
+              <h3 id="black-market-title">Black Market</h3>
+              <span class="product-status" data-i18n="blackMarketStatus">Em desenvolvimento</span>
+            </div>
+            <h4 data-i18n="blackMarketHeadline">Planeje a próxima receita, não a próxima planilha.</h4>
+            <p data-i18n="blackMarketDescription">
+              Um companion SaaS para a comunidade brasileira de Black Desert
+              Online. A ideia é ajudar jogadores a organizar inventário e
+              entender o que falta para criar um item.
+            </p>
+            <p class="product-detail" data-i18n="blackMarketDetails">
+              O MVP explora importação de até oito capturas por vez, revisão
+              manual dos itens e busca de receitas recursivas, fontes e
+              materiais faltantes. É um produto privado, sem lançamento público.
+            </p>
+            <div class="tech-tags" aria-label="Contexto do produto">
+              <span>Inventory</span><span>Recipe explorer</span>
+              <span>Manual review</span><span>Private product</span>
+            </div>
+            <p class="private-project-note" data-i18n="blackMarketPrivateNote">
+              Código e interface não são públicos neste momento.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section
         class="section container projects-section"
         id="projects"
         aria-labelledby="projects-title"
       >
         <div class="section-heading reveal">
           <p class="eyebrow">
-            <span>02</span
+            <span>03</span
             ><span data-i18n="projectsLabel">PROJETOS OPEN SOURCE</span>
           </p>
           <div>
@@ -577,7 +696,7 @@
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">
-              <span>03</span><span data-i18n="approachLabel">ABORDAGEM</span>
+              <span>04</span><span data-i18n="approachLabel">ABORDAGEM</span>
             </p>
             <div>
               <h2 id="approach-title" data-i18n="approachTitle">
@@ -633,7 +752,7 @@
       >
         <div class="about-intro reveal">
           <p class="eyebrow">
-            <span>04</span><span data-i18n="aboutLabel">SOBRE MIM</span>
+            <span>05</span><span data-i18n="aboutLabel">SOBRE MIM</span>
           </p>
           <h2 id="about-title">
             <span data-i18n="aboutTitle">Prazer,</span><br /><em>Enzo.</em>
@@ -692,7 +811,7 @@
       >
         <div class="contact-top">
           <p class="eyebrow">
-            <span>05</span><span data-i18n="contactLabel">PRÓXIMO PASSO</span>
+            <span>06</span><span data-i18n="contactLabel">PRÓXIMO PASSO</span>
           </p>
           <span class="contact-note" data-i18n="contactNote"
             >Aberto a conversar sobre oportunidades.</span
