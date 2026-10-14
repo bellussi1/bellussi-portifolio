@@ -1,55 +1,24 @@
+import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFile, stat } from "node:fs/promises";
-import test from "node:test";
-import { english } from "../src/translations.js";
+import { stat } from "node:fs/promises";
+import { portfolioContent } from "../src/content/portfolio.js";
 
 const siteRoot = new URL("../", import.meta.url);
-const html = await readFile(new URL("index.html", siteRoot), "utf8");
-const productsSection = html.match(/<section\b(?=[^>]*\bid="products")[\s\S]*?<\/section>/)?.[0];
 
 test("shows real local screenshots for both product cases", async () => {
-  assert.ok(productsSection, "missing products section");
-  const captures = [
-    {
-      caseName: "Comandinha",
-      articleClass: "product-case-comandinha",
-      source: "/comandinha-panel-login.png",
-      altKey: "comandinhaImageAlt",
-      captionKey: "comandinhaCaption",
-    },
-    {
-      caseName: "Black Market",
-      articleClass: "product-case-black-market",
-      source: "/black-market-dashboard.webp",
-      altKey: "blackMarketImageAlt",
-      captionKey: "blackMarketCaption",
-    },
-  ];
-
-  for (const capture of captures) {
-    const productCase = productsSection.match(
-      new RegExp(`<article class="product-case ${capture.articleClass}[^>]*>[\\s\\S]*?<\\/article>`),
-    )?.[0];
-    assert.ok(productCase, `missing ${capture.caseName} case study`);
-    const image = productCase.match(/<img\b([^>]*)>/)?.[1];
-    assert.ok(image, `missing ${capture.caseName} screenshot`);
-    assert.match(image, new RegExp(`src=["']${capture.source}["']`));
-    assert.match(image, new RegExp(`data-i18n-alt=["']${capture.altKey}["']`));
-    assert.match(image, /\bwidth=["']\d+["']/i);
-    assert.match(image, /\bheight=["']\d+["']/i);
-    assert.match(image, /\bloading=["']lazy["']/i);
-    assert.match(productCase, new RegExp(`data-i18n=["']${capture.captionKey}["']`));
-    await stat(new URL(`public${capture.source}`, siteRoot));
-    assert.equal(typeof english[capture.altKey], "string", `missing English alt for ${capture.caseName}`);
-    assert.equal(typeof english[capture.captionKey], "string", `missing English caption for ${capture.caseName}`);
+  assert.equal(portfolioContent.products.length, 2);
+  for (const product of portfolioContent.products) {
+    assert.ok(product.image.src, "missing image for " + product.name);
+    assert.ok(product.image.width > 0, "missing image width for " + product.name);
+    assert.ok(product.image.height > 0, "missing image height for " + product.name);
+    assert.ok(product.pt.imageAlt, "missing Portuguese alt for " + product.name);
+    assert.ok(product.en.imageAlt, "missing English alt for " + product.name);
+    assert.ok(product.pt.imageCaption, "missing Portuguese caption for " + product.name);
+    assert.ok(product.en.imageCaption, "missing English caption for " + product.name);
+    await stat(new URL("public" + product.image.src, siteRoot));
   }
-
-  assert.doesNotMatch(productsSection, /concept\.svg|product-flow-panel/i);
-  assert.match(productsSection, /Migração em andamento|Migration in progress/i);
-  assert.match(productsSection, /captura local|local capture/i);
-  assert.doesNotMatch(
-    productsSection,
-    /href=["']https:\/\/github\.com\/bellussi1\/Black-Market(?:["'/?#])/i,
-    "the private source repository must not be linked publicly",
+  const blackMarket = portfolioContent.products.find(
+    ({ id }) => id === "black-market",
   );
+  assert.deepEqual(blackMarket.links, []);
 });

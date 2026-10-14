@@ -25,6 +25,7 @@ export function initParallax(view = window, page = document) {
     .filter((layer) => layer.anchor);
   let frame = 0;
   let previousTime;
+  let disposed = false;
 
   function enabled() {
     return !reduced.matches && !page.hidden;
@@ -40,6 +41,7 @@ export function initParallax(view = window, page = document) {
   }
   function render(time) {
     frame = 0;
+    if (disposed) return;
     if (!enabled()) {
       reset();
       return;
@@ -65,6 +67,7 @@ export function initParallax(view = window, page = document) {
     else previousTime = undefined;
   }
   function update() {
+    if (disposed) return;
     if (!enabled()) {
       reset();
       return;
@@ -90,4 +93,14 @@ export function initParallax(view = window, page = document) {
   reduced.addEventListener("change", update);
   mobile.addEventListener("change", update);
   update();
+  return () => {
+    if (disposed) return;
+    disposed = true;
+    view.removeEventListener("scroll", update);
+    view.removeEventListener("resize", update);
+    page.removeEventListener("visibilitychange", update);
+    reduced.removeEventListener("change", update);
+    mobile.removeEventListener("change", update);
+    reset();
+  };
 }
