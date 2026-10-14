@@ -159,6 +159,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 18px;
+  min-height: 44px;
 }
 .monogram {
   font-family: var(--display);
@@ -218,7 +219,11 @@ ul {
   color: var(--muted);
 }
 .language-control button {
-  padding: 9px 3px;
+  display: inline-grid;
+  min-width: 44px;
+  min-height: 44px;
+  place-items: center;
+  padding: 0 3px;
   letter-spacing: 0.04em;
   font-weight: 600;
   color: var(--muted);
@@ -228,6 +233,8 @@ ul {
 }
 .menu-toggle {
   display: none;
+  width: 44px;
+  height: 44px;
 }
 .button {
   display: inline-flex;
@@ -384,11 +391,7 @@ ul {
 .visual-grid {
   position: absolute;
   inset: 16px -15px;
-  background-image:
-    linear-gradient(#ffffff04 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff04 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: radial-gradient(ellipse, #000 30%, transparent 73%);
+  border: 1px solid var(--line);
 }
 .visual-caption {
   position: absolute;
@@ -982,7 +985,7 @@ ul {
 }
 
 /* Motion is progressive enhancement: content is visible without JavaScript. */
-:is(.visual-grid, .orbit, .system-window, .code-fragment, .visual-tag, .project-demo) {
+:is(.visual-grid, .orbit, .system-window, .code-fragment, .visual-tag, .project-demo, .field-orbit, .pixel-index-preview, .portfolio-product-visual) {
   translate: 0 var(--parallax-y, 0px);
 }
 html[data-motion="enabled"] .reveal {
@@ -1132,7 +1135,7 @@ html[data-motion="enabled"] .reveal.is-visible {
     gap: 12px;
   }
   .language-control button {
-    min-width: 32px;
+    min-width: 44px;
     min-height: 44px;
     padding: 0 3px;
   }
@@ -1147,6 +1150,11 @@ html[data-motion="enabled"] .reveal.is-visible {
     border-bottom: 1px solid var(--line);
     justify-content: center;
     flex-wrap: wrap;
+  }
+  .navigation a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
   }
   .js .navigation {
     display: none;
@@ -1385,6 +1393,36 @@ html[data-motion="enabled"] .reveal.is-visible {
   }
 }
 @media (max-width: 380px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
+    gap: 4px;
+    padding-block: 6px;
+  }
+  .brand {
+    min-height: 44px;
+  }
+  .header-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .concept-control {
+    gap: 2px;
+    padding: 2px;
+  }
+  .concept-control button {
+    min-width: 44px;
+    padding-inline: 4px;
+  }
+  .language-control {
+    gap: 0;
+  }
+  .navigation {
+    top: 100%;
+  }
   .brand-name {
     display: none;
   }

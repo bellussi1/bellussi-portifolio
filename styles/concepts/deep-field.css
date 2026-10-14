@@ -1,381 +1,240 @@
-/* Deep Field: editorial ink, atmospheric light, and quiet instrument marks. */
+/* FIELD — an editorial field notebook in ink, paper, and measured motion. */
 html[data-concept="field"] {
-  --bg: #081117;
-  --surface: #101c24;
-  --raised: #172630;
-  --text: #eaf2f3;
-  --muted: #a2b4bd;
-  --accent: #94dce2;
-  --line: #273b45;
-  --technical: #7cb9c8;
+  color-scheme: dark;
+  --bg: #0b1115;
+  --surface: #111b20;
+  --raised: #19252a;
+  --text: #e4ebe8;
+  --muted: #a3b1b0;
+  --accent: #9bc5aa;
+  --line: #34434a;
+  --technical: #88a9a9;
 }
-
-html[data-concept="field"] body {
-  background:
-    radial-gradient(ellipse at 75% 8%, #14283380, transparent 38rem),
-    var(--bg);
+html[data-concept="field"] body { background: var(--bg); }
+html[data-concept="field"] .site-header { background: rgb(11 17 21 / .94); border-color: var(--line); }
+html[data-concept="field"] .language-control button[aria-pressed="true"],
+html[data-concept="field"] .hero h1 em,
+html[data-concept="field"] .about-intro h2 em { color: var(--accent); }
+html[data-concept="field"] .hero {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  min-height: min(850px, calc(100svh - 96px));
+  padding-block: clamp(72px, 9vh, 126px);
+  gap: clamp(34px, 6vw, 84px);
 }
-
-html[data-concept="field"] .status-dot {
-  box-shadow: 0 0 0 5px #94dce214, 0 0 20px #94dce255;
-}
-
-html[data-concept="field"] .engineering-visual.deep-field-visual {
-  min-height: clamp(450px, 43vw, 630px);
+html[data-concept="field"] .hero-content { max-width: 630px; }
+html[data-concept="field"] .hero h1 { font-size: clamp(56px, 6.3vw, 92px); line-height: 1.02; }
+html[data-concept="field"] .hero-description { max-width: 480px; }
+html[data-concept="field"] .index-hero-meta { display: none; }
+html[data-concept="field"] .deep-field-visual.field-hero-visual {
+  position: relative;
+  min-height: clamp(500px, 46vw, 650px);
   max-height: 690px;
-  overflow: clip;
+  overflow: hidden;
   isolation: isolate;
-  border: 1px solid #87bdc01e;
-  background:
-    radial-gradient(ellipse at 46% 44%, #1c526070 0, #0b1b247a 31%, transparent 68%),
-    radial-gradient(circle at 75% 32%, #79d1db16, transparent 32%),
-    linear-gradient(145deg, #101e25, #071016 68%);
-  box-shadow:
-    inset 0 0 100px #030a0e8c,
-    0 30px 100px #0004;
+  border: 1px solid #42575e;
+  background: #0e181d;
+  box-shadow: 16px 16px 0 #162127;
 }
-
-html[data-concept="field"] .deep-field-visual::before,
-html[data-concept="field"] .deep-field-visual::after {
+html[data-concept="field"] .deep-field-visual::before {
   position: absolute;
   z-index: 1;
+  inset: 12px;
+  border: 1px solid #42575e;
   pointer-events: none;
   content: "";
 }
-
-html[data-concept="field"] .deep-field-visual::before {
-  inset: 0;
-  background:
-    linear-gradient(90deg, #061016a1, transparent 26%, transparent 74%, #0610164d),
-    linear-gradient(0deg, #0610169c, transparent 24%, transparent 80%, #06101642);
-}
-
-html[data-concept="field"] .deep-field-visual::after {
-  inset: 10px;
-  border: 1px solid #9ad9e010;
-}
-
 html[data-concept="field"] .deep-field-canvas {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-  opacity: 0.96;
-  mix-blend-mode: screen;
+  opacity: .92;
   pointer-events: none;
 }
-
 html[data-concept="field"] .field-orbit {
   position: absolute;
   z-index: 1;
   left: 50%;
-  top: 47%;
-  width: min(74%, 470px);
+  top: 48%;
+  width: min(76%, 470px);
   aspect-ratio: 1;
-  border: 1px solid #a9e0e21c;
+  border: 1px solid #a9c7bd2e;
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%) rotate(-27deg) scaleY(0.58);
+  transform: translate(-50%, -50%) rotate(-27deg) scaleY(.58);
 }
-
 html[data-concept="field"] .field-orbit-two {
-  width: min(89%, 570px);
-  border-color: #83c8d014;
-  transform: translate(-50%, -50%) rotate(29deg) scaleY(0.42);
+  width: min(90%, 570px);
+  border-color: #a9c7bd1a;
+  transform: translate(-50%, -50%) rotate(29deg) scaleY(.42);
 }
-
 html[data-concept="field"] .field-reticle {
   position: absolute;
   z-index: 2;
-  top: 47%;
+  top: 48%;
   left: 50%;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #c4eeec80;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #c8ddd3;
   border-radius: 50%;
-  box-shadow: 0 0 20px #95dce44a;
   transform: translate(-50%, -50%);
 }
-
 html[data-concept="field"] .field-reticle::before,
 html[data-concept="field"] .field-reticle::after {
   position: absolute;
+  background: #c8ddd3a3;
   content: "";
-  background: #b8e6e477;
 }
-
-html[data-concept="field"] .field-reticle::before {
-  top: 6px;
-  left: -9px;
-  width: 31px;
-  height: 1px;
-}
-
-html[data-concept="field"] .field-reticle::after {
-  top: -9px;
-  left: 6px;
-  width: 1px;
-  height: 31px;
-}
-
-html[data-concept="field"] .field-reticle span {
-  position: absolute;
-  inset: 4px;
-  background: #d7ffff;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #a6f4f4;
-}
-
+html[data-concept="field"] .field-reticle::before { top: 7px; left: -11px; width: 37px; height: 1px; }
+html[data-concept="field"] .field-reticle::after { top: -11px; left: 7px; width: 1px; height: 37px; }
+html[data-concept="field"] .field-reticle span { position: absolute; inset: 5px; border-radius: 50%; background: #e1eee7; }
 html[data-concept="field"] .field-caption {
+  position: absolute;
   z-index: 2;
+  top: 30px;
+  right: 32px;
+  left: 32px;
   display: flex;
-  top: 29px;
-  right: 30px;
-  left: 30px;
   justify-content: space-between;
-  color: #c1d5d8b8;
-  font: 500 9px/1.4 "IBM Plex Mono", monospace;
-  letter-spacing: 0.14em;
+  color: #bdceca;
+  font: 500 9px/1.4 ui-monospace, monospace;
+  letter-spacing: .13em;
 }
-
 html[data-concept="field"] .field-coordinate {
   position: absolute;
   z-index: 2;
-  top: 42%;
-  left: 8%;
+  top: 43%;
+  left: 9%;
   display: grid;
   gap: 5px;
-  color: #d0e7e7a6;
-  font: 9px/1.5 "IBM Plex Mono", monospace;
-  letter-spacing: 0.12em;
+  color: #b7c6c2;
+  font: 9px/1.5 ui-monospace, monospace;
+  letter-spacing: .12em;
 }
-
-html[data-concept="field"] .field-coordinate b {
-  color: #e5f6f5;
-  font-size: 11px;
-  font-weight: 400;
-}
-
+html[data-concept="field"] .field-coordinate b { color: var(--text); font-size: 11px; font-weight: 400; }
 html[data-concept="field"] .field-signal {
   position: absolute;
   z-index: 2;
-  right: 30px;
-  bottom: 29px;
+  right: 32px;
+  bottom: 30px;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #c1d5d899;
-  font: 500 8px/1.4 "IBM Plex Mono", monospace;
-  letter-spacing: 0.12em;
+  color: #b7c6c2;
+  font: 500 8px/1.4 ui-monospace, monospace;
+  letter-spacing: .12em;
 }
-
-html[data-concept="field"] .field-signal i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 12px #94dce2;
-}
-
-html[data-concept="field"] .pixel-index-preview {
-  display: none;
-}
-
-@media (max-width: 1100px) {
-  html[data-concept="field"] .engineering-visual.deep-field-visual {
-    min-height: 500px;
-  }
-  html[data-concept="field"] .field-coordinate {
-    left: 5%;
-  }
-}
-
-@media (max-width: 760px) {
-  html[data-concept="field"] .engineering-visual.deep-field-visual {
-    min-height: min(112vw, 500px);
-    width: 100%;
-    max-height: 500px;
-    margin-top: 5px;
-  }
-  html[data-concept="field"] .field-orbit {
-    width: 76%;
-  }
-  html[data-concept="field"] .field-orbit-two {
-    width: 94%;
-  }
-  html[data-concept="field"] .field-caption {
-    top: 23px;
-    right: 22px;
-    left: 22px;
-    font-size: 8px;
-  }
-  html[data-concept="field"] .field-coordinate {
-    top: auto;
-    bottom: 25%;
-    left: 22px;
-  }
-  html[data-concept="field"] .field-signal {
-    right: 22px;
-    bottom: 23px;
-    font-size: 7px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html[data-concept="field"] .field-orbit {
-    animation: none !important;
-    transform: translate(-50%, -50%) rotate(-27deg) scaleY(0.58);
-  }
-}
-
-/* The same portfolio facts become an instrumented, cinematic field. */
+html[data-concept="field"] .field-signal i { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+html[data-concept="field"] .pixel-index-preview { display: none; }
+html[data-concept="field"] .credential-strip { border-color: var(--line); }
+html[data-concept="field"] .credential-strip > div > span:not(.credential-note):not(.credential-separator) { font-family: var(--display); font-size: 25px; font-weight: 400; }
 html[data-concept="field"] .section-heading > .eyebrow,
 html[data-concept="field"] .project-category,
-html[data-concept="field"] .fact-label {
-  color: var(--technical);
-}
-
-html[data-concept="field"] .experience-row,
-html[data-concept="field"] .product-case,
-html[data-concept="field"] .project-row {
-  border-color: #8bbbc31e;
-}
-
-html[data-concept="field"] .role-number,
-html[data-concept="field"] .role-label,
-html[data-concept="field"] .project-category span {
-  color: var(--accent);
-}
-
-html[data-concept="field"] .role-pill,
-html[data-concept="field"] .tech-tags span {
-  border-color: #87c5d033;
-  background: #7fc5d00c;
-  color: #c6dcdf;
-}
-
-html[data-concept="field"] .experience-content > p:not(.role-label),
-html[data-concept="field"] .outcome-list li,
-html[data-concept="field"] .product-case-copy > .product-detail {
-  color: #b7c8ce;
-}
-
-html[data-concept="field"] .product-status {
-  border-color: #86cbd24d;
-  background: #94dce20b;
-  color: #bfe9eb;
-}
-
-html[data-concept="field"] .product-visual {
-  border-color: #8bbbc329;
-  background: #101c24;
-  box-shadow: 0 24px 70px #0004;
-}
-
-html[data-concept="field"] .product-visual figcaption span:first-child {
-  color: var(--accent);
-}
-
-html[data-concept="field"] .product-visual:hover img {
-  filter: saturate(1.08) brightness(1.06);
-}
-
-html[data-concept="field"] .project-demo {
-  border-color: #81bfc52e;
-  background: linear-gradient(145deg, #14242c, #0d171e 70%);
-}
-
-html[data-concept="field"] .project-demo .text-link {
-  border-color: #94dce24a;
-  color: #d4e8ea;
-}
-
-html[data-concept="field"] .project-demo .text-link:hover {
-  color: var(--accent);
-}
-
-html[data-concept="field"] .approach-section {
-  border-color: #8bbbc329;
-  background:
-    radial-gradient(ellipse at 90% 0%, #1d4a563d, transparent 38rem),
-    linear-gradient(115deg, #0c1820, #101c24 58%, #0c171e);
-}
-
-html[data-concept="field"] .approach-card {
-  border-color: #93c5cc24;
-  background: #0c171d6b;
-}
-
-html[data-concept="field"] .approach-card:hover {
-  border-color: #94dce25c;
-  background: #16303a;
-  box-shadow: 0 18px 48px #0003;
-}
-
-html[data-concept="field"] .approach-icon {
-  color: var(--accent);
-}
-
-html[data-concept="field"] .about-section {
+html[data-concept="field"] .fact-label { color: var(--technical); }
+html[data-concept="field"] .field-experience-list { position: relative; margin-left: 9px; border-left: 1px solid #53676b; }
+html[data-concept="field"] .field-experience-entry {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(180px, .62fr) minmax(0, 1.5fr);
+  gap: clamp(30px, 7vw, 100px);
+  padding: 40px 0 52px 34px;
+  border-top: 1px solid var(--line);
 }
-
-html[data-concept="field"] .about-intro h2 em {
-  color: var(--accent);
+html[data-concept="field"] .field-experience-entry::before {
+  position: absolute;
+  top: 47px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--accent);
+  background: var(--bg);
+  content: "";
 }
-
-html[data-concept="field"] .about-facts {
-  border-color: #8bbbc329;
+html[data-concept="field"] .field-entry-number { display: block; color: var(--accent); font: 11px ui-monospace, monospace; }
+html[data-concept="field"] .field-experience-meta time { display: block; margin-top: 18px; color: var(--muted); font: 11px ui-monospace, monospace; }
+html[data-concept="field"] .field-experience-meta h3 { margin-top: 11px; font: 400 28px/1.1 var(--display); }
+html[data-concept="field"] .field-experience-meta .role-pill { display: inline-block; margin-top: 17px; border: 0; padding: 0; color: var(--technical); font-size: 11px; }
+html[data-concept="field"] .field-experience-content .role-label { color: var(--accent); font: 10px ui-monospace, monospace; letter-spacing: .08em; }
+html[data-concept="field"] .field-experience-content h4 { margin: 12px 0 16px; font-size: clamp(24px, 2.4vw, 32px); letter-spacing: -.03em; }
+html[data-concept="field"] .field-experience-content > p:not(.role-label),
+html[data-concept="field"] .field-experience-content .outcome-list li,
+html[data-concept="field"] .product-copy > p:not(.project-category, .private-project-note) { color: #bac6c3; }
+html[data-concept="field"] .outcome-list li::before { color: var(--accent); }
+html[data-concept="field"] .tech-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+html[data-concept="field"] .tech-tags li { padding: 4px 9px; border: 1px solid #53656a; color: #d2dcda; font-size: 10px; }
+html[data-concept="field"] .field-product-list { border-bottom: 1px solid var(--line); }
+html[data-concept="field"] .field-product-case {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  align-items: center;
+  gap: clamp(38px, 8vw, 116px);
+  padding-block: 72px;
+  border-top: 1px solid var(--line);
 }
+html[data-concept="field"] .field-product-case.is-reversed { grid-template-columns: minmax(0, 1.22fr) minmax(0, .78fr); }
+html[data-concept="field"] .field-product-case.is-reversed .portfolio-product-visual { grid-column: 1; grid-row: 1; }
+html[data-concept="field"] .field-product-case.is-reversed .product-copy { grid-column: 2; grid-row: 1; }
+html[data-concept="field"] .product-copy { min-width: 0; }
+html[data-concept="field"] .product-copy .project-category { margin-bottom: 16px; font: 10px ui-monospace, monospace; letter-spacing: .12em; }
+html[data-concept="field"] .product-copy .product-status { display: block; width: fit-content; margin-bottom: 14px; border: 1px solid #52665e; padding: 5px 8px; color: #bfd5c8; font-size: 9px; text-transform: uppercase; }
+html[data-concept="field"] .product-copy h3 { font-size: clamp(36px, 4vw, 55px); letter-spacing: -.05em; }
+html[data-concept="field"] .product-copy h4 { margin-block: 10px 18px; color: var(--text); font: 400 clamp(22px, 2.7vw, 34px)/1.18 var(--display); }
+html[data-concept="field"] .product-copy > p:not(.project-category, .private-project-note) { font-size: 14px; }
+html[data-concept="field"] .product-copy .product-detail { margin-top: 14px; padding-left: 13px; border-left: 1px solid var(--accent); }
+html[data-concept="field"] .portfolio-product-visual { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #46585d; background: #101a1f; }
+html[data-concept="field"] .portfolio-product-visual img { display: block; width: 100%; height: auto; transition: transform .6s var(--ease); }
+html[data-concept="field"] .portfolio-product-visual:hover img { transform: scale(1.015); }
+html[data-concept="field"] .portfolio-product-visual figcaption { padding: 11px 13px; border-top: 1px solid #46585d; color: #a3b1b0; font: 9px/1.4 ui-monospace, monospace; }
+html[data-concept="field"] .product-repo-link { margin-top: 22px; }
+html[data-concept="field"] .field-open-source-ledger { border-top: 1px solid var(--line); }
+html[data-concept="field"] .field-open-source-row { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 20px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+html[data-concept="field"] .field-open-source-row > .field-entry-number { padding-top: 5px; }
+html[data-concept="field"] .field-tool-copy { max-width: 780px; }
+html[data-concept="field"] .field-tool-copy .project-category { margin-bottom: 7px; font-size: 9px; }
+html[data-concept="field"] .field-tool-copy h3 { font-size: 28px; letter-spacing: -.035em; }
+html[data-concept="field"] .field-tool-copy h4 { margin-top: 5px; color: #cbd7d4; font: 400 20px/1.25 var(--display); }
+html[data-concept="field"] .field-tool-copy > p:not(.project-category) { margin-top: 10px; color: var(--muted); font-size: 13px; }
+html[data-concept="field"] .field-tool-demo { margin-top: 18px; border-top: 1px solid var(--line); }
+html[data-concept="field"] .field-tool-demo summary { padding-block: 12px; color: var(--technical); cursor: pointer; font-size: 12px; }
+html[data-concept="field"] .field-tool-demo pre { overflow-wrap: anywhere; white-space: pre-wrap; color: var(--accent); font-size: 12px; }
+html[data-concept="field"] .approach-section { border-block: 1px solid var(--line); background: #0f191e; }
+html[data-concept="field"] .approach-card { border-color: #34434a; background: #111b20; }
+html[data-concept="field"] .approach-card:hover { border-color: #789289; background: #17242a; transform: translateY(-4px); }
+html[data-concept="field"] .approach-icon,
+html[data-concept="field"] .role-number { color: var(--accent); }
+html[data-concept="field"] .contact-section { border-color: #46585d; background: #111b20; }
+html[data-concept="field"] .contact-section .contact-note,
+html[data-concept="field"] .contact-section > p,
+html[data-concept="field"] .contact-section .email-line { color: #c1ceca; }
+html[data-concept="field"] .contact-section .button-primary { background: var(--accent); color: #0b1115; }
+html[data-concept="field"] .site-footer { border-top: 1px solid var(--line); }
+html[data-concept="field"] .field-caption,
+html[data-concept="field"] .field-coordinate,
+html[data-concept="field"] .field-signal { text-shadow: 0 1px 3px #000; }
 
-html[data-concept="field"] .contact-section {
-  border-color: #94dce232;
-  background:
-    radial-gradient(circle at 84% 20%, #2d74813a, transparent 24rem),
-    linear-gradient(125deg, #12232b, #0b151b 74%);
-  box-shadow: inset 0 0 100px #03101673;
+@media (max-width: 900px) {
+  html[data-concept="field"] .hero { min-height: 0; grid-template-columns: 1fr 1fr; gap: 32px; }
+  html[data-concept="field"] .deep-field-visual.field-hero-visual { min-height: 500px; }
+  html[data-concept="field"] .field-experience-entry { gap: 32px; }
 }
-
-html[data-concept="field"] .contact-section::after {
-  color: #94dce20b;
-}
-
-html[data-concept="field"] .contact-section .button-primary,
-html[data-concept="field"] .button-primary {
-  background: #9bdde1;
-  color: #0a1418;
-}
-
-html[data-concept="field"] .button-primary:hover,
-html[data-concept="field"] .button-primary:focus-visible {
-  background: #c3eff0;
-  box-shadow: 0 12px 34px #03101480, 0 0 0 4px #94dce21c;
-}
-
-html[data-concept="field"] .site-footer {
-  border-top: 1px solid #8bbbc329;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  html[data-concept="field"] .project-row:hover .project-demo {
-    border-color: #94dce28c;
-    box-shadow: 0 25px 70px #0005, 0 0 0 1px #94dce218;
-  }
-  html[data-concept="field"] .project-row:hover .project-content h3 {
-    color: #c8f0f0;
-  }
-}
-
 @media (max-width: 760px) {
-  html[data-concept="field"] .approach-section {
-    padding-block: 76px;
-  }
-  html[data-concept="field"] .approach-card {
-    margin: 0;
-    padding: 25px 22px;
-  }
-  html[data-concept="field"] .contact-section {
-    padding: 32px 24px 36px;
-  }
+  html[data-concept="field"] .hero { grid-template-columns: 1fr; gap: 24px; padding-block: 74px 50px; }
+  html[data-concept="field"] .hero h1 { font-size: clamp(47px, 12vw, 66px); }
+  html[data-concept="field"] .deep-field-visual.field-hero-visual { width: 100%; min-height: min(115vw, 470px); }
+  html[data-concept="field"] .field-caption { top: 25px; right: 23px; left: 23px; font-size: 8px; }
+  html[data-concept="field"] .field-coordinate { top: auto; bottom: 25%; left: 23px; }
+  html[data-concept="field"] .field-signal { right: 23px; bottom: 24px; font-size: 7px; }
+  html[data-concept="field"] .field-experience-entry { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 38px 24px; }
+  html[data-concept="field"] .field-product-case,
+  html[data-concept="field"] .field-product-case.is-reversed { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
+  html[data-concept="field"] .field-product-case.is-reversed .portfolio-product-visual,
+  html[data-concept="field"] .field-product-case.is-reversed .product-copy { grid-column: auto; grid-row: auto; }
+  html[data-concept="field"] .field-open-source-row { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; }
+  html[data-concept="field"] .credential-strip > div { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-concept="field"] .field-orbit { transform: translate(-50%, -50%) rotate(-27deg) scaleY(.58); }
+  html[data-concept="field"] .approach-card:hover { transform: none; }
+  html[data-concept="field"] .portfolio-product-visual:hover img { transform: none; }
 }

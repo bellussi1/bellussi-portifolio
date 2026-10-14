@@ -13,45 +13,29 @@ uniform float u_time;
 uniform float u_scroll;
 out vec4 outputColor;
 
-float noise(vec2 point) {
-  return fract(sin(dot(point, vec2(127.1, 311.7))) * 43758.5453);
-}
-
 void main() {
   vec2 uv = gl_FragCoord.xy / max(u_resolution, vec2(1.0));
   float aspect = u_resolution.x / max(u_resolution.y, 1.0);
   vec2 p = (uv - 0.5) * vec2(aspect, 1.0);
   vec2 pointer = (u_pointer - 0.5) * vec2(aspect, 1.0);
-  float time = u_time * 0.16;
-
+  float time = u_time * 0.11 + u_scroll * 0.08;
+  float pointerDistance = length(p - pointer);
   vec2 field = p;
-  field.x += sin(p.y * 3.1 + time + u_scroll * 0.45) * 0.075;
-  field.y += cos(p.x * 2.6 - time * 0.75) * 0.052;
-  float pointerPull = exp(-length(p - pointer) * 2.7) * 0.105;
-  field += normalize(p - pointer + vec2(0.0001)) * pointerPull;
+  float pointerPressure = exp(-pointerDistance * 3.2);
+  float ripple = sin(pointerDistance * 16.0 - time * 2.0) * pointerPressure * 0.018;
+  field += normalize(p - pointer + vec2(0.0001)) * ripple;
+  field.x += sin(field.y * 3.4 + time) * 0.012;
+  field.y += cos(field.x * 2.8 - time * 0.8) * 0.009;
 
-  vec2 core = vec2(-0.055, 0.025 + sin(time) * 0.045);
-  float radius = length(field - core);
-  float corona = exp(-radius * 4.0);
-  float edge = exp(-abs(radius - (0.22 + sin(time * 0.7) * 0.012)) * 33.0);
-  float filament = sin((field.x * 4.2 + field.y * 3.0 + sin(field.y * 7.0 + time) * 0.14) * 9.0 + time * 2.1);
-  filament = smoothstep(0.74, 0.98, filament) * exp(-abs(field.y + field.x * 0.42) * 2.5);
-
-  vec3 ink = vec3(0.009, 0.018, 0.030);
-  vec3 deepBlue = vec3(0.035, 0.13, 0.24);
-  vec3 ice = vec3(0.20, 0.57, 0.70);
-  vec3 light = vec3(0.72, 0.89, 0.90);
-  vec3 color = ink;
-  color += deepBlue * corona * 1.7;
-  color += ice * edge * 0.7;
-  color += vec3(0.20, 0.56, 0.64) * filament * 0.15;
-  float pointerGlow = exp(-length(p - pointer) * 5.4) * 0.11;
-  color += mix(ice, light, 0.45) * pointerGlow;
-  color += (noise(gl_FragCoord.xy + u_time * 0.35) - 0.5) * 0.018;
-
-  float vignette = 1.0 - smoothstep(0.18, 1.08, length((uv - 0.5) * vec2(aspect * 0.77, 1.0)));
-  color *= 0.54 + vignette * 0.46;
-  outputColor = vec4(color, 1.0);
+  vec2 gridPosition = field * 18.0;
+  vec2 lineDistance = abs(fract(gridPosition) - 0.5) / fwidth(gridPosition);
+  float line = 1.0 - smoothstep(0.18, 1.15, min(lineDistance.x, lineDistance.y));
+  float majorLine = 1.0 - smoothstep(0.2, 1.4, min(lineDistance.x, lineDistance.y));
+  majorLine *= step(2.5, mod(floor(gridPosition.x) + floor(gridPosition.y), 6.0));
+  float pointerLine = exp(-pointerDistance * 2.3) * line;
+  float lineStrength = clamp(line * 0.34 + majorLine * 0.09 + pointerLine * 0.2, 0.0, 0.48);
+  vec3 ink = vec3(0.39, 0.67, 0.69);
+  outputColor = vec4(ink * lineStrength, lineStrength);
 }`;
 
 const noop = () => {};

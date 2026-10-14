@@ -6,9 +6,11 @@ function createGl() {
   let serial = 0;
   const deleted = [];
   const pointerValues = [];
+  const shaderSources = [];
   return {
     deleted,
     pointerValues,
+    shaderSources,
     VERTEX_SHADER: 1,
     FRAGMENT_SHADER: 2,
     COMPILE_STATUS: 3,
@@ -19,7 +21,7 @@ function createGl() {
     TRIANGLES: 8,
     COLOR_BUFFER_BIT: 9,
     createShader: () => ({ id: ++serial }),
-    shaderSource() {},
+    shaderSource: (_, source) => shaderSources.push(source),
     compileShader() {},
     getShaderParameter: () => true,
     getShaderInfoLog: () => "",
@@ -52,6 +54,19 @@ function createGl() {
     deleteVertexArray: (value) => deleted.push(value),
   };
 }
+
+test("draws a crisp line field with one solid ink color", () => {
+  const h = createHarness();
+  const fragment = h.context.shaderSources.find((source) => source.includes("precision"));
+
+  assert.match(fragment, /fwidth\(/);
+  assert.match(fragment, /u_pointer/);
+  assert.match(fragment, /u_time/);
+  assert.match(fragment, /vec3\s+ink\s*=\s*vec3\(/);
+  assert.match(fragment, /outputColor\s*=\s*vec4\(ink\s*\*/);
+  assert.doesNotMatch(fragment, /\bmix\s*\(/);
+  h.cleanup();
+});
 
 function createHarness({ reduced = false, fine = true, context = createGl() } = {}) {
   const listeners = new Map();
