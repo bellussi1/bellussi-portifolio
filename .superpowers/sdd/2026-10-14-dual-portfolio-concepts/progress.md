@@ -12,7 +12,7 @@
 - [x] Task 1: Concept URL state and switcher
 - [x] Task 2: Replace custom wheel inertia with Lenis
 - [x] Task 3: Deep Field hero and atmosphere
-- [ ] Task 4: Pixel Index texture and pointer treatment
+- [x] Task 4: Pixel Index texture and pointer treatment
 - [ ] Task 5: Responsive shared sections and accessibility integration
 - [ ] Task 6: Production build and final review
 
@@ -40,3 +40,6 @@
 ## Task 3
 - Ruling: add `test/deep-field.test.js` for WebGL2/shader fallback and render lifecycle — the feature owns GPU resources, an observer, pointer and preference listeners, and an animation loop, and the selected executor requires TDD for that lifecycle — cost if wrong: one focused browser-API harness to maintain.
 - Result: Deep Field implementation complete; `npm test` passed 20/20 and `npm run build` succeeded. Desktop hero visual reviewed in Playwright; live reduced-motion and forced-WebGL fallback checks remain in Task 6.
+## Task 4
+- Ruling: add `test/pixel-index.test.js` for fine-pointer gating, reduced-motion behavior, visibility, and cleanup — the concept introduces its own live pointer listeners and CSS state that must not leak into Deep Field or touch interaction, and the selected executor requires TDD — cost if wrong: one focused event harness to maintain.
+- Result: Pixel Index texture, palette, hero index graphic, and pointer controller complete; targeted tests passed 3/3, `npm test` passed 23/23, and `npm run build` succeeded. Desktop concept preview reviewed; touch and live preference review remain in Task 6.

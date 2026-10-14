@@ -5,10 +5,12 @@ import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import "../styles/components/concept-switcher.css";
 import "../styles/concepts/deep-field.css";
+import "../styles/concepts/pixel-index.css";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
 import { initConceptSwitcher } from "./utils/concept.js";
 import { initDeepField } from "./visuals/deep-field.js";
+import { initPixelIndex } from "./visuals/pixel-index.js";
 import { initParallax } from "./utils/parallax.js";
 import { initSmoothScroll } from "./utils/smooth-scroll.js";
 
@@ -16,16 +18,20 @@ const root = document.documentElement;
 initConceptSwitcher({ root });
 let activeVisualConcept;
 let cleanupDeepField = () => {};
+let cleanupPixelIndex = () => {};
 function syncVisualConcept() {
   const concept = root.dataset.concept;
   if (concept === activeVisualConcept) return;
   cleanupDeepField();
+  cleanupPixelIndex();
   cleanupDeepField = () => {};
+  cleanupPixelIndex = () => {};
   activeVisualConcept = concept;
   if (concept === "field")
     cleanupDeepField = initDeepField(
       document.querySelector("[data-deep-field]"),
     );
+  else if (concept === "index") cleanupPixelIndex = initPixelIndex({ root });
 }
 syncVisualConcept();
 document.querySelectorAll("[data-concept-option]").forEach((control) => {
