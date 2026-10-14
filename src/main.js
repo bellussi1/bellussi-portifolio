@@ -4,14 +4,34 @@ import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import "../styles/components/concept-switcher.css";
+import "../styles/concepts/deep-field.css";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
 import { initConceptSwitcher } from "./utils/concept.js";
+import { initDeepField } from "./visuals/deep-field.js";
 import { initParallax } from "./utils/parallax.js";
 import { initSmoothScroll } from "./utils/smooth-scroll.js";
 
 const root = document.documentElement;
 initConceptSwitcher({ root });
+let activeVisualConcept;
+let cleanupDeepField = () => {};
+function syncVisualConcept() {
+  const concept = root.dataset.concept;
+  if (concept === activeVisualConcept) return;
+  cleanupDeepField();
+  cleanupDeepField = () => {};
+  activeVisualConcept = concept;
+  if (concept === "field")
+    cleanupDeepField = initDeepField(
+      document.querySelector("[data-deep-field]"),
+    );
+}
+syncVisualConcept();
+document.querySelectorAll("[data-concept-option]").forEach((control) => {
+  control.addEventListener("click", syncVisualConcept);
+});
+window.addEventListener("popstate", syncVisualConcept);
 root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];

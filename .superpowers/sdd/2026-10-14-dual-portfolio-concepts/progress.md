@@ -11,7 +11,7 @@
 ## Todo
 - [x] Task 1: Concept URL state and switcher
 - [x] Task 2: Replace custom wheel inertia with Lenis
-- [ ] Task 3: Deep Field hero and atmosphere
+- [x] Task 3: Deep Field hero and atmosphere
 - [ ] Task 4: Pixel Index texture and pointer treatment
 - [ ] Task 5: Responsive shared sections and accessibility integration
 - [ ] Task 6: Production build and final review
@@ -37,3 +37,6 @@
 
 ## Task 2
 - Result: Task 2 implementation complete; targeted Lenis lifecycle tests passed 5/5 and `npm test` passed 16/16. Browser interaction review is scheduled with Task 6.
+## Task 3
+- Ruling: add `test/deep-field.test.js` for WebGL2/shader fallback and render lifecycle — the feature owns GPU resources, an observer, pointer and preference listeners, and an animation loop, and the selected executor requires TDD for that lifecycle — cost if wrong: one focused browser-API harness to maintain.
+- Result: Deep Field implementation complete; `npm test` passed 20/20 and `npm run build` succeeded. Desktop hero visual reviewed in Playwright; live reduced-motion and forced-WebGL fallback checks remain in Task 6.

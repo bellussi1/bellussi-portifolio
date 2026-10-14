@@ -1,0 +1,230 @@
+/* Deep Field: editorial ink, atmospheric light, and quiet instrument marks. */
+html[data-concept="field"] {
+  --bg: #081117;
+  --surface: #101c24;
+  --raised: #172630;
+  --text: #eaf2f3;
+  --muted: #a2b4bd;
+  --accent: #94dce2;
+  --line: #273b45;
+  --technical: #7cb9c8;
+}
+
+html[data-concept="field"] body {
+  background:
+    radial-gradient(ellipse at 75% 8%, #14283380, transparent 38rem),
+    var(--bg);
+}
+
+html[data-concept="field"] .status-dot {
+  box-shadow: 0 0 0 5px #94dce214, 0 0 20px #94dce255;
+}
+
+html[data-concept="field"] .engineering-visual.deep-field-visual {
+  min-height: clamp(450px, 43vw, 630px);
+  max-height: 690px;
+  overflow: clip;
+  isolation: isolate;
+  border: 1px solid #87bdc01e;
+  background:
+    radial-gradient(ellipse at 46% 44%, #1c526070 0, #0b1b247a 31%, transparent 68%),
+    radial-gradient(circle at 75% 32%, #79d1db16, transparent 32%),
+    linear-gradient(145deg, #101e25, #071016 68%);
+  box-shadow:
+    inset 0 0 100px #030a0e8c,
+    0 30px 100px #0004;
+}
+
+html[data-concept="field"] .deep-field-visual::before,
+html[data-concept="field"] .deep-field-visual::after {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+html[data-concept="field"] .deep-field-visual::before {
+  inset: 0;
+  background:
+    linear-gradient(90deg, #061016a1, transparent 26%, transparent 74%, #0610164d),
+    linear-gradient(0deg, #0610169c, transparent 24%, transparent 80%, #06101642);
+}
+
+html[data-concept="field"] .deep-field-visual::after {
+  inset: 10px;
+  border: 1px solid #9ad9e010;
+}
+
+html[data-concept="field"] .deep-field-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.96;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+html[data-concept="field"] .field-orbit {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 47%;
+  width: min(74%, 470px);
+  aspect-ratio: 1;
+  border: 1px solid #a9e0e21c;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-27deg) scaleY(0.58);
+}
+
+html[data-concept="field"] .field-orbit-two {
+  width: min(89%, 570px);
+  border-color: #83c8d014;
+  transform: translate(-50%, -50%) rotate(29deg) scaleY(0.42);
+}
+
+html[data-concept="field"] .field-reticle {
+  position: absolute;
+  z-index: 2;
+  top: 47%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #c4eeec80;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #95dce44a;
+  transform: translate(-50%, -50%);
+}
+
+html[data-concept="field"] .field-reticle::before,
+html[data-concept="field"] .field-reticle::after {
+  position: absolute;
+  content: "";
+  background: #b8e6e477;
+}
+
+html[data-concept="field"] .field-reticle::before {
+  top: 6px;
+  left: -9px;
+  width: 31px;
+  height: 1px;
+}
+
+html[data-concept="field"] .field-reticle::after {
+  top: -9px;
+  left: 6px;
+  width: 1px;
+  height: 31px;
+}
+
+html[data-concept="field"] .field-reticle span {
+  position: absolute;
+  inset: 4px;
+  background: #d7ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #a6f4f4;
+}
+
+html[data-concept="field"] .field-caption {
+  z-index: 2;
+  display: flex;
+  top: 29px;
+  right: 30px;
+  left: 30px;
+  justify-content: space-between;
+  color: #c1d5d8b8;
+  font: 500 9px/1.4 "IBM Plex Mono", monospace;
+  letter-spacing: 0.14em;
+}
+
+html[data-concept="field"] .field-coordinate {
+  position: absolute;
+  z-index: 2;
+  top: 42%;
+  left: 8%;
+  display: grid;
+  gap: 5px;
+  color: #d0e7e7a6;
+  font: 9px/1.5 "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+}
+
+html[data-concept="field"] .field-coordinate b {
+  color: #e5f6f5;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+html[data-concept="field"] .field-signal {
+  position: absolute;
+  z-index: 2;
+  right: 30px;
+  bottom: 29px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c1d5d899;
+  font: 500 8px/1.4 "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+}
+
+html[data-concept="field"] .field-signal i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px #94dce2;
+}
+
+html[data-concept="field"] .pixel-index-preview {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  html[data-concept="field"] .engineering-visual.deep-field-visual {
+    min-height: 500px;
+  }
+  html[data-concept="field"] .field-coordinate {
+    left: 5%;
+  }
+}
+
+@media (max-width: 760px) {
+  html[data-concept="field"] .engineering-visual.deep-field-visual {
+    min-height: min(112vw, 500px);
+    width: 100%;
+    max-height: 500px;
+    margin-top: 5px;
+  }
+  html[data-concept="field"] .field-orbit {
+    width: 76%;
+  }
+  html[data-concept="field"] .field-orbit-two {
+    width: 94%;
+  }
+  html[data-concept="field"] .field-caption {
+    top: 23px;
+    right: 22px;
+    left: 22px;
+    font-size: 8px;
+  }
+  html[data-concept="field"] .field-coordinate {
+    top: auto;
+    bottom: 25%;
+    left: 22px;
+  }
+  html[data-concept="field"] .field-signal {
+    right: 22px;
+    bottom: 23px;
+    font-size: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-concept="field"] .field-orbit {
+    animation: none !important;
+    transform: translate(-50%, -50%) rotate(-27deg) scaleY(0.58);
+  }
+}
