@@ -1422,14 +1422,6 @@ html[data-motion="enabled"] .reveal.is-visible {
     justify-content: space-between;
     gap: 4px;
   }
-  .concept-control {
-    gap: 2px;
-    padding: 2px;
-  }
-  .concept-control button {
-    min-width: 44px;
-    padding-inline: 4px;
-  }
   .language-control {
     gap: 0;
   }

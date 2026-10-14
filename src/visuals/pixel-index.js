@@ -8,6 +8,7 @@ export function initPixelIndex({
 
   const page = root.ownerDocument ?? view.document;
   const cursor = root.querySelector("[data-pixel-cursor]");
+  const ornaments = [...root.querySelectorAll("[data-index-ornament]")];
   const reducedMotion = view.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = view.matchMedia("(hover: hover) and (pointer: fine)");
   let pointerAttached = false;
@@ -16,6 +17,10 @@ export function initPixelIndex({
   function clearPointer() {
     root.style.removeProperty("--index-pointer-x");
     root.style.removeProperty("--index-pointer-y");
+    ornaments.forEach((ornament) => {
+      ornament.style.removeProperty("--index-shift-x");
+      ornament.style.removeProperty("--index-shift-y");
+    });
     if (cursor) {
       cursor.dataset.active = "false";
       cursor.dataset.pressed = "false";
@@ -26,6 +31,19 @@ export function initPixelIndex({
     if (reducedMotion.matches || !finePointer.matches || page?.hidden) return;
     root.style.setProperty("--index-pointer-x", `${event.clientX}px`);
     root.style.setProperty("--index-pointer-y", `${event.clientY}px`);
+    const horizontal = event.clientX / Math.max(1, view.innerWidth) - 0.5;
+    const vertical = event.clientY / Math.max(1, view.innerHeight) - 0.5;
+    ornaments.forEach((ornament) => {
+      const depth = Number.parseFloat(ornament.dataset.indexDepth) || 0;
+      ornament.style.setProperty(
+        "--index-shift-x",
+        `${(horizontal * depth * 2).toFixed(2)}px`,
+      );
+      ornament.style.setProperty(
+        "--index-shift-y",
+        `${(vertical * depth * 2).toFixed(2)}px`,
+      );
+    });
     if (cursor) cursor.dataset.active = "true";
   }
 

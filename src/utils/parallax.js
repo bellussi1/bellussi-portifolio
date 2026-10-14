@@ -8,6 +8,7 @@ export function initParallax(view = window, page = document) {
     [".orbit-two", ".engineering-visual", 0.09, 52],
     [".field-orbit", ".field-hero-visual", 0.035, 24],
     [".pixel-index-preview", ".engineering-visual", -0.045, 24],
+    [".index-ornament", ".engineering-visual", 0.06, 18],
     [".portfolio-product-visual", ".field-product-case", 0.025, 18],
     [".system-window", ".engineering-visual", 0.045, 28],
     [".code-fragment", ".engineering-visual", -0.06, 36],
