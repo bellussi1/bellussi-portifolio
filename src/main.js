@@ -2,12 +2,15 @@ import "../styles/modern-normalize.css";
 import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
+import "../styles/components/concept-switcher.css";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
+import { initConceptSwitcher } from "./utils/concept.js";
 import { initParallax } from "./utils/parallax.js";
 import { initSmoothScroll } from "./utils/smooth-scroll.js";
 
 const root = document.documentElement;
+initConceptSwitcher({ root });
 root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];

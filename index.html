@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      document.documentElement.dataset.concept =
+        new URLSearchParams(window.location.search).get("concept") === "b"
+          ? "index"
+          : "field";
+    </script>
     <meta name="theme-color" content="#141412" />
     <meta name="author" content="Enzo Bellussi" />
     <meta
@@ -135,6 +141,11 @@
           >
         </nav>
         <div class="header-controls">
+          <div class="concept-control" role="group" aria-label="Conceito visual / Visual concept">
+            <button type="button" data-concept-option="field" aria-pressed="true">FIELD</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" data-concept-option="index" aria-pressed="false">INDEX</button>
+          </div>
           <div
             class="language-control"
             role="group"
