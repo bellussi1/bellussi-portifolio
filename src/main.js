@@ -10,10 +10,17 @@ import { initSmoothScroll } from "./utils/smooth-scroll.js";
 const root = document.documentElement;
 root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
+const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
 const portuguese = Object.fromEntries(
   translatedElements.map((element) => [
     element.dataset.i18n,
     element.innerHTML,
+  ]),
+);
+const portugueseAlt = Object.fromEntries(
+  translatedAltElements.map((element) => [
+    element.dataset.i18nAlt,
+    element.alt,
   ]),
 );
 let language = "pt";
@@ -44,6 +51,10 @@ function setLanguage(nextLanguage) {
   translatedElements.forEach((element) => {
     element.innerHTML =
       content[element.dataset.i18n] ?? portuguese[element.dataset.i18n];
+  });
+  translatedAltElements.forEach((element) => {
+    element.alt =
+      content[element.dataset.i18nAlt] ?? portugueseAlt[element.dataset.i18nAlt];
   });
   document
     .querySelectorAll("[data-language]")

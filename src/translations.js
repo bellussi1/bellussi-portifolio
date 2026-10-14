@@ -13,24 +13,16 @@ export const english = {
   comandinhaDetails:
     "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
   comandinhaLink: "Explore the public repository",
-  comandinhaFlowLabel: "ORDER FLOW",
-  comandinhaFlowTitle: "From table to team.",
-  comandinhaFlowMenuTitle: "QR menu",
-  comandinhaFlowMenuDescription:
-    "Customers open the catalog for their table and build an order.",
-  comandinhaFlowOrderTitle: "API-validated order",
-  comandinhaFlowOrderDescription:
-    "Availability and prices are checked before the order is saved.",
-  comandinhaFlowPanelTitle: "Operations queue",
-  comandinhaFlowPanelDescription:
-    "The team reviews incoming orders and updates their status.",
+  comandinhaImageAlt: "Actual screenshot of the new Comandinha panel login screen.",
+  comandinhaCaption: "New panel · local capture",
   blackMarketStatus: "In development",
   blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
   blackMarketDescription:
     "A companion SaaS for Brazil’s Black Desert Online community. It helps players organize inventory and understand what is missing to craft an item.",
   blackMarketDetails:
     "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
-  blackMarketCaption: "Inventory and recipes · concept",
+  blackMarketImageAlt: "Actual screenshot of the Black Market inventory dashboard.",
+  blackMarketCaption: "Dashboard · local product capture",
   blackMarketPrivateNote:
     "The code and interface are private at this stage.",
   projectsLabel: "OPEN SOURCE PROJECTS",
