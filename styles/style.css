@@ -159,6 +159,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 18px;
+  min-width: 44px;
   min-height: 44px;
 }
 .monogram {
@@ -953,9 +954,12 @@ ul {
   color: var(--accent);
 }
 .copy-email {
+  min-width: 44px;
+  min-height: 44px;
   padding: 8px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   font-size: 10px;
   color: var(--accent);
@@ -978,6 +982,10 @@ ul {
   color: var(--muted);
 }
 .footer-links a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
   transition: color 0.2s;
 }
 .footer-links a:hover {
@@ -1376,6 +1384,11 @@ html[data-motion="enabled"] .reveal.is-visible {
     gap: 12px;
     flex-wrap: wrap;
     font-size: 11px;
+  }
+  .email-line > a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
   }
   .site-footer {
     padding-block: 36px;

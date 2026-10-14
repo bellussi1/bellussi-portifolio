@@ -46,6 +46,17 @@ test("mobile header controls keep 44px targets and reflow at 320px", () => {
   assert.match(base, /@media\s*\(max-width:\s*380px\)[\s\S]*\.header-inner\s*\{[^}]*grid-template-columns/s);
 });
 
+test("mobile INDEX disclosures and contact/footer controls keep 44px targets", () => {
+  const base = read("../styles/style.css");
+  const index = read("../styles/concepts/pixel-index.css");
+
+  assert.match(index, /\.index-tool-demo summary\s*\{[^}]*min-height:\s*44px/s);
+  assert.match(base, /\.brand\s*\{[^}]*min-width:\s*44px/s);
+  assert.match(base, /\.email-line > a\s*\{[^}]*min-height:\s*44px/s);
+  assert.match(base, /\.copy-email\s*\{[^}]*min-width:\s*44px[^}]*min-height:\s*44px/s);
+  assert.match(base, /\.footer-links a\s*\{[^}]*min-width:\s*44px[^}]*min-height:\s*44px/s);
+});
+
 test("selected language and INDEX contact links remain distinct and readable", () => {
   const base = read("../styles/style.css");
   const index = read("../styles/concepts/pixel-index.css");
