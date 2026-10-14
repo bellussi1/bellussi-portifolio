@@ -10,7 +10,7 @@
 
 ## Todo
 - [x] Task 1: Concept URL state and switcher
-- [ ] Task 2: Replace custom wheel inertia with Lenis
+- [x] Task 2: Replace custom wheel inertia with Lenis
 - [ ] Task 3: Deep Field hero and atmosphere
 - [ ] Task 4: Pixel Index texture and pointer treatment
 - [ ] Task 5: Responsive shared sections and accessibility integration
@@ -33,5 +33,7 @@
 ## Task 1
 - Ruling: add `test/concept.test.js` for URL parsing and switcher history/ARIA behavior — the approved plan named review cases but no failing test file, while the selected Native executor requires TDD for production behavior — cost if wrong: one focused test file to maintain.
 
-- Result: Task 1 complete; 
-pm test passed 14/14 tests; git diff --check clean.
+- Result: Task 1 complete in commit 1ee7306; `npm test` passed 14/14 tests; `git diff --check` clean.
+
+## Task 2
+- Result: Task 2 implementation complete; targeted Lenis lifecycle tests passed 5/5 and `npm test` passed 16/16. Browser interaction review is scheduled with Task 6.

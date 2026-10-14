@@ -1,4 +1,5 @@
 import "../styles/modern-normalize.css";
+import "lenis/dist/lenis.css";
 import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";

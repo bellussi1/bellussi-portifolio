@@ -2,140 +2,118 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { initSmoothScroll } from "../src/utils/smooth-scroll.js";
 
-function harness({ reduced = false, fine = true, rounded = false } = {}) {
-  const listeners = new Map(),
-    media = new Map(),
-    frames = new Map();
-  const root = { scrollHeight: 4000 };
-  const page = {
-    documentElement: root,
-    body: {},
-    hidden: false,
-    addEventListener: (key, fn) => listeners.set(key, fn),
+function createHarness({ reduced = false, hidden = false } = {}) {
+  const listeners = new Map();
+  const preference = {
+    matches: reduced,
+    addEventListener: (_, listener) => (preference.change = listener),
+    removeEventListener: (_, listener) => {
+      if (preference.change === listener) delete preference.change;
+    },
   };
-  let serial = 0,
-    time = 0;
   const view = {
-    scrollY: 0,
-    scrollX: 0,
-    innerHeight: 800,
-    matchMedia(query) {
-      const value = {
-        matches: query.includes("reduce") ? reduced : fine,
-        addEventListener: (_, fn) => {
-          value.change = fn;
-        },
-      };
-      media.set(query, value);
-      return value;
-    },
-    addEventListener: (key, fn) => listeners.set(key, fn),
-    requestAnimationFrame(fn) {
-      frames.set(++serial, fn);
-      return serial;
-    },
-    cancelAnimationFrame(id) {
-      frames.delete(id);
-    },
-    scrollTo(options) {
-      assert.equal(options.behavior, "instant");
-      view.scrollY = rounded ? Math.round(options.top) : options.top;
-    },
-    getComputedStyle(node) {
-      return { overflowY: node.overflowY ?? "visible" };
+    matchMedia: () => preference,
+    addEventListener: (name, listener) => listeners.set(name, listener),
+    removeEventListener: (name, listener) => {
+      if (listeners.get(name) === listener) listeners.delete(name);
     },
   };
-  const target = { closest: () => null, parentElement: null };
-  const wheel = (overrides = {}) => {
-    const event = {
-      deltaY: 120,
-      deltaX: 0,
-      deltaMode: 0,
-      cancelable: true,
-      target,
-      preventDefault() {
-        this.defaultPrevented = true;
-      },
-      ...overrides,
-    };
-    listeners.get("wheel")(event);
-    return event;
+  const page = {
+    hidden,
+    addEventListener: (name, listener) => listeners.set(name, listener),
+    removeEventListener: (name, listener) => {
+      if (listeners.get(name) === listener) listeners.delete(name);
+    },
   };
-  function tick() {
-    const pending = [...frames.values()];
-    frames.clear();
-    time += 16;
-    pending.forEach((fn) => fn(time));
+  const instances = [];
+  class FakeLenis {
+    constructor(options) {
+      this.options = options;
+      this.started = 1;
+      this.stopped = 0;
+      this.destroyed = 0;
+      instances.push(this);
+    }
+    start() {
+      this.started++;
+    }
+    stop() {
+      this.stopped++;
+    }
+    destroy() {
+      this.destroyed++;
+    }
   }
-  function settle() {
-    for (let i = 0; frames.size && i < 200; i++) tick();
-    assert.equal(frames.size, 0);
-  }
-  initSmoothScroll(view, page);
-  return { view, page, media, frames, listeners, wheel, tick, settle };
+  const cleanup = initSmoothScroll({ view, page, LenisClass: FakeLenis });
+  return { cleanup, instances, listeners, page, preference };
 }
 
-test("wheel movement eases, accumulates, reverses immediately and settles within page bounds", () => {
-  const h = harness();
-  assert.equal(h.wheel().defaultPrevented, true);
-  h.tick();
-  assert.ok(h.view.scrollY > 0 && h.view.scrollY < 120);
-  h.wheel();
-  h.settle();
-  assert.equal(h.view.scrollY, 240);
-  h.wheel({ deltaY: 500 });
-  h.tick();
-  const before = h.view.scrollY;
-  h.wheel({ deltaY: -80 });
-  h.tick();
-  assert.ok(h.view.scrollY < before);
-  h.settle();
-  h.view.scrollY = 3190;
-  h.wheel();
-  h.settle();
-  assert.equal(h.view.scrollY, 3200);
+test("creates Lenis with document scrolling and anchor-friendly options", () => {
+  const { cleanup, instances } = createHarness();
+  assert.equal(instances.length, 1);
+  assert.deepEqual(instances[0].options, {
+    autoRaf: true,
+    anchors: true,
+    stopInertiaOnNavigate: true,
+    syncTouch: false,
+    respectReducedMotion: true,
+  });
+  assert.equal(instances[0].started, 1);
+  cleanup();
+  assert.equal(instances[0].destroyed, 1);
 });
 
-test("integer scroll positions do not leave an endless animation at the destination", () => {
-  const h = harness({ rounded: true });
-  h.wheel();
-  h.settle();
-  assert.equal(h.view.scrollY, 120);
+test("stops and resumes Lenis with document visibility", () => {
+  const { instances, listeners, page, cleanup } = createHarness();
+  const instance = instances[0];
+
+  page.hidden = true;
+  listeners.get("visibilitychange")();
+  assert.equal(instance.stopped, 1);
+
+  page.hidden = false;
+  listeners.get("visibilitychange")();
+  assert.equal(instance.started, 2);
+  assert.equal(instances.length, 1);
+  cleanup();
 });
 
-test("native interactions, nested scrolling, zoom and reduced motion retain control", () => {
-  for (const options of [{ reduced: true }, { fine: false }]) {
-    const h = harness(options);
-    assert.ok(!h.wheel().defaultPrevented);
-    assert.equal(h.frames.size, 0);
-  }
-  const h = harness();
-  for (const overrides of [
-    { ctrlKey: true },
-    { shiftKey: true },
-    { deltaX: 200 },
-    { cancelable: false },
-    { target: { closest: () => ({ tagName: "TEXTAREA" }) } },
-    {
-      target: {
-        closest: () => null,
-        overflowY: "auto",
-        scrollHeight: 800,
-        clientHeight: 200,
-        scrollTop: 20,
-        parentElement: null,
-      },
-    },
-  ])
-    assert.ok(!h.wheel(overrides).defaultPrevented);
-  for (const key of ["keydown", "pointerdown", "touchstart", "click"]) {
-    h.wheel();
-    h.listeners.get(key)({ key: "PageDown" });
-    assert.equal(h.frames.size, 0);
-  }
-  h.wheel();
-  const reduced = h.media.get("(prefers-reduced-motion: reduce)");
-  reduced.matches = true;
-  reduced.change();
-  assert.equal(h.frames.size, 0);
+test("destroys and recreates Lenis when reduced-motion preference changes", () => {
+  const { cleanup, instances, preference } = createHarness();
+  const first = instances[0];
+
+  preference.matches = true;
+  preference.change();
+  assert.equal(first.destroyed, 1);
+  assert.equal(instances.length, 1);
+
+  preference.matches = false;
+  preference.change();
+  assert.equal(instances.length, 2);
+  assert.equal(instances[1].started, 1);
+  cleanup();
+  assert.equal(instances[1].destroyed, 1);
+});
+
+test("does not create Lenis while reduced motion is active or the page is hidden", () => {
+  const reduced = createHarness({ reduced: true });
+  assert.equal(reduced.instances.length, 0);
+  reduced.preference.matches = false;
+  reduced.preference.change();
+  assert.equal(reduced.instances.length, 1);
+  reduced.cleanup();
+
+  const hidden = createHarness({ hidden: true });
+  assert.equal(hidden.instances.length, 0);
+  hidden.page.hidden = false;
+  hidden.listeners.get("visibilitychange")();
+  assert.equal(hidden.instances.length, 1);
+  hidden.cleanup();
+});
+
+test("cleanup removes preference and visibility listeners", () => {
+  const { cleanup, listeners, preference } = createHarness();
+  cleanup();
+  assert.equal(preference.change, undefined);
+  assert.equal(listeners.size, 0);
 });
