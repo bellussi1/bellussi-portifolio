@@ -50,10 +50,42 @@ function createHarness({ concept = "index", reduced = false, fine = true } = {})
     page,
     properties,
     preference: matchMedia("(prefers-reduced-motion: reduce)"),
+    finePreference: matchMedia("(hover: hover) and (pointer: fine)"),
     root,
     view,
   };
 }
+
+test("detaches pointer listeners and clears cursor state when capability becomes coarse", () => {
+  const h = createHarness();
+  const pointerListeners = [
+    "pointermove",
+    "pointerleave",
+    "pointerdown",
+    "pointerup",
+    "pointercancel",
+    "blur",
+  ];
+  const countPointerListeners = () =>
+    pointerListeners.filter((name) => h.listeners.has(`view:${name}`)).length;
+
+  h.listeners.get("view:pointermove")({ clientX: 412, clientY: 285 });
+  h.listeners.get("view:pointerdown")();
+  assert.equal(h.cursor.dataset.active, "true");
+  assert.equal(h.cursor.dataset.pressed, "true");
+
+  h.finePreference.matches = false;
+  h.finePreference.change();
+  assert.equal(countPointerListeners(), 0);
+  assert.equal(h.properties.size, 0);
+  assert.equal(h.cursor.dataset.active, "false");
+  assert.equal(h.cursor.dataset.pressed, "false");
+
+  h.finePreference.matches = true;
+  h.finePreference.change();
+  assert.equal(countPointerListeners(), pointerListeners.length);
+  h.cleanup();
+});
 
 test("only enables the Pixel Index effects for the selected concept", () => {
   const inactive = createHarness({ concept: "field" });

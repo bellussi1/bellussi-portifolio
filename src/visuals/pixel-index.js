@@ -75,6 +75,10 @@ export function initPixelIndex({
       return;
     }
     delete root.dataset.indexPaused;
+    if (!finePointer.matches) {
+      detachPointer();
+      return;
+    }
     attachPointer();
   }
 

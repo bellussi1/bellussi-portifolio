@@ -12,8 +12,9 @@
   line-height: 1;
 }
 .concept-control button {
-  min-height: 28px;
-  padding: 0 9px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 6px;
   border-radius: 999px;
   color: var(--muted);
   transition:
@@ -34,7 +35,6 @@
 
 @media (max-width: 760px) {
   .concept-control button {
-    min-height: 36px;
-    padding-inline: 10px;
+    min-height: 44px;
   }
 }
