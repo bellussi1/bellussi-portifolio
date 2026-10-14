@@ -7,13 +7,26 @@ const siteRoot = new URL("../", import.meta.url);
 const html = await readFile(new URL("index.html", siteRoot), "utf8");
 const productsSection = html.match(/<section\b(?=[^>]*\bid="products")[\s\S]*?<\/section>/)?.[0];
 
-test("presents product case studies with local concept visuals and English copy", async () => {
+test("presents Comandinha as a text-led case and keeps the private product context", async () => {
   assert.ok(productsSection, "missing products section");
   assert.match(html, /href="#products"/);
   assert.match(productsSection, /Comandinha/);
   assert.match(productsSection, /Black Market/);
-  assert.match(productsSection, /conceito/i);
-  assert.match(productsSection.replace(/\s+/g, " "), /migração ainda não está pronta para produção/i);
+  const comandinhaCase = productsSection.match(
+    /<article class="product-case product-case-comandinha[^>]*>[\s\S]*?<\/article>/,
+  )?.[0];
+  const blackMarketCase = productsSection.match(
+    /<article class="product-case product-case-black-market[^>]*>[\s\S]*?<\/article>/,
+  )?.[0];
+  assert.ok(comandinhaCase, "missing Comandinha case study");
+  assert.ok(blackMarketCase, "missing Black Market case study");
+  assert.match(comandinhaCase, /class="product-flow-panel"/);
+  assert.match(comandinhaCase, /product-flow-step/);
+  assert.doesNotMatch(comandinhaCase, /<img\b|concept\.svg/i);
+  assert.match(
+    productsSection.replace(/\s+/g, " "),
+    /migração ainda não está pronta para produção/i,
+  );
   assert.match(english.comandinhaDetails, /not production-ready/i);
   assert.doesNotMatch(
     productsSection,
@@ -22,7 +35,8 @@ test("presents product case studies with local concept visuals and English copy"
   );
 
   const imageTags = [...productsSection.matchAll(/<img\b([^>]*)>/g)].map(([, attributes]) => attributes);
-  assert.ok(imageTags.length >= 3, "each product should use an actual interface image");
+  assert.equal(imageTags.length, 1, "only the private-product concept visual remains");
+  assert.match(blackMarketCase, /black-market-concept\.svg/);
   for (const attributes of imageTags) {
     assert.match(attributes, /\balt=["'][^"']+[^"']["']/i);
     assert.match(attributes, /\bwidth=["']\d+["']/i);

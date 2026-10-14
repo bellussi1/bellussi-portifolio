@@ -13,8 +13,17 @@ export const english = {
   comandinhaDetails:
     "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
   comandinhaLink: "Explore the public repository",
-  comandinhaAdminCaption: "Catalog workspace · concept",
-  comandinhaMenuCaption: "QR menu · concept",
+  comandinhaFlowLabel: "ORDER FLOW",
+  comandinhaFlowTitle: "From table to team.",
+  comandinhaFlowMenuTitle: "QR menu",
+  comandinhaFlowMenuDescription:
+    "Customers open the catalog for their table and build an order.",
+  comandinhaFlowOrderTitle: "API-validated order",
+  comandinhaFlowOrderDescription:
+    "Availability and prices are checked before the order is saved.",
+  comandinhaFlowPanelTitle: "Operations queue",
+  comandinhaFlowPanelDescription:
+    "The team reviews incoming orders and updates their status.",
   blackMarketStatus: "In development",
   blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
   blackMarketDescription:

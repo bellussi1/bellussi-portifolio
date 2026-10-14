@@ -427,30 +427,33 @@
               ><span aria-hidden="true">↗</span></a
             >
           </div>
-          <div class="product-visuals product-visuals-comandinha">
-            <figure class="product-visual product-visual-admin">
-              <img
-                src="/comandinha-admin-concept.svg"
-                alt="Visual conceitual do catálogo administrativo do Comandinha, com categorias e produtos de exemplo."
-                width="1440"
-                height="900"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption><span>01</span><span data-i18n="comandinhaAdminCaption">Painel de catálogo · conceito</span></figcaption>
-            </figure>
-            <figure class="product-visual product-visual-menu">
-              <img
-                src="/comandinha-menu-concept.svg"
-                alt="Visual conceitual mobile do cardápio QR do Comandinha, com navegação por categorias e itens de exemplo."
-                width="540"
-                height="900"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption><span>02</span><span data-i18n="comandinhaMenuCaption">Cardápio QR · conceito</span></figcaption>
-            </figure>
-          </div>
+          <aside class="product-flow-panel" aria-labelledby="comandinha-flow-title">
+            <p class="product-flow-label" data-i18n="comandinhaFlowLabel">JORNADA DO PEDIDO</p>
+            <h4 id="comandinha-flow-title" data-i18n="comandinhaFlowTitle">Da mesa ao painel.</h4>
+            <ol class="product-flow-list">
+              <li class="product-flow-step">
+                <span class="product-flow-index" aria-hidden="true">01</span>
+                <div>
+                  <h5 data-i18n="comandinhaFlowMenuTitle">Cardápio por QR</h5>
+                  <p data-i18n="comandinhaFlowMenuDescription">A pessoa abre o catálogo da própria mesa e monta o pedido.</p>
+                </div>
+              </li>
+              <li class="product-flow-step">
+                <span class="product-flow-index" aria-hidden="true">02</span>
+                <div>
+                  <h5 data-i18n="comandinhaFlowOrderTitle">Pedido validado na API</h5>
+                  <p data-i18n="comandinhaFlowOrderDescription">Disponibilidade e preços são conferidos antes do registro.</p>
+                </div>
+              </li>
+              <li class="product-flow-step">
+                <span class="product-flow-index" aria-hidden="true">03</span>
+                <div>
+                  <h5 data-i18n="comandinhaFlowPanelTitle">Fila de operação</h5>
+                  <p data-i18n="comandinhaFlowPanelDescription">A equipe acompanha os pedidos e atualiza seus estados.</p>
+                </div>
+              </li>
+            </ol>
+          </aside>
         </article>
 
         <article class="product-case product-case-black-market reveal" aria-labelledby="black-market-title">

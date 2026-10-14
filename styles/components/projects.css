@@ -30,6 +30,7 @@
   grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
   border-bottom: 1px solid var(--line);
 }
+.product-case-comandinha { align-items: start; }
 .product-case-copy { min-width: 0; }
 .product-title-row {
   display: flex;
@@ -84,12 +85,59 @@
 }
 .product-case-copy .tech-tags { margin-top: 22px; }
 .product-repo-link { margin-top: 26px; width: fit-content; }
-.product-visuals {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(130px, .62fr);
-  align-items: center;
-  gap: 15px;
+.product-flow-panel {
   min-width: 0;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  background: var(--surface);
+}
+.product-flow-label {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font: 9px/1.4 ui-monospace, monospace;
+  letter-spacing: .13em;
+}
+.product-flow-panel h4 {
+  margin: 0 0 25px;
+  color: var(--text);
+  font-family: var(--display);
+  font-size: clamp(24px, 2.5vw, 31px);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1.2;
+}
+.product-flow-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.product-flow-step {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 13px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.product-flow-index {
+  padding-top: 2px;
+  color: var(--accent);
+  font: 10px/1.4 ui-monospace, monospace;
+}
+.product-flow-step h5 {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.product-flow-step p {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
 }
 .product-visual {
   min-width: 0;
@@ -125,7 +173,6 @@
 }
 @media (max-width: 1100px) {
   .product-case { gap: 34px; }
-  .product-visuals { grid-template-columns: minmax(0, 1.3fr) minmax(112px, .65fr); }
 }
 @media (max-width: 1100px) { .project-row { gap: 36px; } }
 @media (max-width: 760px) {
@@ -143,6 +190,4 @@
   .product-case-black-market .product-visual-market { grid-row: 2; }
   .product-case-black-market .product-case-copy { grid-row: 1; }
   .product-case-copy h4 { font-size: 25px; }
-  .product-visuals { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .product-visual-menu { width: min(76%, 300px); justify-self: center; }
 }
