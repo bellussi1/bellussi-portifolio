@@ -1,6 +1,29 @@
 // Professional facts are sourced from the supplied resumes.
 export const english = {
-  navProjects: "Projects",
+  navProducts: "Products",
+  navProjects: "Open source",
+  productsLabel: "PRODUCTS",
+  productsTitle: "Products in progress.<br />Real-world problems.",
+  productsIntro:
+    "Alongside open tools, I work on products with their own context and constraints. Here I explain the problem, current stage and engineering decisions.",
+  comandinhaStatus: "Migration in progress",
+  comandinhaHeadline: "One rhythm for the whole dining room.",
+  comandinhaDescription:
+    "A restaurant operations platform for digital catalogs, tables, orders and QR menus. I am rebuilding its foundation as a monorepo while keeping the legacy product available as the new flows mature.",
+  comandinhaDetails:
+    "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
+  comandinhaLink: "Explore the public repository",
+  comandinhaAdminCaption: "Catalog workspace · concept",
+  comandinhaMenuCaption: "QR menu · concept",
+  blackMarketStatus: "In development",
+  blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
+  blackMarketDescription:
+    "A companion SaaS for Brazil’s Black Desert Online community. It helps players organize inventory and understand what is missing to craft an item.",
+  blackMarketDetails:
+    "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
+  blackMarketCaption: "Inventory and recipes · concept",
+  blackMarketPrivateNote:
+    "The code and interface are private at this stage.",
   projectsLabel: "OPEN SOURCE PROJECTS",
   projectsTitle: "Small tools.<br />Concrete problems.",
   projectsIntro: "Beyond interfaces, I build tools for everyday development. Three personal projects with open code, tests and documentation for you to explore.",
