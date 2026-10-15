@@ -8,7 +8,7 @@ export function initPixelIndex({
 
   const page = root.ownerDocument ?? view.document;
   const cursor = root.querySelector("[data-pixel-cursor]");
-  const ornaments = [...root.querySelectorAll("[data-index-ornament]")];
+  const ornaments = [...root.querySelectorAll("[data-index-depth]")];
   const reducedMotion = view.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = view.matchMedia("(hover: hover) and (pointer: fine)");
   let pointerAttached = false;

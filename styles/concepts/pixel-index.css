@@ -62,7 +62,7 @@ html[data-concept="index"] .engineering-visual.index-hero-visual {
   border: 1px solid #38372f;
   background: #141512;
   box-shadow: 10px 10px 0 #c0b8a8;
-  --accent: #d5a45f;
+  --accent: #bd7050;
   --line: #45443c;
   --muted: #aaa99e;
   --raised: #252620;
@@ -164,11 +164,11 @@ html[data-concept="index"] .index-hero-visual .window-footer {
   color: var(--muted);
 }
 html[data-concept="index"] .index-hero-visual .ui-chart span {
-  background: #d5a45f29;
+  background: rgb(189 112 80 / .18);
   border-top-color: var(--accent);
 }
 html[data-concept="index"] .index-hero-visual .ui-chart span:last-child {
-  background: #d5a45f77;
+  background: rgb(189 112 80 / .44);
 }
 html[data-concept="index"] .index-hero-visual .ui-heading i,
 html[data-concept="index"] .index-hero-visual .ui-sidebar i:nth-child(2),

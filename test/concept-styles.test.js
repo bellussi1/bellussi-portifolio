@@ -18,7 +18,7 @@ test("INDEX uses a metadata hero, table and product catalog without lime", () =>
   const css = read("../styles/concepts/pixel-index.css");
 
   assert.match(html, /class="[^"]*index-hero-meta/);
-  assert.match(html, /class="[^"]*index-hero-mark/);
+  assert.match(html, /class="[^"]*engineering-visual[^\"]*index-hero-visual/);
   assert.match(css, /\.index-experience-table/);
   assert.match(css, /\.index-product-grid/);
   assert.doesNotMatch(css, /\b(?:radial|linear|conic)-gradient\s*\(/i);

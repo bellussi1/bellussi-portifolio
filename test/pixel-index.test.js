@@ -36,6 +36,7 @@ function createHarness({ concept = "index", reduced = false, fine = true } = {})
     },
     querySelector: (selector) =>
       selector === "[data-pixel-cursor]" ? cursor : null,
+    querySelectorAll: () => [],
   };
   const view = {
     matchMedia,

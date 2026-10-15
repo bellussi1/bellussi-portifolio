@@ -22,7 +22,7 @@ function getMeta(attribute, value) {
 }
 
 test("publishes complete canonical and social metadata", () => {
-  assert.match(html, /<html lang="pt-BR">/);
+  assert.match(html, /<html\b[^>]*\blang="pt-BR"/);
   assert.match(html, /<title>Enzo Bellussi \| Software Engineer[^<]*<\/title>/);
   assert.equal(getMeta("name", "author"), "Enzo Bellussi");
   assert.match(getMeta("name", "description") ?? "", /Enzo Bellussi/);

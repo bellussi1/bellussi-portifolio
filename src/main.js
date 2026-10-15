@@ -4,6 +4,7 @@ import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import "../styles/concepts/pixel-index.css";
+import "../styles/concepts/index-atmosphere.css";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
 import { initPixelIndex } from "./visuals/pixel-index.js";
@@ -15,6 +16,36 @@ const root = document.documentElement;
 let language = "pt";
 let motionInitialized = false;
 let cleanupParallax = () => {};
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const themeColor = document.querySelector("[data-theme-color]");
+
+function updateThemeControl() {
+  const dark = root.dataset.theme === "dark";
+  const label = language === "en" ? "Dark theme" : "Tema escuro";
+  const action =
+    language === "en"
+      ? dark
+        ? "Switch to light theme"
+        : "Switch to dark theme"
+      : dark
+        ? "Ativar tema claro"
+        : "Ativar tema escuro";
+  themeToggle.setAttribute("aria-pressed", String(dark));
+  themeToggle.setAttribute("aria-label", label);
+  themeToggle.setAttribute("title", action);
+  if (themeColor) themeColor.content = dark ? "#1d1c19" : "#e9e5da";
+}
+
+themeToggle.addEventListener("click", () => {
+  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+  try {
+    localStorage.setItem("portfolio-theme", root.dataset.theme);
+  } catch {
+    /* Theme switching still works when storage is unavailable. */
+  }
+  updateThemeControl();
+});
+updateThemeControl();
 
 function syncPortfolioContent() {
   const sections = renderPortfolioSections({
@@ -113,6 +144,7 @@ function setLanguage(nextLanguage) {
       ),
     );
   updateMenuLabel();
+  updateThemeControl();
   languageTransition?.cancel();
   if (
     previousLanguage !== language &&
