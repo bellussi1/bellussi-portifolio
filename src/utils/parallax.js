@@ -110,6 +110,12 @@ export function initParallax(view = window, page = document) {
   function onResize() {
     update(true);
   }
+  const main = page.querySelector?.("main");
+  const layoutObserver =
+    main && view.ResizeObserver
+      ? new view.ResizeObserver(onResize)
+      : null;
+  layoutObserver?.observe(main);
   view.addEventListener("scroll", update, { passive: true });
   view.addEventListener("resize", onResize);
   page.addEventListener("visibilitychange", onResize);
@@ -124,6 +130,7 @@ export function initParallax(view = window, page = document) {
     page.removeEventListener("visibilitychange", onResize);
     reduced.removeEventListener("change", onResize);
     mobile.removeEventListener("change", onResize);
+    layoutObserver?.disconnect();
     reset();
   };
 }

@@ -6,6 +6,7 @@ function harness({ mobile = false, reduced = false } = {}) {
   const listeners = new Map();
   const media = new Map();
   const frames = new Map();
+  const observers = [];
   let serial = 0;
   const style = {
     value: "",
@@ -28,8 +29,10 @@ function harness({ mobile = false, reduced = false } = {}) {
       return { top: -1000, height: 500 };
     },
   };
+  const main = {};
   const document = {
     hidden: false,
+    querySelector: (selector) => (selector === "main" ? main : null),
     querySelectorAll: (selector) =>
       selector === ".project-demo" ? [element] : [],
     addEventListener: (name, fn) => listeners.set(name, fn),
@@ -59,6 +62,20 @@ function harness({ mobile = false, reduced = false } = {}) {
     cancelAnimationFrame(id) {
       frames.delete(id);
     },
+    ResizeObserver: class {
+      constructor(callback) {
+        this.callback = callback;
+        this.targets = [];
+        this.disconnected = false;
+        observers.push(this);
+      }
+      observe(target) {
+        this.targets.push(target);
+      }
+      disconnect() {
+        this.disconnected = true;
+      }
+    },
   };
   let now = 0;
   function settle() {
@@ -77,6 +94,8 @@ function harness({ mobile = false, reduced = false } = {}) {
     listeners,
     media,
     frames,
+    observers,
+    main,
     settle,
     get geometryReads() {
       return geometryReads;
@@ -106,6 +125,20 @@ test("reuses anchor geometry during scrolling and measures again on resize", () 
   assert.equal(h.geometryReads, readsAfterInitialization);
   h.listeners.get("resize")();
   assert.equal(h.geometryReads, readsAfterInitialization + 1);
+});
+
+test("remeasures cached geometry when the main content changes size", () => {
+  const h = harness();
+  const cleanup = initParallax(h.window, h.document);
+  const readsAfterInitialization = h.geometryReads;
+  const [observer] = h.observers;
+  assert.deepEqual(observer.targets, [h.main]);
+
+  observer.callback([{ target: h.main }]);
+
+  assert.equal(h.geometryReads, readsAfterInitialization + 1);
+  cleanup();
+  assert.equal(observer.disconnected, true);
 });
 
 test("reduced motion disables offsets and cancels scheduled frames when changed", () => {
