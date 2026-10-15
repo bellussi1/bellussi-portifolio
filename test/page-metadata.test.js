@@ -32,7 +32,15 @@ test("keeps document and share metadata aligned with the selected language", () 
   assert.equal(document.title, "Enzo Bellussi | Front-end Software Engineer");
   assert.equal(
     document.metadata.get('meta[name="description"]').content,
-    "Enzo Bellussi is a Software Engineer focused on front-end, with experience at MarketData and Banco do Brasil.",
+    "Enzo Bellussi is a Front-end Software Engineer building thoughtful interfaces and systems designed to evolve with Angular, React, and TypeScript. Experience at MarketData and Banco do Brasil.",
+  );
+  assert.equal(
+    document.metadata.get('meta[property="og:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
+  );
+  assert.equal(
+    document.metadata.get('meta[name="twitter:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
   );
   assert.equal(
     document.metadata.get('meta[property="og:locale"]').content,
@@ -49,5 +57,13 @@ test("keeps document and share metadata aligned with the selected language", () 
   assert.equal(
     document.metadata.get('meta[property="og:locale"]').content,
     "pt_BR",
+  );
+  assert.equal(
+    document.metadata.get('meta[property="og:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
+  );
+  assert.equal(
+    document.metadata.get('meta[name="twitter:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
   );
 });

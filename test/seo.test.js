@@ -25,7 +25,10 @@ test("publishes complete canonical and social metadata", () => {
   assert.match(html, /<html\b[^>]*\blang="pt-BR"/);
   assert.match(html, /<title>Enzo Bellussi \| Software Engineer[^<]*<\/title>/);
   assert.equal(getMeta("name", "author"), "Enzo Bellussi");
-  assert.match(getMeta("name", "description") ?? "", /Enzo Bellussi/);
+  const description = getMeta("name", "description") ?? "";
+  assert.match(description, /^Software Engineer focado em front-end\./);
+  assert.equal(getMeta("property", "og:description"), description);
+  assert.equal(getMeta("name", "twitter:description"), description);
   assert.match(getMeta("name", "robots") ?? "", /index,\s*follow/);
   assert.match(html, /<link rel="canonical" href="https:\/\/bellussi\.vercel\.app\/"\s*\/>/);
 
