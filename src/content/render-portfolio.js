@@ -502,6 +502,7 @@ function renderIndexTools(language) {
   const copy = language === "en" ? "en" : "pt";
   return (
     '<div class="index-tool-list">' +
+    '<span class="index-grid-cross index-grid-cross--half" aria-hidden="true"></span>' +
     portfolioContent.openSourceProjects
       .map((project, index) => {
         const localized = project[copy];
@@ -540,17 +541,12 @@ function renderIndexTools(language) {
           "</span><p>" +
           escapeHtml(localized.demo) +
           "</p></div></div>";
-        const intersectionMarker =
-          index === 0
-            ? '<span class="index-grid-cross index-grid-cross--half" aria-hidden="true"></span>'
-            : "";
         return (
           '<article class="index-tool-row reveal" data-reveal="' +
           (index === 2 ? "scale" : index === 0 ? "left" : "right") +
           '" style="--reveal-delay:' +
           index * 95 +
           'ms">' +
-          intersectionMarker +
           '<span class="index-card-number">0' +
           (index + 1) +
           '</span><div class="index-tool-title"><p class="project-category">' +
