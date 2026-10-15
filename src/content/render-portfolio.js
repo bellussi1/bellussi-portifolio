@@ -206,7 +206,7 @@ function renderComandinhaDashboard(language, ariaLabel) {
           "</i></span></div>",
       )
       .join("") +
-    "</section></div></div>"
+    "</section></div></div></div>"
   );
 }
 

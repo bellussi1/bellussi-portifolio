@@ -1,6 +1,5 @@
 /* The page reads like a printed technical index: paper, registration lines and ink. */
 html[data-concept="index"] {
-  overflow-x: clip;
   --grid-gutter: 96px;
   --grid-line: rgb(77 64 51 / .055);
   --grid-cross: rgb(126 65 47 / .34);
@@ -15,7 +14,6 @@ html[data-concept="index"] body::before {
 
 html[data-concept="index"] body {
   isolation: isolate;
-  overflow-x: clip;
 }
 
 html[data-concept="index"] .index-layout-grid {
@@ -171,12 +169,14 @@ html[data-concept="index"] .index-tool-row > .index-card-number {
 
 html[data-concept="index"] .index-tool-title {
   grid-column: 1;
+  min-width: 0;
   padding-left: 52px;
   padding-right: 20px;
 }
 
 html[data-concept="index"] .index-tool-description {
   grid-column: 2 / span 3;
+  min-width: 0;
 }
 
 html[data-concept="index"] .approach-grid {
@@ -245,6 +245,13 @@ html[data-concept="index"] .engineering-visual.index-hero-visual {
   animation: index-enter-right 1.05s .12s var(--ease) both;
 }
 
+@media (max-width: 1340px) {
+  html[data-concept="index"] .hero-content,
+  html[data-concept="index"] .engineering-visual.index-hero-visual {
+    animation-name: index-enter-down;
+  }
+}
+
 html[data-concept="index"] .index-parallax-layer {
   transition: translate 650ms cubic-bezier(.2, .7, .2, 1);
   translate: var(--index-shift-x, 0px) calc(var(--parallax-y, 0px) + var(--index-shift-y, 0px));
@@ -257,6 +264,11 @@ html[data-concept="index"] .index-parallax-layer {
 
 @keyframes index-enter-right {
   from { opacity: 0; translate: 28px 0; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes index-enter-down {
+  from { opacity: 0; translate: 0 22px; }
   to { opacity: 1; translate: 0 0; }
 }
 
@@ -276,7 +288,7 @@ html[data-concept="index"] .approach-section > .container {
 html[data-concept="index"] #experience::before,
 html[data-concept="index"] #products::before,
 html[data-concept="index"] #projects::before,
-html[data-concept="index"] .approach-section::before,
+html[data-concept="index"] .approach-section > .container::before,
 html[data-concept="index"] #about::before {
   position: absolute;
   z-index: 0;
@@ -287,8 +299,8 @@ html[data-concept="index"] #about::before {
 
 html[data-concept="index"] #experience::before {
   top: 16%;
-  right: -156px;
-  width: 320px;
+  left: 75%;
+  width: clamp(96px, 24vw, 320px);
   aspect-ratio: 1;
   border: 1px solid var(--geometry-line);
   border-radius: 50%;
@@ -301,36 +313,36 @@ html[data-concept="index"] #experience::before {
 
 html[data-concept="index"] #products::before {
   top: 17%;
-  right: -46px;
-  width: 164px;
-  height: 164px;
+  left: 75%;
+  width: clamp(110px, 14vw, 164px);
+  aspect-ratio: 1;
   border: 1px solid var(--geometry-line);
   transform: rotate(45deg);
 }
 
 html[data-concept="index"] #projects::before {
   top: 22%;
-  right: -52px;
-  width: 220px;
-  height: 220px;
+  left: 75%;
+  width: clamp(100px, 18vw, 220px);
+  aspect-ratio: 1;
   border: 1px solid var(--geometry-line);
   border-radius: 50%;
   box-shadow: 0 0 0 18px transparent, 0 0 0 19px var(--geometry-line);
 }
 
-html[data-concept="index"] .approach-section::before {
+html[data-concept="index"] .approach-section > .container::before {
   top: 12%;
-  right: 4%;
-  width: 188px;
-  height: 188px;
+  left: 75%;
+  width: clamp(120px, 14vw, 188px);
+  aspect-ratio: 1;
   border: 1px solid var(--geometry-line);
   transform: rotate(45deg);
 }
 
 html[data-concept="index"] #about::before {
   top: 16%;
-  left: -184px;
-  width: 310px;
+  left: 25%;
+  width: clamp(110px, 22vw, 310px);
   aspect-ratio: 1;
   border: 1px solid var(--geometry-line);
   border-radius: 50%;
@@ -340,10 +352,10 @@ html[data-concept="index"] #about::before {
 html[data-concept="index"] #experience::before,
 html[data-concept="index"] #products::before,
 html[data-concept="index"] #projects::before,
-html[data-concept="index"] .approach-section::before,
+html[data-concept="index"] .approach-section > .container::before,
 html[data-concept="index"] #about::before {
   transition: translate .75s var(--ease);
-  translate: 0 var(--parallax-y, 0px);
+  translate: -50% var(--parallax-y, 0px);
 }
 
 /* Directional reveal motion; the observer only adds the visible state. */
@@ -360,11 +372,11 @@ html[data-motion="enabled"][data-concept="index"] .reveal {
 }
 
 html[data-motion="enabled"][data-concept="index"] .reveal[data-reveal="left"] {
-  translate: -38px 0;
+  translate: 0 28px;
 }
 
 html[data-motion="enabled"][data-concept="index"] .reveal[data-reveal="right"] {
-  translate: 38px 0;
+  translate: 0 28px;
 }
 
 html[data-motion="enabled"][data-concept="index"] .reveal[data-reveal="down"] {
@@ -465,7 +477,7 @@ html[data-concept="index"] .index-terminal-head i {
 }
 
 html[data-concept="index"] .index-terminal pre {
-  overflow-x: auto;
+  overflow: visible;
   margin: 0;
   padding: 16px 14px 17px;
   color: #eeeae1;
@@ -878,17 +890,51 @@ html[data-concept="index"][data-index-paused="true"] .index-ornament {
     white-space: pre-wrap;
   }
 
+  html[data-concept="index"] .index-terminal-head {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  html[data-concept="index"] .index-terminal-head > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   html[data-concept="index"] #experience::before,
   html[data-concept="index"] #projects::before,
-  html[data-concept="index"] .approach-section::before,
+  html[data-concept="index"] .approach-section > .container::before,
   html[data-concept="index"] #about::before {
     opacity: .45;
     transform: scale(.72);
   }
 
+  html[data-concept="index"] #experience::before {
+    left: 50%;
+    width: clamp(96px, 30vw, 150px);
+    box-shadow: 0 0 0 7px transparent, 0 0 0 8px var(--geometry-line);
+  }
+
   html[data-concept="index"] #products::before {
+    left: 50%;
+    width: 110px;
     opacity: .4;
     transform: rotate(45deg) scale(.72);
+  }
+
+  html[data-concept="index"] #projects::before {
+    left: 50%;
+    width: clamp(100px, 32vw, 150px);
+    box-shadow: 0 0 0 8px transparent, 0 0 0 9px var(--geometry-line);
+  }
+
+  html[data-concept="index"] .approach-section > .container::before {
+    left: 75%;
+  }
+
+  html[data-concept="index"] #about::before {
+    left: 50%;
+    width: clamp(96px, 30vw, 150px);
+    box-shadow: 0 0 0 7px transparent, 0 0 0 8px var(--geometry-line);
   }
 
   html[data-concept="index"] .index-product-card:hover {
@@ -906,9 +952,19 @@ html[data-concept="index"][data-index-paused="true"] .index-ornament {
   }
 
   html[data-concept="index"] .index-terminal-flow {
-    grid-template-columns: 90px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
     gap: 8px;
     padding-inline: 10px;
+  }
+
+  html[data-concept="index"] .index-terminal-flow > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  html[data-concept="index"] .index-tool-title .project-category {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -925,7 +981,7 @@ html[data-concept="index"][data-index-paused="true"] .index-ornament {
   html[data-concept="index"] .index-hero-grain,
   html[data-concept="index"] .index-parallax-layer,
   html[data-concept="index"] .index-grid-section::before,
-  html[data-concept="index"] .approach-section::before {
+  html[data-concept="index"] .approach-section > .container::before {
     animation: none !important;
     transition: none !important;
     translate: none !important;
@@ -1563,9 +1619,13 @@ html[data-motion="enabled"][data-concept="index"] .index-product-card .portfolio
 
 html[data-motion="enabled"][data-concept="index"] .index-product-card .index-product-copy {
   opacity: 0;
-  translate: 18px 0;
+  translate: clamp(4px, 1.25vw, 18px) 0;
   transition: opacity .66s var(--ease), translate .7s var(--ease);
   transition-delay: calc(var(--reveal-delay, 0ms) + 190ms);
+}
+
+html[data-motion="enabled"][data-concept="index"] .index-product-card:nth-child(even) .index-product-copy {
+  translate: clamp(-18px, -1.25vw, -4px) 0;
 }
 
 html[data-motion="enabled"][data-concept="index"] .index-product-card.is-visible .portfolio-product-visual,
@@ -1582,12 +1642,12 @@ html[data-motion="enabled"][data-concept="index"] .index-tool-description {
 }
 
 html[data-motion="enabled"][data-concept="index"] .index-tool-title {
-  translate: -18px 0;
+  translate: clamp(4px, 1.25vw, 18px) 0;
   transition-delay: calc(var(--reveal-delay, 0ms) + 65ms);
 }
 
 html[data-motion="enabled"][data-concept="index"] .index-tool-description {
-  translate: 18px 0;
+  translate: clamp(-18px, -1.25vw, -4px) 0;
   transition-delay: calc(var(--reveal-delay, 0ms) + 150ms);
 }
 
@@ -1629,7 +1689,7 @@ html[data-motion="enabled"][data-concept="index"] .index-tool-row.is-visible > .
 html[data-concept="index"] #experience::before,
 html[data-concept="index"] #products::before,
 html[data-concept="index"] #projects::before,
-html[data-concept="index"] .approach-section::before,
+html[data-concept="index"] .approach-section > .container::before,
 html[data-concept="index"] #about::before {
   animation: index-section-mark-drift 44s ease-in-out infinite alternate;
   transform-origin: center;
@@ -1639,7 +1699,7 @@ html[data-concept="index"] #about::before {
 html[data-concept="index"] #experience::before { animation-duration: 39s; }
 html[data-concept="index"] #products::before { animation-duration: 52s; animation-delay: -17s; }
 html[data-concept="index"] #projects::before { animation-duration: 47s; animation-delay: -11s; }
-html[data-concept="index"] .approach-section::before { animation-duration: 56s; animation-delay: -24s; }
+html[data-concept="index"] .approach-section > .container::before { animation-duration: 56s; animation-delay: -24s; }
 html[data-concept="index"] #about::before { animation-duration: 61s; animation-delay: -29s; }
 
 @keyframes index-section-mark-drift {
@@ -1650,7 +1710,7 @@ html[data-concept="index"] #about::before { animation-duration: 61s; animation-d
 html[data-concept="index"][data-index-paused="true"] #experience::before,
 html[data-concept="index"][data-index-paused="true"] #products::before,
 html[data-concept="index"][data-index-paused="true"] #projects::before,
-html[data-concept="index"][data-index-paused="true"] .approach-section::before,
+html[data-concept="index"][data-index-paused="true"] .approach-section > .container::before,
 html[data-concept="index"][data-index-paused="true"] #about::before {
   animation-play-state: paused;
 }
@@ -1665,8 +1725,7 @@ html[data-concept="index"] .index-terminal pre {
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: visible;
   overflow-wrap: anywhere;
   white-space: pre-wrap;
   word-break: normal;
@@ -1678,6 +1737,28 @@ html[data-concept="index"] .index-terminal pre code {
 }
 
 @media (max-width: 760px) {
+  html[data-concept="index"] .index-product-card > .index-card-number { display: none; }
+}
+
+@media (max-width: 380px) {
+  html[data-concept="index"] .index-terminal-flow {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 8px;
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  html[data-motion="enabled"][data-concept="index"] .index-product-card .index-product-copy,
+  html[data-motion="enabled"][data-concept="index"] .index-tool-title,
+  html[data-motion="enabled"][data-concept="index"] .index-tool-description {
+    translate: 0 8px;
+  }
+}
+
+@container (max-width: 480px) {
+  html[data-concept="index"] .index-product-card > .index-card-number { display: none; }
+
   .comandinha-dashboard {
     grid-template-columns: 56px minmax(0, 1fr);
     min-height: 0;
@@ -1703,7 +1784,6 @@ html[data-concept="index"] .index-terminal pre code {
   .comandinha-dashboard__main { padding: 12px 10px; }
   .comandinha-dashboard__topbar { padding-inline: 9px; }
   .comandinha-dashboard__panels { grid-template-columns: minmax(0, 1fr); }
-  html[data-concept="index"] .index-product-card > .index-card-number { display: none; }
   .comandinha-dashboard__popular-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
   .comandinha-dashboard__popular-list > div > span { display: grid; }
   .comandinha-dashboard__popular-list strong { font-size: 6px; }
@@ -1713,10 +1793,9 @@ html[data-concept="index"] .index-terminal pre code {
     gap: 4px;
     padding-inline: 6px;
   }
-  html[data-concept="index"] .index-terminal pre { overflow-x: hidden; }
 }
 
-@media (max-width: 380px) {
+@container (max-width: 380px) {
   .comandinha-dashboard { grid-template-columns: 44px minmax(0, 1fr); }
   .comandinha-dashboard__main { padding-inline: 8px; }
   .comandinha-dashboard__heading { align-items: flex-start; flex-direction: column; gap: 4px; }
@@ -1739,7 +1818,7 @@ html[data-concept="index"] .index-terminal pre code {
   html[data-concept="index"] #experience::before,
   html[data-concept="index"] #products::before,
   html[data-concept="index"] #projects::before,
-  html[data-concept="index"] .approach-section::before,
+  html[data-concept="index"] .approach-section > .container::before,
   html[data-concept="index"] #about::before {
     animation: none !important;
     rotate: none !important;
