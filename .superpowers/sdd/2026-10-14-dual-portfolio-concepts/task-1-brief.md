@@ -15,4 +15,3 @@
 - [x] Add accessible `FIELD` and `INDEX` buttons using `[data-concept-option]`; expose the selected state with `aria-pressed`.
 - [x] Implement `readConcept` and `initConceptSwitcher` in `src/utils/concept.js`; selecting A removes the `concept` parameter, selecting B writes `concept=b`, and unrelated query parameters remain intact.
 - [x] Initialize the switcher in `src/main.js` and confirm selection, direct URLs, and Back/Forward through the Task 1 Review Focus checks.
-
