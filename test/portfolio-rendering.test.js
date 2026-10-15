@@ -51,7 +51,9 @@ test("keeps project facts, image paths, and public links consistent across conce
   for (const product of portfolioContent.products) {
     for (const section of [field.products, index.products]) {
       if (product.id === "comandinha") {
-        assert.match(section, /class="comandinha-dashboard" role="img"/);
+        assert.match(section, /<picture>/);
+        assert.ok(section.includes(product.image.pt.desktop.src));
+        assert.ok(section.includes(product.image.pt.mobile.src));
         assert.ok(section.includes(escapeHtml(product.pt.imageAlt)));
       } else {
         assert.ok(section.includes(product.image.src), "missing image " + product.id);

@@ -40,159 +40,28 @@ function anchor(link, label, className = "text-link") {
   );
 }
 
-function renderComandinhaDashboard(language, ariaLabel) {
-  const labels =
-    language === "en"
-      ? {
-          aria: "Comandinha operations dashboard preview with demonstration revenue, orders and service status.",
-          venue: "CASA BELLUSSI · CENTER",
-          day: "TUESDAY · OCTOBER 14",
-          page: "Today's operation",
-          demo: "DEMO DATA",
-          service: "SERVICE RUNNING",
-          revenue: "Sales today",
-          orders: "Orders",
-          average: "Average ticket",
-          comparison: "vs. last Tuesday",
-          chart: "Revenue through the day",
-          orderQueue: "Order queue",
-          active: "03 ACTIVE",
-          table: "Table",
-          items: "items",
-          preparing: "Preparing",
-          ready: "Ready",
-          received: "Received",
-          countUnit: "orders",
-          values: ["$4,820.40", "$56.05"],
-        }
-      : {
-          aria: "Prévia do dashboard do Comandinha com receita, pedidos e status do salão demonstrativos.",
-          venue: "CASA BELLUSSI · CENTRO",
-          day: "TERÇA-FEIRA · 14 DE OUTUBRO",
-          page: "Operação de hoje",
-          demo: "DADOS DEMONSTRATIVOS",
-          service: "SALÃO EM OPERAÇÃO",
-          revenue: "Vendas do dia",
-          orders: "Pedidos",
-          average: "Ticket médio",
-          comparison: "vs. terça passada",
-          chart: "Receita ao longo do dia",
-          orderQueue: "Fila de pedidos",
-          active: "03 EM ANDAMENTO",
-          table: "Mesa",
-          items: "itens",
-          preparing: "Preparando",
-          ready: "Pronto",
-          received: "Recebido",
-          countUnit: "pedidos",
-          values: ["R$ 4.820,40", "R$ 56,05"],
-        };
-  const orders =
-    language === "en"
-      ? [
-          ["14:26", "#1042", "08", "4", "$128.40", labels.preparing, "is-preparing"],
-          ["14:21", "#1041", "03", "2", "$74.90", labels.ready, "is-ready"],
-          ["14:18", "#1040", "11", "1", "$56.00", labels.received, "is-received"],
-        ]
-      : [
-          ["14:26", "#1042", "08", "4", "R$ 128,40", labels.preparing, "is-preparing"],
-          ["14:21", "#1041", "03", "2", "R$ 74,90", labels.ready, "is-ready"],
-          ["14:18", "#1040", "11", "1", "R$ 56,00", labels.received, "is-received"],
-        ];
-
-  return [
-    '<div class="comandinha-dashboard" role="img" aria-label="',
-    escapeHtml(ariaLabel || labels.aria),
-    '"><header class="comandinha-dashboard__topbar"><div class="comandinha-dashboard__brand"><span aria-hidden="true">c</span><strong>comandinha</strong></div><span class="comandinha-dashboard__venue">',
-    escapeHtml(labels.venue),
-    '</span><span class="comandinha-dashboard__service"><i aria-hidden="true"></i>',
-    escapeHtml(labels.service),
-    '</span><span class="comandinha-dashboard__demo">',
-    escapeHtml(labels.demo),
-    '</span></header><div class="comandinha-dashboard__main"><div class="comandinha-dashboard__heading"><div><p>',
-    escapeHtml(labels.day),
-    '</p><h4>',
-    escapeHtml(labels.page),
-    '</h4></div><span class="comandinha-dashboard__shift">14:00 — 22:00</span></div><section class="comandinha-dashboard__metrics"><article class="is-primary"><span>',
-    escapeHtml(labels.revenue),
-    '</span><strong>',
-    escapeHtml(labels.values[0]),
-    '</strong><small><i>+12,8%</i> ',
-    escapeHtml(labels.comparison),
-    '</small></article><article><span>',
-    escapeHtml(labels.orders),
-    '</span><strong>86</strong><small>+8,2% ',
-    escapeHtml(labels.comparison),
-    '</small></article><article><span>',
-    escapeHtml(labels.average),
-    '</span><strong>',
-    escapeHtml(labels.values[1]),
-    '</strong><small>+4,1% ',
-    escapeHtml(labels.comparison),
-    '</small></article></section><div class="comandinha-dashboard__main-grid"><section class="comandinha-dashboard__panel comandinha-dashboard__revenue"><header><div><span>',
-    escapeHtml(labels.chart),
-    '</span><strong>',
-    escapeHtml(labels.values[0]),
-    '</strong></div><small>08:00 — 18:00</small></header><div class="comandinha-dashboard__chart"><div class="comandinha-dashboard__axis" aria-hidden="true"><span>5k</span><span>3k</span><span>1k</span><span>0</span></div><svg viewBox="0 0 640 190" preserveAspectRatio="none" aria-hidden="true"><path class="comandinha-dashboard__gridline" d="M0 18H640 M0 66H640 M0 114H640 M0 162H640"/><path class="comandinha-dashboard__area" d="M0 160 C34 156 47 143 78 146 S122 130 156 136 S202 111 238 124 S282 96 318 108 S360 78 397 91 S443 62 480 74 S520 39 556 53 S606 28 640 34 V190H0Z"/><path class="comandinha-dashboard__line" d="M0 160 C34 156 47 143 78 146 S122 130 156 136 S202 111 238 124 S282 96 318 108 S360 78 397 91 S443 62 480 74 S520 39 556 53 S606 28 640 34"/><circle cx="480" cy="74" r="4"/><circle cx="640" cy="34" r="4"/></svg><div class="comandinha-dashboard__time" aria-hidden="true"><span>10h</span><span>12h</span><span>14h</span><span>16h</span><span>18h</span></div></div></section><section class="comandinha-dashboard__panel comandinha-dashboard__order-queue"><header><div><span>',
-    escapeHtml(labels.orderQueue),
-    '</span><small>86 ',
-    escapeHtml(labels.countUnit),
-    '</small></div><i>',
-    escapeHtml(labels.active),
-    '</i></header><ol class="comandinha-dashboard__orders">',
-    orders
-      .map(
-        ([time, number, table, quantity, total, status, state], index) =>
-          '<li class="comandinha-dashboard__order-row"><span class="comandinha-dashboard__order-index">0' +
-          (index + 1) +
-          '</span><div class="comandinha-dashboard__order-copy"><strong>' +
-          escapeHtml(number) +
-          '</strong><small>' +
-          escapeHtml(labels.table) +
-          ' ' +
-          escapeHtml(table) +
-          ' · ' +
-          escapeHtml(quantity) +
-          ' ' +
-          escapeHtml(labels.items) +
-          '</small></div><span class="comandinha-dashboard__order-time">' +
-          escapeHtml(time) +
-          '</span><strong class="comandinha-dashboard__order-total">' +
-          escapeHtml(total) +
-          '</strong><span class="comandinha-dashboard__order-status ' +
-          state +
-          '"><i aria-hidden="true"></i>' +
-          escapeHtml(status) +
-          '</span></li>',
-      )
-      .join(""),
-    '</ol></section></div><div class="comandinha-dashboard__footline"><span>RESTAURANT OPERATIONS</span><span>',
-    escapeHtml(labels.demo),
-    '</span></div></div></div>',
-  ].join("");
-}
 function productImage(product, copy, language) {
-  if (product.id === "comandinha") {
-    return (
-      '<figure class="portfolio-product-visual portfolio-product-visual--comandinha">' +
-      renderComandinhaDashboard(language, copy.imageAlt) +
-      '<figcaption><span>' +
-      escapeHtml(copy.imageCaption) +
-      "</span></figcaption></figure>"
-    );
-  }
+  const localizedImage = product.image[language];
+  const desktopImage = localizedImage?.desktop ?? product.image;
+  const mobileImage = localizedImage?.mobile;
 
   return (
     '<figure class="portfolio-product-visual">' +
+    "<picture>" +
+    (mobileImage
+      ? '<source media="(max-width: 760px)" srcset="' +
+        escapeHtml(mobileImage.src) +
+        '" type="image/png">'
+      : "") +
     '<img src="' +
-    escapeHtml(product.image.src) +
+    escapeHtml(desktopImage.src) +
     '" alt="' +
     escapeHtml(copy.imageAlt) +
     '" width="' +
-    product.image.width +
+    desktopImage.width +
     '" height="' +
-    product.image.height +
-    '" loading="lazy" decoding="async">' +
+    desktopImage.height +
+    '" loading="lazy" decoding="async"></picture>' +
     '<figcaption><span>' +
     escapeHtml(copy.imageCaption) +
     "</span></figcaption></figure>"

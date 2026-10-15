@@ -87,6 +87,32 @@ export const portfolioContent = {
     {
       id: "comandinha",
       name: "Comandinha",
+      image: {
+        pt: {
+          desktop: {
+            src: "/comandinha-dashboard-desktop-pt.png",
+            width: 1597,
+            height: 1338,
+          },
+          mobile: {
+            src: "/comandinha-dashboard-mobile-pt.png",
+            width: 1597,
+            height: 1338,
+          },
+        },
+        en: {
+          desktop: {
+            src: "/comandinha-dashboard-desktop-en.png",
+            width: 1597,
+            height: 1338,
+          },
+          mobile: {
+            src: "/comandinha-dashboard-mobile-en.png",
+            width: 1597,
+            height: 1338,
+          },
+        },
+      },
       category: "RESTAURANT OPERATIONS",
       technologies: [
         "Next.js",
