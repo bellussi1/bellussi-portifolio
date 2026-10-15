@@ -93,6 +93,7 @@ test("allows public crawlers and advertises the single-page sitemap", async () =
   const robots = await readFile(new URL("public/robots.txt", siteRoot), "utf8");
   const sitemap = await readFile(new URL("public/sitemap.xml", siteRoot), "utf8");
 
+  assert.match(robots, /User-agent:\s*OAI-SearchBot[\s\S]*?Allow:\s*\//i);
   assert.match(robots, /User-agent:\s*\*/i);
   assert.match(robots, /Allow:\s*\//i);
   assert.match(robots, /Sitemap:\s*https:\/\/bellussi\.vercel\.app\/sitemap\.xml/i);
