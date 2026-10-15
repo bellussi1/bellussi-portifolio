@@ -20,6 +20,7 @@ test("shows a dashboard preview and a real local recipe screenshot", async () =>
     if (product.id === "comandinha") {
       for (const section of [field.products, index.products]) {
         assert.match(section, /class="comandinha-dashboard" role="img"/);
+        assert.doesNotMatch(section, /<main\b[^>]*comandinha-dashboard__main/);
         assert.ok(section.includes(product.pt.imageAlt));
       }
     } else {

@@ -87,11 +87,12 @@ function makeRoot(view) {
   };
 }
 
-test("concept query defaults to field and selects index only for concept=b", async () => {
+test("concept query defaults to INDEX and selects FIELD only for concept=a", async () => {
   const { readConcept } = await loadConceptModule();
-  assert.equal(readConcept(""), "field");
-  assert.equal(readConcept("?campaign=portfolio"), "field");
-  assert.equal(readConcept("?concept=unknown"), "field");
+  assert.equal(readConcept(""), "index");
+  assert.equal(readConcept("?campaign=portfolio"), "index");
+  assert.equal(readConcept("?concept=unknown"), "index");
+  assert.equal(readConcept("?concept=a"), "field");
   assert.equal(readConcept("?concept=b"), "index");
 });
 
@@ -100,20 +101,20 @@ test("switcher updates the URL and pressed state without dropping other query va
   const h = makeRoot(new FakeView("https://portfolio.test/?campaign=2026"));
   const cleanup = initConceptSwitcher({ root: h.root, view: h.view });
 
+  assert.equal(h.root.dataset.concept, "index");
+  assert.equal(h.controls[0].getAttribute("aria-pressed"), "false");
+  assert.equal(h.controls[1].getAttribute("aria-pressed"), "true");
+
+  h.controls[0].click();
   assert.equal(h.root.dataset.concept, "field");
+  assert.equal(h.view.url.searchParams.get("concept"), "a");
+  assert.equal(h.view.url.searchParams.get("campaign"), "2026");
   assert.equal(h.controls[0].getAttribute("aria-pressed"), "true");
   assert.equal(h.controls[1].getAttribute("aria-pressed"), "false");
 
   h.controls[1].click();
   assert.equal(h.root.dataset.concept, "index");
   assert.equal(h.view.url.searchParams.get("concept"), "b");
-  assert.equal(h.view.url.searchParams.get("campaign"), "2026");
-  assert.equal(h.controls[0].getAttribute("aria-pressed"), "false");
-  assert.equal(h.controls[1].getAttribute("aria-pressed"), "true");
-
-  h.controls[0].click();
-  assert.equal(h.root.dataset.concept, "field");
-  assert.equal(h.view.url.searchParams.has("concept"), false);
   assert.equal(h.view.url.searchParams.get("campaign"), "2026");
   cleanup();
 });
@@ -125,6 +126,8 @@ test("browser history restores the selected concept and cleanup removes listener
 
   assert.equal(h.root.dataset.concept, "index");
   h.view.popTo("https://portfolio.test/");
+  assert.equal(h.root.dataset.concept, "index");
+  h.view.popTo("https://portfolio.test/?concept=a");
   assert.equal(h.root.dataset.concept, "field");
   assert.equal(h.controls[0].getAttribute("aria-pressed"), "true");
   assert.equal(h.controls[1].getAttribute("aria-pressed"), "false");
@@ -132,5 +135,5 @@ test("browser history restores the selected concept and cleanup removes listener
   cleanup();
   h.controls[1].click();
   assert.equal(h.root.dataset.concept, "field");
-  assert.equal(h.view.url.searchParams.has("concept"), false);
+  assert.equal(h.view.url.searchParams.get("concept"), "a");
 });

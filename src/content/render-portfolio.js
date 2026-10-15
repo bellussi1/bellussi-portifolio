@@ -140,7 +140,7 @@ function renderComandinhaDashboard(language, ariaLabel) {
     labels.salonActive +
     '</div></aside><div class="comandinha-dashboard__workspace" aria-hidden="true"><header class="comandinha-dashboard__topbar"><strong>' +
     labels.restaurant +
-    '</strong><span class="comandinha-dashboard__top-actions">⌕　◷　<b>EB</b></span></header><main class="comandinha-dashboard__main"><div class="comandinha-dashboard__heading"><div><p>' +
+    '</strong><span class="comandinha-dashboard__top-actions">⌕　◷　<b>EB</b></span></header><div class="comandinha-dashboard__main"><div class="comandinha-dashboard__heading"><div><p>' +
     labels.greeting +
     '</p><h4>' +
     labels.page +
@@ -206,7 +206,7 @@ function renderComandinhaDashboard(language, ariaLabel) {
           "</i></span></div>",
       )
       .join("") +
-    "</section></main></div></div>"
+    "</section></div></div>"
   );
 }
 

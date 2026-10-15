@@ -1,7 +1,7 @@
 export function readConcept(search) {
-  return new URLSearchParams(search).get("concept") === "b"
-    ? "index"
-    : "field";
+  return new URLSearchParams(search).get("concept") === "a"
+    ? "field"
+    : "index";
 }
 
 export function initConceptSwitcher({
@@ -30,8 +30,7 @@ export function initConceptSwitcher({
     if (root.dataset.concept === concept) return;
 
     const url = new URL(view.location.href);
-    if (concept === "index") url.searchParams.set("concept", "b");
-    else url.searchParams.delete("concept");
+    url.searchParams.set("concept", concept === "index" ? "b" : "a");
     view.history.pushState({}, "", `${url.pathname}${url.search}${url.hash}`);
     applyConcept(concept);
   }
