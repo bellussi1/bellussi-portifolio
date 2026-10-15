@@ -96,11 +96,6 @@ export const portfolioContent = {
         "Prisma",
         "TypeScript",
       ],
-      image: {
-        src: "/comandinha-panel-login.png",
-        width: 1440,
-        height: 1000,
-      },
       links: [
         {
           type: "repository",
@@ -115,8 +110,8 @@ export const portfolioContent = {
         details:
           "Next.js e React na web, NestJS na API, PostgreSQL e Prisma. O catálogo e o fluxo QR já têm uma base integrada; a migração ainda não está pronta para produção.",
         imageAlt:
-          "Captura real da tela de entrada do novo painel do Comandinha.",
-        imageCaption: "Novo painel · captura local",
+          "Prévia de um dashboard do Comandinha com métricas e pedidos de demonstração.",
+        imageCaption: "Operação do salão · dados demonstrativos",
         linkLabel: "Explorar repositório público",
       },
       en: {
@@ -126,8 +121,9 @@ export const portfolioContent = {
           "A restaurant operations platform for digital catalogs, tables, orders and QR menus. I am rebuilding its foundation as a monorepo while keeping the legacy product available as the new flows mature.",
         details:
           "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
-        imageAlt: "Actual screenshot of the new Comandinha panel login screen.",
-        imageCaption: "New panel · local capture",
+        imageAlt:
+          "Comandinha dashboard preview with demonstration metrics and orders.",
+        imageCaption: "Restaurant operations · mock data",
         linkLabel: "Explore the public repository",
       },
     },
@@ -142,9 +138,9 @@ export const portfolioContent = {
         "Private product",
       ],
       image: {
-        src: "/black-market-dashboard.webp",
+        src: "/black-market-recipe.png",
         width: 1440,
-        height: 1000,
+        height: 1200,
       },
       links: [],
       pt: {
@@ -154,8 +150,9 @@ export const portfolioContent = {
           "Um companion SaaS para a comunidade brasileira de Black Desert Online. A ideia é ajudar jogadores a organizar inventário e entender o que falta para criar um item.",
         details:
           "O MVP explora importação de até oito capturas por vez, revisão manual dos itens e busca de receitas recursivas, fontes e materiais faltantes. É um produto privado, sem lançamento público.",
-        imageAlt: "Captura real do painel de inventário do Black Market.",
-        imageCaption: "Painel · captura local do produto",
+        imageAlt:
+          "Captura da tela real de receitas do Black Market com árvore de produção, cálculo de preços e materiais necessários.",
+        imageCaption: "Receita · árvore de produção e cálculo de mercado",
         privateNote: "Código e interface não são públicos neste momento.",
       },
       en: {
@@ -166,8 +163,8 @@ export const portfolioContent = {
         details:
           "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
         imageAlt:
-          "Actual screenshot of the Black Market inventory dashboard.",
-        imageCaption: "Dashboard · local product capture",
+          "Real Black Market recipe screen with its production tree, price calculations and required materials.",
+        imageCaption: "Recipe · production tree and market calculation",
         privateNote: "The code and interface are private at this stage.",
       },
     },
@@ -177,7 +174,7 @@ export const portfolioContent = {
       id: "deploy-preflight",
       name: "Deploy Preflight",
       category: "DEPLOY / CI",
-      command: "deploy-preflight check --json",
+      command: "deploy-preflight check --env-file .env.local --json",
       technologies: ["TypeScript", "Node.js", "HTTP", "GitHub Actions"],
       links: [
         { type: "code", href: "https://github.com/bellussi1/deploy-preflight" },
@@ -221,7 +218,8 @@ export const portfolioContent = {
       id: "local-webhook-recorder",
       name: "Local Webhook Recorder",
       category: "BACKEND / INTEGRATIONS",
-      command: "webhook-recorder list --json",
+      command:
+        "webhook-recorder replay EVENT_ID --to http://127.0.0.1:3000/webhooks --json",
       technologies: ["TypeScript", "Node.js", "SQLite", "Webhooks"],
       links: [
         {
@@ -268,7 +266,8 @@ export const portfolioContent = {
       id: "compose-doctor",
       name: "Compose Doctor",
       category: "INFRA / DOCKER",
-      command: "compose-doctor check --json",
+      command:
+        "compose-doctor check --file examples/compose.yaml --file examples/compose.fixed.yaml --project-name doctor-demo --service api --json",
       technologies: [
         "TypeScript",
         "Docker Compose",
@@ -293,7 +292,7 @@ export const portfolioContent = {
         decision:
           "Consultas somente de leitura, subprocessos com limites e projeção de metadados. Relatórios em texto ou JSON.",
         demo:
-          "Healthcheck apontando para a rota errada → unhealthy. Overlay de correção → ready.",
+          "API e banco saudáveis → ready · exit 0.",
         codeLabel: "Explorar código",
         testsLabel: "Ver testes e CI",
         exampleLabel: "EXEMPLO DE USO",
@@ -306,7 +305,7 @@ export const portfolioContent = {
         decision:
           "Read-only queries, bounded subprocesses and selected metadata. Reports in text or JSON.",
         demo:
-          "Healthcheck points to the wrong route → unhealthy. Corrective overlay → ready.",
+          "API and database healthy → ready · exit 0.",
         codeLabel: "Explore code",
         testsLabel: "View tests and CI",
         exampleLabel: "USAGE EXAMPLE",

@@ -50,7 +50,12 @@ test("keeps project facts, image paths, and public links consistent across conce
   );
   for (const product of portfolioContent.products) {
     for (const section of [field.products, index.products]) {
-      assert.ok(section.includes(product.image.src), "missing image " + product.id);
+      if (product.id === "comandinha") {
+        assert.match(section, /class="comandinha-dashboard" role="img"/);
+        assert.ok(section.includes(escapeHtml(product.pt.imageAlt)));
+      } else {
+        assert.ok(section.includes(product.image.src), "missing image " + product.id);
+      }
       assert.ok(section.includes(product.name), "missing product " + product.id);
       for (const link of product.links) assert.ok(section.includes(link.href));
     }
@@ -65,25 +70,21 @@ test("keeps project facts, image paths, and public links consistent across conce
 
 test("renders PT and EN copy for every record", () => {
   for (const language of ["pt", "en"]) {
-    for (const concept of ["field", "index"]) {
-      const sections = renderPortfolioSections({ concept, language });
-      const rendered = [
-        sections.experience,
-        sections.products,
-        sections.projects,
-      ].join("\n");
+    const rendered = ["field", "index"]
+      .map((concept) => renderPortfolioSections({ concept, language }))
+      .flatMap((sections) => [sections.experience, sections.products, sections.projects])
+      .join("\n");
 
-      for (const record of allRecords()) {
-        assert.ok(rendered.includes(record.name), "missing " + record.id);
-        for (const value of Object.values(record[language])) {
-          const values = Array.isArray(value) ? value : [value];
-          for (const text of values) {
-            if (typeof text === "string")
-              assert.ok(
-                rendered.includes(escapeHtml(text)),
-                "missing " + language + " copy for " + record.id + ": " + text,
-              );
-          }
+    for (const record of allRecords()) {
+      assert.ok(rendered.includes(record.name), "missing " + record.id);
+      for (const value of Object.values(record[language])) {
+        const values = Array.isArray(value) ? value : [value];
+        for (const text of values) {
+          if (typeof text === "string")
+            assert.ok(
+              rendered.includes(escapeHtml(text)),
+              "missing " + language + " copy for " + record.id + ": " + text,
+            );
         }
       }
     }
