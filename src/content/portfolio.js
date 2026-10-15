@@ -93,11 +93,40 @@ export const portfolioContent = {
             src: "/comandinha-dashboard-desktop-pt.png",
             width: 1597,
             height: 1338,
+            webp: [
+              {
+                src: "/project-previews/comandinha-desktop-pt-350.webp",
+                width: 350,
+                height: 293,
+              },
+              {
+                src: "/project-previews/comandinha-desktop-pt-700.webp",
+                width: 700,
+                height: 586,
+              },
+              {
+                src: "/project-previews/comandinha-desktop-pt-1200.webp",
+                width: 1200,
+                height: 1006,
+              },
+            ],
           },
           mobile: {
             src: "/comandinha-dashboard-mobile-pt.png",
             width: 1597,
             height: 1338,
+            webp: [
+              {
+                src: "/project-previews/comandinha-mobile-pt-350.webp",
+                width: 350,
+                height: 293,
+              },
+              {
+                src: "/project-previews/comandinha-mobile-pt-700.webp",
+                width: 700,
+                height: 586,
+              },
+            ],
           },
         },
         en: {
@@ -105,11 +134,40 @@ export const portfolioContent = {
             src: "/comandinha-dashboard-desktop-en.png",
             width: 1597,
             height: 1338,
+            webp: [
+              {
+                src: "/project-previews/comandinha-desktop-en-350.webp",
+                width: 350,
+                height: 293,
+              },
+              {
+                src: "/project-previews/comandinha-desktop-en-700.webp",
+                width: 700,
+                height: 586,
+              },
+              {
+                src: "/project-previews/comandinha-desktop-en-1200.webp",
+                width: 1200,
+                height: 1006,
+              },
+            ],
           },
           mobile: {
             src: "/comandinha-dashboard-mobile-en.png",
             width: 1597,
             height: 1338,
+            webp: [
+              {
+                src: "/project-previews/comandinha-mobile-en-350.webp",
+                width: 350,
+                height: 293,
+              },
+              {
+                src: "/project-previews/comandinha-mobile-en-700.webp",
+                width: 700,
+                height: 586,
+              },
+            ],
           },
         },
       },
@@ -167,6 +225,23 @@ export const portfolioContent = {
         src: "/black-market-recipe.png",
         width: 1597,
         height: 1338,
+        webp: [
+          {
+            src: "/project-previews/black-market-350.webp",
+            width: 350,
+            height: 293,
+          },
+          {
+            src: "/project-previews/black-market-700.webp",
+            width: 700,
+            height: 586,
+          },
+          {
+            src: "/project-previews/black-market-1200.webp",
+            width: 1200,
+            height: 1006,
+          },
+        ],
       },
       links: [],
       pt: {

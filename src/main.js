@@ -1,5 +1,4 @@
 import "../styles/modern-normalize.css";
-import "lenis/dist/lenis.css";
 import "../styles/style.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
@@ -9,13 +8,29 @@ import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
 import { initPixelIndex } from "./visuals/pixel-index.js";
 import { initParallax } from "./utils/parallax.js";
-import { initSmoothScroll } from "./utils/smooth-scroll.js";
-import { renderPortfolioSections } from "./content/render-portfolio.js";
+import { positionNavigationIndicator } from "./utils/navigation-indicator.js";
+import {
+  setInnerHtmlIfChanged,
+  setMarkupInFrames,
+} from "./utils/content-update.js";
+import { shouldEnableSmoothScroll } from "./utils/smooth-scroll-capability.js";
+import { renderScrollProgress } from "./utils/scroll-progress.js";
+import {
+  renderPortfolioSection,
+  renderPortfolioSections,
+} from "./content/render-portfolio.js";
 
 const root = document.documentElement;
 let language = "pt";
+try {
+  language = localStorage.getItem("portfolio-language") === "en" ? "en" : "pt";
+} catch {
+  /* The page starts in Portuguese when storage is unavailable. */
+}
 let motionInitialized = false;
 let cleanupParallax = () => {};
+let parallaxStartFrame = 0;
+let portfolioRenderVersion = 0;
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeColor = document.querySelector("[data-theme-color]");
 
@@ -36,6 +51,15 @@ function updateThemeControl() {
   if (themeColor) themeColor.content = dark ? "#1d1c19" : "#e9e5da";
 }
 
+function scheduleParallax() {
+  cancelAnimationFrame(parallaxStartFrame);
+  parallaxStartFrame = requestAnimationFrame(() => {
+    parallaxStartFrame = 0;
+    cleanupParallax();
+    cleanupParallax = initParallax();
+  });
+}
+
 themeToggle.addEventListener("click", () => {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
   try {
@@ -47,25 +71,44 @@ themeToggle.addEventListener("click", () => {
 });
 updateThemeControl();
 
-function syncPortfolioContent() {
-  const sections = renderPortfolioSections({
+function syncPortfolioContent({ frameByFrame = false } = {}) {
+  const renderVersion = ++portfolioRenderVersion;
+  const parameters = {
     concept: root.dataset.concept,
     language,
-  });
-  document.querySelector('[data-portfolio-content="experience"]').innerHTML =
-    sections.experience;
-  document.querySelector('[data-portfolio-content="products"]').innerHTML =
-    sections.products;
-  document.querySelector('[data-portfolio-content="projects"]').innerHTML =
-    sections.projects;
-  if (!motionInitialized) return;
-  setupMotion();
-  cleanupParallax();
-  cleanupParallax = initParallax();
+  };
+  const targets = [
+    ["experience", document.querySelector('[data-portfolio-content="experience"]')],
+    ["products", document.querySelector('[data-portfolio-content="products"]')],
+    ["projects", document.querySelector('[data-portfolio-content="projects"]')],
+  ];
+  function complete() {
+    if (!motionInitialized) return;
+    setupMotion();
+    cleanupParallax();
+    scheduleParallax();
+  }
+  if (frameByFrame) {
+    setMarkupInFrames(
+      targets.map(([section, target]) => [
+        target,
+        () => renderPortfolioSection(section, parameters),
+      ]),
+      window.requestAnimationFrame.bind(window),
+      complete,
+      () => renderVersion === portfolioRenderVersion,
+    );
+    return;
+  }
+  const sections = renderPortfolioSections(parameters);
+  targets.forEach(([section, target]) =>
+    setInnerHtmlIfChanged(target, sections[section]),
+  );
+  complete();
 }
 
 initPixelIndex({ root });
-syncPortfolioContent();
+syncPortfolioContent({ frameByFrame: true });
 root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
@@ -106,14 +149,17 @@ function setLanguage(nextLanguage) {
   const content = language === "en" ? english : portuguese;
   // Both translation dictionaries contain only local, trusted strings.
   translatedElements.forEach((element) => {
-    element.innerHTML =
-      content[element.dataset.i18n] ?? portuguese[element.dataset.i18n];
+    setInnerHtmlIfChanged(
+      element,
+      content[element.dataset.i18n] ?? portuguese[element.dataset.i18n],
+    );
   });
   translatedAltElements.forEach((element) => {
-    element.alt =
+    const translatedAlt =
       content[element.dataset.i18nAlt] ?? portugueseAlt[element.dataset.i18nAlt];
+    if (element.alt !== translatedAlt) element.alt = translatedAlt;
   });
-  syncPortfolioContent();
+  if (previousLanguage !== language) syncPortfolioContent();
   document
     .querySelectorAll("[data-language]")
     .forEach((button) =>
@@ -202,11 +248,9 @@ document
       setLanguage(button.dataset.language),
     ),
   );
-try {
-  setLanguage(localStorage.getItem("portfolio-language") ?? "pt");
-} catch {
-  setLanguage("pt");
-}
+// The initial document already contains Portuguese labels, metadata and copy.
+// Apply the stored English locale only when it differs from that default.
+if (language === "en") setLanguage(language);
 
 // Content remains visible without animation APIs or when reduced motion is set.
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -238,8 +282,18 @@ reducedMotion.addEventListener("change", setupMotion);
 reducedMotion.addEventListener("change", () => {
   if (reducedMotion.matches) languageTransition?.cancel();
 });
-cleanupParallax = initParallax();
-initSmoothScroll();
+if (shouldEnableSmoothScroll(window, navigator.hardwareConcurrency)) {
+  requestAnimationFrame(() => {
+    Promise.all([
+      import("./utils/smooth-scroll.js"),
+      import("lenis/dist/lenis.css"),
+    ])
+      .then(([{ initSmoothScroll }]) => initSmoothScroll())
+      .catch(() => {
+        // Native scrolling remains available if the optional Lenis chunk fails.
+      });
+  });
+}
 
 const navigationIndicator = document.createElement("span");
 navigationIndicator.className = "navigation-indicator";
@@ -249,10 +303,7 @@ function updateNavigationIndicator() {
   const current = navigation.querySelector('a[aria-current="location"]');
   const indicator = navigation.querySelector(".navigation-indicator");
   if (!indicator) return;
-  indicator.style.opacity = current ? "1" : "0";
-  if (!current) return;
-  indicator.style.width = `${current.offsetWidth}px`;
-  indicator.style.transform = `translateX(${current.offsetLeft}px)`;
+  positionNavigationIndicator(indicator, current);
 }
 window.addEventListener("resize", updateNavigationIndicator);
 document.fonts?.ready.then(updateNavigationIndicator);
@@ -278,13 +329,22 @@ if ("IntersectionObserver" in window) {
 
 const progress = document.querySelector(".scroll-progress");
 let scrollScheduled = false;
+let scrollableRange = 0;
+function measureScrollRange() {
+  scrollableRange = Math.max(0, root.scrollHeight - window.innerHeight);
+}
 function updateProgress() {
-  document
-    .querySelector(".site-header")
-    .classList.toggle("is-scrolled", window.scrollY > 24);
-  const scrollable = root.scrollHeight - window.innerHeight;
-  progress.style.transform = `scaleX(${scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0})`;
+  renderScrollProgress({
+    progress,
+    header: document.querySelector(".site-header"),
+    scrollY: window.scrollY,
+    scrollable: scrollableRange,
+  });
   scrollScheduled = false;
+}
+function measureAndUpdateProgress() {
+  measureScrollRange();
+  updateProgress();
 }
 window.addEventListener(
   "scroll",
@@ -296,8 +356,13 @@ window.addEventListener(
   },
   { passive: true },
 );
-window.addEventListener("resize", updateProgress);
-updateProgress();
+window.addEventListener("resize", measureAndUpdateProgress);
+if ("ResizeObserver" in window) {
+  const progressResizeObserver = new ResizeObserver(measureScrollRange);
+  progressResizeObserver.observe(document.querySelector("main"));
+}
+document.fonts?.ready.then(measureAndUpdateProgress);
+requestAnimationFrame(measureAndUpdateProgress);
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 let copyReset;

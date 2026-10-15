@@ -1,3 +1,25 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/dm-sans-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/fonts/dm-serif-display-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/fonts/dm-serif-display-italic-latin.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* Design tokens and foundations */
 :root {
   color-scheme: dark;
@@ -1008,10 +1030,10 @@ html[data-motion="enabled"] .reveal.is-visible {
   transform: none;
 }
 .hero-content {
-  animation: hero-enter 0.9s var(--ease) both;
+  animation: hero-enter 0.28s var(--ease) both;
 }
 .engineering-visual {
-  animation: hero-enter 1.2s 0.15s var(--ease) both;
+  animation: hero-enter 0.85s 0.1s var(--ease) both;
 }
 .approach-card:nth-child(2) {
   transition-delay: 0.08s;

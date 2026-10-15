@@ -25,6 +25,17 @@ test("INDEX uses a metadata hero, table and product catalog without lime", () =>
   assert.doesNotMatch(css, /#c6ed5b|#d8ff79|index-lime/i);
 });
 
+test("keeps the moving grain off touch displays while retaining its texture", () => {
+  const css = read("../styles/concepts/pixel-index.css");
+  const touchRule = css.slice(
+    css.indexOf("@media (hover: none), (pointer: coarse)"),
+    css.indexOf("@media (prefers-reduced-motion: reduce)", css.indexOf("@media (hover: none), (pointer: coarse)")),
+  );
+
+  assert.match(css, /\.pixel-grain\s*\{[^}]*background:\s*url\("\/print-grain\.svg"\)/s);
+  assert.match(touchRule, /\.(?:pixel-grain|index-hero-grain)[^{]*\{[^}]*animation:\s*none/s);
+});
+
 test("both concepts have structurally distinct, solid-color compositions", () => {
   const field = read("../styles/concepts/deep-field.css");
   const index = read("../styles/concepts/pixel-index.css");

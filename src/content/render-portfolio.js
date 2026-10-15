@@ -1,5 +1,9 @@
 import { portfolioContent } from "./portfolio.js";
 
+const desktopImageSizes =
+  "(min-width: 1360px) 583px, (min-width: 1101px) calc(50vw - 93px), (min-width: 761px) calc(50vw - 65px), calc(100vw - 66px)";
+const mobileImageSizes = "calc(100vw - 66px)";
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -40,6 +44,26 @@ function anchor(link, label, className = "text-link") {
   );
 }
 
+function webpSource(image, sizes, media = "") {
+  if (!image?.webp?.length) return "";
+  const mediaAttribute = media ? 'media="' + media + '" ' : "";
+  const candidates = image.webp
+    .map(
+      (candidate) =>
+        escapeHtml(candidate.src) + " " + candidate.width + "w",
+    )
+    .join(", ");
+  return (
+    "<source " +
+    mediaAttribute +
+    'type="image/webp" srcset="' +
+    candidates +
+    '" sizes="' +
+    sizes +
+    '">'
+  );
+}
+
 function productImage(product, copy, language) {
   const localizedImage = product.image[language];
   const desktopImage = localizedImage?.desktop ?? product.image;
@@ -49,10 +73,18 @@ function productImage(product, copy, language) {
     '<figure class="portfolio-product-visual">' +
     "<picture>" +
     (mobileImage
+      ? webpSource(
+          mobileImage,
+          mobileImageSizes,
+          "(max-width: 760px)",
+        )
+      : "") +
+    (mobileImage
       ? '<source media="(max-width: 760px)" srcset="' +
         escapeHtml(mobileImage.src) +
         '" type="image/png">'
       : "") +
+    webpSource(desktopImage, desktopImageSizes) +
     '<img src="' +
     escapeHtml(desktopImage.src) +
     '" alt="' +
@@ -404,22 +436,29 @@ function renderIndexTools(language) {
   );
 }
 
-export function renderPortfolioSections({ concept, language }) {
+export function renderPortfolioSection(section, { concept, language }) {
   const selectedConcept = concept === "index" ? "index" : "field";
   const selectedLanguage = language === "en" ? "en" : "pt";
 
+  if (section === "experience")
+    return selectedConcept === "field"
+      ? renderFieldExperience(selectedLanguage)
+      : renderIndexExperience(selectedLanguage);
+  if (section === "products")
+    return selectedConcept === "field"
+      ? renderFieldProducts(selectedLanguage)
+      : renderIndexProducts(selectedLanguage);
+  if (section === "projects")
+    return selectedConcept === "field"
+      ? renderFieldTools(selectedLanguage)
+      : renderIndexTools(selectedLanguage);
+  return "";
+}
+
+export function renderPortfolioSections(parameters) {
   return {
-    experience:
-      selectedConcept === "field"
-        ? renderFieldExperience(selectedLanguage)
-        : renderIndexExperience(selectedLanguage),
-    products:
-      selectedConcept === "field"
-        ? renderFieldProducts(selectedLanguage)
-        : renderIndexProducts(selectedLanguage),
-    projects:
-      selectedConcept === "field"
-        ? renderFieldTools(selectedLanguage)
-        : renderIndexTools(selectedLanguage),
+    experience: renderPortfolioSection("experience", parameters),
+    products: renderPortfolioSection("products", parameters),
+    projects: renderPortfolioSection("projects", parameters),
   };
 }

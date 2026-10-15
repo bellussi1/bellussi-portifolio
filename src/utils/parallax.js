@@ -30,6 +30,7 @@ export function initParallax(view = window, page = document) {
       })),
     )
     .filter((layer) => layer.anchor);
+  const anchorGeometry = new Map();
   let frame = 0;
   let previousTime;
   let disposed = false;
@@ -73,19 +74,31 @@ export function initParallax(view = window, page = document) {
     if (unsettled) frame = view.requestAnimationFrame(render);
     else previousTime = undefined;
   }
-  function update() {
+  function measureAnchors() {
+    anchorGeometry.clear();
+    layers.forEach(({ anchor }) => {
+      if (anchorGeometry.has(anchor)) return;
+      const bounds = anchor.getBoundingClientRect();
+      const ownLayer = layers.find((layer) => layer.element === anchor);
+      anchorGeometry.set(anchor, {
+        top: bounds.top + (view.scrollY || 0) - (ownLayer?.current || 0),
+        height: bounds.height,
+      });
+    });
+  }
+
+  function update(measure = false) {
     if (disposed) return;
     if (!enabled()) {
       reset();
       return;
     }
-    // Read stable parent bounds before writing layer offsets in the next frame.
-    const bounds = new Map();
+    if (measure) measureAnchors();
     layers.forEach((layer) => {
-      if (!bounds.has(layer.anchor))
-        bounds.set(layer.anchor, layer.anchor.getBoundingClientRect());
-      const rect = bounds.get(layer.anchor);
-      const displacement = view.innerHeight / 2 - (rect.top + rect.height / 2);
+      const rect = anchorGeometry.get(layer.anchor);
+      const viewportTop = rect.top - (view.scrollY || 0);
+      const displacement =
+        view.innerHeight / 2 - (viewportTop + rect.height / 2);
       const limit = mobile.matches
         ? Math.min(10, layer.limit * 0.25)
         : layer.limit;
@@ -94,20 +107,23 @@ export function initParallax(view = window, page = document) {
     });
     if (!frame && layers.length) frame = view.requestAnimationFrame(render);
   }
+  function onResize() {
+    update(true);
+  }
   view.addEventListener("scroll", update, { passive: true });
-  view.addEventListener("resize", update);
-  page.addEventListener("visibilitychange", update);
-  reduced.addEventListener("change", update);
-  mobile.addEventListener("change", update);
-  update();
+  view.addEventListener("resize", onResize);
+  page.addEventListener("visibilitychange", onResize);
+  reduced.addEventListener("change", onResize);
+  mobile.addEventListener("change", onResize);
+  update(true);
   return () => {
     if (disposed) return;
     disposed = true;
     view.removeEventListener("scroll", update);
-    view.removeEventListener("resize", update);
-    page.removeEventListener("visibilitychange", update);
-    reduced.removeEventListener("change", update);
-    mobile.removeEventListener("change", update);
+    view.removeEventListener("resize", onResize);
+    page.removeEventListener("visibilitychange", onResize);
+    reduced.removeEventListener("change", onResize);
+    mobile.removeEventListener("change", onResize);
     reset();
   };
 }

@@ -1,7 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { portfolioContent } from "../src/content/portfolio.js";
-import { renderPortfolioSections } from "../src/content/render-portfolio.js";
+import {
+  renderPortfolioSection,
+  renderPortfolioSections,
+} from "../src/content/render-portfolio.js";
 
 function escapeHtml(value) {
   return String(value)
@@ -88,6 +91,20 @@ test("renders PT and EN copy for every record", () => {
               "missing " + language + " copy for " + record.id + ": " + text,
             );
         }
+      }
+    }
+  }
+});
+
+test("renders each portfolio section independently without changing its markup", () => {
+  for (const concept of ["field", "index"]) {
+    for (const language of ["pt", "en"]) {
+      const sections = renderPortfolioSections({ concept, language });
+      for (const key of Object.keys(sections)) {
+        assert.equal(
+          renderPortfolioSection(key, { concept, language }),
+          sections[key],
+        );
       }
     }
   }

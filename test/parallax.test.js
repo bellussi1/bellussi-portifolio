@@ -19,9 +19,14 @@ function harness({ mobile = false, reduced = false } = {}) {
   const element = {
     style,
     dataset: {},
-    closest: () => ({
-      getBoundingClientRect: () => ({ top: -1000, height: 500 }),
-    }),
+    closest: () => anchor,
+  };
+  let geometryReads = 0;
+  const anchor = {
+    getBoundingClientRect: () => {
+      geometryReads++;
+      return { top: -1000, height: 500 };
+    },
   };
   const document = {
     hidden: false,
@@ -65,7 +70,18 @@ function harness({ mobile = false, reduced = false } = {}) {
     }
     assert.equal(frames.size, 0, "animation must stop after settling");
   }
-  return { window, document, element, listeners, media, frames, settle };
+  return {
+    window,
+    document,
+    element,
+    listeners,
+    media,
+    frames,
+    settle,
+    get geometryReads() {
+      return geometryReads;
+    },
+  };
 }
 
 test("parallax is bounded, settles and reduces movement on mobile", () => {
@@ -79,6 +95,17 @@ test("parallax is bounded, settles and reduces movement on mobile", () => {
     h.listeners.get("scroll")();
     h.settle();
   }
+});
+
+test("reuses anchor geometry during scrolling and measures again on resize", () => {
+  const h = harness();
+  initParallax(h.window, h.document);
+  const readsAfterInitialization = h.geometryReads;
+  h.listeners.get("scroll")();
+  h.settle();
+  assert.equal(h.geometryReads, readsAfterInitialization);
+  h.listeners.get("resize")();
+  assert.equal(h.geometryReads, readsAfterInitialization + 1);
 });
 
 test("reduced motion disables offsets and cancels scheduled frames when changed", () => {

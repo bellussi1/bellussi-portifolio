@@ -384,6 +384,10 @@ html[data-concept="index"] .footer-links a:hover { color: var(--accent); }
 }
 @media (hover: none), (pointer: coarse) {
   html[data-concept="index"] .pixel-cursor { display: none; }
+  html[data-concept="index"] :is(.pixel-grain, .index-hero-grain) {
+    animation: none !important;
+    background-position: 0 0;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html[data-concept="index"] .pixel-grain { animation: none !important; background-position: 0 0; }
