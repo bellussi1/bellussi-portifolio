@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { stat } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { portfolioContent } from "../src/content/portfolio.js";
 import { renderPortfolioSections } from "../src/content/render-portfolio.js";
 
@@ -32,7 +32,11 @@ test("shows a dashboard preview and a real local recipe screenshot", async () =>
       assert.ok(product.image.height > 0, "missing image height for " + product.name);
       for (const section of [field.products, index.products])
         assert.ok(section.includes(product.image.src));
-      await stat(new URL("public" + product.image.src, siteRoot));
+      const imagePath = new URL("public" + product.image.src, siteRoot);
+      await stat(imagePath);
+      const image = await readFile(imagePath);
+      assert.equal(image.readUInt32BE(16), product.image.width);
+      assert.equal(image.readUInt32BE(20), product.image.height);
     }
   }
   const blackMarket = portfolioContent.products.find(

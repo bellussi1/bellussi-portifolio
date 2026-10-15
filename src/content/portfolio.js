@@ -139,8 +139,8 @@ export const portfolioContent = {
       ],
       image: {
         src: "/black-market-recipe.png",
-        width: 1440,
-        height: 1200,
+        width: 1597,
+        height: 1338,
       },
       links: [],
       pt: {
@@ -151,8 +151,8 @@ export const portfolioContent = {
         details:
           "O MVP explora importação de até oito capturas por vez, revisão manual dos itens e busca de receitas recursivas, fontes e materiais faltantes. É um produto privado, sem lançamento público.",
         imageAlt:
-          "Captura da tela real de receitas do Black Market com árvore de produção, cálculo de preços e materiais necessários.",
-        imageCaption: "Receita · árvore de produção e cálculo de mercado",
+          "Captura da tela real do Black Market com lucro por hora, custo dos materiais, faturamento da receita e árvore de produção com quatro insumos.",
+        imageCaption: "Receita · margem, custo dos materiais e árvore de produção",
         privateNote: "Código e interface não são públicos neste momento.",
       },
       en: {
@@ -163,8 +163,8 @@ export const portfolioContent = {
         details:
           "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
         imageAlt:
-          "Real Black Market recipe screen with its production tree, price calculations and required materials.",
-        imageCaption: "Recipe · production tree and market calculation",
+          "Real Black Market screen showing hourly profit, material costs, recipe revenue and a production tree with four ingredients.",
+        imageCaption: "Recipe · margin, material costs and production tree",
         privateNote: "The code and interface are private at this stage.",
       },
     },

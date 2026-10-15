@@ -40,12 +40,12 @@ Expected: the Comandinha preview presents useful operational information at a gl
 
 ## Task 2: Replace the Black Market preview image
 
-- [ ] Add an assertion that public/black-market-recipe.png pixel dimensions match portfolioContent.products metadata.
-- [ ] Run node --test test/product-showcase.test.js; confirm the dimension assertion fails for a mismatched artifact.
-- [ ] Capture the updated real recipe workspace with the application sidebar omitted and the result metrics plus production graph visible.
-- [ ] Replace public/black-market-recipe.png and update its actual dimensions, alt text and caption in src/content/portfolio.js.
-- [ ] Run node --test test/product-showcase.test.js and then npm test; both must pass.
-- [ ] Inspect the project section at desktop and narrow viewport widths; confirm the image remains in the grid and does not overflow.
-- [ ] Commit the Black Market image and its metadata/test updates together as one atomic portfolio change.
+- [x] Add an assertion that public/black-market-recipe.png pixel dimensions match portfolioContent.products metadata.
+- [x] Run node --test test/product-showcase.test.js; confirm the dimension assertion fails for a mismatched artifact.
+- [x] Capture the updated real recipe workspace with the application sidebar omitted and the result metrics plus production graph visible.
+- [x] Replace public/black-market-recipe.png and update its actual dimensions, alt text and caption in src/content/portfolio.js.
+- [x] Run node --test test/product-showcase.test.js and then npm test; both must pass.
+- [x] Inspect the project section at desktop and narrow viewport widths; confirm the image remains in the grid and does not overflow.
+- [x] Commit the Black Market image and its metadata/test updates together as one atomic portfolio change.
 
 Expected: the Black Market image clearly communicates recipe value and production structure instead of showing a tiny full-page screenshot.
