@@ -25,6 +25,18 @@ test("INDEX uses a metadata hero, table and product catalog without lime", () =>
   assert.doesNotMatch(css, /#c6ed5b|#d8ff79|index-lime/i);
 });
 
+test("INDEX staggers hero entry without keeping the first viewport hidden", () => {
+  const css = read("../styles/concepts/index-atmosphere.css");
+
+  assert.match(css, /\.hero-content\s*\{[^}]*animation: index-enter-left \.55s/s);
+  assert.match(
+    css,
+    /\.engineering-visual\.index-hero-visual\s*\{[^}]*animation: index-enter-right \.68s \.06s/s,
+  );
+  assert.match(css, /\.hero-line > span,[\s\S]*?animation-duration:\s*\.58s/);
+  assert.match(css, /\.hero-footnote\s*\{[^}]*animation-delay:\s*\.26s/s);
+});
+
 test("keeps the moving grain off touch displays while retaining its texture", () => {
   const css = read("../styles/concepts/pixel-index.css");
   const touchRule = css.slice(
