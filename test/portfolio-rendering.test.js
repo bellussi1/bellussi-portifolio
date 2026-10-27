@@ -110,17 +110,15 @@ test("renders each portfolio section independently without changing its markup",
   }
 });
 
-test("does not publish a Black Market source link", () => {
+test("renders the Black Market repository link in both languages and concepts", () => {
   const blackMarket = portfolioContent.products.find(
     ({ id }) => id === "black-market",
   );
   assert.ok(blackMarket);
-  assert.equal(blackMarket.links.length, 0);
   for (const concept of ["field", "index"]) {
-    const sections = renderPortfolioSections({ concept, language: "en" });
-    assert.doesNotMatch(
-      sections.products,
-      /github\.com\/bellussi1\/Black-Market/i,
-    );
+    for (const language of ["pt", "en"]) {
+      const sections = renderPortfolioSections({ concept, language });
+      assert.match(sections.products, /github\.com\/bellussi1\/Black-Market/i);
+    }
   }
 });

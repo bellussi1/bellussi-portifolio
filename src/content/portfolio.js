@@ -214,12 +214,12 @@ export const portfolioContent = {
     {
       id: "black-market",
       name: "Black Market",
-      category: "GAME COMPANION · PRIVATE SAAS",
+      category: "GAME COMPANION · ANGULAR / NESTJS",
       technologies: [
-        "Inventory",
-        "Recipe explorer",
-        "Manual review",
-        "Private product",
+        "Angular",
+        "NestJS",
+        "PostgreSQL",
+        "OCR",
       ],
       image: {
         src: "/black-market-recipe.png",
@@ -243,30 +243,32 @@ export const portfolioContent = {
           },
         ],
       },
-      links: [],
+      links: [
+        { type: "code", href: "https://github.com/bellussi1/Black-Market" },
+      ],
       pt: {
-        status: "Em desenvolvimento",
+        status: "Código aberto · Em desenvolvimento",
         headline: "Planeje a próxima receita, não a próxima planilha.",
         description:
-          "Um companion SaaS para a comunidade brasileira de Black Desert Online. A ideia é ajudar jogadores a organizar inventário e entender o que falta para criar um item.",
+          "Uma ferramenta independente para jogadores de Black Desert Online planejarem receitas, materiais e custos de produção.",
         details:
-          "O MVP explora importação de até oito capturas por vez, revisão manual dos itens e busca de receitas recursivas, fontes e materiais faltantes. É um produto privado, sem lançamento público.",
+          "Monorepo com Angular e SSR, API NestJS e PostgreSQL. Reúne árvore de sub-receitas, comparação de custos, preços de mercado e leitura de capturas com revisão manual.",
         imageAlt:
           "Captura da tela real do Black Market com lucro por hora, custo dos materiais, faturamento da receita e árvore de produção com quatro insumos.",
         imageCaption: "Receita · margem, custo dos materiais e árvore de produção",
-        privateNote: "Código e interface não são públicos neste momento.",
+        linkLabel: "Explorar repositório",
       },
       en: {
-        status: "In development",
+        status: "Open source · In development",
         headline: "Plan the next recipe, not the next spreadsheet.",
         description:
-          "A companion SaaS for Brazil’s Black Desert Online community. It helps players organize inventory and understand what is missing to craft an item.",
+          "An independent tool that helps Black Desert Online players plan recipes, materials and production costs.",
         details:
-          "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
+          "A monorepo with Angular and SSR, a NestJS API and PostgreSQL. It brings together nested recipes, cost comparisons, market prices and screenshot reading with manual review.",
         imageAlt:
           "Real Black Market screen showing hourly profit, material costs, recipe revenue and a production tree with four ingredients.",
         imageCaption: "Recipe · margin, material costs and production tree",
-        privateNote: "The code and interface are private at this stage.",
+        linkLabel: "Explore the repository",
       },
     },
   ],

@@ -91,7 +91,11 @@ test("uses responsive Comandinha previews with the Black Market image ratio", as
   const blackMarket = portfolioContent.products.find(
     ({ id }) => id === "black-market",
   );
-  assert.deepEqual(blackMarket.links, []);
+  assert.ok(
+    blackMarket.links.some(
+      ({ href }) => href === "https://github.com/bellussi1/Black-Market",
+    ),
+  );
 });
 
 test("serves responsive WebP sources sized for each project preview", async () => {
