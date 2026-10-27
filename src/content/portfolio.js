@@ -85,129 +85,35 @@ export const portfolioContent = {
   ],
   products: [
     {
-      id: "comandinha",
-      name: "Comandinha",
+      id: "koreader-ecosystem",
+      name: "KOReader Ecosystem",
       image: {
-        pt: {
-          desktop: {
-            src: "/comandinha-dashboard-desktop-pt.png",
-            width: 1597,
-            height: 1338,
-            webp: [
-              {
-                src: "/project-previews/comandinha-desktop-pt-350.webp",
-                width: 350,
-                height: 293,
-              },
-              {
-                src: "/project-previews/comandinha-desktop-pt-700.webp",
-                width: 700,
-                height: 586,
-              },
-              {
-                src: "/project-previews/comandinha-desktop-pt-1200.webp",
-                width: 1200,
-                height: 1006,
-              },
-            ],
-          },
-          mobile: {
-            src: "/comandinha-dashboard-mobile-pt.png",
-            width: 1597,
-            height: 1338,
-            webp: [
-              {
-                src: "/project-previews/comandinha-mobile-pt-350.webp",
-                width: 350,
-                height: 293,
-              },
-              {
-                src: "/project-previews/comandinha-mobile-pt-700.webp",
-                width: 700,
-                height: 586,
-              },
-            ],
-          },
-        },
-        en: {
-          desktop: {
-            src: "/comandinha-dashboard-desktop-en.png",
-            width: 1597,
-            height: 1338,
-            webp: [
-              {
-                src: "/project-previews/comandinha-desktop-en-350.webp",
-                width: 350,
-                height: 293,
-              },
-              {
-                src: "/project-previews/comandinha-desktop-en-700.webp",
-                width: 700,
-                height: 586,
-              },
-              {
-                src: "/project-previews/comandinha-desktop-en-1200.webp",
-                width: 1200,
-                height: 1006,
-              },
-            ],
-          },
-          mobile: {
-            src: "/comandinha-dashboard-mobile-en.png",
-            width: 1597,
-            height: 1338,
-            webp: [
-              {
-                src: "/project-previews/comandinha-mobile-en-350.webp",
-                width: 350,
-                height: 293,
-              },
-              {
-                src: "/project-previews/comandinha-mobile-en-700.webp",
-                width: 700,
-                height: 586,
-              },
-            ],
-          },
-        },
+        pt: { desktop: { src: "/koreader-library-pt.png", width: 1440, height: 1200 } },
+        en: { desktop: { src: "/koreader-library-en.png", width: 1440, height: 949 } },
       },
-      category: "RESTAURANT OPERATIONS",
-      technologies: [
-        "Next.js",
-        "React",
-        "NestJS",
-        "PostgreSQL",
-        "Prisma",
-        "TypeScript",
-      ],
-      links: [
-        {
-          type: "repository",
-          href: "https://github.com/bellussi1/comandinha",
-        },
-      ],
+      category: "READING TOOLS · OPEN SOURCE",
+      technologies: ["Electron", "React", "TypeScript", "Python", "SQLite"],
+      links: [{ type: "repository", href: "https://github.com/bellussi1/koreader-ecosystem" }],
       pt: {
-        status: "Migração em andamento",
-        headline: "Um salão inteiro no mesmo ritmo.",
+        status: "Open source · em desenvolvimento",
+        headline: "Sua biblioteca e seu progresso em um só lugar.",
         description:
-          "Plataforma de operação para restaurantes, com catálogo digital, mesas, pedidos e cardápio por QR. Estou reconstruindo a base como um monorepo, preservando o produto legado enquanto os novos fluxos amadurecem.",
+          "Aplicativo Windows que reúne a biblioteca Calibre e as estantes Hardcover, permite editar metadados e enviar ebooks ao Kindle com KOReader.",
         details:
-          "Next.js e React na web, NestJS na API, PostgreSQL e Prisma. O catálogo e o fluxo QR já têm uma base integrada; a migração ainda não está pronta para produção.",
-        imageAlt:
-          "Prévia de um dashboard do Comandinha com métricas e pedidos de demonstração.",
-        imageCaption: "Operação do salão · dados demonstrativos",
+          "Interface React e Electron com serviço Python local. O projeto inclui backups criptografados e integração de progresso de leitura; fluxos de sincronização ainda estão em validação no dispositivo.",
+        imageAlt: "Biblioteca do KOReader Ecosystem com capas e dados fictícios de demonstração.",
+        imageCaption: "Biblioteca · dados demonstrativos",
         linkLabel: "Explorar repositório público",
       },
       en: {
-        status: "Migration in progress",
-        headline: "One rhythm for the whole dining room.",
+        status: "Open source · in development",
+        headline: "Your library and reading progress together.",
         description:
-          "A restaurant operations platform for digital catalogs, tables, orders and QR menus. I am rebuilding its foundation as a monorepo while keeping the legacy product available as the new flows mature.",
+          "A Windows app for browsing a Calibre library and Hardcover shelves, editing metadata, and sending ebooks to a Kindle running KOReader.",
         details:
-          "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
-        imageAlt:
-          "Comandinha dashboard preview with demonstration metrics and orders.",
-        imageCaption: "Restaurant operations · mock data",
+          "A React and Electron interface with a local Python service. It includes encrypted backups and reading-progress integration; device synchronization workflows are still being validated.",
+        imageAlt: "KOReader Ecosystem library with book covers and fictional demo data.",
+        imageCaption: "Library · demo data",
         linkLabel: "Explore the public repository",
       },
     },

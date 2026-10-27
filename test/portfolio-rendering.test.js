@@ -45,7 +45,7 @@ test("keeps project facts, image paths, and public links consistent across conce
 
   assert.deepEqual(
     portfolioContent.products.map(({ id }) => id),
-    ["comandinha", "black-market"],
+    ["koreader-ecosystem", "black-market"],
   );
   assert.deepEqual(
     portfolioContent.openSourceProjects.map(({ id }) => id),
@@ -53,10 +53,9 @@ test("keeps project facts, image paths, and public links consistent across conce
   );
   for (const product of portfolioContent.products) {
     for (const section of [field.products, index.products]) {
-      if (product.id === "comandinha") {
+      if (product.id === "koreader-ecosystem") {
         assert.match(section, /<picture>/);
         assert.ok(section.includes(product.image.pt.desktop.src));
-        assert.ok(section.includes(product.image.pt.mobile.src));
         assert.ok(section.includes(escapeHtml(product.pt.imageAlt)));
       } else {
         assert.ok(section.includes(product.image.src), "missing image " + product.id);

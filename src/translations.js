@@ -6,15 +6,6 @@ export const english = {
   productsTitle: "Products in progress.<br />Real-world problems.",
   productsIntro:
     "Alongside open tools, I work on products with their own context and constraints. Here I explain the problem, current stage and engineering decisions.",
-  comandinhaStatus: "Migration in progress",
-  comandinhaHeadline: "One rhythm for the whole dining room.",
-  comandinhaDescription:
-    "A restaurant operations platform for digital catalogs, tables, orders and QR menus. I am rebuilding its foundation as a monorepo while keeping the legacy product available as the new flows mature.",
-  comandinhaDetails:
-    "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
-  comandinhaLink: "Explore the public repository",
-  comandinhaImageAlt: "Actual screenshot of the new Comandinha panel login screen.",
-  comandinhaCaption: "New panel · local capture",
   blackMarketStatus: "In development",
   blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
   blackMarketDescription:
