@@ -1,0 +1,2 @@
+# Enzo Bellussi — portfólio
+Público: recrutadores e engenheiros avaliando experiência e qualidade de frontend. Objetivo: identificar especialidade, evidências e contato rapidamente. Verdade: src/content/portfolio.js e conteúdo vigente da main 5186afa. Stack HTML/CSS/JS Vite; PT/EN, temas e PDFs preservados. Experimento determinístico: / A original, /v2 B tipografia, /v3 C redesign. Sem divisão de tráfego, merge ou publicação oficial nesta tarefa. Requisitos completos: docs/portfolio-abc-design.md.
