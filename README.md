@@ -49,3 +49,30 @@ As experiências profissionais descrevem responsabilidades fornecidas no curríc
 ## Publicação
 
 O projeto mantém a integração existente com a Vercel. Comando de build: `npm run build`; diretório de saída: `dist`; versão de Node: 24.x.
+
+
+## Experimento A/B/C
+
+A raiz continua sendo o controle original. `/v2` usa Zilla Slab com mudanças apenas tipográficas; `/v3` é uma experiência editorial independente. Não há distribuição aleatória de visitantes.
+
+```sh
+npm ci
+npm run dev
+# ou build/preview de produção
+npm test
+npm run build
+npm run preview -- --host 127.0.0.1 --port 4180
+# com o preview aberto e Chrome instalado:
+npm run test:browser
+```
+
+O teste de navegador usa Chrome por padrão; `PLAYWRIGHT_CHANNEL=msedge` seleciona Edge. `PORTFOLIO_TEST_URL` troca a origem do preview. As ferramentas Playwright e axe-core são dependências apenas de desenvolvimento. Para usar Chromium em outro ambiente, execute `npx playwright install chromium` e use `PLAYWRIGHT_CHANNEL=chromium`. Nenhuma dependência de UI foi adicionada.
+
+O seletor mantém idioma nas URLs (`?lang=pt` ou `?lang=en`) e tema em preferência local. Para inspecionar sem seletor, use `?compare=0`: seu módulo não é baixado. Para eliminá-lo do build, defina `VITE_PORTFOLIO_COMPARE=false` antes de `npm run build`. B/C mantêm `noindex` e canonical para a raiz, inclusive no HTML sem JS; vercel.json também define cabeçalhos. Não promova C sem decisão explícita.
+
+`predev` e `prebuild` geram v2/index.html a partir de index.html e v3/index.html a partir dos dados compartilhados. Não edite os gerados. Depois de mudar o HTML original ou os renderizadores com dev já aberto, execute `node scripts/generate-variants.mjs` novamente (ou reinicie o dev). O texto PT gerado em src/editorial/portuguese.generated.js também é descartável.
+
+Documentação: [skills](docs/design-skill-audit.md), [auditoria original](docs/portfolio-audit.md), [arquitetura](docs/portfolio-abc-design.md), [tokens e tipografia](DESIGN.md), [comparação e testes](docs/portfolio-comparison.md), [evidências](docs/evidence/README.md).
+
+
+A V3 recebeu uma segunda direção de arte e motion: consulte [o refinamento](docs/v3-creative-refinement.md). Com o preview aberto, `node scripts/v3-refinement-check.mjs` verifica diálogo, foco, screenshots, ponteiro, motion reduzido, navegação interrompida e reabertura de mídia. As novas imagens WebP são derivadas das capturas originais, que continuam acessíveis integralmente.

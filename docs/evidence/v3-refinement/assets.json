@@ -1,0 +1,12 @@
+{
+  "source": "Original PNG screenshots retained unchanged in public/; derivatives created via Pillow/Lanczos/WebP quality86",
+  "files": {
+    "v3-black-market-480.webp": 13940,
+    "v3-black-market-960.webp": 41496,
+    "v3-koreader-en-480.webp": 15216,
+    "v3-koreader-en-960.webp": 43268,
+    "v3-koreader-pt-480.webp": 16014,
+    "v3-koreader-pt-960.webp": 49228
+  },
+  "total_bytes": 179162
+}

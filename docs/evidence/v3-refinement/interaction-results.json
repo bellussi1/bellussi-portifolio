@@ -1,0 +1,39 @@
+[
+  {
+    "name": "normal motion and reading-driven project focus",
+    "pass": true
+  },
+  {
+    "name": "pointer depth is bounded and stops when reduced motion changes",
+    "pass": true
+  },
+  {
+    "name": "real screenshot dialog: keyboard open, focus trap, Escape and focus return",
+    "pass": true
+  },
+  {
+    "name": "rapid project changes settle on the last selection",
+    "pass": true
+  },
+  {
+    "name": "interrupted manual navigation reconciles the case actually visible",
+    "pass": true
+  },
+  {
+    "name": "reopening a different screenshot resets modal scroll",
+    "pass": true
+  },
+  {
+    "name": "screenshots and reading have no overflow in all target sizes/themes/locales",
+    "pass": true
+  },
+  {
+    "name": "repeated locale changes reconnect only current motion targets",
+    "pass": true
+  },
+  {
+    "name": "console",
+    "pass": true,
+    "errors": []
+  }
+]

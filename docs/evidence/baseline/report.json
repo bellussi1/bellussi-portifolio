@@ -1,0 +1,3626 @@
+{
+ "url": "http://127.0.0.1:4178",
+ "at": "2026-10-29T13:27:28.251Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.49,
+    0.26,
+    0.44,
+    0.47,
+    0.34,
+    0.46,
+    0.73,
+    0.28,
+    0.24
+   ],
+   "motion": {
+    "elements": 128,
+    "css": 57,
+    "transitions": 69,
+    "scripted": 2,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 7508,
+     "screens": 8.3,
+     "words": 1115,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 5,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "koreader-library-pt.png",
+      "black-market-700.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "✳"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Do detalhe visual à arquitetura.",
+     "words": 5,
+     "chars": 32,
+     "lines": 2,
+     "size": 82,
+     "vw": 5.7,
+     "font": "DM Sans",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.43,
+     "top": 319,
+     "mixedFonts": [
+      "DM Sans",
+      "DM Serif Display italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Do detalhe visual à arquitetura.",
+     "words": 5,
+     "lines": 2,
+     "size": 82,
+     "font": "DM Sans"
+    },
+    "headings": [
+     {
+      "text": "eb·",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.083,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 30,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Do detalhe visual à arquitetura.",
+      "words": 5,
+      "chars": 32,
+      "lines": 2,
+      "size": 82,
+      "vw": 5.7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.43,
+      "top": 319,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Código que chega à produção.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.65,
+      "top": 1033,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Produtos em construção. Problemas do mundo real.",
+      "words": 7,
+      "chars": 48,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.65,
+      "top": 2229,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "KOReader Ecosystem",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 3105,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Black Market",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 3107,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ferramentas pequenas. Problemas concretos.",
+      "words": 4,
+      "chars": 42,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.65,
+      "top": 3527,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Uma boa interface começa antes do CSS.",
+      "words": 7,
+      "chars": 38,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.65,
+      "top": 5271,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "⌘",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 2.3,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 5577,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 2.3,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.02,
+      "top": 5577,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "⟷",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 2.3,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 5577,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Prazer, Enzo.",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 87.4,
+      "vw": 6.1,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.043,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 6219,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Vamos construir o próximo capítulo?",
+      "words": 5,
+      "chars": 35,
+      "lines": 2,
+      "size": 68,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 6927,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "eb·",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.083,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 7418,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 3
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.82,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.14,
+       "mono": false
+      },
+      {
+       "family": "DM Serif Display",
+       "share": 0.04,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      27,
+      33,
+      34,
+      36,
+      56,
+      68,
+      76,
+      82,
+      87
+     ],
+     "sizeCount": 25,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 12,
+      "leading": 1.7,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 9.2
+     },
+     "measureChars": 89,
+     "max": {
+      "size": 87.4,
+      "vw": 6.1,
+      "font": "DM Serif Display",
+      "text": "Enzo."
+     },
+     "monoShare": 0.14,
+     "monoProseShare": 0.11,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "01 / FRONT-END ENGINEERING",
+      "EB.",
+      "interface.tsx",
+      "↗",
+      "reusable components",
+      "TypeScript"
+     ],
+     "microLabels": 36,
+     "microLabelShare": 0.074,
+     "microSamples": [
+      "SOFTWARE ENGINEER · FRONT-END",
+      "01 / FRONT-END ENGINEERING",
+      "EB.",
+      "DESIGN → CODE → PRODUCTION",
+      "/ PROFILE",
+      "BASE"
+     ],
+     "upperShare": 0.08,
+     "centerShare": 0,
+     "smallText": 85
+    },
+    "eyebrows": [
+     {
+      "text": "SOFTWARE ENGINEER · FRONT-END",
+      "above": "Do detalhe visual à arquitetura.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 273
+     },
+     {
+      "text": "Open source · em desenvolvimento",
+      "above": "KOReader Ecosystem",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3071
+     },
+     {
+      "text": "Código aberto · Em desenvolvimento",
+      "above": "Black Market",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3073
+     },
+     {
+      "text": "05",
+      "above": "Prazer, Enzo.",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 6165
+     },
+     {
+      "text": "Aberto a conversar sobre oportunidades.",
+      "above": "Vamos construir o próximo capítulo?",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 6856
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01 / FRONT-END ENGINEERING",
+      "size": 9,
+      "top": 266
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 148
+     },
+     {
+      "text": "01",
+      "size": 11,
+      "top": 1045
+     },
+     {
+      "text": "02",
+      "size": 11,
+      "top": 2241
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 2514
+     },
+     {
+      "text": "01 /",
+      "size": 10,
+      "top": 3046
+     },
+     {
+      "text": "02",
+      "size": 10,
+      "top": 2514
+     },
+     {
+      "text": "02 /",
+      "size": 10,
+      "top": 3048
+     },
+     {
+      "text": "03",
+      "size": 11,
+      "top": 3539
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 3854
+     },
+     {
+      "text": "02",
+      "size": 10,
+      "top": 4259
+     },
+     {
+      "text": "03",
+      "size": 10,
+      "top": 4663
+     }
+    ],
+    "color": {
+     "bodyBg": "#1d1c19",
+     "bodyBgHsl": {
+      "h": 45,
+      "s": 0.07,
+      "l": 0.11
+     },
+     "dark": true,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#c5beb1",
+       "share": 0.62
+      },
+      {
+       "color": "#eeeae1",
+       "share": 0.15
+      },
+      {
+       "color": "#d2ad98",
+       "share": 0.1
+      },
+      {
+       "color": "#c47d5c",
+       "share": 0.04
+      },
+      {
+       "color": "#e2a184",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#82412f",
+      "hsl": {
+       "h": 13,
+       "s": 0.47,
+       "l": 0.35
+      },
+      "fg": "#fff8ee"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": 0,
+     "height": 54,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Pular para o conteúdo",
+      "Conheça minha experiência ↘"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "div.engineering-visual.index-hero-visual → rgb(192, 184, 168) 10px 10px 0px 0px",
+      "div.system-window.index-parallax-layer → rgba(0, 0, 0, 0.267) 0px 24px 70px 0px",
+      "div.code-fragment.index-parallax-layer → rgba(0, 0, 0, 0.333) 0px 16px 45px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 32,
+     "hairlineSamples": [
+      "header.site-header 1440px",
+      "div.window-bar 491px",
+      "div.ui-chart 389px",
+      "div.window-footer 490px",
+      "div.index-hero-meta 1240px"
+     ],
+     "outlinedBoxes": 12,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 1,
+     "boxRadius": 9,
+     "squareMedia": 4,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 817
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "svg",
+      "ratio": 0.43
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.21
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 97,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "dm serif display"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 7508,
+    "margins": {
+     "left": 100,
+     "right": 114
+    },
+    "sections": [
+     {
+      "sel": "section#home.hero.container",
+      "tag": "section",
+      "top": 97,
+      "height": 720,
+      "words": 75,
+      "media": 2,
+      "middle": 41,
+      "heading": {
+       "text": "Do detalhe visual",
+       "size": 82,
+       "tag": "h1"
+      },
+      "left": 100,
+      "right": 150,
+      "textLeft": 100,
+      "textRight": 150,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience.section.container",
+      "tag": "section",
+      "top": 912,
+      "height": 1317,
+      "words": 266,
+      "media": 0,
+      "middle": 167,
+      "heading": {
+       "text": "Código que chega",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 120,
+      "textLeft": 100,
+      "textRight": 120,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#products.section.container",
+      "tag": "section",
+      "top": 2228,
+      "height": 1298,
+      "words": 209,
+      "media": 4,
+      "middle": 3,
+      "heading": {
+       "text": "Problemas do mundo real.",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 120,
+      "textLeft": 100,
+      "textRight": 133,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-heading.reveal",
+      "tag": "div",
+      "top": 3527,
+      "height": 229,
+      "words": 33,
+      "media": 0,
+      "middle": 101,
+      "heading": {
+       "text": "Problemas concretos.",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 473,
+      "textLeft": 100,
+      "textRight": 473,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 3826,
+      "height": 1213,
+      "words": 288,
+      "media": 0,
+      "middle": 30,
+      "heading": {
+       "text": "Deploy Preflight",
+       "size": 21,
+       "tag": "h3"
+      },
+      "left": 112,
+      "right": 114,
+      "textLeft": 112,
+      "textRight": 114,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach.approach-section",
+      "tag": "section",
+      "top": 5160,
+      "height": 864,
+      "words": 127,
+      "media": 0,
+      "middle": 61,
+      "heading": {
+       "text": "Uma boa interface",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 131,
+      "textLeft": 100,
+      "textRight": 131,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.section.container",
+      "tag": "section",
+      "top": 6024,
+      "height": 783,
+      "words": 109,
+      "media": 0,
+      "middle": 409,
+      "heading": {
+       "text": "Enzo.",
+       "size": 87,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 103,
+      "textLeft": 100,
+      "textRight": 103,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact-section.container",
+      "tag": "section",
+      "top": 6807,
+      "height": 564,
+      "words": 39,
+      "media": 0,
+      "middle": 378,
+      "heading": {
+       "text": "Vamos construir",
+       "size": 68,
+       "tag": "h2"
+      },
+      "left": 165,
+      "right": 165,
+      "textLeft": 165,
+      "textRight": 165,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site-footer.container",
+      "tag": "footer",
+      "top": 7371,
+      "height": 137,
+      "words": 14,
+      "media": 0,
+      "middle": 803,
+      "heading": {
+       "text": "eb",
+       "size": 36,
+       "tag": "span"
+      },
+      "left": 100,
+      "right": 100,
+      "textLeft": 100,
+      "textRight": 100,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Do detalhe visual à arquitetura.",
+      "size": 82,
+      "top": 319,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 410,
+      "n": 12
+     },
+     {
+      "x": 720,
+      "n": 6
+     },
+     {
+      "x": 152,
+      "n": 3
+     },
+     {
+      "x": 165,
+      "n": 3
+     },
+     {
+      "x": 100,
+      "n": 2
+     },
+     {
+      "x": 123,
+      "n": 2
+     },
+     {
+      "x": 742,
+      "n": 2
+     },
+     {
+      "x": 776,
+      "n": 1
+     },
+     {
+      "x": 1042,
+      "n": 1
+     },
+     {
+      "x": 1060,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 33,
+    "bodySize": 12,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.58,
+    0.23,
+    0.33,
+    0.57,
+    0.29,
+    0.62,
+    0.66,
+    0.23
+   ],
+   "motion": {
+    "elements": 128,
+    "css": 57,
+    "transitions": 69,
+    "scripted": 2,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 8147,
+     "screens": 8,
+     "words": 1107,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 5,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "koreader-library-pt.png",
+      "black-market-350.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "✳"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Do detalhe visual à arquitetura.",
+     "words": 5,
+     "chars": 32,
+     "lines": 2,
+     "size": 54,
+     "vw": 7,
+     "font": "DM Sans",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.87,
+     "top": 250,
+     "mixedFonts": [
+      "DM Sans",
+      "DM Serif Display italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Do detalhe visual à arquitetura.",
+     "words": 5,
+     "lines": 2,
+     "size": 54,
+     "font": "DM Sans"
+    },
+    "headings": [
+     {
+      "text": "eb·",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.083,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 26,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Do detalhe visual à arquitetura.",
+      "words": 5,
+      "chars": 32,
+      "lines": 2,
+      "size": 54,
+      "vw": 7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 250,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "✳",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 27,
+      "vw": 3.5,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0.03,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 1051,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Código que chega à produção.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.69,
+      "top": 1399,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Produtos em construção. Problemas do mundo real.",
+      "words": 7,
+      "chars": 48,
+      "lines": 2,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.69,
+      "top": 2818,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ferramentas pequenas. Problemas concretos.",
+      "words": 4,
+      "chars": 42,
+      "lines": 2,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.69,
+      "top": 3945,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Uma boa interface começa antes do CSS.",
+      "words": 7,
+      "chars": 38,
+      "lines": 2,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.69,
+      "top": 5798,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "⌘",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 4.3,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.05,
+      "top": 6055,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 4.3,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.03,
+      "top": 6055,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "⟷",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 4.3,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.05,
+      "top": 6055,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Gosto de conectar o que as pessoas veem ao que faz o software funcionar.",
+      "words": 14,
+      "chars": 72,
+      "lines": 3,
+      "size": 27,
+      "vw": 3.5,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": -0.03,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.46,
+      "top": 6777,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Prazer, Enzo.",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 87.4,
+      "vw": 11.4,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.043,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 6791,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Vamos construir o próximo capítulo?",
+      "words": 5,
+      "chars": 35,
+      "lines": 2,
+      "size": 40,
+      "vw": 5.2,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 7627,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "eb·",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.083,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 8057,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 3
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.82,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.14,
+       "mono": false
+      },
+      {
+       "family": "DM Serif Display",
+       "share": 0.04,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      27,
+      33,
+      36,
+      40,
+      54,
+      76,
+      87
+     ],
+     "sizeCount": 23,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 12,
+      "leading": 1.7,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 9.2
+     },
+     "measureChars": 50,
+     "max": {
+      "size": 87.4,
+      "vw": 11.4,
+      "font": "DM Serif Display",
+      "text": "Enzo."
+     },
+     "monoShare": 0.14,
+     "monoProseShare": 0.11,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "01 / FRONT-END ENGINEERING",
+      "EB.",
+      "interface.tsx",
+      "↗",
+      "reusable components",
+      "TypeScript"
+     ],
+     "microLabels": 36,
+     "microLabelShare": 0.075,
+     "microSamples": [
+      "SOFTWARE ENGINEER · FRONT-END",
+      "01 / FRONT-END ENGINEERING",
+      "EB.",
+      "DESIGN → CODE → PRODUCTION",
+      "/ PROFILE",
+      "BASE"
+     ],
+     "upperShare": 0.08,
+     "centerShare": 0,
+     "smallText": 84
+    },
+    "eyebrows": [
+     {
+      "text": "SOFTWARE ENGINEER · FRONT-END",
+      "above": "Do detalhe visual à arquitetura.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 204
+     },
+     {
+      "text": "05",
+      "above": "Prazer, Enzo.",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 6737
+     },
+     {
+      "text": "Aberto a conversar sobre oportunidades.",
+      "above": "Vamos construir o próximo capítulo?",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 7556
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01 / FRONT-END ENGINEERING",
+      "size": 9,
+      "top": 620
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 148
+     },
+     {
+      "text": "01",
+      "size": 11,
+      "top": 1411
+     },
+     {
+      "text": "02",
+      "size": 11,
+      "top": 2830
+     },
+     {
+      "text": "01 /",
+      "size": 10,
+      "top": 3395
+     },
+     {
+      "text": "02 /",
+      "size": 10,
+      "top": 3396
+     },
+     {
+      "text": "03",
+      "size": 11,
+      "top": 3966
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 4226
+     },
+     {
+      "text": "02",
+      "size": 10,
+      "top": 4668
+     },
+     {
+      "text": "03",
+      "size": 10,
+      "top": 5130
+     },
+     {
+      "text": "04",
+      "size": 11,
+      "top": 5810
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 6060
+     }
+    ],
+    "color": {
+     "bodyBg": "#1d1c19",
+     "bodyBgHsl": {
+      "h": 45,
+      "s": 0.07,
+      "l": 0.11
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#141512",
+       "top": 581,
+       "hsl": {
+        "h": 80,
+        "s": 0.08,
+        "l": 0.08
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#c5beb1",
+       "share": 0.62
+      },
+      {
+       "color": "#eeeae1",
+       "share": 0.15
+      },
+      {
+       "color": "#d2ad98",
+       "share": 0.1
+      },
+      {
+       "color": "#c47d5c",
+       "share": 0.04
+      },
+      {
+       "color": "#e2a184",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#82412f",
+      "hsl": {
+       "h": 13,
+       "s": 0.47,
+       "l": 0.35
+      },
+      "fg": "#fff8ee"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": 0,
+     "height": 54,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Pular para o conteúdo",
+      "Conheça minha experiência ↘"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "div.engineering-visual.index-hero-visual → rgb(192, 184, 168) 10px 10px 0px 0px",
+      "div.system-window.index-parallax-layer → rgba(0, 0, 0, 0.267) 0px 24px 70px 0px",
+      "div.code-fragment.index-parallax-layer → rgba(0, 0, 0, 0.333) 0px 16px 45px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 30,
+     "hairlineSamples": [
+      "header.site-header 768px",
+      "div.window-bar 575px",
+      "div.ui-chart 474px",
+      "div.window-footer 575px",
+      "div.index-hero-meta 704px"
+     ],
+     "outlinedBoxes": 12,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 1,
+     "boxRadius": 9,
+     "squareMedia": 4,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "svg",
+      "ratio": 0.58
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.37
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 97,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "dm serif display"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 8147,
+    "margins": {
+     "left": 32,
+     "right": 39
+    },
+    "sections": [
+     {
+      "sel": "section#home.hero.container",
+      "tag": "section",
+      "top": 97,
+      "height": 1086,
+      "words": 75,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Do detalhe visual",
+       "size": 54,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 57,
+      "textLeft": 32,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience.section.container",
+      "tag": "section",
+      "top": 1278,
+      "height": 1539,
+      "words": 266,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Código que chega",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 44,
+      "textLeft": 32,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#products.section.container",
+      "tag": "section",
+      "top": 2817,
+      "height": 1127,
+      "words": 210,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "Produtos em construção.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 44,
+      "textLeft": 32,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-heading.reveal",
+      "tag": "div",
+      "top": 3945,
+      "height": 183,
+      "words": 33,
+      "media": 0,
+      "middle": 25,
+      "heading": {
+       "text": "Problemas concretos.",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 88,
+      "textLeft": 32,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 4198,
+      "height": 1369,
+      "words": 288,
+      "media": 0,
+      "middle": 33,
+      "heading": {
+       "text": "Deploy Preflight",
+       "size": 21,
+       "tag": "h3"
+      },
+      "left": 44,
+      "right": 33,
+      "textLeft": 44,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach.approach-section",
+      "tag": "section",
+      "top": 5687,
+      "height": 909,
+      "words": 127,
+      "media": 0,
+      "middle": 4,
+      "heading": {
+       "text": "Uma boa interface",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 59,
+      "textLeft": 32,
+      "textRight": 59,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.section.container",
+      "tag": "section",
+      "top": 6596,
+      "height": 911,
+      "words": 109,
+      "media": 0,
+      "middle": 141,
+      "heading": {
+       "text": "Enzo.",
+       "size": 87,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 36,
+      "textLeft": 32,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact-section.container",
+      "tag": "section",
+      "top": 7507,
+      "height": 503,
+      "words": 39,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Vamos construir",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 97,
+      "right": 97,
+      "textLeft": 97,
+      "textRight": 97,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site-footer.container",
+      "tag": "footer",
+      "top": 8010,
+      "height": 137,
+      "words": 14,
+      "media": 0,
+      "middle": 267,
+      "heading": {
+       "text": "eb",
+       "size": 36,
+       "tag": "span"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Do detalhe visual à arquitetura.",
+      "size": 54,
+      "top": 250,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 208,
+      "n": 12
+     },
+     {
+      "x": 32,
+      "n": 4
+     },
+     {
+      "x": 384,
+      "n": 4
+     },
+     {
+      "x": 84,
+      "n": 3
+     },
+     {
+      "x": 97,
+      "n": 3
+     },
+     {
+      "x": 49,
+      "n": 2
+     },
+     {
+      "x": 400,
+      "n": 2
+     },
+     {
+      "x": 572,
+      "n": 2
+     },
+     {
+      "x": 69,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 33,
+    "bodySize": 12,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.51,
+    0.44,
+    0.47,
+    0.44,
+    0.55,
+    0.47,
+    0.52,
+    0.43,
+    0.48,
+    1,
+    0.63,
+    0.44
+   ],
+   "motion": {
+    "elements": 119,
+    "css": 55,
+    "transitions": 62,
+    "scripted": 2,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 10744,
+     "screens": 12.7,
+     "words": 1096,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 5,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "koreader-library-pt.png",
+      "black-market-350.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "✳"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Do detalhe visual à arquitetura.",
+     "words": 5,
+     "chars": 32,
+     "lines": 2,
+     "size": 47,
+     "vw": 12.1,
+     "font": "DM Sans",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 260,
+     "mixedFonts": [
+      "DM Sans",
+      "DM Serif Display italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Do detalhe visual à arquitetura.",
+     "words": 5,
+     "lines": 2,
+     "size": 47,
+     "font": "DM Sans"
+    },
+    "headings": [
+     {
+      "text": "eb·",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 31,
+      "vw": 7.9,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.097,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.11,
+      "top": 16,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Do detalhe visual à arquitetura.",
+      "words": 5,
+      "chars": 32,
+      "lines": 2,
+      "size": 47,
+      "vw": 12.1,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 260,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "eb.",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 799,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "MarketData / Banco do Brasil",
+      "words": 5,
+      "chars": 28,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1132,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Código que chega à produção.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1319,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Da interface à responsabilidade técnica.",
+      "words": 5,
+      "chars": 40,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1714,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "+",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 2122,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Uma nova base para um sistema legado.",
+      "words": 7,
+      "chars": 37,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2370,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Produtos em construção. Problemas do mundo real.",
+      "words": 7,
+      "chars": 48,
+      "lines": 4,
+      "size": 40,
+      "vw": 10.3,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2950,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "KOReader Ecosystem",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 3654,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Black Market",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 4444,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ferramentas pequenas. Problemas concretos.",
+      "words": 4,
+      "chars": 42,
+      "lines": 4,
+      "size": 40,
+      "vw": 10.3,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 4952,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Uma boa interface começa antes do CSS.",
+      "words": 7,
+      "chars": 38,
+      "lines": 3,
+      "size": 40,
+      "vw": 10.3,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 7559,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "⌘",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 8.5,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 7861,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Arquitetura que acompanha.",
+      "words": 3,
+      "chars": 26,
+      "lines": 2,
+      "size": 25,
+      "vw": 6.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 7922,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 8.5,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 8213,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiência que funciona.",
+      "words": 3,
+      "chars": 25,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 8274,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "⟷",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 33,
+      "vw": 8.5,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.1,
+      "top": 8536,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Integração de ponta a ponta.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 25,
+      "vw": 6.4,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 8597,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Prazer, Enzo.",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 75.9,
+      "vw": 19.5,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.043,
+      "leading": 1,
+      "upper": false,
+      "italic": true,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 9038,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Gosto de conectar o que as pessoas veem ao que faz o software funcionar.",
+      "words": 14,
+      "chars": 72,
+      "lines": 3,
+      "size": 26,
+      "vw": 6.7,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": -0.03,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 9268,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Vamos construir o próximo capítulo?",
+      "words": 5,
+      "chars": 35,
+      "lines": 3,
+      "size": 40,
+      "vw": 10.3,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 10047,
+      "mixedFonts": [
+       "DM Sans",
+       "DM Serif Display italic"
+      ],
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "eb·",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "DM Serif Display",
+      "weight": 400,
+      "tracking": -0.1,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.11,
+      "top": 10598,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 23,
+     "maxLines": 4,
+     "over2Lines": 4,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 3
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.82,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.14,
+       "mono": false
+      },
+      {
+       "family": "DM Serif Display",
+       "share": 0.04,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      30,
+      31,
+      33,
+      40,
+      47,
+      66,
+      76
+     ],
+     "sizeCount": 23,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 12,
+      "leading": 1.7,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 9.2
+     },
+     "measureChars": 50,
+     "max": {
+      "size": 75.9,
+      "vw": 19.5,
+      "font": "DM Serif Display",
+      "text": "Enzo."
+     },
+     "monoShare": 0.14,
+     "monoProseShare": 0.1,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "01 / FRONT-END ENGINEERING",
+      "EB.",
+      "interface.tsx",
+      "↗",
+      "reusable components",
+      "TypeScript"
+     ],
+     "microLabels": 33,
+     "microLabelShare": 0.072,
+     "microSamples": [
+      "SOFTWARE ENGINEER · FRONT-END",
+      "01 / FRONT-END ENGINEERING",
+      "EB.",
+      "DESIGN → CODE → PRODUCTION",
+      "/ PROFILE",
+      "BASE"
+     ],
+     "upperShare": 0.08,
+     "centerShare": 0,
+     "smallText": 83
+    },
+    "eyebrows": [
+     {
+      "text": "SOFTWARE ENGINEER · FRONT-END",
+      "above": "Do detalhe visual à arquitetura.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 219
+     },
+     {
+      "text": "interface.tsx",
+      "above": "eb.",
+      "upper": false,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 10,
+      "top": 778
+     },
+     {
+      "text": "Experiência em contextos reais",
+      "above": "MarketData / Banco do Brasil",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 1105
+     },
+     {
+      "text": "01",
+      "above": "Código que chega à produção.",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 1277
+     },
+     {
+      "text": "DESENVOLVEDOR FRONT-END",
+      "above": "Da interface à responsabilidade técnica.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 1667
+     },
+     {
+      "text": "ESTÁGIO EM DESENVOLVIMENTO FRONT-END",
+      "above": "Uma nova base para um sistema legado.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 2323
+     },
+     {
+      "text": "02",
+      "above": "Produtos em construção. Problemas do mun",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 2908
+     },
+     {
+      "text": "Open source · em desenvolvimento",
+      "above": "KOReader Ecosystem",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3621
+     },
+     {
+      "text": "Código aberto · Em desenvolvimento",
+      "above": "Black Market",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 4411
+     },
+     {
+      "text": "03",
+      "above": "Ferramentas pequenas. Problemas concreto",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 4910
+     },
+     {
+      "text": "04",
+      "above": "Uma boa interface começa antes do CSS.",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 7517
+     },
+     {
+      "text": "01",
+      "above": "Arquitetura que acompanha.",
+      "upper": false,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 10,
+      "top": 7866
+     },
+     {
+      "text": "React · Angular · Vue · TypeScript",
+      "above": "↗",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 8119
+     },
+     {
+      "text": "02",
+      "above": "Experiência que funciona.",
+      "upper": false,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 10,
+      "top": 8218
+     },
+     {
+      "text": "WCAG · Web Vitals · Responsive UI",
+      "above": "⟷",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 10,
+      "top": 8442
+     },
+     {
+      "text": "03",
+      "above": "Integração de ponta a ponta.",
+      "upper": false,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 10,
+      "top": 8541
+     },
+     {
+      "text": "05",
+      "above": "Prazer, Enzo.",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 8993
+     },
+     {
+      "text": "Aberto a conversar sobre oportunidades.",
+      "above": "Vamos construir o próximo capítulo?",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 9995
+     },
+     {
+      "text": "enzobellussi3@gmail.com",
+      "above": "eb·",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 10482
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01 / FRONT-END ENGINEERING",
+      "size": 7,
+      "top": 705
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 118
+     },
+     {
+      "text": "01",
+      "size": 11,
+      "top": 1277
+     },
+     {
+      "text": "02",
+      "size": 11,
+      "top": 2908
+     },
+     {
+      "text": "01 /",
+      "size": 10,
+      "top": 3596
+     },
+     {
+      "text": "02 /",
+      "size": 10,
+      "top": 4386
+     },
+     {
+      "text": "03",
+      "size": 11,
+      "top": 4910
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 5318
+     },
+     {
+      "text": "02",
+      "size": 10,
+      "top": 6014
+     },
+     {
+      "text": "03",
+      "size": 10,
+      "top": 6706
+     },
+     {
+      "text": "04",
+      "size": 11,
+      "top": 7517
+     },
+     {
+      "text": "01",
+      "size": 10,
+      "top": 7866
+     }
+    ],
+    "color": {
+     "bodyBg": "#1d1c19",
+     "bodyBgHsl": {
+      "h": 45,
+      "s": 0.07,
+      "l": 0.11
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#141512",
+       "top": 681,
+       "hsl": {
+        "h": 80,
+        "s": 0.08,
+        "l": 0.08
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#c5beb1",
+       "share": 0.63
+      },
+      {
+       "color": "#eeeae1",
+       "share": 0.15
+      },
+      {
+       "color": "#d2ad98",
+       "share": 0.1
+      },
+      {
+       "color": "#c47d5c",
+       "share": 0.04
+      },
+      {
+       "color": "#e2a184",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#82412f",
+      "hsl": {
+       "h": 13,
+       "s": 0.47,
+       "l": 0.35
+      },
+      "fg": "#fff8ee"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": 0,
+     "height": 54,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Pular para o conteúdo",
+      "Conheça minha experiência ↘"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "div.engineering-visual.index-hero-visual → rgb(192, 184, 168) 10px 10px 0px 0px",
+      "div.system-window.index-parallax-layer → rgba(0, 0, 0, 0.267) 0px 24px 70px 0px",
+      "div.code-fragment.index-parallax-layer → rgba(0, 0, 0, 0.333) 0px 16px 45px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 28,
+     "hairlineSamples": [
+      "header.site-header 390px",
+      "div.window-bar 312px",
+      "div.window-footer 312px",
+      "div.index-hero-meta 350px",
+      "div.credential-strip.container 350px"
+     ],
+     "outlinedBoxes": 14,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 4,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 1080
+      },
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": false,
+       "top": 7832
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "svg",
+      "ratio": 0.27
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.17
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 77,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "dm serif display"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 10744,
+    "margins": {
+     "left": 20,
+     "right": 22
+    },
+    "sections": [
+     {
+      "sel": "section#home.hero.container",
+      "tag": "section",
+      "top": 77,
+      "height": 1003,
+      "words": 75,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Do detalhe visual",
+       "size": 47,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 21,
+      "textLeft": 20,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-heading.reveal",
+      "tag": "div",
+      "top": 1277,
+      "height": 225,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Código que chega",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 24,
+      "textLeft": 20,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 1546,
+      "height": 1226,
+      "words": 215,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Da interface à responsabilidade técnica.",
+       "size": 22,
+       "tag": "h3"
+      },
+      "left": 20,
+      "right": 29,
+      "textLeft": 20,
+      "textRight": 29,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-heading.reveal",
+      "tag": "div",
+      "top": 2908,
+      "height": 317,
+      "words": 34,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Produtos em construção.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 25,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 3259,
+      "height": 1579,
+      "words": 176,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "KOReader Ecosystem",
+       "size": 25,
+       "tag": "h3"
+      },
+      "left": 34,
+      "right": 34,
+      "textLeft": 37,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-heading.reveal",
+      "tag": "div",
+      "top": 4910,
+      "height": 341,
+      "words": 35,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ferramentas pequenas.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 21,
+      "textLeft": 20,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 5295,
+      "height": 2065,
+      "words": 288,
+      "media": 0,
+      "middle": 32,
+      "heading": {
+       "text": "Deploy Preflight",
+       "size": 21,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 20,
+      "textLeft": 32,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach.approach-section",
+      "tag": "section",
+      "top": 7438,
+      "height": 1476,
+      "words": 127,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Uma boa interface",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 24,
+      "textLeft": 20,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.section.container",
+      "tag": "section",
+      "top": 8914,
+      "height": 1016,
+      "words": 109,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Enzo.",
+       "size": 76,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 22,
+      "textLeft": 20,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact-section.container",
+      "tag": "section",
+      "top": 9930,
+      "height": 631,
+      "words": 39,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Vamos construir",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 45,
+      "right": 63,
+      "textLeft": 45,
+      "textRight": 63,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site-footer.container",
+      "tag": "footer",
+      "top": 10561,
+      "height": 183,
+      "words": 14,
+      "media": 0,
+      "middle": 21,
+      "heading": {
+       "text": "eb",
+       "size": 30,
+       "tag": "span"
+      },
+      "left": 20,
+      "right": 122,
+      "textLeft": 20,
+      "textRight": 122,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Do detalhe visual à arquitetura.",
+      "size": 47,
+      "top": 260,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 20
+     },
+     {
+      "x": 49,
+      "n": 7
+     },
+     {
+      "x": 37,
+      "n": 5
+     },
+     {
+      "x": 74,
+      "n": 3
+     },
+     {
+      "x": 204,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 36,
+    "bodySize": 12,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "mixed-font-headline",
+   "width": 1440,
+   "message": "3 headline(s) switch typeface or to italic mid-line (the \"one italic serif word\" move).",
+   "fix": "Set the whole headline in one face. Emphasis comes from the words.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "5 eyebrow/kicker label(s) above headings: \"SOFTWARE ENGINEER · FRONT-END\" above \"Do detalhe visual à arquitetura.\"; \"Open source · em desenvolvimento\" above \"KOReader Ecosystem\"; \"Código aberto · Em desenvolvimento\" above \"Black Market\"; \"05\" above \"Prazer, Enzo.\"; \"Aberto a conversar sobre oportunidades.\" above \"Vamos construir o próximo capítulo?\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: ui-monospace — e.g. \"01 / FRONT-END ENGINEERING\", \"EB.\", \"interface.tsx\", \"↗\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "numbering",
+   "width": 1440,
+   "message": "Decorative index numbers: \"01 / FRONT-END ENGINEERING\", \"01\", \"01\", \"02\", \"01\", \"01 /\"",
+   "fix": "Remove them. If order truly matters, write it into the words (\"First, …\") or use a real <ol>.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "36 tiny uppercase letter-spaced labels (e.g. \"SOFTWARE ENGINEER · FRONT-END\", \"01 / FRONT-END ENGINEERING\", \"EB.\", \"DESIGN → CODE → PRODUCTION\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "emoji",
+   "width": 1440,
+   "message": "Emoji in the page: ✳",
+   "fix": "Remove. Use words or real imagery.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "3 box-shadow(s) on elements at rest: div.engineering-visual.index-hero-visual → rgb(192, 184, 168) 10px 10px 0px 0px | div.system-window.index-parallax-layer → rgba(0, 0, 0, 0.267) 0px 24px 70px 0px | div.code-fragment.index-parallax-layer → rgba(0, 0, 0, 0.333) 0px 16px 45px 0px",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "32 thin rule(s)/divider line(s): header.site-header 1440px | div.window-bar 491px | div.ui-chart 389px | div.window-footer 490px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "12 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "palette-claude",
+   "width": 1440,
+   "message": "Cream + terracotta palette (text #eeeae1, text #d2ad98, text #c47d5c, text #e2a184).",
+   "fix": "Re-draw the palette from the library. This pairing reads as an assistant brand, not yours.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (DM Sans, ui-monospace, DM Serif Display).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "25 different font sizes (8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 24, 25, 27, 33, 34, 36, 56, 68, 76, 82, 87).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "body-size",
+   "width": 1440,
+   "message": "Body text is 12px (the size most of the running text is set in).",
+   "fix": "Body copy 16–20px. Map small sizes from blueprints onto your body step.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 2 picture(s) on the page (2 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "measure",
+   "width": 1440,
+   "message": "Longest paragraph runs about 89 characters per line.",
+   "fix": "Cap paragraphs at 45–75 characters (max-width: 60ch)."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "85 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "dev-server",
+   "width": 1440,
+   "message": "This page is served by a development server (Vite, webpack or Next in dev mode).",
+   "fix": "Run the last gate on the production build too (vite build && vite preview, next build && next start, or the built index.html): minifiers and bundlers change the CSS a visitor receives.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 390,
+   "message": "5 headline(s) wrap past two lines at 390px: \"Produtos em construção. Problemas do mundo real.\" → 4 lines (7 words, 40px); \"Ferramentas pequenas. Problemas concretos.\" → 4 lines (4 words, 40px); \"Uma boa interface começa antes do CSS.\" → 3 lines (7 words, 40px); \"Gosto de conectar o que as pessoas veem ao que f\" → 3 lines (14 words, 26px, a paragraph set above 24px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 24px or less."
+  },
+  {
+   "level": "FAIL",
+   "id": "icon-cards",
+   "width": 390,
+   "message": "1 row(s) of identical cards each topped with a small icon (3 cards).",
+   "fix": "Replace with one composed section from the direction: a narrative split, a list set in large type, or real imagery per item."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "docs\\evidence\\baseline\\desktop-fold.jpg",
+   "pages": [
+    "docs\\evidence\\baseline\\desktop-page-01.jpg",
+    "docs\\evidence\\baseline\\desktop-page-02.jpg",
+    "docs\\evidence\\baseline\\desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "docs\\evidence\\baseline\\tablet-fold.jpg",
+   "pages": [
+    "docs\\evidence\\baseline\\tablet-page-01.jpg",
+    "docs\\evidence\\baseline\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "docs\\evidence\\baseline\\mobile-fold.jpg",
+   "pages": [
+    "docs\\evidence\\baseline\\mobile-page-01.jpg",
+    "docs\\evidence\\baseline\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

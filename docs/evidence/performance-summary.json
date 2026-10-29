@@ -1,0 +1,98 @@
+[
+  {
+    "variant": "a",
+    "mode": "mobile",
+    "lighthouseVersion": "13.6.0",
+    "fetchTime": "2026-10-29T13:48:09.851Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP_ms": 966.6446000000001,
+    "CLS": 0,
+    "TBT_ms": 2.5,
+    "transfer_bytes": 558203
+  },
+  {
+    "variant": "b",
+    "mode": "mobile",
+    "lighthouseVersion": "13.6.0",
+    "fetchTime": "2026-10-29T13:48:23.125Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "LCP_ms": 907.9948999999999,
+    "CLS": 0.001942524467931841,
+    "TBT_ms": 0,
+    "transfer_bytes": 607055
+  },
+  {
+    "variant": "c",
+    "mode": "mobile",
+    "lighthouseVersion": "13.6.0",
+    "fetchTime": "2026-10-29T13:48:36.142Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "LCP_ms": 910.6133,
+    "CLS": 0,
+    "TBT_ms": 0,
+    "transfer_bytes": 640605
+  },
+  {
+    "variant": "a",
+    "mode": "desktop",
+    "lighthouseVersion": "13.6.0",
+    "fetchTime": "2026-10-29T13:48:48.374Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP_ms": 433.1997,
+    "CLS": 0,
+    "TBT_ms": 0,
+    "transfer_bytes": 592940
+  },
+  {
+    "variant": "b",
+    "mode": "desktop",
+    "lighthouseVersion": "13.6.0",
+    "fetchTime": "2026-10-29T13:49:02.738Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "LCP_ms": 522.933,
+    "CLS": 0.002348751730776802,
+    "TBT_ms": 0,
+    "transfer_bytes": 641792
+  },
+  {
+    "variant": "c",
+    "mode": "desktop",
+    "lighthouseVersion": "13.6.0",
+    "fetchTime": "2026-10-29T13:49:16.966Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "LCP_ms": 793.75575,
+    "CLS": 0,
+    "TBT_ms": 0,
+    "transfer_bytes": 604047
+  }
+]

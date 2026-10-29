@@ -1,0 +1,210 @@
+[
+  {
+    "port": 4179,
+    "metrics": {
+      "text": "Pular para o conteúdo\neb·\nEnzo Bellussi\nExperiência\nProdutos\nOpen source\nAbordagem\nSobre\nContato ↗\nPT\n/\nEN\n\nSOFTWARE ENGINEER · FRONT-END\n\nDo detalhe visual\nà arquitetura.\n\nConstruo e evoluo aplicações web para contextos em que usabilidade, performance e manutenção importam. Experiência em produção, do ambiente bancário à consultoria.\n\nConheça minha experiência\n↘\nBaixar currículo\n↓\n01 / FRONT-END ENGINEERING\nEB.\ninterface.tsx\n↗\neb.\nreusable components\nTypeScript\n<Interface\nexperience=\"thoughtful\"\narchitecture=\"maintainable\"\n/>\n✳\nDESIGN → CODE → PRODUCTION\n01\n/ PROFILE\nBASE\nSão Paulo, Brasil\nWEB\nConstruindo para a web desde 2022\n\nExperiência em contextos reais\n\nMarketData\n/\nBanco do Brasil\nSistemas corporativos. Responsabilidade técnica.\n\n01\nEXPERIÊNCIA\n\nCódigo que chega\nà produção.\n\nMeu trabalho envolve construir interfaces, entender sistemas existentes e tomar decisões que continuem fazendo sentido depois do deploy.\n\nPERÍODO\tORGANIZAÇÃO\tCONTRIBUIÇÃO\nAgo. 2024 — atual\t\nMarketData\nConsultoria · múltiplos clientes\nDESENVOLVEDOR FRONT-END\n\t\nDa interface à responsabilidade técnica.\n\nDesenvolvimento e sustentação de aplicações com Angular, React e TypeScript. Responsável técnico pelos projetos Dexco e RecargaPay, com atuação em arquitetura, manutenção e entrega em produção.\n\nIntegração com APIs REST e back-ends em ASP.NET MVC.\nInterfaces responsivas e acessíveis, com atenção a SEO técnico.\nModernização gradual de sistemas legados e acompanhamento de pipelines no GitLab.\nAngular\nReact\nTypeScript\nREST APIs\nAWS S3\nGitLab CI/CD\nMais sobre o contexto\n+\n\nOut. 2022 — ago. 2024\t\nBanco do Brasil\nTecnologia · operações internacionais\nESTÁGIO EM DESENVOLVIMENTO FRONT-END\n\t\nUma nova base para um sistema legado.\n\nAtuação no portal interno da Unidade de Negócios Internacionais. Refatoração do sistema legado em Vue.js, com uma arquitetura voltada à reutilização e à manutenção.\n\nCriação de componentes reutilizáveis e manutenção de Design System interno.\nIntegração com microsserviços Node.js e tratamento de dados na interface.\nOtimização de carregamento, compatibilidade entre navegadores e revisão de código.\nVue.js\nNode.js\nDesign System\nCode Review\nScrum\n\nOs trabalhos acima fazem parte da minha experiência profissional. Código e sistemas internos pertencem às respectivas empresas.\n\n02\nPRODUTOS\n\nProdutos em construção.\nProblemas do mundo real.\n\nAlém das ferramentas abertas, participo de produtos com contextos e desafios próprios. Aqui, explico o problema, a etapa atual e as decisões de engenharia.\n\n01\nBiblioteca · dados demonstrativos\n\n01 / READING TOOLS · OPEN SOURCE\n\nOPEN SOURCE · EM DESENVOLVIMENTO\n\nKOReader Ecosystem\nSua biblioteca e seu progresso em um só lugar.\n\nAplicativo Windows que reúne a biblioteca Calibre e as estantes Hardcover, permite editar metadados e enviar ebooks ao Kindle com KOReader.\n\nInterface React e Electron com serviço Python local. O projeto inclui backups criptografados e integração de progresso de leitura; fluxos de sincronização ainda estão em validação no dispositivo.\n\nElectron\nReact\nTypeScript\nPython\nSQLite\nExplorar repositório público\n↗\n02\nReceita · margem, custo dos materiais e árvore de produção\n\n02 / GAME COMPANION · ANGULAR / NESTJS\n\nCÓDIGO ABERTO · EM DESENVOLVIMENTO\n\nBlack Market\nPlaneje a próxima receita, não a próxima planilha.\n\nUma ferramenta independente para jogadores de Black Desert Online planejarem receitas, materiais e custos de produção.\n\nMonorepo com Angular e SSR, API NestJS e PostgreSQL. Reúne árvore de sub-receitas, comparação de custos, preços de mercado e leitura de capturas com revisão manual.\n\nAngular\nNestJS\nPostgreSQL\nOCR\nExplorar repositório\n↗\n\n03\nPROJETOS OPEN SOURCE\n\nFerramentas pequenas.\nProblemas concretos.\n\nAlém das interfaces, construo ferramentas para o dia a dia de quem desenvolve. Três projetos autorais com código aberto, testes e documentação para você explorar.\n\n01\n\nDEPLOY / CI\n\nDeploy Preflight\nConfiguração validada antes do deploy.\n\nVariáveis ausentes, arquivos inacessíveis e URLs inválidas podem interromper uma entrega. Uma CLI que reúne essas verificações em um relatório para o terminal ou pipeline.\n\nValidação tipada, probes HTTP opcionais e códigos de saída para CI. Valores de ambiente ficam fora dos relatórios.\n\nTypeScript\nNode.js\nHTTP\nGitHub Actions\nTERMINAL\nDEPLOY / CI\n$ deploy-preflight check --env-file .env.local --json\nFLUXO ESPERADO\n\nVariável obrigatória ausente → exit 1. Configuração corrigida → exit 0.\n\nExplorar código\n↗\nVer testes e CI\n↗\nReproduzir a demo\n↗\n02\n\nBACKEND / INTEGRATIONS\n\nLocal Webhook Recorder\nUm evento. Quantos testes precisar.\n\nReproduzir uma integração não deveria depender de disparar o evento de novo. Captura webhooks locais, permite inspecionar o payload e reenviá-lo após ajustar o handler.\n\nPersistência em SQLite, preservação dos bytes e replay explícito para endpoints locais. Limites de payload e retenção.\n\nTypeScript\nNode.js\nSQLite\nWebhooks\nTERMINAL\nBACKEND / INTEGRATIONS\n$ webhook-recorder replay EVENT_ID --to http://127.0.0.1:3000/webhooks --json\nFLUXO ESPERADO\n\nCapture um pedido e reproduza duas vezes: o handler de exemplo identifica a duplicata.\n\nExplorar código\n↗\nVer testes e CI\n↗\nReproduzir a demo\n↗\n03\n\nINFRA / DOCKER\n\nCompose Doctor\nEntenda o estado do seu ambiente.\n\nUm container em execução pode ter um healthcheck falhando. Diagnóstico de serviços Docker Compose com estado, reinícios, portas e sugestões de investigação.\n\nConsultas somente de leitura, subprocessos com limites e projeção de metadados. Relatórios em texto ou JSON.\n\nTypeScript\nDocker Compose\nHealthchecks\nCLI\nTERMINAL\nINFRA / DOCKER\n$ compose-doctor check --file examples/compose.yaml --file examples/compose.fixed.yaml --project-name doctor-demo --service api --json\nFLUXO ESPERADO\n\nAPI e banco saudáveis → ready · exit 0.\n\nExplorar código\n↗\nVer testes e CI\n↗\nReproduzir a demo\n↗\n\n04\nABORDAGEM\n\nUma boa interface\ncomeça antes do CSS.\n\nCombino cuidado visual com decisões de engenharia para construir aplicações que as pessoas consigam usar e os times consigam evoluir.\n\n⌘\n01\nArquitetura que acompanha.\n\nComponentes reutilizáveis, Design Systems e gerenciamento de estado. Uma base consistente para evoluir interfaces sem multiplicar complexidade.\n\nReact · Angular · Vue · TypeScript\n↗\n02\nExperiência que funciona.\n\nResponsividade, acessibilidade, performance e SEO técnico. Atenção ao comportamento real da aplicação, em diferentes telas e navegadores.\n\nWCAG · Web Vitals · Responsive UI\n⟷\n03\nIntegração de ponta a ponta.\n\nAPIs REST, microsserviços e dados na interface. Vivência com Node.js, PostgreSQL, AWS S3 e pipelines de entrega.\n\nNode.js · REST · AWS · CI/CD\n\n05\nSOBRE MIM\n\nPrazer,\nEnzo.\n\nSão Paulo, Brasil.\nCuriosidade como ponto de partida.\n\nGosto de conectar o que as pessoas veem ao que faz o software funcionar.\n\nSou engenheiro de software com foco em front-end. Desde 2022, atuo em aplicações corporativas, passando por ambiente bancário e consultoria. Meu interesse vai do detalhe da interação à organização do código que sustenta a experiência.\n\nTambém exploro back-end, infraestrutura e ferramentas para desenvolvedores, além do uso de IA como apoio à engenharia de software.\n\nFORMAÇÃO\nCiência da Computação\n\nUniversidade FAM · 2022–2025\n\nIDIOMAS\nPortuguês & inglês\n\nPortuguês nativo · Inglês avançado\n\nVeja minha trajetória no LinkedIn\n↗\n\n06\nPRÓXIMO PASSO\n\nAberto a conversar sobre oportunidades.\nVamos construir\no próximo capítulo?\n\nSe você procura alguém que combine desenvolvimento front-end, atenção à experiência e vivência em produção, vamos conversar.\n\nEntre em contato\n↗\nBaixar currículo\n↓\nenzobellussi3@gmail.com\nCopiar\n⧉\neb·\n\n© 2026 Enzo Bellussi\n\nGitHub ↗\nLinkedIn ↗\nCV PT ↓\nCV EN ↓",
+      "items": [
+        {
+          "class": "brand",
+          "bounds": {
+            "x": 100,
+            "y": 26,
+            "width": 141.8125,
+            "height": 44,
+            "top": 26,
+            "right": 241.8125,
+            "bottom": 70,
+            "left": 100
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        },
+        {
+          "class": "",
+          "bounds": {
+            "x": 720,
+            "y": 319.1875,
+            "width": 620,
+            "height": 171.546875,
+            "top": 319.1875,
+            "right": 1340,
+            "bottom": 490.734375,
+            "left": 720
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "82px",
+          "spacing": "-5.33px"
+        },
+        {
+          "class": "hero-description",
+          "bounds": {
+            "x": 720,
+            "y": 508.90625,
+            "width": 520,
+            "height": 85.5,
+            "top": 508.90625,
+            "right": 1240,
+            "bottom": 594.40625,
+            "left": 720
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "15px",
+          "spacing": "normal"
+        },
+        {
+          "class": "hero-actions",
+          "bounds": {
+            "x": 720,
+            "y": 628.40625,
+            "width": 620,
+            "height": 54.390625,
+            "top": 628.40625,
+            "right": 1340,
+            "bottom": 682.796875,
+            "left": 720
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        },
+        {
+          "class": "engineering-visual index-hero-visual",
+          "bounds": {
+            "x": 100,
+            "y": 240.296875,
+            "width": 580,
+            "height": 475.40625,
+            "top": 240.296875,
+            "right": 680,
+            "bottom": 715.703125,
+            "left": 100
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        },
+        {
+          "class": "brand footer-brand",
+          "bounds": {
+            "x": 100,
+            "y": 7418.78125,
+            "width": 44,
+            "height": 44,
+            "top": 7418.78125,
+            "right": 144,
+            "bottom": 7462.78125,
+            "left": 100
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        }
+      ]
+    }
+  },
+  {
+    "port": 4180,
+    "metrics": {
+      "text": "Pular para o conteúdo\neb·\nEnzo Bellussi\nExperiência\nProdutos\nOpen source\nAbordagem\nSobre\nContato ↗\nPT\n/\nEN\n\nSOFTWARE ENGINEER · FRONT-END\n\nDo detalhe visual\nà arquitetura.\n\nConstruo e evoluo aplicações web para contextos em que usabilidade, performance e manutenção importam. Experiência em produção, do ambiente bancário à consultoria.\n\nConheça minha experiência\n↘\nBaixar currículo\n↓\n01 / FRONT-END ENGINEERING\nEB.\ninterface.tsx\n↗\neb.\nreusable components\nTypeScript\n<Interface\nexperience=\"thoughtful\"\narchitecture=\"maintainable\"\n/>\n✳\nDESIGN → CODE → PRODUCTION\n01\n/ PROFILE\nBASE\nSão Paulo, Brasil\nWEB\nConstruindo para a web desde 2022\n\nExperiência em contextos reais\n\nMarketData\n/\nBanco do Brasil\nSistemas corporativos. Responsabilidade técnica.\n\n01\nEXPERIÊNCIA\n\nCódigo que chega\nà produção.\n\nMeu trabalho envolve construir interfaces, entender sistemas existentes e tomar decisões que continuem fazendo sentido depois do deploy.\n\nPERÍODO\tORGANIZAÇÃO\tCONTRIBUIÇÃO\nAgo. 2024 — atual\t\nMarketData\nConsultoria · múltiplos clientes\nDESENVOLVEDOR FRONT-END\n\t\nDa interface à responsabilidade técnica.\n\nDesenvolvimento e sustentação de aplicações com Angular, React e TypeScript. Responsável técnico pelos projetos Dexco e RecargaPay, com atuação em arquitetura, manutenção e entrega em produção.\n\nIntegração com APIs REST e back-ends em ASP.NET MVC.\nInterfaces responsivas e acessíveis, com atenção a SEO técnico.\nModernização gradual de sistemas legados e acompanhamento de pipelines no GitLab.\nAngular\nReact\nTypeScript\nREST APIs\nAWS S3\nGitLab CI/CD\nMais sobre o contexto\n+\n\nOut. 2022 — ago. 2024\t\nBanco do Brasil\nTecnologia · operações internacionais\nESTÁGIO EM DESENVOLVIMENTO FRONT-END\n\t\nUma nova base para um sistema legado.\n\nAtuação no portal interno da Unidade de Negócios Internacionais. Refatoração do sistema legado em Vue.js, com uma arquitetura voltada à reutilização e à manutenção.\n\nCriação de componentes reutilizáveis e manutenção de Design System interno.\nIntegração com microsserviços Node.js e tratamento de dados na interface.\nOtimização de carregamento, compatibilidade entre navegadores e revisão de código.\nVue.js\nNode.js\nDesign System\nCode Review\nScrum\n\nOs trabalhos acima fazem parte da minha experiência profissional. Código e sistemas internos pertencem às respectivas empresas.\n\n02\nPRODUTOS\n\nProdutos em construção.\nProblemas do mundo real.\n\nAlém das ferramentas abertas, participo de produtos com contextos e desafios próprios. Aqui, explico o problema, a etapa atual e as decisões de engenharia.\n\n01\nBiblioteca · dados demonstrativos\n\n01 / READING TOOLS · OPEN SOURCE\n\nOPEN SOURCE · EM DESENVOLVIMENTO\n\nKOReader Ecosystem\nSua biblioteca e seu progresso em um só lugar.\n\nAplicativo Windows que reúne a biblioteca Calibre e as estantes Hardcover, permite editar metadados e enviar ebooks ao Kindle com KOReader.\n\nInterface React e Electron com serviço Python local. O projeto inclui backups criptografados e integração de progresso de leitura; fluxos de sincronização ainda estão em validação no dispositivo.\n\nElectron\nReact\nTypeScript\nPython\nSQLite\nExplorar repositório público\n↗\n02\nReceita · margem, custo dos materiais e árvore de produção\n\n02 / GAME COMPANION · ANGULAR / NESTJS\n\nCÓDIGO ABERTO · EM DESENVOLVIMENTO\n\nBlack Market\nPlaneje a próxima receita, não a próxima planilha.\n\nUma ferramenta independente para jogadores de Black Desert Online planejarem receitas, materiais e custos de produção.\n\nMonorepo com Angular e SSR, API NestJS e PostgreSQL. Reúne árvore de sub-receitas, comparação de custos, preços de mercado e leitura de capturas com revisão manual.\n\nAngular\nNestJS\nPostgreSQL\nOCR\nExplorar repositório\n↗\n\n03\nPROJETOS OPEN SOURCE\n\nFerramentas pequenas.\nProblemas concretos.\n\nAlém das interfaces, construo ferramentas para o dia a dia de quem desenvolve. Três projetos autorais com código aberto, testes e documentação para você explorar.\n\n01\n\nDEPLOY / CI\n\nDeploy Preflight\nConfiguração validada antes do deploy.\n\nVariáveis ausentes, arquivos inacessíveis e URLs inválidas podem interromper uma entrega. Uma CLI que reúne essas verificações em um relatório para o terminal ou pipeline.\n\nValidação tipada, probes HTTP opcionais e códigos de saída para CI. Valores de ambiente ficam fora dos relatórios.\n\nTypeScript\nNode.js\nHTTP\nGitHub Actions\nTERMINAL\nDEPLOY / CI\n$ deploy-preflight check --env-file .env.local --json\nFLUXO ESPERADO\n\nVariável obrigatória ausente → exit 1. Configuração corrigida → exit 0.\n\nExplorar código\n↗\nVer testes e CI\n↗\nReproduzir a demo\n↗\n02\n\nBACKEND / INTEGRATIONS\n\nLocal Webhook Recorder\nUm evento. Quantos testes precisar.\n\nReproduzir uma integração não deveria depender de disparar o evento de novo. Captura webhooks locais, permite inspecionar o payload e reenviá-lo após ajustar o handler.\n\nPersistência em SQLite, preservação dos bytes e replay explícito para endpoints locais. Limites de payload e retenção.\n\nTypeScript\nNode.js\nSQLite\nWebhooks\nTERMINAL\nBACKEND / INTEGRATIONS\n$ webhook-recorder replay EVENT_ID --to http://127.0.0.1:3000/webhooks --json\nFLUXO ESPERADO\n\nCapture um pedido e reproduza duas vezes: o handler de exemplo identifica a duplicata.\n\nExplorar código\n↗\nVer testes e CI\n↗\nReproduzir a demo\n↗\n03\n\nINFRA / DOCKER\n\nCompose Doctor\nEntenda o estado do seu ambiente.\n\nUm container em execução pode ter um healthcheck falhando. Diagnóstico de serviços Docker Compose com estado, reinícios, portas e sugestões de investigação.\n\nConsultas somente de leitura, subprocessos com limites e projeção de metadados. Relatórios em texto ou JSON.\n\nTypeScript\nDocker Compose\nHealthchecks\nCLI\nTERMINAL\nINFRA / DOCKER\n$ compose-doctor check --file examples/compose.yaml --file examples/compose.fixed.yaml --project-name doctor-demo --service api --json\nFLUXO ESPERADO\n\nAPI e banco saudáveis → ready · exit 0.\n\nExplorar código\n↗\nVer testes e CI\n↗\nReproduzir a demo\n↗\n\n04\nABORDAGEM\n\nUma boa interface\ncomeça antes do CSS.\n\nCombino cuidado visual com decisões de engenharia para construir aplicações que as pessoas consigam usar e os times consigam evoluir.\n\n⌘\n01\nArquitetura que acompanha.\n\nComponentes reutilizáveis, Design Systems e gerenciamento de estado. Uma base consistente para evoluir interfaces sem multiplicar complexidade.\n\nReact · Angular · Vue · TypeScript\n↗\n02\nExperiência que funciona.\n\nResponsividade, acessibilidade, performance e SEO técnico. Atenção ao comportamento real da aplicação, em diferentes telas e navegadores.\n\nWCAG · Web Vitals · Responsive UI\n⟷\n03\nIntegração de ponta a ponta.\n\nAPIs REST, microsserviços e dados na interface. Vivência com Node.js, PostgreSQL, AWS S3 e pipelines de entrega.\n\nNode.js · REST · AWS · CI/CD\n\n05\nSOBRE MIM\n\nPrazer,\nEnzo.\n\nSão Paulo, Brasil.\nCuriosidade como ponto de partida.\n\nGosto de conectar o que as pessoas veem ao que faz o software funcionar.\n\nSou engenheiro de software com foco em front-end. Desde 2022, atuo em aplicações corporativas, passando por ambiente bancário e consultoria. Meu interesse vai do detalhe da interação à organização do código que sustenta a experiência.\n\nTambém exploro back-end, infraestrutura e ferramentas para desenvolvedores, além do uso de IA como apoio à engenharia de software.\n\nFORMAÇÃO\nCiência da Computação\n\nUniversidade FAM · 2022–2025\n\nIDIOMAS\nPortuguês & inglês\n\nPortuguês nativo · Inglês avançado\n\nVeja minha trajetória no LinkedIn\n↗\n\n06\nPRÓXIMO PASSO\n\nAberto a conversar sobre oportunidades.\nVamos construir\no próximo capítulo?\n\nSe você procura alguém que combine desenvolvimento front-end, atenção à experiência e vivência em produção, vamos conversar.\n\nEntre em contato\n↗\nBaixar currículo\n↓\nenzobellussi3@gmail.com\nCopiar\n⧉\neb·\n\n© 2026 Enzo Bellussi\n\nGitHub ↗\nLinkedIn ↗\nCV PT ↓\nCV EN ↓",
+      "items": [
+        {
+          "class": "brand",
+          "bounds": {
+            "x": 100,
+            "y": 26,
+            "width": 141.8125,
+            "height": 44,
+            "top": 26,
+            "right": 241.8125,
+            "bottom": 70,
+            "left": 100
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        },
+        {
+          "class": "",
+          "bounds": {
+            "x": 720,
+            "y": 319.1875,
+            "width": 620,
+            "height": 171.546875,
+            "top": 319.1875,
+            "right": 1340,
+            "bottom": 490.734375,
+            "left": 720
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "82px",
+          "spacing": "-5.33px"
+        },
+        {
+          "class": "hero-description",
+          "bounds": {
+            "x": 720,
+            "y": 508.90625,
+            "width": 520,
+            "height": 85.5,
+            "top": 508.90625,
+            "right": 1240,
+            "bottom": 594.40625,
+            "left": 720
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "15px",
+          "spacing": "normal"
+        },
+        {
+          "class": "hero-actions",
+          "bounds": {
+            "x": 720,
+            "y": 628.40625,
+            "width": 620,
+            "height": 54.390625,
+            "top": 628.40625,
+            "right": 1340,
+            "bottom": 682.796875,
+            "left": 720
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        },
+        {
+          "class": "engineering-visual index-hero-visual",
+          "bounds": {
+            "x": 100,
+            "y": 240.296875,
+            "width": 580,
+            "height": 475.40625,
+            "top": 240.296875,
+            "right": 680,
+            "bottom": 715.703125,
+            "left": 100
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        },
+        {
+          "class": "brand footer-brand",
+          "bounds": {
+            "x": 100,
+            "y": 7418.78125,
+            "width": 44,
+            "height": 44,
+            "top": 7418.78125,
+            "right": 144,
+            "bottom": 7462.78125,
+            "left": 100
+          },
+          "font": "\"DM Sans\", sans-serif",
+          "size": "16px",
+          "spacing": "normal"
+        }
+      ]
+    }
+  }
+]

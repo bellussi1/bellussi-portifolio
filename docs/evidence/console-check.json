@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/",
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "path": "/v2",
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "path": "/v3",
+    "errors": [],
+    "warnings": []
+  }
+]

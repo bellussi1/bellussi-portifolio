@@ -20,6 +20,8 @@ import {
   renderPortfolioSections,
 } from "./content/render-portfolio.js";
 
+import { initialLanguage } from "./experiment/state.js";
+
 const root = document.documentElement;
 let language = "pt";
 try {
@@ -27,6 +29,7 @@ try {
 } catch {
   /* The page starts in Portuguese when storage is unavailable. */
 }
+language = initialLanguage(location.search, language);
 let motionInitialized = false;
 let cleanupParallax = () => {};
 let parallaxStartFrame = 0;
@@ -146,6 +149,11 @@ function setLanguage(nextLanguage) {
   const previousLanguage = language;
   language = nextLanguage === "en" ? "en" : "pt";
   syncPageMetadata(document, language);
+  const localeUrl = new URL(location.href);
+  if (localeUrl.searchParams.has("lang")) {
+    localeUrl.searchParams.set("lang", language);
+    history.replaceState(null, "", localeUrl);
+  }
   const content = language === "en" ? english : portuguese;
   // Both translation dictionaries contain only local, trusted strings.
   translatedElements.forEach((element) => {
@@ -387,3 +395,7 @@ document.querySelector(".copy-email").addEventListener("click", async () => {
         : "Não foi possível copiar. Selecione o endereço ou use o link de contato.";
   }
 });
+
+if (import.meta.env.VITE_PORTFOLIO_COMPARE !== "false" && new URLSearchParams(location.search).get("compare") !== "0") {
+  import("./experiment/compare.js").then(({ initComparison }) => initComparison());
+}
