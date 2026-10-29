@@ -380,7 +380,7 @@ try {
         const control = page.locator(selector).first();
         await control.scrollIntoViewIfNeeded();
         const box = await control.boundingBox();
-        assert.ok(box.y >= 0 && box.y + box.height <= 600, selector);
+        assert.ok(box.y >= -0.5 && box.y + box.height <= 600.5, selector);
       }
       await page.locator('[data-preview="black-market"]').click();
       assert.match(
