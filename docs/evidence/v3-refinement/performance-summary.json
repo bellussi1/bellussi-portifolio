@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "mobile",
+    "performance": 100,
+    "accessibility": 100,
+    "LCP_ms": 1091.522,
+    "CLS": 0,
+    "TBT_ms": 81,
+    "transfer_bytes": 239990
+  },
+  {
+    "mode": "desktop",
+    "performance": 100,
+    "accessibility": 100,
+    "LCP_ms": 289.7982,
+    "CLS": 0,
+    "TBT_ms": 0,
+    "transfer_bytes": 256272
+  }
+]

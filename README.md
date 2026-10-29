@@ -73,3 +73,6 @@ O seletor mantém idioma nas URLs (`?lang=pt` ou `?lang=en`) e tema em preferên
 `predev` e `prebuild` geram v2/index.html a partir de index.html e v3/index.html a partir dos dados compartilhados. Não edite os gerados. Depois de mudar o HTML original ou os renderizadores com dev já aberto, execute `node scripts/generate-variants.mjs` novamente (ou reinicie o dev). O texto PT gerado em src/editorial/portuguese.generated.js também é descartável.
 
 Documentação: [skills](docs/design-skill-audit.md), [auditoria original](docs/portfolio-audit.md), [arquitetura](docs/portfolio-abc-design.md), [tokens e tipografia](DESIGN.md), [comparação e testes](docs/portfolio-comparison.md), [evidências](docs/evidence/README.md).
+
+
+A V3 recebeu uma segunda direção de arte e motion: consulte [o refinamento](docs/v3-creative-refinement.md). Com o preview aberto, `node scripts/v3-refinement-check.mjs` verifica diálogo, foco, screenshots, ponteiro, motion reduzido, navegação interrompida e reabertura de mídia. As novas imagens WebP são derivadas das capturas originais, que continuam acessíveis integralmente.

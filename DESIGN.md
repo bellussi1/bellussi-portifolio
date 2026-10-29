@@ -6,25 +6,19 @@ A é o controle de origin/main 5186afa: index.html, CSS original, traduções, d
 ## B — tipografia isolada
 Zilla Slab 400/500/600/700 normal e 400 italic, arquivos WOFF2 latin locais sob SIL OFL. Georgia/serif de fallback e font-display swap. Família de interface e display mudam para slab; código literal continua monospace. Headline preserva a escala responsiva original, com peso500, leading1.04 e tracking−.035em. H2 peso500/1.15/−.02em; H3 peso600/1.25/−.01em. Papel de leitura16–17px, leading1.6; links e ações14px. Nenhum padding, margin, grid, tamanho de imagem, cor ou animação alterado. Mudanças de altura e quebra de linha decorrem exclusivamente da tipografia; nenhum ajuste geométrico foi necessário.
 
-## C — identidade editorial
-Modo Experience: nome e especialidade na coluna fixa45%, dossiê na coluna55%. Interface sem linhas decorativas, ruído, gradientes ou glass. Capturas reais dos produtos; nenhum asset externo ou claim criado. Tema inicial claro; escolha explícita de tema reaproveitada das outras versões.
+## C — direção refinada: caderno de interfaces
 
-| Papel | Token e valor |
-|---|---|
-| Papel / tinta | --paper #fff / --ink #17191c |
-| Superfície / texto secundário | --surface #f3f4f6 / --secondary #50545c |
-| Ação | --blue #1a4be0, texto branco |
-| Tema escuro | papel #17191c, superfície #23262d, tinta #f1f3f7, secundário #bdc4d0, ação #9ab5ff |
-| Nome / títulos | Zilla Slab / Georgia / serif |
-| Leitura / controles | DM Sans / Arial / sans-serif |
-| Código literal | ui-monospace, somente pre/code |
-| Corpo / lead / pequeno | 17px /20px /14px; leading1.6/1.5/1.5 |
-| Título / nome | clamp30–44px /clamp56–96px |
-| Frame | gutter24–64px; seções112px desktop,80px mobile |
-| Ações | retangulares; alvo mínimo44px, principal52px |
-| Foco | outline3px, offset5px, cor de ação |
+Atualizada após o feedback visual do proprietário. O split45/55 e Zilla Slab permanecem; a identidade passa a ocupar um campo cobalto, com nome em escala64–120px. A leitura usa papel #faf9f5 e tinta #17252c; a ação é #2444bd, com amarelo #f3d17e reservado ao currículo e progresso sobre cobalto. Tema escuro: #17242c / #f7f5e9; identidade #192d89. Metadados secundários mantêm contraste AA testado.
 
-Desktop≥960px usa coluna fixa; abaixo disso, conteúdo no fluxo. Desktop com altura≤759px também desativa sticky para não prender controles fora da tela. Não há scroll hijacking em C. Entradas de600ms apenas na abertura, feedback de180ms no preview e CTA. Preferência de movimento reduzido remove animações e suavização; conteúdo permanece visível. A/B preservam Lenis e efeitos originais.
+Casos reais substituem screenshots sem enquadramento: palco de proporção1.32 desktop/1.05 mobile, composição azul mineral no KOReader e areia no Black Market. A mídia usa WebP480/960, crop intencional e inclinação pequena somente com movimento permitido. O título de assunto integra a arte; texto de projeto, status e links permanecem fora da imagem. Captura completa original fica disponível em diálogo nativo e link direto. Miniatura lateral80×72px acompanha o caso em leitura, sem competir com o nome.
+
+Motion: máscaras de linhas do nome750ms, stagger80ms; abertura de apoio500ms; títulos por máscara500ms; imagens de cases600ms com atraso70ms; textos420ms; foco de projeto/diálogo220ms; hover160–260ms. Curvas --ease-out(.23,1,.32,1) e --ease-in-out(.77,0,.175,1). Ponteiro limitado a±5px/±4px em hover/precise pointer; scroll parallax via CSS view timeline com fallback estático. Sem scroll hijacking, ticker, cursor customizado ou loop infinito de JS.
+
+Conteúdo visível por padrão, mesmo sem JS. Reduced motion em runtime cancela WAAPI, removes transforms/scroll parallax e devolve a imagem ao plano. Observadores e callbacks são desconectados/cancelados antes de cada render de idioma. Navegação manual temporariamente estabiliza a seleção e reconcilia o último case visível após910ms, inclusive se o usuário interromper a rolagem. Cada abertura do diálogo reinicia scrollTop, com Escape/foco de retorno nativos.
+
+Breakpoints: coluna no fluxo até959px de largura ou759px de altura desktop. Em320px o motivo Interface→Sistema encurta a seta/gaps. Foco3px, alvos principais44px+, corpo17px, lead20px, metadados14px, legendas móveis13px. detalhes/projetos acessíveis por controles nativos.
+
+Exceções à house style Taste foram decididas, não ignoradas: a sombra cria plano de apresentação para screenshot real; a linha pertence a um disclosure interativo; o papel claro apoia o campo cobalto dominante. O scanner não mede mérito artístico nem substitui WCAG. Evidências e testes desta revisão: docs/v3-creative-refinement.md e docs/evidence/v3-refinement/.
 
 ## Dados e conteúdo
 src/content/portfolio.js é a fonte das duas experiências, dois produtos e três ferramentas. Textos estáticos PT são extraídos de index.html na geração; EN reutiliza translations.js. Apenas narrativa curta específica de C fica no renderizador. Novas experiências ou resultados nunca devem ser inventados para preencher o desenho.

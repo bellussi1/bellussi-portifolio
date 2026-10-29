@@ -1,5 +1,7 @@
 # Comparação A/B/C — 29/10/2026
 
+> Registro da primeira rodada A/B/C. A V3 foi refinada posteriormente; decisões, imagens e métricas atuais de C estão em [v3-creative-refinement.md](v3-creative-refinement.md). As avaliações e medições de C abaixo descrevem a composição anterior.
+
 ## Resultado e recomendação
 Três páginas funcionais: `/` controle, `/v2` tipografia e `/v3` redesign. Seletor de links reais com estado ativo, PT/EN e tema preservados; desativação por visita ou build. Nada de tráfego aleatório. A permanece oficial; C é experimento.
 
