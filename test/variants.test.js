@@ -63,3 +63,11 @@ test("Vite route normalization preserves the query and maps only experiment path
   assert.equal(normalizeVariantRequest("/v2/"), "/v2/index.html");
   assert.equal(normalizeVariantRequest("/v30"), "/v30");
 });
+
+test("Vercel cleanUrls never conflicts with explicit HTML rewrites", () => {
+  const config = JSON.parse(readFileSync(new URL("../vercel.json", import.meta.url), "utf8"));
+  for (const rewrite of config.rewrites) {
+    assert.ok(!(config.cleanUrls && rewrite.destination.endsWith('.html')), 'cleanUrls removes HTML extensions before rewrites');
+  }
+  assert.deepEqual(config.rewrites.map(r=>r.source), ['/v2','/v3']);
+});

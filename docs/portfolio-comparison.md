@@ -39,7 +39,7 @@ O SEO69 de B/C decorre do **noindex intencional** (`is-crawlable`), necessário 
 C tem LCP desktop cerca de0.36s maior que A nesta amostra, embora ambos abaixo de1s. B acrescenta aproximadamente49kB de transferência móvel pela família slab com pesos reais. C transfere cerca de82kB a mais no perfil móvel desta execução, incluindo mídia real; não declarar melhora universal de performance com base em nota100. Fontes locais e previews WebP existentes foram aproveitados; uma futura otimização dos PNGs KOReader é possível sem mudar os fatos.
 
 ## Verificação funcional e engenharia
-- **62/62 testes de unidade**, incluindo os54 anteriores: fatos/renderização, SEO, imagens, parallax, Lenis, idioma/rotas e limite de CSS tipográfico.
+- **63/63 testes de unidade**, incluindo os54 anteriores: fatos/renderização, SEO, imagens, parallax, Lenis, idioma/rotas e limite de CSS tipográfico.
 - **Build de produção aprovado**, com entradas distintas A/B/C. CSS de C9.61kB (gzip2.85), CSS principal de A84.18kB (gzip15.43) mantido; C não importa os estilos de A. Nenhum framework de UI foi adicionado. Playwright/axe são dependências apenas de teste.
 - **48 combinações de navegador**: A/B/C × PT/EN × claro/escuro ×320/390/768/1440. Sem novas falhas de JS/rede, âncoras ou PDFs. As8 ocorrências conhecidas de overflow A/B em320 foram registradas separadamente, não ocultadas.
 - **11 fluxos**: rotas diretas com/sem slash, alternância A→B→C emEN, preview/idioma/tema/clipboard, teclado/skip/disclosure/menu/Escape, PDFs e recursos, storage bloqueado, C sem JS, seletor oculto sem download, idioma após reload, motion normal/reflow equivalente e desktop baixo. Todos passaram após correções.
@@ -57,7 +57,12 @@ Impeccable detect retornou `[]` para os arquivos novos (sem alegar auditoria WCA
 1. A/B conservam overflow333px em viewport320px, originado na seção Abordagem, confirmado também no checkout original intocado; conservam contraste4.45:1 na pequena numeração dessa seção no tema escuro. Corrigir depois do experimento alteraria o controle solicitado. Por isso não se declara que todas as variantes atingem integralmente WCAG/reflow.
 2. Não foram realizados estudo com recrutadores, teste com leitor de tela humano, hardware mobile físico ou coleta de Web Vitals de campo. Não há conclusão estatística sobre preferência ou conversão.
 3. O teste de reflow720px representa metade de1440px; não equivale a validar todos os modos de zoom/text-only de todos os navegadores.
-4. Vercel local/preview será verificada quando o PR gerar deployment; o build e o mapeamento local foram exercitados. Nenhum merge nem promoção de C faz parte da entrega.
+4. A Vercel marcou o deployment do PR#3 como Ready. A preview redireciona para login/SSO da Vercel, portanto o conteúdo remoto não pôde ser validado sem autenticação do proprietário. O build e as três rotas locais foram exercitados; o usuário pode abrir a preview autenticado ou o servidor local. Nenhum merge nem promoção de C faz parte da entrega.
 5. A/ B mantêm a dependência de JS das seções centrais; C entrega os fatos no HTML inicial emPT. Sem JS, a query EN não traduz o HTML; PT permanece legível como fallback.
 
 Não restam tarefas de implementação planejadas; a decisão de adoção e as melhorias herdadas acima são posteriores à comparação.
+
+## Entrega remota
+PR de revisão: https://github.com/bellussi1/bellussi-portifolio/pull/3 . Preview: https://bellussi-portifolio-git-codex-po-bc9214-enzo-bellussis-projects.vercel.app (requer login Vercel). `docs/evidence/deployment-check.json` registra o redirecionamento para login; HTTP200 dessa tela não foi contado como aprovação das variantes.
+
+Na checagem final de configuração foi removido cleanUrls=true: a [documentação oficial Vite/Vercel](https://vercel.com/docs/frameworks/frontend/vite) informa que rewrites com cleanUrls não devem incluir extensão.html no destino. Os rewrites explícitos de arquivo foram mantidos sem cleanUrls, com teste de regressão.

@@ -1,0 +1,59 @@
+{
+  "origin": "https://bellussi-portifolio-git-codex-po-bc9214-enzo-bellussis-projects.vercel.app",
+  "at": "2026-10-29T13:58:35.510Z",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "url": "https://vercel.com/login (SSO redirect)",
+      "variant": null,
+      "robots": null,
+      "title": "Login \u2013 Vercel",
+      "authenticationRequired": true
+    },
+    {
+      "path": "/v2",
+      "status": 200,
+      "url": "https://vercel.com/login (SSO redirect)",
+      "variant": null,
+      "robots": null,
+      "title": "Login \u2013 Vercel",
+      "authenticationRequired": true
+    },
+    {
+      "path": "/v2/",
+      "status": 200,
+      "url": "https://vercel.com/login (SSO redirect)",
+      "variant": null,
+      "robots": null,
+      "title": "Login \u2013 Vercel",
+      "authenticationRequired": true
+    },
+    {
+      "path": "/v3",
+      "status": 200,
+      "url": "https://vercel.com/login (SSO redirect)",
+      "variant": null,
+      "robots": null,
+      "title": "Login \u2013 Vercel",
+      "authenticationRequired": true
+    },
+    {
+      "path": "/v3/",
+      "status": 200,
+      "url": "https://vercel.com/login (SSO redirect)",
+      "variant": null,
+      "robots": null,
+      "title": "Login \u2013 Vercel",
+      "authenticationRequired": true
+    },
+    {
+      "path": "/curriculo-pt.pdf",
+      "status": 200,
+      "url": "https://vercel.com/login (SSO redirect)",
+      "variant": null,
+      "robots": null,
+      "authenticationRequired": true
+    }
+  ]
+}
