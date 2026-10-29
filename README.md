@@ -49,3 +49,10 @@ As experiências profissionais descrevem responsabilidades fornecidas no curríc
 ## Publicação
 
 O projeto mantém a integração existente com a Vercel. Comando de build: `npm run build`; diretório de saída: `dist`; versão de Node: 24.x.
+
+
+## Versão publicada
+
+A direção V2 (Zilla Slab) foi escolhida em 29/10/2026 e promovida à raiz. As fontes são locais (SIL OFL), com pesos reais e fallback Georgia. Layout, conteúdo, temas, animações, PT/EN e currículos foram preservados. URLs com `?lang=pt` ou `?lang=en` selecionam o idioma explicitamente, inclusive sem armazenamento local.
+
+A produção não contém o seletor A/B/C nem o redesign V3. O experimento e suas evidências permanecem na branch `codex/portfolio-abc` e no PR #3, sem integrar seus arquivos à página oficial.

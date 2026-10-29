@@ -4,6 +4,9 @@ import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import "../styles/concepts/pixel-index.css";
 import "../styles/concepts/index-atmosphere.css";
+import "../styles/variants/zilla.css";
+import "../styles/variants/typography.css";
+import { initialLanguage } from "./utils/language.js";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
 import { initPixelIndex } from "./visuals/pixel-index.js";
@@ -27,6 +30,7 @@ try {
 } catch {
   /* The page starts in Portuguese when storage is unavailable. */
 }
+language = initialLanguage(location.search, language);
 let motionInitialized = false;
 let cleanupParallax = () => {};
 let parallaxStartFrame = 0;
@@ -146,6 +150,11 @@ function setLanguage(nextLanguage) {
   const previousLanguage = language;
   language = nextLanguage === "en" ? "en" : "pt";
   syncPageMetadata(document, language);
+  const localeUrl = new URL(location.href);
+  if (localeUrl.searchParams.has("lang")) {
+    localeUrl.searchParams.set("lang", language);
+    history.replaceState(null, "", localeUrl);
+  }
   const content = language === "en" ? english : portuguese;
   // Both translation dictionaries contain only local, trusted strings.
   translatedElements.forEach((element) => {
