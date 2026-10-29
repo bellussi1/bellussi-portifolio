@@ -24,3 +24,11 @@ dist-ssr
 *.sw?
 .vercel
 .worktrees/
+
+# Generated experiment entry points
+/v2/
+/v3/
+.impeccable/
+src/editorial/portuguese.generated.js
+
+/dist-comparison-disabled/
