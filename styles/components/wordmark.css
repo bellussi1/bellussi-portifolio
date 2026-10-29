@@ -1,0 +1,29 @@
+/* The name shares the monogram's serif voice, with a softer italic surname. */
+.site-header .brand-surname {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+}
+@media (min-width: 1101px) {
+  .site-header .brand {
+    gap: 14px;
+  }
+  .site-header .brand-name {
+    font-family: var(--display);
+    font-size: clamp(24px, 1.8vw, 30px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+}
+@media (min-width: 600px) and (max-width: 760px) {
+  .site-header .brand-name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+}

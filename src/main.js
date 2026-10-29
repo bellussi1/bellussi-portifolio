@@ -6,6 +6,7 @@ import "../styles/concepts/pixel-index.css";
 import "../styles/concepts/index-atmosphere.css";
 import "../styles/variants/zilla.css";
 import "../styles/variants/typography.css";
+import "../styles/components/wordmark.css";
 import { initialLanguage } from "./utils/language.js";
 import { english } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
