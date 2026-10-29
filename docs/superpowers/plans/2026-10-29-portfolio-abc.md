@@ -18,6 +18,8 @@ Rotas diretas com/sem slash; storage indisponível; JS ausente; texto EN mais lo
 - [x] 2. Fontes Zilla locais com licença; B apenas tipografia em styles/variants/typography.css. Verificar CSS permitido e screenshots pareados.
 - [x] 3. Render C em src/editorial/render.js com dados de portfolio.js, traduções extras explícitas e cópia estática existente; entrada independente e CSS tokens. Testar todos fatos/links nas duas línguas e prerender sem JS; implementar controles nativos, tema, cópia e navegação.
 - [x] 4. Executar suíte/browser, screenshots e auditorias. Corrigir regressões introduzidas. Registrar resultados e notas subjetivas separados em docs/portfolio-comparison.md.
-- [ ] 5. Commits coerentes, revisar diff, branch remota e PR de revisão via conector GitHub (gh sem login). Nenhum merge. Atualizar documentação e entregar links de comparação.
+- [x] 5. Commits coerentes, revisar diff, branch remota e PR de revisão via conector GitHub (gh sem login). Nenhum merge. Atualizar documentação e entregar links de comparação.
 
 Verificação:62/62 unidade,48 combinações e11 fluxos; build normal e sem comparador;6 auditorias Lighthouse13.6. P2 desktop baixo corrigido após revisão independente. Oito ocorrências herdadas documentadas.
+
+Entrega: commits dedicados de pesquisa, implementação e evidências; integração por PR, sem merge.

@@ -1,0 +1,2203 @@
+{
+ "url": "http://127.0.0.1:4180/v3?compare=0",
+ "at": "2026-10-29T13:46:09.074Z",
+ "allow": [
+  "few-pictures"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    0.66,
+    0.79,
+    0.8,
+    0.64,
+    0.69,
+    0.92,
+    0.83,
+    0.63,
+    0.73,
+    0.7
+   ],
+   "motion": {
+    "elements": 2,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 8203,
+     "screens": 9.1,
+     "words": 909,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "koreader-library-pt.png",
+      "koreader-library-pt.png",
+      "black-market-700.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Enzo Bellussi.",
+     "words": 2,
+     "chars": 14,
+     "lines": 2,
+     "size": 92.2,
+     "vw": 6.4,
+     "font": "Zilla Slab",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.95,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.38,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Enzo Bellussi.",
+     "words": 2,
+     "lines": 2,
+     "size": 92.2,
+     "font": "Zilla Slab"
+    },
+    "headings": [
+     {
+      "text": "EB.",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 32,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Enzo Bellussi.",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 92.2,
+      "vw": 6.4,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 113,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Interfaces cuidadosas. Sistemas que evoluem.",
+      "words": 5,
+      "chars": 44,
+      "lines": 2,
+      "size": 53.3,
+      "vw": 3.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 152,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Produtos em construção",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 627,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiência",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 2955,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MarketData",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 3119,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Banco do Brasil",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 3732,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ferramentas abertas",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 4379,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Como trabalho",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 6030,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Além do código",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 6684,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Vamos conversar.",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 7438,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Enzo Bellussi.",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 57.6,
+      "vw": 4,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.48,
+      "top": 7935,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.04,
+       "mono": false
+      },
+      {
+       "family": "Zilla Slab",
+       "share": 0.03,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      17,
+      20,
+      28,
+      36,
+      53,
+      58,
+      92
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 17,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.6
+     },
+     "measureChars": 81,
+     "max": {
+      "size": 92.2,
+      "vw": 6.4,
+      "font": "Zilla Slab",
+      "text": "EnzoBellussi."
+     },
+     "monoShare": 0.04,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Mais sobre o contexto",
+      "above": "Banco do Brasil",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 17,
+      "top": 3620
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f4f6",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.14,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#edf0f8",
+       "top": 866,
+       "hsl": {
+        "h": 224,
+        "s": 0.44,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17191c",
+       "share": 0.67
+      },
+      {
+       "color": "#50545c",
+       "share": 0.26
+      },
+      {
+       "color": "#1a4be0",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1a4be0",
+      "hsl": {
+       "h": 225,
+       "s": 0.79,
+       "l": 0.49
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 3,
+     "radius": 0,
+     "height": 55,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Pular para o conteúdo",
+      "KOReader Ecosystem",
+      "Conheça minha experiência"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 3,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 4527
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 5,
+     "fixed": false,
+     "height": 108,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "zilla slab"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 8203,
+    "margins": {
+     "left": 50,
+     "right": 60
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Enzo Bellussi.",
+      "size": 92,
+      "top": 113,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 698,
+      "n": 27
+     },
+     {
+      "x": 726,
+      "n": 13
+     },
+     {
+      "x": 50,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 42,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.1,
+    "voidBox": {
+     "x": 360,
+     "y": 120,
+     "w": 300,
+     "h": 420
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.72,
+    0.67,
+    0.67,
+    0.36,
+    0.55,
+    0.96,
+    0.42,
+    0.46,
+    0.46
+   ],
+   "motion": {
+    "elements": 2,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 8316,
+     "screens": 8.1,
+     "words": 899,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "koreader-library-pt.png",
+      "black-market-1200.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Enzo Bellussi.",
+     "words": 2,
+     "chars": 14,
+     "lines": 2,
+     "size": 96,
+     "vw": 12.5,
+     "font": "Zilla Slab",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.95,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 104,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Enzo Bellussi.",
+     "words": 2,
+     "lines": 2,
+     "size": 96,
+     "font": "Zilla Slab"
+    },
+    "headings": [
+     {
+      "text": "EB.",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.05,
+      "top": 28,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Enzo Bellussi.",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 96,
+      "vw": 12.5,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 104,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Interfaces cuidadosas. Sistemas que evoluem.",
+      "words": 5,
+      "chars": 44,
+      "lines": 2,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 685,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Produtos em construção",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 1089,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiência",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 3415,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MarketData",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 3572,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Banco do Brasil",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 4150,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ferramentas abertas",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 4731,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Como trabalho",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 6291,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Além do código",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 6907,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Vamos conversar.",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 7584,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Enzo Bellussi.",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 8066,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.04,
+       "mono": false
+      },
+      {
+       "family": "Zilla Slab",
+       "share": 0.03,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      17,
+      20,
+      28,
+      30,
+      40,
+      54,
+      96
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 17.6
+     },
+     "measureChars": 85,
+     "max": {
+      "size": 96,
+      "vw": 12.5,
+      "font": "Zilla Slab",
+      "text": "EnzoBellussi."
+     },
+     "monoShare": 0.04,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f4f6",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.14,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#edf0f8",
+       "top": 1310,
+       "hsl": {
+        "h": 224,
+        "s": 0.44,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17191c",
+       "share": 0.68
+      },
+      {
+       "color": "#50545c",
+       "share": 0.25
+      },
+      {
+       "color": "#1a4be0",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1a4be0",
+      "hsl": {
+       "h": 225,
+       "s": 0.79,
+       "l": 0.49
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": 0,
+     "height": 55,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Pular para o conteúdo",
+      "Conheça minha experiência"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 2,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 76,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "zilla slab"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 8316,
+    "margins": {
+     "left": 24,
+     "right": 24
+    },
+    "sections": [
+     {
+      "sel": "aside.identity",
+      "tag": "aside",
+      "top": 0,
+      "height": 577,
+      "words": 22,
+      "media": 0,
+      "middle": 254,
+      "heading": {
+       "text": "Enzo",
+       "size": 96,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.introduction",
+      "tag": "section",
+      "top": 653,
+      "height": 357,
+      "words": 41,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Interfaces cuidadosas.",
+       "size": 54,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 61,
+      "textLeft": 24,
+      "textRight": 61,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#products",
+      "tag": "section",
+      "top": 1089,
+      "height": 2246,
+      "words": 182,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Produtos em construção",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 34,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience",
+      "tag": "section",
+      "top": 3415,
+      "height": 1236,
+      "words": 257,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Experiência",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 34,
+      "textLeft": 24,
+      "textRight": 34,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#projects",
+      "tag": "section",
+      "top": 4731,
+      "height": 1481,
+      "words": 277,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ferramentas abertas",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 39,
+      "textLeft": 24,
+      "textRight": 39,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach",
+      "tag": "section",
+      "top": 6291,
+      "height": 535,
+      "words": 107,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Como trabalho",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 31,
+      "textLeft": 24,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about",
+      "tag": "section",
+      "top": 6907,
+      "height": 565,
+      "words": 99,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Além do código",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 36,
+      "textLeft": 24,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact",
+      "tag": "section",
+      "top": 7552,
+      "height": 434,
+      "words": 34,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Vamos conversar.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 40,
+      "right": 124,
+      "textLeft": 40,
+      "textRight": 124,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 7986,
+      "height": 330,
+      "words": 14,
+      "media": 0,
+      "middle": 24,
+      "heading": {
+       "text": "Enzo Bellussi.",
+       "size": 40,
+       "tag": "p"
+      },
+      "left": 24,
+      "right": 373,
+      "textLeft": 24,
+      "textRight": 373,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Enzo Bellussi.",
+      "size": 96,
+      "top": 104,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 29
+     },
+     {
+      "x": 40,
+      "n": 13
+     }
+    ],
+    "leftBlocks": 42,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.85,
+    0.61,
+    0.64,
+    0.47,
+    0.64,
+    0.57,
+    0.84,
+    0.91,
+    0.64,
+    0.52,
+    0.66,
+    0.53
+   ],
+   "motion": {
+    "elements": 2,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 9805,
+     "screens": 11.6,
+     "words": 899,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "koreader-library-pt.png",
+      "black-market-700.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Enzo Bellussi.",
+     "words": 2,
+     "chars": 14,
+     "lines": 2,
+     "size": 56,
+     "vw": 14.4,
+     "font": "Zilla Slab",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.95,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.88,
+     "top": 104,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Enzo Bellussi.",
+     "words": 2,
+     "lines": 2,
+     "size": 56,
+     "font": "Zilla Slab"
+    },
+    "headings": [
+     {
+      "text": "EB.",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.1,
+      "top": 28,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Enzo Bellussi.",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 56,
+      "vw": 14.4,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 104,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Interfaces cuidadosas. Sistemas que evoluem.",
+      "words": 5,
+      "chars": 44,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 657,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Produtos em construção",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1091,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiência",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 3125,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MarketData",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 3337,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Banco do Brasil",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 4132,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ferramentas abertas",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 4951,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Como trabalho",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7111,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Além do código",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7970,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Vamos conversar.",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 8870,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Enzo Bellussi.",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Zilla Slab",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 9499,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.04,
+       "mono": false
+      },
+      {
+       "family": "Zilla Slab",
+       "share": 0.03,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      17,
+      20,
+      28,
+      30,
+      32,
+      40,
+      56
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 17.6
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 56,
+      "vw": 14.4,
+      "font": "Zilla Slab",
+      "text": "EnzoBellussi."
+     },
+     "monoShare": 0.04,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f4f6",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.14,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17191c",
+       "share": 0.68
+      },
+      {
+       "color": "#50545c",
+       "share": 0.25
+      },
+      {
+       "color": "#1a4be0",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1a4be0",
+      "hsl": {
+       "h": 225,
+       "s": 0.79,
+       "l": 0.49
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 1,
+     "radius": 0,
+     "height": 55,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Pular para o conteúdo"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 2,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 124,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "zilla slab"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 9805,
+    "margins": {
+     "left": 24,
+     "right": 24
+    },
+    "sections": [
+     {
+      "sel": "aside.identity",
+      "tag": "aside",
+      "top": 0,
+      "height": 501,
+      "words": 22,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Enzo",
+       "size": 56,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "header.reading-header",
+      "tag": "header",
+      "top": 501,
+      "height": 124,
+      "words": 9,
+      "media": 0,
+      "middle": 20,
+      "heading": null,
+      "left": 24,
+      "right": 31,
+      "textLeft": 24,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.introduction",
+      "tag": "section",
+      "top": 625,
+      "height": 386,
+      "words": 41,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Interfaces cuidadosas.",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 37,
+      "textLeft": 24,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#products",
+      "tag": "section",
+      "top": 1091,
+      "height": 1954,
+      "words": 182,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Produtos em construção",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 27,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience",
+      "tag": "section",
+      "top": 3125,
+      "height": 1746,
+      "words": 257,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Experiência",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 26,
+      "textLeft": 24,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#projects",
+      "tag": "section",
+      "top": 4951,
+      "height": 2079,
+      "words": 277,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ferramentas abertas",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 40,
+      "textLeft": 24,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach",
+      "tag": "section",
+      "top": 7111,
+      "height": 779,
+      "words": 107,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Como trabalho",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 26,
+      "textLeft": 24,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about",
+      "tag": "section",
+      "top": 7970,
+      "height": 788,
+      "words": 99,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Além do código",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 32,
+      "textLeft": 24,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact",
+      "tag": "section",
+      "top": 8838,
+      "height": 581,
+      "words": 34,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Vamos conversar.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 40,
+      "right": 48,
+      "textLeft": 40,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 9419,
+      "height": 386,
+      "words": 14,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Enzo Bellussi.",
+       "size": 40,
+       "tag": "p"
+      },
+      "left": 24,
+      "right": 115,
+      "textLeft": 24,
+      "textRight": 115,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Enzo Bellussi.",
+      "size": 56,
+      "top": 104,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 29
+     },
+     {
+      "x": 40,
+      "n": 13
+     }
+    ],
+    "leftBlocks": 42,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "1 eyebrow/kicker label(s) above headings: \"Mais sobre o contexto\" above \"Banco do Brasil\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence."
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (DM Sans, ui-monospace, Zilla Slab).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "long-pin",
+   "width": 1440,
+   "message": "The same large text stays on screen for 10 screens in a row: \"Enzo Bellussi.\"",
+   "fix": "A pinned element earns two screens, and something must change at each. Shorten the run or give every screen its own content."
+  },
+  {
+   "level": "FAIL",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Only 2 element(s) moved while the page loaded and scrolled.",
+   "fix": "Build the motion layer (SKILL.md step 9, references/motion.md): the signature move, an entrance for the parts of every section, feedback on every control, and one moving picture. Transform and opacity only, with a reduced-motion fallback."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "docs\\evidence\\editorial\\desktop-fold.jpg",
+   "pages": [
+    "docs\\evidence\\editorial\\desktop-page-01.jpg",
+    "docs\\evidence\\editorial\\desktop-page-02.jpg",
+    "docs\\evidence\\editorial\\desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "docs\\evidence\\editorial\\tablet-fold.jpg",
+   "pages": [
+    "docs\\evidence\\editorial\\tablet-page-01.jpg",
+    "docs\\evidence\\editorial\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "docs\\evidence\\editorial\\mobile-fold.jpg",
+   "pages": [
+    "docs\\evidence\\editorial\\mobile-page-01.jpg",
+    "docs\\evidence\\editorial\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
