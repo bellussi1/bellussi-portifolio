@@ -85,6 +85,36 @@ export const portfolioContent = {
   ],
   products: [
     {
+      id: "atlas",
+      name: "ATLAS",
+      image: { src: "/atlas-reading.jpg", width: 1440, height: 1000 },
+      category: "OPEN KNOWLEDGE · DATA VISUALIZATION",
+      technologies: ["Angular 21", "TypeScript", "Zod", "Wikidata", "Playwright"],
+      links: [{ type: "live", href: "https://atlas-kappa-drab.vercel.app" }],
+      pt: {
+        status: "No ar · código aberto",
+        headline: "Ler é explorar: história como uma rede navegável.",
+        description:
+          "Enciclopédia visual e interativa de história, política e sociedade, em que pessoas, obras, conceitos e acontecimentos se conectam e cada afirmação indica sua fonte.",
+        details:
+          "Angular 21 com Signals e TypeScript strict, conteúdo validado com Zod e dados da Wikipédia, Wikidata e Commons por ingestão reproduzível. Site estático com rotas prerenderizadas e testes de acessibilidade com Playwright e axe.",
+        imageAlt: "Captura real da leitura sobre Marxismo no ATLAS, com índice visual e retrato licenciado.",
+        imageCaption: "Leitura sobre Marxismo · site publicado",
+        linkLabel: "Ver o site ao vivo",
+      },
+      en: {
+        status: "Live · open source",
+        headline: "Reading is exploring: history as a navigable network.",
+        description:
+          "A visual, interactive encyclopedia of history, politics and society, where people, works, concepts and events connect and every claim points to its source.",
+        details:
+          "Angular 21 with Signals and strict TypeScript, Zod-validated content, and Wikipedia, Wikidata and Commons data through reproducible ingestion. A static site with prerendered routes and accessibility tests using Playwright and axe.",
+        imageAlt: "Actual screenshot of the Marxism reading in ATLAS, with its visual index and licensed portrait.",
+        imageCaption: "Marxism reading · published site",
+        linkLabel: "See the live site",
+      },
+    },
+    {
       id: "koreader-ecosystem",
       name: "KOReader Ecosystem",
       image: {

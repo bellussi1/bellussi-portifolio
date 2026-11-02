@@ -45,7 +45,7 @@ test("keeps project facts, image paths, and public links consistent across conce
 
   assert.deepEqual(
     portfolioContent.products.map(({ id }) => id),
-    ["koreader-ecosystem", "black-market"],
+    ["atlas", "koreader-ecosystem", "black-market"],
   );
   assert.deepEqual(
     portfolioContent.openSourceProjects.map(({ id }) => id),
