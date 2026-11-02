@@ -1350,3 +1350,11 @@ html[data-concept="index"] .index-terminal pre code {
     animation: none !important;
   }
 }
+
+/* Product captures share one proportion so paired cards line up. */
+html[data-concept] .portfolio-product-visual img {
+  aspect-ratio: 1425 / 1400;
+  height: auto;
+  object-fit: cover;
+  object-position: top left;
+}

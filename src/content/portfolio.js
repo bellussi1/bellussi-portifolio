@@ -87,7 +87,7 @@ export const portfolioContent = {
     {
       id: "atlas",
       name: "ATLAS",
-      image: { src: "/atlas-reading.jpg", width: 1440, height: 1000 },
+      image: { src: "/atlas-reading.jpg", width: 1440, height: 1414 },
       category: "OPEN KNOWLEDGE · DATA VISUALIZATION",
       technologies: ["Angular 21", "TypeScript", "Zod", "Wikidata", "Playwright"],
       links: [
@@ -121,8 +121,8 @@ export const portfolioContent = {
       id: "koreader-ecosystem",
       name: "KOReader Ecosystem",
       image: {
-        pt: { desktop: { src: "/koreader-library-pt.png", width: 1440, height: 1200 } },
-        en: { desktop: { src: "/koreader-library-en.png", width: 1440, height: 949 } },
+        pt: { desktop: { src: "/koreader-library-pt.png", width: 1425, height: 1400 } },
+        en: { desktop: { src: "/koreader-library-en.png", width: 1425, height: 1400 } },
       },
       category: "READING TOOLS · OPEN SOURCE",
       technologies: ["Electron", "React", "TypeScript", "Python", "SQLite"],
