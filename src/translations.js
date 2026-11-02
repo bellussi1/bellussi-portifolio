@@ -3,9 +3,27 @@ export const english = {
   navProducts: "Products",
   navProjects: "Open source",
   productsLabel: "PRODUCTS",
-  productsTitle: "Products in progress.<br />Real-world problems.",
+  productsTitle: "Products I built.<br />Real-world problems.",
   productsIntro:
-    "Alongside open tools, I work on products with their own context and constraints. Here I explain the problem, current stage and engineering decisions.",
+    "Beyond small tools, I build full products with their own context and constraints: an interactive encyclopedia, a desktop app, a game planner and a restaurant platform. Here is the problem, the stage and the engineering decisions.",
+  atlasStatus: "Live · expanding",
+  atlasHeadline: "Reading is exploring: history as a navigable network.",
+  atlasDescription:
+    "A visual, interactive encyclopedia of history, politics and society. People, works, concepts and events form a network where every claim points to its source and its degree of certainty: fact, interpretation or controversy.",
+  atlasDetails:
+    "Angular 21 with Signals, strict TypeScript and Zod-validated content. Data from Wikipedia, Wikidata and Commons arrives through reproducible ingestion, and the site is static, with prerendered routes and accessibility tests using Playwright and axe.",
+  atlasImageAlt: "Actual screenshot of the Marxism reading in ATLAS, with its visual index and licensed portrait.",
+  atlasCaption: "Marxism reading · published site",
+  productLive: "See it live",
+  koreaderStatus: "Open source · v0.3",
+  koreaderHeadline: "Your library, your reader and your progress in one place.",
+  koreaderDescription:
+    "A Windows app that joins Calibre, Kindle with KOReader and Hardcover: browse your library, edit metadata, send a book to Kindle over USB and track reading, with encrypted backups and data that stays on your machine.",
+  koreaderDetails:
+    "Electron, React and TypeScript for the interface; Python at the core. Every feature states what is ready and what still needs validation on a real device. It is an early-stage project.",
+  koreaderImageAlt: "Screenshot of the Calibre library in KOReader Ecosystem, with covers, search and filters, using demo data.",
+  koreaderCaption: "Library · demo data",
+  koreaderDownload: "Download for Windows",
   comandinhaStatus: "Migration in progress",
   comandinhaHeadline: "One rhythm for the whole dining room.",
   comandinhaDescription:
@@ -18,13 +36,11 @@ export const english = {
   blackMarketStatus: "In development",
   blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
   blackMarketDescription:
-    "A companion SaaS for Brazil’s Black Desert Online community. It helps players organize inventory and understand what is missing to craft an item.",
+    "An independent planner for Brazil’s Black Desert Online community. It explores recipes and sub-recipes in a production tree and compares buying versus crafting each material, with prices, masteries and time.",
   blackMarketDetails:
-    "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
+    "A TypeScript monorepo with Angular and SSR, NestJS, PostgreSQL and Drizzle, sharing calculation rules between browser and API. The code is open, but there is no hosted public service.",
   blackMarketImageAlt: "Actual screenshot of the Black Market inventory dashboard.",
   blackMarketCaption: "Dashboard · local product capture",
-  blackMarketPrivateNote:
-    "The code and interface are private at this stage.",
   projectsLabel: "OPEN SOURCE PROJECTS",
   projectsTitle: "Small tools.<br />Concrete problems.",
   projectsIntro: "Beyond interfaces, I build tools for everyday development. Three personal projects with open code, tests and documentation for you to explore.",

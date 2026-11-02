@@ -7,9 +7,23 @@ const siteRoot = new URL("../", import.meta.url);
 const html = await readFile(new URL("index.html", siteRoot), "utf8");
 const productsSection = html.match(/<section\b(?=[^>]*\bid="products")[\s\S]*?<\/section>/)?.[0];
 
-test("shows real local screenshots for both product cases", async () => {
+test("shows real screenshots for every product case", async () => {
   assert.ok(productsSection, "missing products section");
   const captures = [
+    {
+      caseName: "ATLAS",
+      articleClass: "product-case-atlas",
+      source: "/atlas-reading.jpg",
+      altKey: "atlasImageAlt",
+      captionKey: "atlasCaption",
+    },
+    {
+      caseName: "KOReader Ecosystem",
+      articleClass: "product-case-koreader",
+      source: "/koreader-library.png",
+      altKey: "koreaderImageAlt",
+      captionKey: "koreaderCaption",
+    },
     {
       caseName: "Comandinha",
       articleClass: "product-case-comandinha",
@@ -28,7 +42,7 @@ test("shows real local screenshots for both product cases", async () => {
 
   for (const capture of captures) {
     const productCase = productsSection.match(
-      new RegExp(`<article class="product-case ${capture.articleClass}[^>]*>[\\s\\S]*?<\\/article>`),
+      new RegExp(`<article class="product-case (?:product-case-reverse )?${capture.articleClass}[^>]*>[\\s\\S]*?<\\/article>`),
     )?.[0];
     assert.ok(productCase, `missing ${capture.caseName} case study`);
     const image = productCase.match(/<img\b([^>]*)>/)?.[1];
@@ -47,9 +61,9 @@ test("shows real local screenshots for both product cases", async () => {
   assert.doesNotMatch(productsSection, /concept\.svg|product-flow-panel/i);
   assert.match(productsSection, /Migração em andamento|Migration in progress/i);
   assert.match(productsSection, /captura local|local capture/i);
-  assert.doesNotMatch(
+  assert.match(
     productsSection,
-    /href=["']https:\/\/github\.com\/bellussi1\/Black-Market(?:["'/?#])/i,
-    "the private source repository must not be linked publicly",
+    /href=["']https:\/\/github\.com\/bellussi1\/Black-Market["']/i,
+    "the Black Market repository is public and must be linked",
   );
 });

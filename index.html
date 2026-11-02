@@ -385,19 +385,155 @@
           </p>
           <div>
             <h2 id="products-title" data-i18n="productsTitle">
-              Produtos em construção.<br />Problemas do mundo real.
+              Produtos que construí.<br />Problemas do mundo real.
             </h2>
             <p class="section-description" data-i18n="productsIntro">
-              Além das ferramentas abertas, participo de produtos com contextos
-              e desafios próprios. Aqui, explico o problema, a etapa atual e as
-              decisões de engenharia.
+              Além das ferramentas pequenas, construo produtos completos com contexto e restrições próprias: uma enciclopédia interativa, um aplicativo desktop, um planejador de jogo e uma plataforma para restaurantes. Aqui estão o problema, a etapa atual e as decisões de engenharia.
             </p>
           </div>
         </div>
 
-        <article class="product-case product-case-comandinha reveal" aria-labelledby="comandinha-title">
+        <article class="product-case product-case-atlas reveal" aria-labelledby="atlas-title">
           <div class="product-case-copy">
-            <p class="project-category"><span>01 /</span> RESTAURANT OPERATIONS</p>
+            <p class="project-category"><span>01 /</span> OPEN KNOWLEDGE · DATA VISUALIZATION</p>
+            <div class="product-title-row">
+              <h3 id="atlas-title">ATLAS</h3>
+              <span class="product-status" data-i18n="atlasStatus">No ar · em expansão</span>
+            </div>
+            <h4 data-i18n="atlasHeadline">Ler é explorar: história como uma rede navegável.</h4>
+            <p data-i18n="atlasDescription">
+              Uma enciclopédia visual e interativa de história, política e
+              sociedade. Pessoas, obras, conceitos e acontecimentos formam uma
+              rede em que cada afirmação indica a fonte e o seu grau de
+              certeza: fato, interpretação ou controvérsia.
+            </p>
+            <p class="product-detail" data-i18n="atlasDetails">
+              Angular 21 com Signals, TypeScript strict e conteúdo validado
+              com Zod. Dados da Wikipédia, Wikidata e Commons entram por
+              ingestão reproduzível e o site é estático, com rotas
+              prerenderizadas e testes de acessibilidade com Playwright e axe.
+            </p>
+            <div class="tech-tags" aria-label="Tecnologias">
+              <span>Angular 21</span><span>TypeScript</span><span>Zod</span>
+              <span>Wikidata</span><span>Playwright</span><span>Static-first</span>
+            </div>
+            <div class="product-links">
+              <a class="text-link" href="https://atlas-kappa-drab.vercel.app" target="_blank" rel="noopener noreferrer"><span data-i18n="productLive">Ver ao vivo</span><span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/bellussi1/ATLAS" target="_blank" rel="noopener noreferrer"><span data-i18n="comandinhaLink">Explorar repositório público</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="product-visual product-visual-atlas">
+            <img
+              src="/atlas-reading.jpg"
+              alt="Captura real da leitura sobre Marxismo no ATLAS, com índice visual e retrato licenciado."
+              data-i18n-alt="atlasImageAlt"
+              width="1440"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>01</span><span data-i18n="atlasCaption">Leitura sobre Marxismo · site publicado</span></figcaption>
+          </figure>
+        </article>
+
+        <article class="product-case product-case-reverse product-case-koreader reveal" aria-labelledby="koreader-title">
+          <div class="product-case-copy">
+            <p class="project-category"><span>02 /</span> DESKTOP APP · LOCAL-FIRST</p>
+            <div class="product-title-row">
+              <h3 id="koreader-title">KOReader Ecosystem</h3>
+              <span class="product-status" data-i18n="koreaderStatus">Open source · v0.3</span>
+            </div>
+            <h4 data-i18n="koreaderHeadline">Sua biblioteca, seu leitor e seu progresso em um lugar só.</h4>
+            <p data-i18n="koreaderDescription">
+              Aplicativo para Windows que une Calibre, Kindle com KOReader e
+              Hardcover: navegar pela biblioteca, editar metadados, enviar um
+              livro ao Kindle por USB e acompanhar a leitura, com backups
+              criptografados e dados que ficam na sua máquina.
+            </p>
+            <p class="product-detail" data-i18n="koreaderDetails">
+              Electron, React e TypeScript na interface; Python no núcleo. Cada
+              recurso declara o que está pronto e o que ainda precisa de
+              validação em dispositivo real. É um projeto em estágio inicial.
+            </p>
+            <div class="tech-tags" aria-label="Tecnologias">
+              <span>Electron</span><span>React</span><span>TypeScript</span>
+              <span>Python</span><span>Calibre</span><span>Hardcover API</span>
+            </div>
+            <div class="product-links">
+              <a class="text-link" href="https://github.com/bellussi1/koreader-ecosystem/releases/latest" target="_blank" rel="noopener noreferrer"><span data-i18n="koreaderDownload">Baixar para Windows</span><span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/bellussi1/koreader-ecosystem" target="_blank" rel="noopener noreferrer"><span data-i18n="comandinhaLink">Explorar repositório público</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="product-visual product-visual-koreader">
+            <img
+              src="/koreader-library.png"
+              alt="Captura da biblioteca Calibre no KOReader Ecosystem, com capas, busca e filtros, usando dados de demonstração."
+              data-i18n-alt="koreaderImageAlt"
+              width="1440"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>02</span><span data-i18n="koreaderCaption">Biblioteca · dados de demonstração</span></figcaption>
+          </figure>
+        </article>
+
+        <article class="product-case product-case-black-market reveal" aria-labelledby="black-market-title">
+          <div class="product-case-copy">
+            <p class="project-category"><span>03 /</span> GAME COMPANION · OPEN SOURCE</p>
+            <div class="product-title-row">
+              <h3 id="black-market-title">Black Market</h3>
+              <span class="product-status" data-i18n="blackMarketStatus">Em desenvolvimento</span>
+            </div>
+            <h4 data-i18n="blackMarketHeadline">Planeje a próxima receita, não a próxima planilha.</h4>
+            <p data-i18n="blackMarketDescription">
+              Planejador independente para a comunidade brasileira de Black
+              Desert Online. Explora receitas e sub-receitas numa árvore de
+              produção e compara comprar ou produzir cada material, com
+              preços, maestrias e tempo.
+            </p>
+            <p class="product-detail" data-i18n="blackMarketDetails">
+              Monorepo TypeScript com Angular e SSR, NestJS, PostgreSQL e
+              Drizzle, com regras de cálculo compartilhadas entre navegador e
+              API. O código é aberto, mas não há serviço público hospedado.
+            </p>
+            <div class="tech-tags" aria-label="Tecnologias">
+              <span>Angular SSR</span><span>NestJS</span><span>PostgreSQL</span>
+              <span>Drizzle</span><span>Docker</span><span>pnpm monorepo</span>
+            </div>
+            <div class="product-links">
+              <a class="text-link" href="https://github.com/bellussi1/Black-Market" target="_blank" rel="noopener noreferrer"><span data-i18n="comandinhaLink">Explorar repositório público</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="product-visual product-visual-market">
+            <img
+              src="/black-market-dashboard.webp"
+              alt="Captura real do painel de inventário do Black Market."
+              data-i18n-alt="blackMarketImageAlt"
+              width="1440"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>03</span><span data-i18n="blackMarketCaption">Painel · captura local do produto</span></figcaption>
+          </figure>
+        </article>
+
+        <article class="product-case product-case-reverse product-case-comandinha reveal" aria-labelledby="comandinha-title">
+          <figure class="product-visual product-visual-comandinha">
+            <img
+              src="/comandinha-panel-login.png"
+              alt="Captura real da tela de entrada do novo painel do Comandinha."
+              data-i18n-alt="comandinhaImageAlt"
+              width="1440"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>04</span><span data-i18n="comandinhaCaption">Novo painel · captura local</span></figcaption>
+          </figure>
+          <div class="product-case-copy">
+            <p class="project-category"><span>04 /</span> RESTAURANT OPERATIONS</p>
             <div class="product-title-row">
               <h3 id="comandinha-title">Comandinha</h3>
               <span class="product-status" data-i18n="comandinhaStatus">Migração em andamento</span>
@@ -427,59 +563,8 @@
               ><span aria-hidden="true">↗</span></a
             >
           </div>
-          <figure class="product-visual product-visual-comandinha">
-            <img
-              src="/comandinha-panel-login.png"
-              alt="Captura real da tela de entrada do novo painel do Comandinha."
-              data-i18n-alt="comandinhaImageAlt"
-              width="1440"
-              height="1000"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption><span>01</span><span data-i18n="comandinhaCaption">Novo painel · captura local</span></figcaption>
-          </figure>
         </article>
 
-        <article class="product-case product-case-black-market reveal" aria-labelledby="black-market-title">
-          <figure class="product-visual product-visual-market">
-            <img
-              src="/black-market-dashboard.webp"
-              alt="Captura real do painel de inventário do Black Market."
-              data-i18n-alt="blackMarketImageAlt"
-              width="1440"
-              height="1000"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption><span>02</span><span data-i18n="blackMarketCaption">Painel · captura local do produto</span></figcaption>
-          </figure>
-          <div class="product-case-copy">
-            <p class="project-category"><span>02 /</span> GAME COMPANION · PRIVATE SAAS</p>
-            <div class="product-title-row">
-              <h3 id="black-market-title">Black Market</h3>
-              <span class="product-status" data-i18n="blackMarketStatus">Em desenvolvimento</span>
-            </div>
-            <h4 data-i18n="blackMarketHeadline">Planeje a próxima receita, não a próxima planilha.</h4>
-            <p data-i18n="blackMarketDescription">
-              Um companion SaaS para a comunidade brasileira de Black Desert
-              Online. A ideia é ajudar jogadores a organizar inventário e
-              entender o que falta para criar um item.
-            </p>
-            <p class="product-detail" data-i18n="blackMarketDetails">
-              O MVP explora importação de até oito capturas por vez, revisão
-              manual dos itens e busca de receitas recursivas, fontes e
-              materiais faltantes. É um produto privado, sem lançamento público.
-            </p>
-            <div class="tech-tags" aria-label="Contexto do produto">
-              <span>Inventory</span><span>Recipe explorer</span>
-              <span>Manual review</span><span>Private product</span>
-            </div>
-            <p class="private-project-note" data-i18n="blackMarketPrivateNote">
-              Código e interface não são públicos neste momento.
-            </p>
-          </div>
-        </article>
       </section>
       <section
         class="section container projects-section"
