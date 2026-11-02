@@ -1536,3 +1536,16 @@ html[data-motion="enabled"] .reveal.is-visible {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+.window-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+}
+.product-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}

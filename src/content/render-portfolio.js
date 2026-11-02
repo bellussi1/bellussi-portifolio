@@ -214,9 +214,14 @@ function renderIndexExperience(language) {
 
 function renderProductCopy(product, language, concept, index) {
   const copy = product[language];
-  const links = product.links
-    .map((link) => anchor(link, copy.linkLabel, "text-link product-repo-link"))
-    .join("");
+  const links =
+    '<div class="product-links">' +
+    product.links
+      .map((link) =>
+        anchor(link, copy.linkLabels?.[link.type] ?? copy.linkLabel, "text-link product-repo-link"),
+      )
+      .join("") +
+    "</div>";
   const privateNote = copy.privateNote
     ? '<p class="private-project-note">' + escapeHtml(copy.privateNote) + "</p>"
     : "";

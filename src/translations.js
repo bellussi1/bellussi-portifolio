@@ -11,7 +11,7 @@ export const english = {
   productsNoteLink: "View repository",
   projectsLabel: "OPEN SOURCE PROJECTS",
   projectsTitle: "Small tools.<br />Concrete problems.",
-  projectsIntro: "Beyond interfaces, I build tools for everyday development. Three personal projects with open code, tests and documentation for you to explore.",
+  projectsIntro: "Beyond interfaces, I build tools for everyday development. Personal projects with open code, tests and documentation for you to explore.",
   projectCode: "Explore code",
   projectTests: "View tests and CI",
   projectExample: "USAGE EXAMPLE",

@@ -90,7 +90,10 @@ export const portfolioContent = {
       image: { src: "/atlas-reading.jpg", width: 1440, height: 1000 },
       category: "OPEN KNOWLEDGE · DATA VISUALIZATION",
       technologies: ["Angular 21", "TypeScript", "Zod", "Wikidata", "Playwright"],
-      links: [{ type: "live", href: "https://atlas-kappa-drab.vercel.app" }],
+      links: [
+        { type: "live", href: "https://atlas-kappa-drab.vercel.app" },
+        { type: "repository", href: "https://github.com/bellussi1/ATLAS" },
+      ],
       pt: {
         status: "No ar · código aberto",
         headline: "Ler é explorar: história como uma rede navegável.",
@@ -100,7 +103,7 @@ export const portfolioContent = {
           "Angular 21 com Signals e TypeScript strict, conteúdo validado com Zod e dados da Wikipédia, Wikidata e Commons por ingestão reproduzível. Site estático com rotas prerenderizadas e testes de acessibilidade com Playwright e axe.",
         imageAlt: "Captura real da leitura sobre Marxismo no ATLAS, com índice visual e retrato licenciado.",
         imageCaption: "Leitura sobre Marxismo · site publicado",
-        linkLabel: "Ver o site ao vivo",
+        linkLabels: { live: "Ver o site ao vivo", repository: "Explorar repositório público" },
       },
       en: {
         status: "Live · open source",
@@ -111,7 +114,7 @@ export const portfolioContent = {
           "Angular 21 with Signals and strict TypeScript, Zod-validated content, and Wikipedia, Wikidata and Commons data through reproducible ingestion. A static site with prerendered routes and accessibility tests using Playwright and axe.",
         imageAlt: "Actual screenshot of the Marxism reading in ATLAS, with its visual index and licensed portrait.",
         imageCaption: "Marxism reading · published site",
-        linkLabel: "See the live site",
+        linkLabels: { live: "See the live site", repository: "Explore the public repository" },
       },
     },
     {
