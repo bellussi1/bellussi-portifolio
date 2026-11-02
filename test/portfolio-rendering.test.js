@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { portfolioContent } from "../src/content/portfolio.js";
@@ -45,7 +46,7 @@ test("keeps project facts, image paths, and public links consistent across conce
 
   assert.deepEqual(
     portfolioContent.products.map(({ id }) => id),
-    ["atlas", "koreader-ecosystem", "black-market"],
+    ["atlas", "koreader-ecosystem"],
   );
   assert.deepEqual(
     portfolioContent.openSourceProjects.map(({ id }) => id),
@@ -109,15 +110,14 @@ test("renders each portfolio section independently without changing its markup",
   }
 });
 
-test("renders the Black Market repository link in both languages and concepts", () => {
-  const blackMarket = portfolioContent.products.find(
-    ({ id }) => id === "black-market",
-  );
-  assert.ok(blackMarket);
+test("cites Black Market as a single line without a product card", async () => {
+  assert.ok(!portfolioContent.products.some(({ id }) => id === "black-market"));
+  const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+  assert.ok(html.includes("products-note"));
+  assert.ok(html.includes("https://github.com/bellussi1/Black-Market"));
   for (const concept of ["field", "index"]) {
     for (const language of ["pt", "en"]) {
-      const sections = renderPortfolioSections({ concept, language });
-      assert.match(sections.products, /github\.com\/bellussi1\/Black-Market/i);
+      assert.doesNotMatch(renderPortfolioSections({ concept, language }).products, /Black Market/i);
     }
   }
 });

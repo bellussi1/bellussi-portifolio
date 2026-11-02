@@ -147,66 +147,6 @@ export const portfolioContent = {
         linkLabel: "Explore the public repository",
       },
     },
-    {
-      id: "black-market",
-      name: "Black Market",
-      category: "GAME COMPANION · ANGULAR / NESTJS",
-      technologies: [
-        "Angular",
-        "NestJS",
-        "PostgreSQL",
-        "OCR",
-      ],
-      image: {
-        src: "/black-market-recipe.png",
-        width: 1597,
-        height: 1338,
-        webp: [
-          {
-            src: "/project-previews/black-market-350.webp",
-            width: 350,
-            height: 293,
-          },
-          {
-            src: "/project-previews/black-market-700.webp",
-            width: 700,
-            height: 586,
-          },
-          {
-            src: "/project-previews/black-market-1200.webp",
-            width: 1200,
-            height: 1006,
-          },
-        ],
-      },
-      links: [
-        { type: "code", href: "https://github.com/bellussi1/Black-Market" },
-      ],
-      pt: {
-        status: "Código aberto · Em desenvolvimento",
-        headline: "Planeje a próxima receita, não a próxima planilha.",
-        description:
-          "Uma ferramenta independente para jogadores de Black Desert Online planejarem receitas, materiais e custos de produção.",
-        details:
-          "Monorepo com Angular e SSR, API NestJS e PostgreSQL. Reúne árvore de sub-receitas, comparação de custos, preços de mercado e leitura de capturas com revisão manual.",
-        imageAlt:
-          "Captura da tela real do Black Market com lucro por hora, custo dos materiais, faturamento da receita e árvore de produção com quatro insumos.",
-        imageCaption: "Receita · margem, custo dos materiais e árvore de produção",
-        linkLabel: "Explorar repositório",
-      },
-      en: {
-        status: "Open source · In development",
-        headline: "Plan the next recipe, not the next spreadsheet.",
-        description:
-          "An independent tool that helps Black Desert Online players plan recipes, materials and production costs.",
-        details:
-          "A monorepo with Angular and SSR, a NestJS API and PostgreSQL. It brings together nested recipes, cost comparisons, market prices and screenshot reading with manual review.",
-        imageAlt:
-          "Real Black Market screen showing hourly profit, material costs, recipe revenue and a production tree with four ingredients.",
-        imageCaption: "Recipe · margin, material costs and production tree",
-        linkLabel: "Explore the repository",
-      },
-    },
   ],
   openSourceProjects: [
     {

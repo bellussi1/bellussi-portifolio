@@ -3,19 +3,12 @@ export const english = {
   navProducts: "Products",
   navProjects: "Open source",
   productsLabel: "PRODUCTS",
-  productsTitle: "Products in progress.<br />Real-world problems.",
+  productsTitle: "Products I built.<br />Real-world problems.",
   productsIntro:
-    "Alongside open tools, I work on products with their own context and constraints. Here I explain the problem, current stage and engineering decisions.",
-  blackMarketStatus: "In development",
-  blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
-  blackMarketDescription:
-    "A companion SaaS for Brazil’s Black Desert Online community. It helps players organize inventory and understand what is missing to craft an item.",
-  blackMarketDetails:
-    "The MVP explores imports of up to eight screenshots at a time, with manual item review, recursive recipe search, sources and missing materials. It is a private product with no public launch yet.",
-  blackMarketImageAlt: "Actual screenshot of the Black Market inventory dashboard.",
-  blackMarketCaption: "Dashboard · local product capture",
-  blackMarketPrivateNote:
-    "The code and interface are private at this stage.",
+    "Two open source products, each with its own context and constraints: an interactive encyclopedia and a desktop app. Here are the problem, the current stage and the engineering decisions.",
+  productsNoteLead: "Also building",
+  productsNoteText: "an open source recipe and production planner for Black Desert Online players.",
+  productsNoteLink: "View repository",
   projectsLabel: "OPEN SOURCE PROJECTS",
   projectsTitle: "Small tools.<br />Concrete problems.",
   projectsIntro: "Beyond interfaces, I build tools for everyday development. Three personal projects with open code, tests and documentation for you to explore.",
