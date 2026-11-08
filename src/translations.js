@@ -53,7 +53,7 @@ export const portuguese = {
   atlasLive: "Visitar o ATLAS",
   atlasCode: "Ver código",
   atlasReadingAlt:
-    "Página de leitura do ATLAS sobre Marxismo, com índice visual e retratos licenciados.",
+    "Página de leitura do ATLAS sobre Marxismo, com índice visual e retrato licenciado.",
   atlasCaption: "Leitura · Marxismo",
 
   koreaderCategory: "DESKTOP · LOCAL-FIRST",
@@ -62,7 +62,7 @@ export const portuguese = {
     "Um companion para Windows que reúne Calibre, Kindle com KOReader e Hardcover. Navegue e edite sua biblioteca, envie livros por USB e acompanhe a leitura — com backups criptografados e dados que ficam na sua máquina.",
   koreaderDownload: "Baixar para Windows",
   koreaderAlt:
-    "Biblioteca do KOReader Ecosystem com capas, busca e filtros, usando dados de demonstração.",
+    "Biblioteca do KOReader Ecosystem com capas reais, busca e filtros.",
   blackMarketCategory: "FERRAMENTAS DE JOGO · OPEN SOURCE",
   blackMarketStatus: "Em desenvolvimento",
   blackMarketDescription:
@@ -74,7 +74,7 @@ export const portuguese = {
   comandinhaDescription:
     "Plataforma de operação para restaurantes com cardápio digital, mesas, pedidos e atendimento por QR. Estou reconstruindo a base como monorepo enquanto o produto legado continua rodando.",
   comandinhaAlt:
-    "Tela de entrada do painel do Comandinha para operação de restaurantes.",
+    "Painel de operação do Comandinha com vendas, pedidos e fila de atendimento.",
   viewRepo: "Ver repositório",
 
   ossLabel: "OPEN SOURCE",
