@@ -624,7 +624,7 @@ html[data-theme="dark"][data-concept="index"] {
   --raised: #302d27;
   --text: #eeeae1;
   --muted: #c5beb1;
-  --accent: #c47d5c;
+  --accent: #d18b69;
   --line: #5a554c;
   --technical: #d2ad98;
   --index-black: #48433c;
@@ -1357,4 +1357,26 @@ html[data-concept] .portfolio-product-visual img {
   height: auto;
   object-fit: cover;
   object-position: top left;
+}
+
+
+
+
+@supports (content-visibility: auto) {
+  #experience, #products, #projects, #approach, #about, #contact { content-visibility: auto; }
+  #experience { contain-intrinsic-size: auto 2000px; }
+  #products { contain-intrinsic-size: auto 1500px; }
+  #projects { contain-intrinsic-size: auto 1900px; }
+  #approach { contain-intrinsic-size: auto 1100px; }
+  #about { contain-intrinsic-size: auto 800px; }
+  #contact { contain-intrinsic-size: auto 600px; }
+}
+/* Touch devices keep the editorial composition; decorative entrance motion is
+   skipped to keep the first render cheap. */
+@media (hover: none), (pointer: coarse) {
+  html[data-concept="index"] *,
+  html[data-concept="index"] *::before,
+  html[data-concept="index"] *::after {
+    animation: none !important;
+  }
 }

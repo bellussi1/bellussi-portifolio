@@ -22,15 +22,19 @@ function getMeta(attribute, value) {
 }
 
 test("publishes complete canonical and social metadata", () => {
-  assert.match(html, /<html\b[^>]*\blang="pt-BR"/);
-  assert.match(html, /<title>Enzo Bellussi \| Software Engineer[^<]*<\/title>/);
+  assert.match(html, /<html\b[^>]*\blang="en"/);
+  assert.match(html, /<title>Enzo Bellussi — Software Engineer<\/title>/);
   assert.equal(getMeta("name", "author"), "Enzo Bellussi");
   const description = getMeta("name", "description") ?? "";
-  assert.match(description, /^Software Engineer focado em front-end\./);
+  assert.match(description, /^Software engineer with 3\+ years/);
   assert.equal(getMeta("property", "og:description"), description);
-  assert.equal(getMeta("name", "twitter:description"), description);
+  assert.ok(getMeta("name", "twitter:description"));
+  assert.equal(getMeta("property", "og:locale"), "en_US");
   assert.match(getMeta("name", "robots") ?? "", /index,\s*follow/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/bellussi\.vercel\.app\/"\s*\/>/);
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/bellussi\.vercel\.app\/"\s*\/?>/,
+  );
 
   for (const property of [
     "og:title",

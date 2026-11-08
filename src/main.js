@@ -8,16 +8,13 @@ import "../styles/variants/zilla.css";
 import "../styles/variants/typography.css";
 import "../styles/components/wordmark.css";
 import { initialLanguage } from "./utils/language.js";
-import { english } from "./translations.js";
+import { portuguese } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
-import { initPixelIndex } from "./visuals/pixel-index.js";
-import { initParallax } from "./utils/parallax.js";
-import { positionNavigationIndicator } from "./utils/navigation-indicator.js";
+
 import {
   setInnerHtmlIfChanged,
   setMarkupInFrames,
 } from "./utils/content-update.js";
-import { shouldEnableSmoothScroll } from "./utils/smooth-scroll-capability.js";
 import { renderScrollProgress } from "./utils/scroll-progress.js";
 import {
   renderPortfolioSection,
@@ -25,16 +22,14 @@ import {
 } from "./content/render-portfolio.js";
 
 const root = document.documentElement;
-let language = "pt";
+let language = "en";
 try {
-  language = localStorage.getItem("portfolio-language") === "en" ? "en" : "pt";
+  language = localStorage.getItem("portfolio-language") === "pt" ? "pt" : "en";
 } catch {
-  /* The page starts in Portuguese when storage is unavailable. */
+  /* The page starts in English when storage is unavailable. */
 }
 language = initialLanguage(location.search, language);
-let motionInitialized = false;
-let cleanupParallax = () => {};
-let parallaxStartFrame = 0;
+let hasRenderedLanguage = false;
 let portfolioRenderVersion = 0;
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeColor = document.querySelector("[data-theme-color]");
@@ -54,15 +49,6 @@ function updateThemeControl() {
   themeToggle.setAttribute("aria-label", label);
   themeToggle.setAttribute("title", action);
   if (themeColor) themeColor.content = dark ? "#1d1c19" : "#e9e5da";
-}
-
-function scheduleParallax() {
-  cancelAnimationFrame(parallaxStartFrame);
-  parallaxStartFrame = requestAnimationFrame(() => {
-    parallaxStartFrame = 0;
-    cleanupParallax();
-    cleanupParallax = initParallax();
-  });
 }
 
 themeToggle.addEventListener("click", () => {
@@ -87,12 +73,7 @@ function syncPortfolioContent({ frameByFrame = false } = {}) {
     ["products", document.querySelector('[data-portfolio-content="products"]')],
     ["projects", document.querySelector('[data-portfolio-content="projects"]')],
   ];
-  function complete() {
-    if (!motionInitialized) return;
-    setupMotion();
-    cleanupParallax();
-    scheduleParallax();
-  }
+  function complete() {}
   if (frameByFrame) {
     setMarkupInFrames(
       targets.map(([section, target]) => [
@@ -112,18 +93,17 @@ function syncPortfolioContent({ frameByFrame = false } = {}) {
   complete();
 }
 
-initPixelIndex({ root });
-syncPortfolioContent({ frameByFrame: true });
+if (language !== "en") syncPortfolioContent({ frameByFrame: true });
 root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
-const portuguese = Object.fromEntries(
+const englishContent = Object.fromEntries(
   translatedElements.map((element) => [
     element.dataset.i18n,
     element.innerHTML,
   ]),
 );
-const portugueseAlt = Object.fromEntries(
+const englishAlt = Object.fromEntries(
   translatedAltElements.map((element) => [
     element.dataset.i18nAlt,
     element.alt,
@@ -147,28 +127,32 @@ function updateMenuLabel() {
   );
 }
 
-function setLanguage(nextLanguage) {
+function setLanguage(nextLanguage, { persist = true } = {}) {
   const previousLanguage = language;
-  language = nextLanguage === "en" ? "en" : "pt";
+  language = nextLanguage === "pt" ? "pt" : "en";
   syncPageMetadata(document, language);
   const localeUrl = new URL(location.href);
   if (localeUrl.searchParams.has("lang")) {
     localeUrl.searchParams.set("lang", language);
     history.replaceState(null, "", localeUrl);
   }
-  const content = language === "en" ? english : portuguese;
+  const content = language === "pt" ? portuguese : englishContent;
   // Both translation dictionaries contain only local, trusted strings.
-  translatedElements.forEach((element) => {
-    setInnerHtmlIfChanged(
-      element,
-      content[element.dataset.i18n] ?? portuguese[element.dataset.i18n],
-    );
-  });
-  translatedAltElements.forEach((element) => {
-    const translatedAlt =
-      content[element.dataset.i18nAlt] ?? portugueseAlt[element.dataset.i18nAlt];
-    if (element.alt !== translatedAlt) element.alt = translatedAlt;
-  });
+  if (language === "pt" || hasRenderedLanguage) {
+    translatedElements.forEach((element) => {
+      setInnerHtmlIfChanged(
+        element,
+        content[element.dataset.i18n] ?? englishContent[element.dataset.i18n],
+      );
+    });
+    translatedAltElements.forEach((element) => {
+      const translatedAlt =
+        content[element.dataset.i18nAlt] ??
+        englishAlt[element.dataset.i18nAlt];
+      if (element.alt !== translatedAlt) element.alt = translatedAlt;
+    });
+  }
+  hasRenderedLanguage = true;
   if (previousLanguage !== language) syncPortfolioContent();
   document
     .querySelectorAll("[data-language]")
@@ -196,7 +180,7 @@ function setLanguage(nextLanguage) {
     .forEach((link) =>
       link.setAttribute(
         "aria-label",
-        language === "en" ? "Enzo Bellussi, home" : "Enzo Bellussi, início",
+        language === "en" ? "eb, Enzo Bellussi, home" : "eb, Enzo Bellussi, início",
       ),
     );
   updateMenuLabel();
@@ -213,11 +197,12 @@ function setLanguage(nextLanguage) {
         easing: "ease-out",
       });
   }
-  requestAnimationFrame(updateNavigationIndicator);
-  try {
-    localStorage.setItem("portfolio-language", language);
-  } catch {
-    /* The switch works when storage is unavailable. */
+  if (persist) {
+    try {
+      localStorage.setItem("portfolio-language", language);
+    } catch {
+      /* The switch works when storage is unavailable. */
+    }
   }
 }
 
@@ -258,65 +243,14 @@ document
       setLanguage(button.dataset.language),
     ),
   );
-// The initial document already contains Portuguese labels, metadata and copy.
-// Apply the stored English locale only when it differs from that default.
-if (language === "en") setLanguage(language);
+// The initial document ships in English with matching metadata and ARIA labels.
+// Only the Portuguese entry point needs a DOM pass on first load.
+if (language !== "en") setLanguage(language, { persist: false });
 
-// Content remains visible without animation APIs or when reduced motion is set.
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-let revealObserver;
-function setupMotion() {
-  revealObserver?.disconnect();
-  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
-    delete root.dataset.motion;
-    return;
-  }
-  revealObserver = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      }),
-    { threshold: 0.08 },
-  );
-  document
-    .querySelectorAll(".reveal")
-    .forEach((element) => revealObserver.observe(element));
-  root.dataset.motion = "enabled";
-}
-setupMotion();
-motionInitialized = true;
-reducedMotion.addEventListener("change", setupMotion);
 reducedMotion.addEventListener("change", () => {
   if (reducedMotion.matches) languageTransition?.cancel();
 });
-if (shouldEnableSmoothScroll(window, navigator.hardwareConcurrency)) {
-  requestAnimationFrame(() => {
-    Promise.all([
-      import("./utils/smooth-scroll.js"),
-      import("lenis/dist/lenis.css"),
-    ])
-      .then(([{ initSmoothScroll }]) => initSmoothScroll())
-      .catch(() => {
-        // Native scrolling remains available if the optional Lenis chunk fails.
-      });
-  });
-}
-
-const navigationIndicator = document.createElement("span");
-navigationIndicator.className = "navigation-indicator";
-navigationIndicator.setAttribute("aria-hidden", "true");
-navigation.append(navigationIndicator);
-function updateNavigationIndicator() {
-  const current = navigation.querySelector('a[aria-current="location"]');
-  const indicator = navigation.querySelector(".navigation-indicator");
-  if (!indicator) return;
-  positionNavigationIndicator(indicator, current);
-}
-window.addEventListener("resize", updateNavigationIndicator);
-document.fonts?.ready.then(updateNavigationIndicator);
 
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(
@@ -328,7 +262,6 @@ if ("IntersectionObserver" in window) {
             link.setAttribute("aria-current", "location");
           else link.removeAttribute("aria-current");
         });
-        updateNavigationIndicator();
       }),
     { rootMargin: "-15% 0px -55% 0px" },
   );
@@ -340,10 +273,10 @@ if ("IntersectionObserver" in window) {
 const progress = document.querySelector(".scroll-progress");
 let scrollScheduled = false;
 let scrollableRange = 0;
-function measureScrollRange() {
-  scrollableRange = Math.max(0, root.scrollHeight - window.innerHeight);
-}
 function updateProgress() {
+  if (!scrollableRange) {
+    scrollableRange = Math.max(0, root.scrollHeight - window.innerHeight);
+  }
   renderScrollProgress({
     progress,
     header: document.querySelector(".site-header"),
@@ -351,10 +284,6 @@ function updateProgress() {
     scrollable: scrollableRange,
   });
   scrollScheduled = false;
-}
-function measureAndUpdateProgress() {
-  measureScrollRange();
-  updateProgress();
 }
 window.addEventListener(
   "scroll",
@@ -366,13 +295,9 @@ window.addEventListener(
   },
   { passive: true },
 );
-window.addEventListener("resize", measureAndUpdateProgress);
-if ("ResizeObserver" in window) {
-  const progressResizeObserver = new ResizeObserver(measureScrollRange);
-  progressResizeObserver.observe(document.querySelector("main"));
-}
-document.fonts?.ready.then(measureAndUpdateProgress);
-requestAnimationFrame(measureAndUpdateProgress);
+window.addEventListener("resize", () => {
+  scrollableRange = 0;
+});
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 let copyReset;
@@ -387,7 +312,7 @@ document.querySelector(".copy-email").addEventListener("click", async () => {
     clearTimeout(copyReset);
     copyReset = setTimeout(() => {
       label.textContent =
-        language === "en" ? english.copyEmail : portuguese.copyEmail;
+        language === "en" ? englishContent.copyEmail : portuguese.copyEmail;
       status.textContent = "";
     }, 2500);
   } catch {

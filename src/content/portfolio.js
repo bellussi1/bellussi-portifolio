@@ -15,7 +15,7 @@ export const portfolioContent = {
       pt: {
         period: "Ago. 2024 — atual",
         pill: "Consultoria · múltiplos clientes",
-        role: "DESENVOLVEDOR FRONT-END",
+        role: "ENGENHEIRO DE SOFTWARE (FRONT-END)",
         title: "Da interface à responsabilidade técnica.",
         description:
           "Desenvolvimento e sustentação de aplicações com Angular, React e TypeScript. Responsável técnico pelos projetos Dexco e RecargaPay, com atuação em arquitetura, manutenção e entrega em produção.",
@@ -31,7 +31,7 @@ export const portfolioContent = {
       en: {
         period: "Aug. 2024 — present",
         pill: "Consulting · multiple clients",
-        role: "FRONT-END DEVELOPER",
+        role: "SOFTWARE ENGINEER (FRONT-END)",
         title: "From interface development to technical ownership.",
         description:
           "Development and maintenance of applications with Angular, React and TypeScript. Technical ownership of Dexco and RecargaPay projects, contributing to architecture, maintenance and production delivery.",
@@ -58,7 +58,7 @@ export const portfolioContent = {
       pt: {
         period: "Out. 2022 — ago. 2024",
         pill: "Tecnologia · operações internacionais",
-        role: "ESTÁGIO EM DESENVOLVIMENTO FRONT-END",
+        role: "ESTAGIÁRIO EM ENGENHARIA DE SOFTWARE (FRONT-END)",
         title: "Uma nova base para um sistema legado.",
         description:
           "Atuação no portal interno da Unidade de Negócios Internacionais. Refatoração do sistema legado em Vue.js, com uma arquitetura voltada à reutilização e à manutenção.",
@@ -71,7 +71,7 @@ export const portfolioContent = {
       en: {
         period: "Oct. 2022 — Aug. 2024",
         pill: "Technology · international operations",
-        role: "FRONT-END DEVELOPMENT INTERN",
+        role: "SOFTWARE ENGINEER INTERN (FRONT-END)",
         title: "A new foundation for a legacy system.",
         description:
           "Work on the internal portal of the International Business Unit. Refactoring of a legacy system using Vue.js, with an architecture focused on reuse and maintainability.",
@@ -87,7 +87,7 @@ export const portfolioContent = {
     {
       id: "atlas",
       name: "ATLAS",
-      image: { src: "/atlas-reading.jpg", width: 1440, height: 1414 },
+      image: { src: "/atlas-reading.webp", width: 1200, height: 1178 },
       category: "OPEN KNOWLEDGE · DATA VISUALIZATION",
       technologies: ["Angular 21", "TypeScript", "Zod", "Wikidata", "Playwright"],
       links: [
@@ -121,8 +121,8 @@ export const portfolioContent = {
       id: "koreader-ecosystem",
       name: "KOReader Ecosystem",
       image: {
-        pt: { desktop: { src: "/koreader-library-pt.png", width: 1425, height: 1400 } },
-        en: { desktop: { src: "/koreader-library-en.png", width: 1425, height: 1400 } },
+        pt: { desktop: { src: "/koreader-library-pt.webp", width: 1200, height: 1179 } },
+        en: { desktop: { src: "/koreader-library-en.webp", width: 1200, height: 1179 } },
       },
       category: "READING TOOLS · OPEN SOURCE",
       technologies: ["Electron", "React", "TypeScript", "Python", "SQLite"],
@@ -134,8 +134,8 @@ export const portfolioContent = {
           "Aplicativo Windows que reúne a biblioteca Calibre e as estantes Hardcover, permite editar metadados e enviar ebooks ao Kindle com KOReader.",
         details:
           "Interface React e Electron com serviço Python local. O projeto inclui backups criptografados e integração de progresso de leitura; fluxos de sincronização ainda estão em validação no dispositivo.",
-        imageAlt: "Biblioteca do KOReader Ecosystem com capas e dados fictícios de demonstração.",
-        imageCaption: "Biblioteca · dados demonstrativos",
+        imageAlt: "Biblioteca do KOReader Ecosystem com capas reais, busca e filtros.",
+        imageCaption: "Biblioteca · captura do produto",
         linkLabel: "Explorar repositório público",
       },
       en: {
@@ -145,8 +145,8 @@ export const portfolioContent = {
           "A Windows app for browsing a Calibre library and Hardcover shelves, editing metadata, and sending ebooks to a Kindle running KOReader.",
         details:
           "A React and Electron interface with a local Python service. It includes encrypted backups and reading-progress integration; device synchronization workflows are still being validated.",
-        imageAlt: "KOReader Ecosystem library with book covers and fictional demo data.",
-        imageCaption: "Library · demo data",
+        imageAlt: "KOReader Ecosystem library with real book covers, search and filters.",
+        imageCaption: "Library · product capture",
         linkLabel: "Explore the public repository",
       },
     },

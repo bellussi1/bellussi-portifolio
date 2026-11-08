@@ -5,5 +5,7 @@ test('shareable locale wins over stored preference when visiting the official po
  assert.equal(initialLanguage('?lang=en','pt'),'en');
  assert.equal(initialLanguage('?lang=pt','en'),'pt');
  assert.equal(initialLanguage('?lang=invalid','en'),'en');
- assert.equal(initialLanguage('',null),'pt');
+ assert.equal(initialLanguage('',null),'en');
+ assert.equal(initialLanguage('','en'),'en');
+ assert.equal(initialLanguage('','pt'),'pt');
 });

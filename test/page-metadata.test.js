@@ -29,10 +29,10 @@ test("keeps document and share metadata aligned with the selected language", () 
 
   syncPageMetadata(document, "en");
   assert.equal(document.documentElement.lang, "en");
-  assert.equal(document.title, "Enzo Bellussi | Front-end Software Engineer");
+  assert.equal(document.title, "Enzo Bellussi — Software Engineer");
   assert.equal(
     document.metadata.get('meta[name="description"]').content,
-    "Enzo Bellussi is a Front-end Software Engineer building thoughtful interfaces and systems designed to evolve with Angular, React, and TypeScript. Experience at MarketData and Banco do Brasil.",
+    "Software engineer with 3+ years building enterprise web products. TypeScript, React, Angular and Node.js — performance, accessibility and maintainable systems.",
   );
   assert.equal(
     document.metadata.get('meta[property="og:description"]').content,
@@ -53,7 +53,7 @@ test("keeps document and share metadata aligned with the selected language", () 
 
   syncPageMetadata(document, "pt");
   assert.equal(document.documentElement.lang, "pt-BR");
-  assert.equal(document.title, "Enzo Bellussi | Software Engineer com foco em Front-end");
+  assert.equal(document.title, "Enzo Bellussi — Engenheiro de Software");
   assert.equal(
     document.metadata.get('meta[property="og:locale"]').content,
     "pt_BR",
