@@ -94,7 +94,6 @@ function syncPortfolioContent({ frameByFrame = false } = {}) {
 }
 
 if (language !== "en") syncPortfolioContent({ frameByFrame: true });
-root.classList.add("js");
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
 const englishContent = Object.fromEntries(
