@@ -1,52 +1,19 @@
-# Enzo Bellussi — Portfolio
+# Portfólio de Enzo Bellussi
 
-Personal site of **Enzo Bellussi**, a software engineer based in São Paulo, Brazil. English-first, with a full Portuguese version, selected product case studies, experience, technical toolkit and downloadable resumes.
+Portfólio profissional voltado a recrutadores, com experiência em engenharia front-end, versões em português e inglês e currículos para download.
 
-**Live:** [bellussi.vercel.app](https://bellussi.vercel.app) · **LinkedIn:** [in/enzo-bellussi](https://www.linkedin.com/in/enzo-bellussi/) · **GitHub:** [bellussi1](https://github.com/bellussi1)
+**Site:** [bellussi.vercel.app](https://bellussi.vercel.app)
 
-![Portfolio preview](public/og-image.png)
+## Desenvolvimento
 
-## What is here
-
-- **ATLAS case study** — the flagship open-source project: an interactive encyclopedia built on a sourced knowledge graph, with 896 entities, 7,918 sourced claims and 898 sources at the time of writing.
-- **Selected products** — KOReader Ecosystem, Black Market and Comandinha, with real screenshots and current project status.
-- **Open-source tools** — Deploy Preflight, Local Webhook Recorder and Compose Doctor.
-- **Experience and toolkit** — enterprise work at MarketData and Banco do Brasil, plus the stack used across front end, back end, cloud and quality.
-- **Bilingual experience** — English is the default; Portuguese is available through the language switch and `?lang=pt`.
-- **Resume downloads** — ATS-oriented LaTeX resumes in English and Portuguese.
-
-## Lighthouse
-
-The production build is audited on mobile and desktop:
-
-| Performance | Accessibility | Best practices | SEO |
-| --- | --- | --- | --- |
-| 100 | 100 | 100 | 100 |
-
-Some deliberate choices behind those scores:
-
-- No UI framework and no animation library. The site ships a small amount of vanilla JavaScript.
-- Self-hosted, subsetted fonts with preload; no third-party font requests.
-- AVIF/WebP images with responsive `srcset`, explicit dimensions and lazy loading below the fold.
-- No scroll hijacking or heavy parallax. Motion is limited to hover states, the language crossfade and short CSS transitions; `prefers-reduced-motion` is respected.
-- Semantic HTML, visible focus states, keyboard-friendly navigation, skip link and WCAG-minded contrast.
-- English-first metadata, canonical URL, hreflang alternates, Open Graph, Twitter cards, JSON-LD and sitemap.
-
-## Stack
-
-- **HTML, CSS and modern JavaScript** — no framework.
-- **Vite** for development and production builds.
-- **Node.js 24** and the committed lockfile.
-- **Vercel** for hosting.
-
-## Development
+Use Node.js 24 e instale as dependências do lockfile:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Validate and preview the production build:
+Para validar e visualizar o build de produção:
 
 ```sh
 npm test
@@ -54,57 +21,38 @@ npm run build
 npm run preview
 ```
 
-## Structure
+## Estrutura
 
-```text
-index.html                 English content, semantics, metadata and page structure
-src/main.js                Language switch, navigation, scroll progress, contact copy
-src/translations.js        Portuguese copy and UI strings
-src/utils/page-metadata.js Language-aware title, description and social metadata
-styles/style.css           Design tokens, layout, components, responsive rules and motion
-public/fonts/              Self-hosted DM Sans and DM Serif Display subsets
-public/images/             AVIF/WebP responsive product screenshots
-cv/                        LaTeX sources and compiled ATS-oriented resumes
-test/                      SEO, i18n, content and performance regression tests
-```
+- `index.html`: conteúdo em português, semântica, metadados e estrutura das seções.
+- `src/translations.js`: versão em inglês dos textos.
+- `src/main.js`: idioma, menu, navegação, animações e cópia do contato.
+- `src/utils/parallax.js`: profundidade de scroll nas camadas visuais, com deslocamento limitado e suavização por frame.
+- `src/utils/smooth-scroll.js`: desaceleração curta da rodinha com limites, resposta à inversão de direção e preservação de interações nativas.
+- `styles/style.css`: tokens visuais, componentes, composição responsiva e movimento reduzido.
+- `styles/components/premium.css`: contraste editorial, entradas por linhas, revelação coordenada, terminais e microinterações.
+- `public/curriculo-pt.pdf` e `public/curriculo-en.pdf`: currículos para download.
 
-## Updating content
+O site usa HTML, CSS e JavaScript com Vite, sem framework de interface ou biblioteca de animação. Os textos principais continuam presentes no HTML sem depender do JavaScript. As animações respeitam `prefers-reduced-motion`.
 
-1. Edit the English source in `index.html`.
-2. Update the matching keys in `src/translations.js` for Portuguese.
-3. Replace screenshots in `public/images/`, keeping the responsive sizes and alt keys.
-4. Update the ATLAS numbers only when they match the published build. The current figures come from the project's content manifest.
-5. Rebuild the resumes from `cv/curriculo-en.tex` and `cv/curriculo-pt.tex`, then copy the PDFs to `public/`.
-6. Run `npm test` and `npm run build`.
+O parallax mantém a rolagem nativa, preserva os transforms existentes e reduz a intensidade em telas de até 760px. O loop para ao estabilizar e é cancelado quando a página fica oculta ou o usuário ativa movimento reduzido. Os testes cobrem os limites, a estabilização e a mudança dessa preferência.
 
-## Content policy
+A suavização da rodinha usa a posição real do documento, sem wrapper de scroll virtual. É aplicada somente com ponteiro preciso e hover; toque, zoom, campos editáveis, rolagem horizontal e áreas com scroll próprio mantêm seu comportamento nativo. Teclado, cliques, toque e movimento reduzido cancelam a inércia. O deslocamento pendente é limitado a 1,5 tela para manter resposta em gestos rápidos. Os testes cobrem desaceleração, inversão, limites e cancelamento.
 
-Case studies describe work that exists. There are no invented metrics, client screenshots or confidential system details. Client code and internal systems belong to the respective companies. ATLAS numbers are derived from the published content bundle.
+A abertura entra por linhas; títulos, descrições e comandos aparecem em sequência nas seções. O menu sinaliza a seção ativa com um indicador deslizante. A troca PT/EN usa uma transição curta, com os textos atualizados imediatamente. Conteúdo e comandos permanecem disponíveis sem JavaScript e com movimento reduzido.
 
-## Deployment
+## Atualização de conteúdo
 
-The project is connected to Vercel.
+Atualize os textos em português no HTML e as respectivas chaves em `src/translations.js`. Substitua os PDFs mantendo os nomes acima. A troca de idioma também troca o currículo dos botões principais.
 
-- Build command: `npm run build`
-- Output directory: `dist`
-- Node.js: 24.x
+As experiências profissionais descrevem responsabilidades fornecidas no currículo. Não há código, screenshots de sistemas internos ou métricas de impacto inventadas.
 
----
+## Publicação
 
-## Português
+O projeto mantém a integração existente com a Vercel. Comando de build: `npm run build`; diretório de saída: `dist`; versão de Node: 24.x.
 
-Portfólio profissional de **Enzo Bellussi**, engenheiro de software em São Paulo. O inglês é o idioma padrão, com versão completa em português, estudos de caso de produtos, experiência, ferramentas e currículos para download.
 
-- **No ar:** [bellussi.vercel.app](https://bellussi.vercel.app)
-- **Projeto principal:** [ATLAS](https://atlas-bellussi.pages.dev) — enciclopédia visual com grafo de conhecimento e fontes em cada afirmação.
-- **Currículos:** `public/curriculo-en.pdf` e `public/curriculo-pt.pdf`; fontes em `cv/`.
-- **Lighthouse:** 100 em performance, acessibilidade, boas práticas e SEO, no mobile e no desktop.
+## Versão publicada
 
-Para rodar localmente, use Node.js 24:
+A direção V2 (Zilla Slab) foi escolhida em 29/10/2026 e promovida à raiz. As fontes são locais (SIL OFL), com pesos reais e fallback Georgia. Layout, conteúdo, temas, animações, PT/EN e currículos foram preservados. URLs com `?lang=pt` ou `?lang=en` selecionam o idioma explicitamente, inclusive sem armazenamento local.
 
-```sh
-npm ci
-npm run dev
-```
-
-Os textos em português ficam em `src/translations.js`; o HTML contém o inglês, que é o idioma padrão. As capturas de produto estão em `public/images/`. O README dos currículos, com instruções de compilação LaTeX, está em [`cv/README.md`](cv/README.md).
+A produção não contém o seletor A/B/C nem o redesign V3. O experimento e suas evidências permanecem na branch `codex/portfolio-abc` e no PR #3, sem integrar seus arquivos à página oficial.

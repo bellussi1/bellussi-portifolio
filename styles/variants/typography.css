@@ -1,0 +1,49 @@
+/* B changes typography only. Geometry, color, media and motion remain the control. */
+html[data-variant="b"] {
+  --font: "Zilla Slab", Georgia, serif;
+  --display: "Zilla Slab", Georgia, serif;
+}
+html[data-variant="b"] body {
+  font-weight: 400;
+  line-height: 1.65;
+}
+html[data-variant="b"] .hero h1 {
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+html[data-variant="b"] h2 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+html[data-variant="b"] h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+html[data-variant="b"] .section-description {
+  line-height: 1.65;
+}
+html[data-variant="b"] .navigation {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Reading role: 16–17px; original display sizes remain the experiment's anchor. */
+html[data-variant="b"] .hero-description,
+html[data-variant="b"] .section-description,
+html[data-variant="b"] .index-experience-contribution > p,
+html[data-variant="b"] .index-product-copy > p,
+html[data-variant="b"] .index-tool-description > p,
+html[data-variant="b"] .approach-card > p,
+html[data-variant="b"] .about-content > p:not(.about-lead),
+html[data-variant="b"] .contact-section > p {
+  font-size: clamp(1rem, 0.97rem + 0.1vw, 1.0625rem);
+  line-height: 1.6;
+}
+html[data-variant="b"] .navigation a,
+html[data-variant="b"] .button,
+html[data-variant="b"] .text-link {
+  font-size: 0.875rem;
+}

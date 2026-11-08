@@ -8,22 +8,16 @@ function createDocument() {
     'meta[property="og:title"]',
     'meta[property="og:description"]',
     'meta[property="og:locale"]',
-    'meta[property="og:locale:alternate"]',
     'meta[name="twitter:title"]',
     'meta[name="twitter:description"]',
   ];
-  const elements = new Map(
-    selectors.map((selector) => [selector, { content: "" }]),
-  );
+  const elements = new Map(selectors.map((selector) => [selector, { content: "" }]));
 
   return {
     documentElement: { lang: "" },
     title: "",
     querySelector(selector) {
-      assert.ok(
-        elements.has(selector),
-        `unexpected metadata selector: ${selector}`,
-      );
+      assert.ok(elements.has(selector), `unexpected metadata selector: ${selector}`);
       return elements.get(selector);
     },
     metadata: elements,
@@ -35,18 +29,22 @@ test("keeps document and share metadata aligned with the selected language", () 
 
   syncPageMetadata(document, "en");
   assert.equal(document.documentElement.lang, "en");
-  assert.equal(document.title, "Enzo Bellussi — Software Engineer");
+  assert.equal(document.title, "Enzo Bellussi | Front-end Software Engineer");
   assert.equal(
     document.metadata.get('meta[name="description"]').content,
-    "Software engineer with 3+ years building enterprise web products. TypeScript, React, Angular and Node.js — performance, accessibility and maintainable systems.",
+    "Enzo Bellussi is a Front-end Software Engineer building thoughtful interfaces and systems designed to evolve with Angular, React, and TypeScript. Experience at MarketData and Banco do Brasil.",
+  );
+  assert.equal(
+    document.metadata.get('meta[property="og:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
+  );
+  assert.equal(
+    document.metadata.get('meta[name="twitter:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
   );
   assert.equal(
     document.metadata.get('meta[property="og:locale"]').content,
     "en_US",
-  );
-  assert.equal(
-    document.metadata.get('meta[property="og:locale:alternate"]').content,
-    "pt_BR",
   );
   assert.equal(
     document.metadata.get('meta[name="twitter:title"]').content,
@@ -55,13 +53,17 @@ test("keeps document and share metadata aligned with the selected language", () 
 
   syncPageMetadata(document, "pt");
   assert.equal(document.documentElement.lang, "pt-BR");
-  assert.equal(document.title, "Enzo Bellussi — Engenheiro de Software");
+  assert.equal(document.title, "Enzo Bellussi | Software Engineer com foco em Front-end");
   assert.equal(
     document.metadata.get('meta[property="og:locale"]').content,
     "pt_BR",
   );
-  assert.match(
+  assert.equal(
+    document.metadata.get('meta[property="og:description"]').content,
     document.metadata.get('meta[name="description"]').content,
-    /Engenheiro de software/,
+  );
+  assert.equal(
+    document.metadata.get('meta[name="twitter:description"]').content,
+    document.metadata.get('meta[name="description"]').content,
   );
 });

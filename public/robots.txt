@@ -1,3 +1,7 @@
+# Allow ChatGPT Search to discover this public portfolio.
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
 
