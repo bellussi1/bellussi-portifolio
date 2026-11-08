@@ -15,7 +15,7 @@ export const portfolioContent = {
       pt: {
         period: "Ago. 2024 — atual",
         pill: "Consultoria · múltiplos clientes",
-        role: "ENGENHEIRO DE SOFTWARE (FRONT-END)",
+        role: "ENGENHEIRO DE SOFTWARE PLENO (FRONT-END)",
         title: "Da interface à responsabilidade técnica.",
         description:
           "Desenvolvimento e sustentação de aplicações com Angular, React e TypeScript. Responsável técnico pelos projetos Dexco e RecargaPay, com atuação em arquitetura, manutenção e entrega em produção.",
@@ -31,7 +31,7 @@ export const portfolioContent = {
       en: {
         period: "Aug. 2024 — present",
         pill: "Consulting · multiple clients",
-        role: "SOFTWARE ENGINEER (FRONT-END)",
+        role: "MID-LEVEL SOFTWARE ENGINEER (FRONT-END)",
         title: "From interface development to technical ownership.",
         description:
           "Development and maintenance of applications with Angular, React and TypeScript. Technical ownership of Dexco and RecargaPay projects, contributing to architecture, maintenance and production delivery.",
