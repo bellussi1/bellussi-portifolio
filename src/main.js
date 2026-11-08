@@ -24,6 +24,7 @@ const copyLabel = document.querySelector(".copy-email [data-i18n]");
 let language = "en";
 let languageTransition;
 let copyReset;
+let hasRenderedLanguage = false;
 
 const ui = () => (language === "pt" ? portuguese : englishUi);
 
@@ -42,14 +43,20 @@ function updateDocumentLanguage(nextLanguage) {
   const content = language === "pt" ? portuguese : englishContent;
   const altContent = language === "pt" ? portuguese : englishAlt;
 
-  translatedElements.forEach((element) => {
-    element.innerHTML =
-      content[element.dataset.i18n] ?? englishContent[element.dataset.i18n];
-  });
-  translatedAltElements.forEach((element) => {
-    element.alt =
-      altContent[element.dataset.i18nAlt] ?? englishAlt[element.dataset.i18nAlt];
-  });
+  // The document already ships in English. Skip the initial DOM rewrite so
+  // first paint stays cheap, then keep both languages in sync afterwards.
+  if (language === "pt" || hasRenderedLanguage) {
+    translatedElements.forEach((element) => {
+      element.innerHTML =
+        content[element.dataset.i18n] ?? englishContent[element.dataset.i18n];
+    });
+    translatedAltElements.forEach((element) => {
+      element.alt =
+        altContent[element.dataset.i18nAlt] ??
+        englishAlt[element.dataset.i18nAlt];
+    });
+  }
+  hasRenderedLanguage = true;
 
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.setAttribute(
@@ -155,33 +162,8 @@ try {
 }
 setLanguage(initialLanguage, { persist: false });
 
-// Content is always visible without JavaScript; motion is an enhancement.
-const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-let revealObserver;
-function setupMotion() {
-  revealObserver?.disconnect();
-  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
-    delete root.dataset.motion;
-    return;
-  }
-  revealObserver = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      }),
-    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
-  );
-  document.querySelectorAll(".reveal").forEach((element) => {
-    revealObserver.observe(element);
-  });
-  root.dataset.motion = "enabled";
-}
-setupMotion();
-reducedMotion.addEventListener("change", setupMotion);
-
+// Content is visible by default. Motion stays in CSS so the initial render
+// does not depend on JavaScript layout work.
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(
     (entries) =>
@@ -225,8 +207,9 @@ window.addEventListener(
   },
   { passive: true },
 );
-window.addEventListener("resize", updateProgress);
-updateProgress();
+// The progress bar starts at 0% in CSS. Reading scrollHeight on load or on
+// resize forces a full layout, so measurements happen only while scrolling.
+// full layout, so the first measurement waits for the first scroll or resize.
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 copyButton.addEventListener("click", async () => {
