@@ -1,69 +1,107 @@
 import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
-import { english } from "../src/translations.js";
+import { portuguese } from "../src/translations.js";
 
 const siteRoot = new URL("../", import.meta.url);
 const html = await readFile(new URL("index.html", siteRoot), "utf8");
-const productsSection = html.match(/<section\b(?=[^>]*\bid="products")[\s\S]*?<\/section>/)?.[0];
 
-test("shows real screenshots for every product case", async () => {
-  assert.ok(productsSection, "missing products section");
+const articles = [...html.matchAll(/<article\b[\s\S]*?<\/article>/g)].map(
+  (match) => match[0],
+);
+
+function articleWith(id) {
+  return articles.find((article) => article.includes(`id="${id}"`));
+}
+
+test("features ATLAS as the main case study with the current live URL", async () => {
+  assert.match(html, /<section[^>]+id="work"/);
+  const atlas = articleWith("atlas-title");
+  assert.ok(atlas, "missing ATLAS feature");
+  assert.match(atlas, /id="atlas-title">ATLAS</);
+  assert.match(
+    atlas,
+    /href="https:\/\/atlas-bellussi\.pages\.dev\/"/,
+    "ATLAS must link to the current live deployment",
+  );
+  assert.match(atlas, /href="https:\/\/github\.com\/bellussi1\/ATLAS"/);
+  assert.doesNotMatch(html, /atlas-kappa-drab\.vercel\.app/);
+  assert.match(atlas, /data-i18n="atlasMetric2Value">7,918</);
+  assert.match(atlas, /data-i18n="atlasMetric3Value">898</);
+  assert.match(atlas, /data-i18n="atlasMetric1Value">896</);
+});
+
+test("shows real, responsive screenshots for every product", async () => {
   const captures = [
     {
-      caseName: "ATLAS",
-      articleClass: "product-case-atlas",
-      source: "/atlas-reading.jpg",
-      altKey: "atlasImageAlt",
-      captionKey: "atlasCaption",
+      name: "ATLAS",
+      id: "atlas-title",
+      source: "/images/atlas-reading-1200.webp",
+      altKey: "atlasReadingAlt",
     },
     {
-      caseName: "KOReader Ecosystem",
-      articleClass: "product-case-koreader",
-      source: "/koreader-library.png",
-      altKey: "koreaderImageAlt",
-      captionKey: "koreaderCaption",
+      name: "KOReader Ecosystem",
+      id: "koreader-title",
+      source: "/images/koreader-library-720.webp",
+      altKey: "koreaderAlt",
     },
     {
-      caseName: "Comandinha",
-      articleClass: "product-case-comandinha",
-      source: "/comandinha-panel-login.png",
-      altKey: "comandinhaImageAlt",
-      captionKey: "comandinhaCaption",
+      name: "Black Market",
+      id: "black-market-title",
+      source: "/images/black-market-720.webp",
+      altKey: "blackMarketAlt",
     },
     {
-      caseName: "Black Market",
-      articleClass: "product-case-black-market",
-      source: "/black-market-dashboard.webp",
-      altKey: "blackMarketImageAlt",
-      captionKey: "blackMarketCaption",
+      name: "Comandinha",
+      id: "comandinha-title",
+      source: "/images/comandinha-720.webp",
+      altKey: "comandinhaAlt",
     },
   ];
 
   for (const capture of captures) {
-    const productCase = productsSection.match(
-      new RegExp(`<article class="product-case (?:product-case-reverse )?${capture.articleClass}[^>]*>[\\s\\S]*?<\\/article>`),
-    )?.[0];
-    assert.ok(productCase, `missing ${capture.caseName} case study`);
-    const image = productCase.match(/<img\b([^>]*)>/)?.[1];
-    assert.ok(image, `missing ${capture.caseName} screenshot`);
+    const block = articleWith(capture.id);
+    assert.ok(block, `missing ${capture.name} block`);
+
+    const picture = block.match(/<picture>[\s\S]*?<\/picture>/)?.[0];
+    assert.ok(picture, `missing responsive picture for ${capture.name}`);
+    assert.match(picture, /type="image\/avif"/);
+    assert.match(picture, /type="image\/webp"/);
+    assert.match(picture, /720\.(avif|webp)/);
+    assert.match(picture, /1200\.(avif|webp)/);
+
+    const image = picture.match(/<img\b([^>]*)>/)?.[1];
+    assert.ok(image, `missing image for ${capture.name}`);
     assert.match(image, new RegExp(`src=["']${capture.source}["']`));
-    assert.match(image, new RegExp(`data-i18n-alt=["']${capture.altKey}["']`));
+    assert.match(
+      image,
+      new RegExp(`data-i18n-alt=["']${capture.altKey}["']`),
+    );
     assert.match(image, /\bwidth=["']\d+["']/i);
     assert.match(image, /\bheight=["']\d+["']/i);
     assert.match(image, /\bloading=["']lazy["']/i);
-    assert.match(productCase, new RegExp(`data-i18n=["']${capture.captionKey}["']`));
+    assert.equal(
+      typeof portuguese[capture.altKey],
+      "string",
+      `missing Portuguese alt for ${capture.name}`,
+    );
     await stat(new URL(`public${capture.source}`, siteRoot));
-    assert.equal(typeof english[capture.altKey], "string", `missing English alt for ${capture.caseName}`);
-    assert.equal(typeof english[capture.captionKey], "string", `missing English caption for ${capture.caseName}`);
   }
+});
 
-  assert.doesNotMatch(productsSection, /concept\.svg|product-flow-panel/i);
-  assert.match(productsSection, /Migração em andamento|Migration in progress/i);
-  assert.match(productsSection, /captura local|local capture/i);
-  assert.match(
-    productsSection,
-    /href=["']https:\/\/github\.com\/bellussi1\/Black-Market["']/i,
-    "the Black Market repository is public and must be linked",
-  );
+test("links the open-source tools and their current repositories", () => {
+  for (const repo of [
+    "deploy-preflight",
+    "local-webhook-recorder",
+    "compose-doctor",
+    "koreader-ecosystem",
+    "Black-Market",
+    "comandinha",
+  ]) {
+    assert.match(
+      html,
+      new RegExp(`https://github\\.com/bellussi1/${repo}`),
+      `missing repository link: ${repo}`,
+    );
+  }
 });

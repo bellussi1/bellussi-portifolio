@@ -1,148 +1,204 @@
-// Professional facts are sourced from the supplied resumes.
-export const english = {
-  navProducts: "Products",
-  navProjects: "Open source",
-  productsLabel: "PRODUCTS",
-  productsTitle: "Products I built.<br />Real-world problems.",
-  productsIntro:
-    "Beyond small tools, I build full products with their own context and constraints: an interactive encyclopedia, a desktop app, a game planner and a restaurant platform. Here is the problem, the stage and the engineering decisions.",
-  atlasStatus: "Live · expanding",
-  atlasHeadline: "Reading is exploring: history as a navigable network.",
-  atlasDescription:
-    "A visual, interactive encyclopedia of history, politics and society. People, works, concepts and events form a network where every claim points to its source and its degree of certainty: fact, interpretation or controversy.",
-  atlasDetails:
-    "Angular 21 with Signals, strict TypeScript and Zod-validated content. Data from Wikipedia, Wikidata and Commons arrives through reproducible ingestion, and the site is static, with prerendered routes and accessibility tests using Playwright and axe.",
-  atlasImageAlt: "Actual screenshot of the Marxism reading in ATLAS, with its visual index and licensed portrait.",
-  atlasCaption: "Marxism reading · published site",
-  productLive: "See it live",
-  koreaderStatus: "Open source · v0.3",
-  koreaderHeadline: "Your library, your reader and your progress in one place.",
-  koreaderDescription:
-    "A Windows app that joins Calibre, Kindle with KOReader and Hardcover: browse your library, edit metadata, send a book to Kindle over USB and track reading, with encrypted backups and data that stays on your machine.",
-  koreaderDetails:
-    "Electron, React and TypeScript for the interface; Python at the core. Every feature states what is ready and what still needs validation on a real device. It is an early-stage project.",
-  koreaderImageAlt: "Screenshot of the Calibre library in KOReader Ecosystem, with covers, search and filters, using demo data.",
-  koreaderCaption: "Library · demo data",
-  koreaderDownload: "Download for Windows",
-  comandinhaStatus: "Migration in progress",
-  comandinhaHeadline: "One rhythm for the whole dining room.",
-  comandinhaDescription:
-    "A restaurant operations platform for digital catalogs, tables, orders and QR menus. I am rebuilding its foundation as a monorepo while keeping the legacy product available as the new flows mature.",
-  comandinhaDetails:
-    "Next.js and React on the web, NestJS in the API, PostgreSQL and Prisma. The catalog and QR flow have an integrated foundation; the migration is not production-ready yet.",
-  comandinhaLink: "Explore the public repository",
-  comandinhaImageAlt: "Actual screenshot of the new Comandinha panel login screen.",
-  comandinhaCaption: "New panel · local capture",
-  blackMarketStatus: "In development",
-  blackMarketHeadline: "Plan the next recipe, not the next spreadsheet.",
-  blackMarketDescription:
-    "An independent planner for Brazil’s Black Desert Online community. It explores recipes and sub-recipes in a production tree and compares buying versus crafting each material, with prices, masteries and time.",
-  blackMarketDetails:
-    "A TypeScript monorepo with Angular and SSR, NestJS, PostgreSQL and Drizzle, sharing calculation rules between browser and API. The code is open, but there is no hosted public service.",
-  blackMarketImageAlt: "Actual screenshot of the Black Market inventory dashboard.",
-  blackMarketCaption: "Dashboard · local product capture",
-  projectsLabel: "OPEN SOURCE PROJECTS",
-  projectsTitle: "Small tools.<br />Concrete problems.",
-  projectsIntro: "Beyond interfaces, I build tools for everyday development. Three personal projects with open code, tests and documentation for you to explore.",
-  projectCode: "Explore code",
-  projectTests: "View tests and CI",
-  projectExample: "USAGE EXAMPLE",
-  projectDemo: "Run the demo",
-  preflightTitle: "Validate configuration before deployment.",
-  preflightDescription: "Missing variables, inaccessible files and invalid URLs can break a release. A CLI that brings these checks into one report for your terminal or pipeline.",
-  preflightDecision: "Typed validation, optional HTTP probes and CI exit codes. Environment values stay out of reports.",
-  preflightDemo: "Missing required variable → exit 1. Corrected configuration → exit 0.",
-  recorderTitle: "One event. As many tests as you need.",
-  recorderDescription: "Reproducing an integration should not require triggering the event again. Capture local webhooks, inspect their payloads and replay them after changing your handler.",
-  recorderDecision: "SQLite persistence, byte-preserving capture and explicit replay to local endpoints. Payload and retention limits.",
-  recorderDemo: "Capture an order and replay it twice: the example handler identifies the duplicate.",
-  doctorTitle: "Understand the state of your environment.",
-  doctorDescription: "A running container can still have a failing healthcheck. Diagnose Docker Compose services with status, restarts, ports and investigation suggestions.",
-  doctorDecision: "Read-only queries, bounded subprocesses and selected metadata. Reports in text or JSON.",
-  doctorDemo: "Healthcheck points to the wrong route → unhealthy. Corrective overlay → ready.",
-  skip: "Skip to content",
-  navExperience: "Experience",
-  navApproach: "Approach",
-  navAbout: "About",
-  navContact: 'Contact <span aria-hidden="true">↗</span>',
-  heroFirst: "From visual detail",
-  heroSecond: "to&nbsp;",
-  heroAccent: "architecture.",
+// Portuguese copy for the English-first portfolio.
+// Proper nouns, product names and technology names stay untranslated.
+export const portuguese = {
+  skip: "Pular para o conteúdo",
+  navWork: "Trabalhos",
+  navExperience: "Experiência",
+  navAbout: "Sobre",
+  navContact: "Contato",
+  navResume: "Currículo",
+
+  heroEyebrow: "ENGENHEIRO DE SOFTWARE · SÃO PAULO, BRASIL",
+  heroAvailability: "Aberto a oportunidades",
+  heroTitleLine1: "Construo a interface",
+  heroTitleLine2: "e o <em>sistema</em>",
+  heroTitleLine3: "<em>por trás dela.</em>",
   heroDescription:
-    "I build and evolve web applications where usability, performance and maintainability matter. Production experience across banking and consulting environments.",
-  heroCta: "Explore my experience",
-  resume: "Download resume",
-  location: "São Paulo, Brazil",
-  since: "Building for the web since 2022",
-  trajectoryLabel: "Experience in real-world environments",
-  credentialNote: "Enterprise systems. Technical ownership.",
-  experienceLabel: "EXPERIENCE",
-  experienceTitle: "Code that makes it<br />to production.",
+    "Engenheiro de software com 3+ anos entregando aplicações web corporativas para bancos, varejo, energia e pagamentos. Trabalho com TypeScript, React, Angular e Node.js — com foco em performance, acessibilidade e sistemas que times conseguem manter.",
+  heroCta: "Ver trabalhos selecionados",
+  resume: "Baixar currículo",
+  heroFact1: "3+ anos em produção",
+  heroFact2: "MarketData · Banco do Brasil",
+  heroFact3: "Remoto ou híbrido · UTC−3",
+  heroVisualLabel: "ATLAS · PRODUTO NO AR",
+  heroVisualCaption:
+    "Grafo de conhecimento · leituras contínuas · afirmações com fonte",
+  atlasHomeAlt:
+    "Página inicial do ATLAS com a frase Tudo se liga e uma composição geométrica colorida.",
+
+  credentialLabel: "EXPERIÊNCIA COM",
+  credentialNote: "Sistemas corporativos. Responsabilidade em produção.",
+
+  workLabel: "TRABALHOS SELECIONADOS",
+  workTitle: "Produtos, não demos.",
+  workIntro:
+    "Estudos de caso de produtos que projetei, construí e coloquei no ar — incluindo o ATLAS, meu principal projeto open source.",
+  atlasCategory: "PROJETO PRINCIPAL · CONHECIMENTO ABERTO",
+  atlasStatus: "No ar · open source",
+  atlasHeadline:
+    "História como uma rede navegável — com fonte para cada afirmação.",
+  atlasDescription:
+    "ATLAS é uma enciclopédia interativa de história, política e sociedade. Pessoas, obras, conceitos e acontecimentos formam um grafo de conhecimento tipado, e cada afirmação carrega sua fonte e se é fato documentado, interpretação, controvérsia ou lacuna assumida.",
+  atlasRoleLabel: "O QUE CONSTRUÍ",
+  atlasRole:
+    "Arquitetura do produto, front end em Angular, pipeline de conteúdo validado por schema e suíte de testes de acessibilidade e E2E. Pensado para entrega estática com ingestão reproduzível do Wikimedia.",
+  atlasMetric1Value: "896",
+  atlasMetric1Label: "entidades",
+  atlasMetric2Value: "7.918",
+  atlasMetric2Label: "afirmações com fonte",
+  atlasMetric3Value: "898",
+  atlasMetric3Label: "fontes",
+  atlasMetric4Value: "4",
+  atlasMetric4Label: "leituras contínuas",
+  atlasLive: "Visitar o ATLAS",
+  atlasCode: "Ver código",
+  atlasReadingAlt:
+    "Página de leitura do ATLAS sobre Marxismo, com índice visual e retratos licenciados.",
+  atlasCaption: "Leitura · Marxismo",
+
+  koreaderCategory: "DESKTOP · LOCAL-FIRST",
+  koreaderStatus: "Open source · v0.3",
+  koreaderDescription:
+    "Um companion para Windows que reúne Calibre, Kindle com KOReader e Hardcover. Navegue e edite sua biblioteca, envie livros por USB e acompanhe a leitura — com backups criptografados e dados que ficam na sua máquina.",
+  koreaderDownload: "Baixar para Windows",
+  koreaderAlt:
+    "Biblioteca do KOReader Ecosystem com capas, busca e filtros, usando dados de demonstração.",
+  blackMarketCategory: "FERRAMENTAS DE JOGO · OPEN SOURCE",
+  blackMarketStatus: "Em desenvolvimento",
+  blackMarketDescription:
+    "Planejador de produção para a comunidade brasileira de Black Desert Online. Expande receitas em uma árvore e compara comprar ou produzir com preços, maestrias e tempo.",
+  blackMarketAlt:
+    "Painel de inventário do Black Market com dados de produção e mercado.",
+  comandinhaCategory: "OPERAÇÃO DE RESTAURANTES",
+  comandinhaStatus: "Migração em andamento",
+  comandinhaDescription:
+    "Plataforma de operação para restaurantes com cardápio digital, mesas, pedidos e atendimento por QR. Estou reconstruindo a base como monorepo enquanto o produto legado continua rodando.",
+  comandinhaAlt:
+    "Tela de entrada do painel do Comandinha para operação de restaurantes.",
+  viewRepo: "Ver repositório",
+
+  ossLabel: "OPEN SOURCE",
+  ossTitle: "Ferramentas pequenas. Hábitos de produção.",
+  ossIntro:
+    "CLIs que mantenho para as partes de entregar software que são fáceis de errar: configuração, integrações e ambientes locais.",
+  preflightDescription:
+    "Valida variáveis de ambiente, artefatos de build e endpoints antes de um deploy. Checagens tipadas, probes HTTP opcionais e relatórios JSON prontos para CI.",
+  recorderDescription:
+    "Captura requisições de webhook em SQLite local e as reproduz em handlers de loopback. Captura preservando bytes, com limites de armazenamento e retenção.",
+  doctorDescription:
+    "Diagnóstico somente leitura de Docker Compose: healthchecks, histórico de reinícios, portas publicadas e relatórios acionáveis em CLI.",
+  viewCode: "Ver código",
+
+  experienceLabel: "EXPERIÊNCIA",
+  experienceTitle: "Produção é a revisão de verdade.",
   experienceIntro:
-    "My work involves building interfaces, understanding existing systems and making decisions that still make sense after deployment.",
-  marketPeriod: "Aug. 2024 — present",
-  marketPill: "Consulting · multiple clients",
-  marketRole: "FRONT-END DEVELOPER",
-  marketTitle: "From interface development to technical ownership.",
-  marketDescription:
-    "Development and maintenance of applications with Angular, React and TypeScript. Technical ownership of Dexco and RecargaPay projects, contributing to architecture, maintenance and production delivery.",
-  marketBullet1: "Integration with REST APIs and ASP.NET MVC back-ends.",
+    "Entrego e mantenho software para clientes corporativos desde 2022 — primeiro dentro de um banco, hoje em projetos de consultoria.",
+  marketPeriod: "ago. 2024 — atual",
+  marketLocation: "São Paulo, Brasil · Híbrido",
+  marketRole: "Engenheiro de Software (Front-end)",
+  marketSummary:
+    "Construo e mantenho SPAs em Angular e React para clientes corporativos de varejo, energia, mobilidade e pagamentos. Responsável técnico pelos projetos Dexco e RecargaPay.",
+  marketBullet1:
+    "Entrego funcionalidades em produção para marcas como Natura, Nissan, Dexco, RecargaPay, Patriá e testadores da rede Visa.",
   marketBullet2:
-    "Responsive, accessible interfaces with attention to technical SEO.",
+    "Respondo por arquitetura, entrega e suporte em produção nos projetos Dexco e RecargaPay; colaboro com produto, design e back-end.",
   marketBullet3:
-    "Gradual legacy modernization and deployment pipeline monitoring in GitLab.",
-  marketDetailsLabel: "More about the context",
-  marketDetails:
-    "Work on projects for clients across different industries, including Natura, Nissan and Dexco. Experience with Tailwind CSS and SASS, asset storage on AWS S3 and gradual migration from jQuery to modern frameworks.",
-  bankPeriod: "Oct. 2022 — Aug. 2024",
-  bankPill: "Technology · international operations",
-  bankRole: "FRONT-END DEVELOPMENT INTERN",
-  bankTitle: "A new foundation for a legacy system.",
-  bankDescription:
-    "Work on the internal portal of the International Business Unit. Refactoring of a legacy system using Vue.js, with an architecture focused on reuse and maintainability.",
+    "Integro APIs REST e back-ends ASP.NET MVC; sirvo assets estáticos pelo AWS S3.",
+  marketBullet4:
+    "Modernizo código legado em jQuery, construo interfaces acessíveis (WCAG) e acompanho pipelines de CI/CD no GitLab.",
+  bankPeriod: "out. 2022 — ago. 2024",
+  bankLocation: "São Paulo, Brasil · Presencial",
+  bankRole: "Estagiário em Engenharia de Software (Front-end)",
+  bankSummary:
+    "Um dos principais desenvolvedores front-end do portal interno da Unidade de Negócios Internacionais, sistema crítico para as operações internacionais do banco.",
   bankBullet1:
-    "Reusable components and maintenance of an internal Design System.",
+    "Refiz um sistema legado em Vue.js com uma arquitetura moderna e baseada em componentes reutilizáveis.",
   bankBullet2:
-    "Integration with Node.js microservices and data handling in the interface.",
+    "Criei componentes e mantive o Design System interno.",
   bankBullet3:
-    "Loading performance optimization, browser compatibility and code reviews.",
-  confidentiality:
-    "These projects are part of my professional experience. Internal code and systems belong to the respective companies.",
-  approachLabel: "APPROACH",
-  approachTitle: "A good interface<br />starts before CSS.",
-  approachIntro:
-    "I combine visual care with engineering decisions to build applications people can use and teams can continue to evolve.",
-  approach1Title: "Architecture that keeps up.",
-  approach1Description:
-    "Reusable components, Design Systems and state management. A consistent foundation for evolving interfaces without multiplying complexity.",
-  approach2Title: "An experience that works.",
-  approach2Description:
-    "Responsive design, accessibility, performance and technical SEO. Attention to how applications behave across screens and browsers.",
-  approach3Title: "End-to-end integration.",
-  approach3Description:
-    "REST APIs, microservices and data in the interface. Experience with Node.js, PostgreSQL, AWS S3 and delivery pipelines.",
-  aboutLabel: "ABOUT ME",
-  aboutTitle: "Meet",
-  aboutLocation: "São Paulo, Brazil.<br />Curiosity as a starting point.",
+    "Integrei microsserviços Node.js e tratei dados complexos na camada de apresentação.",
+  bankBullet4:
+    "Melhorei performance de carregamento e compatibilidade entre navegadores e dispositivos; participei de code reviews e rituais Scrum.",
+  experienceNote:
+    "Código de clientes e sistemas internos pertencem às respectivas empresas. Nenhum screenshot ou métrica confidencial é exibido.",
+
+  toolkitLabel: "FERRAMENTAS",
+  toolkitTitle: "Profundidade na interface. Repertório em toda a stack.",
+  toolkitIntro:
+    "As ferramentas que mais uso, agrupadas pelos problemas que resolvem.",
+  toolkitGroup1Title: "Linguagens",
+  toolkitGroup1: "TypeScript · JavaScript (ES6+) · HTML5 · CSS3 · SQL",
+  toolkitGroup2Title: "Front end",
+  toolkitGroup2:
+    "React · Next.js · Angular · RxJS · Vue.js · Tailwind CSS · SASS",
+  toolkitGroup3Title: "Back end e dados",
+  toolkitGroup3:
+    "Node.js · NestJS · APIs REST · PostgreSQL · Prisma · Drizzle · ASP.NET MVC",
+  toolkitGroup4Title: "Cloud e DevOps",
+  toolkitGroup4:
+    "AWS S3 · Docker · GitLab CI/CD · GitHub Actions · Vercel · Cloudflare",
+  toolkitGroup5Title: "Engenharia",
+  toolkitGroup5:
+    "Design Systems · gerenciamento de estado · performance web · Core Web Vitals · acessibilidade WCAG · SEO técnico · code review · Agile",
+  toolkitGroup6Title: "Qualidade e IA",
+  toolkitGroup6:
+    "Vitest · Playwright · axe · Zod · desenvolvimento assistido por IA · revisão de código e geração de testes com LLMs",
+
+  aboutLabel: "SOBRE",
+  aboutTitle: "Engenheiro antes de tudo. <em>Obsessivo por interface.</em>",
+  aboutLocation: "São Paulo, Brasil · UTC−3",
   aboutLead:
-    "I enjoy connecting what people see with what makes software work.",
-  aboutBody:
-    "I am a software engineer focused on front-end. Since 2022, I have worked on enterprise applications in banking and consulting. My interests range from interaction details to the code structure behind the experience.",
-  aboutLearning:
-    "I also explore back-end development, infrastructure and developer tools, along with AI-assisted software engineering.",
-  educationLabel: "EDUCATION",
-  educationTitle: "Computer Science",
-  educationDetails: "Universidade FAM · 2022–2025",
-  languagesLabel: "LANGUAGES",
-  languagesTitle: "Portuguese & English",
-  languagesDetails: "Native Portuguese · Advanced English",
-  linkedinCta: "Explore my background on LinkedIn",
-  contactLabel: "NEXT STEP",
-  contactNote: "Open to conversations about opportunities.",
-  contactFirst: "Let’s build",
-  contactAccent: "the next chapter.",
+    "Gosto da parte em que produto, design e infraestrutura se encontram.",
+  aboutBody1:
+    "Sou Enzo Bellussi, engenheiro de software em São Paulo. Comecei em 2022 modernizando um portal bancário crítico no Banco do Brasil e hoje construo produtos corporativos na MarketData. No caminho, aprendi que boa interface é um problema de sistemas: contratos de dados, estado, orçamento de performance, acessibilidade e deploy.",
+  aboutBody2:
+    "O ATLAS é onde levo isso mais longe. Ele combina design system, pipeline de conteúdo validado por schema, grafo de conhecimento e front end Angular static-first — com fontes e ressalvas editoriais dentro do produto.",
+  aboutBody3:
+    "Sou falante nativo de português, com inglês profissional (B1+) e conforto para trabalhar com times distribuídos.",
+  factEducationLabel: "FORMAÇÃO",
+  factEducationTitle: "Bacharelado em Ciência da Computação",
+  factEducationDetail: "Universidade FAM · 2022–2025",
+  factLanguagesLabel: "IDIOMAS",
+  factLanguagesTitle: "Português e inglês",
+  factLanguagesDetail: "Português nativo · Inglês profissional (B1+)",
+  factLocationLabel: "BASE",
+  factLocationTitle: "São Paulo, Brasil",
+  factLocationDetail: "Aberto a remoto · UTC−3",
+  aboutLinkedIn: "Mais no LinkedIn",
+  aboutGitHub: "Open source no GitHub",
+
+  contactLabel: "CONTATO",
+  contactNote:
+    "Aberto a posições de engenharia de software e colaborações de produto.",
+  contactTitle: "Vamos construir algo <em>que dure.</em>",
   contactDescription:
-    "If you are looking for someone who combines front-end engineering, attention to user experience and production experience, let’s talk.",
-  emailCta: "Get in touch",
-  copyEmail: "Copy",
+    "Se você precisa de alguém que transite entre interface, arquitetura e entrega, vamos conversar.",
+  contactEmail: "Enviar e-mail",
+  copyEmail: "Copiar",
+  email: "enzobellussi3@gmail.com",
+
+  footerNote: "Projetado e construído com HTML, CSS e TypeScript.",
+  backToTop: "Voltar ao topo",
+
+  menuOpen: "Abrir menu",
+  menuClose: "Fechar menu",
+  mainNavigation: "Navegação principal",
+  copyEmailAria: "Copiar e-mail",
+  copied: "Copiado",
+  emailCopied: "E-mail copiado.",
+  copyError:
+    "Não foi possível copiar. Selecione o endereço ou use o link de contato.",
+  brandHome: "Enzo Bellussi, início",
+};
+
+export const englishUi = {
+  menuOpen: "Open menu",
+  menuClose: "Close menu",
+  mainNavigation: "Main navigation",
+  copyEmailAria: "Copy email address",
+  copied: "Copied",
+  emailCopied: "Email address copied.",
+  copyError:
+    "Could not copy. Select the email address or use the contact link.",
+  brandHome: "Enzo Bellussi, home",
 };

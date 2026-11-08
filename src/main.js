@@ -1,108 +1,112 @@
 import "../styles/modern-normalize.css";
 import "../styles/style.css";
-import "../styles/components/projects.css";
-import "../styles/components/premium.css";
-import { english } from "./translations.js";
+import { englishUi, portuguese } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
-import { initParallax } from "./utils/parallax.js";
-import { initSmoothScroll } from "./utils/smooth-scroll.js";
 
 const root = document.documentElement;
 root.classList.add("js");
+
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
-const portuguese = Object.fromEntries(
-  translatedElements.map((element) => [
-    element.dataset.i18n,
-    element.innerHTML,
-  ]),
+const englishContent = Object.fromEntries(
+  translatedElements.map((element) => [element.dataset.i18n, element.innerHTML]),
 );
-const portugueseAlt = Object.fromEntries(
-  translatedAltElements.map((element) => [
-    element.dataset.i18nAlt,
-    element.alt,
-  ]),
+const englishAlt = Object.fromEntries(
+  translatedAltElements.map((element) => [element.dataset.i18nAlt, element.alt]),
 );
-let language = "pt";
-let languageTransition;
+
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
+const main = document.querySelector("main");
+const copyButton = document.querySelector(".copy-email");
+const copyStatus = document.querySelector("#copy-status");
+const copyLabel = document.querySelector(".copy-email [data-i18n]");
+let language = "en";
+let languageTransition;
+let copyReset;
+
+const ui = () => (language === "pt" ? portuguese : englishUi);
 
 function updateMenuLabel() {
   const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  const labels = language === "pt" ? portuguese : englishUi;
   menuButton.setAttribute(
     "aria-label",
-    language === "en"
-      ? isOpen
-        ? "Close menu"
-        : "Open menu"
-      : isOpen
-        ? "Fechar menu"
-        : "Abrir menu",
+    isOpen ? labels.menuClose : labels.menuOpen,
   );
 }
 
-function setLanguage(nextLanguage) {
-  const previousLanguage = language;
-  language = nextLanguage === "en" ? "en" : "pt";
+function updateDocumentLanguage(nextLanguage) {
+  language = nextLanguage === "pt" ? "pt" : "en";
   syncPageMetadata(document, language);
-  const content = language === "en" ? english : portuguese;
-  // Both translation dictionaries contain only local, trusted strings.
+  const content = language === "pt" ? portuguese : englishContent;
+  const altContent = language === "pt" ? portuguese : englishAlt;
+
   translatedElements.forEach((element) => {
     element.innerHTML =
-      content[element.dataset.i18n] ?? portuguese[element.dataset.i18n];
+      content[element.dataset.i18n] ?? englishContent[element.dataset.i18n];
   });
   translatedAltElements.forEach((element) => {
     element.alt =
-      content[element.dataset.i18nAlt] ?? portugueseAlt[element.dataset.i18nAlt];
+      altContent[element.dataset.i18nAlt] ?? englishAlt[element.dataset.i18nAlt];
   });
-  document
-    .querySelectorAll("[data-language]")
-    .forEach((button) =>
-      button.setAttribute(
-        "aria-pressed",
-        String(button.dataset.language === language),
-      ),
+
+  document.querySelectorAll("[data-language]").forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      String(button.dataset.language === language),
     );
+  });
+
   document.querySelectorAll("[data-resume]").forEach((link) => {
-    link.href = language === "en" ? "/curriculo-en.pdf" : "/curriculo-pt.pdf";
+    link.href =
+      language === "pt" ? "/curriculo-pt.pdf" : "/curriculo-en.pdf";
   });
-  navigation.setAttribute(
-    "aria-label",
-    language === "en" ? "Main navigation" : "Navegação principal",
-  );
-  document
-    .querySelector(".copy-email")
-    .setAttribute(
+
+  navigation.setAttribute("aria-label", ui().mainNavigation);
+  copyButton.setAttribute("aria-label", ui().copyEmailAria);
+  document.querySelectorAll(".brand").forEach((brand) => {
+    brand.setAttribute("aria-label", ui().brandHome);
+  });
+  document.querySelectorAll(".language-control").forEach((control) => {
+    control.setAttribute(
       "aria-label",
-      language === "en" ? "Copy email address" : "Copiar e-mail",
+      language === "pt" ? "Idioma" : "Language",
     );
-  document
-    .querySelectorAll(".brand")
-    .forEach((link) =>
-      link.setAttribute(
-        "aria-label",
-        language === "en" ? "Enzo Bellussi, home" : "Enzo Bellussi, início",
-      ),
-    );
+  });
   updateMenuLabel();
+
+  const url = new URL(window.location.href);
+  if (language === "pt") url.searchParams.set("lang", "pt");
+  else url.searchParams.delete("lang");
+  history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function setLanguage(nextLanguage, { persist = true } = {}) {
+  const previousLanguage = language;
+  language = nextLanguage === "pt" ? "pt" : "en";
+  updateDocumentLanguage(language);
+
+  if (persist) {
+    try {
+      localStorage.setItem("portfolio-language", language);
+    } catch {
+      /* Language switching still works when storage is unavailable. */
+    }
+  }
+
   languageTransition?.cancel();
   if (
     previousLanguage !== language &&
     !matchMedia("(prefers-reduced-motion: reduce)").matches
   ) {
-    languageTransition = document
-      .querySelector("main")
-      .animate?.([{ opacity: 0.45 }, { opacity: 1 }], {
-        duration: 220,
-        easing: "ease-out",
-      });
-  }
-  requestAnimationFrame(updateNavigationIndicator);
-  try {
-    localStorage.setItem("portfolio-language", language);
-  } catch {
-    /* The switch works when storage is unavailable. */
+    languageTransition = main.animate?.(
+      [
+        { opacity: 0.45, transform: "translateY(2px)" },
+        { opacity: 1, transform: "none" },
+      ],
+      { duration: 220, easing: "ease-out" },
+    );
   }
 }
 
@@ -118,9 +122,9 @@ menuButton.addEventListener("click", () => {
   menuButton.setAttribute("aria-expanded", String(open));
   updateMenuLabel();
 });
-navigation
-  .querySelectorAll("a")
-  .forEach((link) => link.addEventListener("click", closeMenu));
+navigation.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
 document.addEventListener("keydown", (event) => {
   if (
     event.key === "Escape" &&
@@ -133,23 +137,25 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".site-header")) closeMenu();
 });
-matchMedia("(min-width: 761px)").addEventListener("change", (event) => {
+matchMedia("(min-width: 861px)").addEventListener("change", (event) => {
   if (event.matches) closeMenu();
 });
-document
-  .querySelectorAll("[data-language]")
-  .forEach((button) =>
-    button.addEventListener("click", () =>
-      setLanguage(button.dataset.language),
-    ),
-  );
-try {
-  setLanguage(localStorage.getItem("portfolio-language") ?? "pt");
-} catch {
-  setLanguage("pt");
-}
 
-// Content remains visible without animation APIs or when reduced motion is set.
+document.querySelectorAll("[data-language]").forEach((button) => {
+  button.addEventListener("click", () => setLanguage(button.dataset.language));
+});
+
+let initialLanguage = "en";
+try {
+  const storedLanguage = localStorage.getItem("portfolio-language");
+  const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+  initialLanguage = urlLanguage === "pt" || storedLanguage === "pt" ? "pt" : "en";
+} catch {
+  initialLanguage = "en";
+}
+setLanguage(initialLanguage, { persist: false });
+
+// Content is always visible without JavaScript; motion is an enhancement.
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 let revealObserver;
 function setupMotion() {
@@ -166,36 +172,15 @@ function setupMotion() {
           revealObserver.unobserve(entry.target);
         }
       }),
-    { threshold: 0.08 },
+    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
   );
-  document
-    .querySelectorAll(".reveal")
-    .forEach((element) => revealObserver.observe(element));
+  document.querySelectorAll(".reveal").forEach((element) => {
+    revealObserver.observe(element);
+  });
   root.dataset.motion = "enabled";
 }
 setupMotion();
 reducedMotion.addEventListener("change", setupMotion);
-reducedMotion.addEventListener("change", () => {
-  if (reducedMotion.matches) languageTransition?.cancel();
-});
-initParallax();
-initSmoothScroll();
-
-const navigationIndicator = document.createElement("span");
-navigationIndicator.className = "navigation-indicator";
-navigationIndicator.setAttribute("aria-hidden", "true");
-navigation.append(navigationIndicator);
-function updateNavigationIndicator() {
-  const current = navigation.querySelector('a[aria-current="location"]');
-  const indicator = navigation.querySelector(".navigation-indicator");
-  if (!indicator) return;
-  indicator.style.opacity = current ? "1" : "0";
-  if (!current) return;
-  indicator.style.width = `${current.offsetWidth}px`;
-  indicator.style.transform = `translateX(${current.offsetLeft}px)`;
-}
-window.addEventListener("resize", updateNavigationIndicator);
-document.fonts?.ready.then(updateNavigationIndicator);
 
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(
@@ -203,27 +188,31 @@ if ("IntersectionObserver" in window) {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         navigation.querySelectorAll("a").forEach((link) => {
-          if (link.hash === `#${entry.target.id}`)
+          if (link.hash === `#${entry.target.id}`) {
             link.setAttribute("aria-current", "location");
-          else link.removeAttribute("aria-current");
+          } else {
+            link.removeAttribute("aria-current");
+          }
         });
-        updateNavigationIndicator();
       }),
-    { rootMargin: "-15% 0px -55% 0px" },
+    { rootMargin: "-18% 0px -62% 0px" },
   );
   document
-    .querySelectorAll("main section[id]")
-    .forEach((section) => sectionObserver.observe(section));
+    .querySelectorAll("main section[id], main section [id]")
+    .forEach((section) => {
+      if (section.matches("section[id]")) sectionObserver.observe(section);
+    });
 }
 
 const progress = document.querySelector(".scroll-progress");
+const header = document.querySelector(".site-header");
 let scrollScheduled = false;
 function updateProgress() {
-  document
-    .querySelector(".site-header")
-    .classList.toggle("is-scrolled", window.scrollY > 24);
+  header.classList.toggle("is-scrolled", window.scrollY > 20);
   const scrollable = root.scrollHeight - window.innerHeight;
-  progress.style.transform = `scaleX(${scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0})`;
+  progress.style.transform = `scaleX(${
+    scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0
+  })`;
   scrollScheduled = false;
 }
 window.addEventListener(
@@ -240,25 +229,17 @@ window.addEventListener("resize", updateProgress);
 updateProgress();
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-let copyReset;
-document.querySelector(".copy-email").addEventListener("click", async () => {
-  const status = document.querySelector("#copy-status");
+copyButton.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText("enzobellussi3@gmail.com");
-    const label = document.querySelector(".copy-email [data-i18n]");
-    label.textContent = language === "en" ? "Copied" : "Copiado";
-    status.textContent =
-      language === "en" ? "Email address copied." : "E-mail copiado.";
+    copyLabel.textContent = ui().copied;
+    copyStatus.textContent = ui().emailCopied;
     clearTimeout(copyReset);
     copyReset = setTimeout(() => {
-      label.textContent =
-        language === "en" ? english.copyEmail : portuguese.copyEmail;
-      status.textContent = "";
+      copyLabel.textContent = language === "pt" ? "Copiar" : "Copy";
+      copyStatus.textContent = "";
     }, 2500);
   } catch {
-    status.textContent =
-      language === "en"
-        ? "Could not copy. Select the email address or use the contact link."
-        : "Não foi possível copiar. Selecione o endereço ou use o link de contato.";
+    copyStatus.textContent = ui().copyError;
   }
 });

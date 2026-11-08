@@ -1,0 +1,135 @@
+﻿\documentclass[10pt,a4paper]{article}
+
+% ---------- Page, encoding and ATS ----------
+\usepackage[a4paper,left=1.35cm,right=1.35cm,top=1.05cm,bottom=1.05cm]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{cmap}
+  \usepackage{microtype}
+  \DisableLigatures{encoding=T1,family=*}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+  \setmainfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf,BoldItalicFont=lmsans10-boldoblique.otf,Ligatures={NoCommon,NoRequired},Kerning=Off]
+\fi
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\hypersetup{
+  pdfauthor={Enzo Bellussi Cruz Souza},
+  pdftitle={Enzo Bellussi Cruz Souza - Software Engineer - Resume},
+  pdfsubject={Software Engineer, Front-end Architecture, Product Engineering},
+  pdfkeywords={Software Engineer, Frontend Engineer, TypeScript, JavaScript, React, Next.js, Angular, RxJS, Vue.js, Node.js, NestJS, PostgreSQL, REST APIs, AWS, Docker, CI/CD, Design Systems, Web Performance, Core Web Vitals, WCAG, Technical SEO, Playwright, Test Automation, AI-assisted software development}
+}
+
+% ---------- Layout ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\emergencystretch=2em
+\raggedright
+
+\titleformat{\section}
+  {\normalsize\bfseries}
+  {}{0pt}{}
+  [\vspace{0.5pt}\hrule height 0.4pt]
+\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+
+\setlist[itemize]{
+  leftmargin=1.05em,
+  label=\textbullet,
+  itemsep=0.35pt,
+  topsep=0.5pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\role}[4]{%
+  \textbf{#1}\hfill #2\\[1pt]
+  \textit{#3}\hfill #4\par\vspace{1.5pt}
+}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\fontsize{17}{19}\selectfont\textbf{Enzo Bellussi Cruz Souza}}\\[2pt]
+  \small\textbf{Software Engineer} \textbar{} Front-end Architecture \& Product Engineering\\[2pt]
+  \small
+  S\~ao Paulo, Brazil \textbar{} +55 (11) 99884-4666 \textbar{}
+  \href{mailto:enzobellussi3@gmail.com}{enzobellussi3@gmail.com}\\[1pt]
+  \small
+  \href{https://www.linkedin.com/in/enzo-bellussi/}{linkedin.com/in/enzo-bellussi} \textbar{}
+  \href{https://github.com/bellussi1}{github.com/bellussi1} \textbar{}
+  \href{https://bellussi.vercel.app/}{bellussi.vercel.app}
+\end{center}
+
+% ---------- Summary ----------
+\section*{PROFESSIONAL SUMMARY}
+Software Engineer with 3+ years of experience building and maintaining production web applications for enterprise clients in banking, retail, energy, mobility and payments. Strong in \textbf{TypeScript, React, Angular and Node.js}, with hands-on work across \textbf{REST APIs, PostgreSQL, AWS, Docker and CI/CD}. Technical owner for multi-client projects, from architecture and code review to accessibility, performance and deployment. Open-source maintainer of \textbf{ATLAS}, a live knowledge product with 896 entities, 7,900+ sourced claims and 898 sources.
+
+% ---------- Skills ----------
+\section*{TECHNICAL SKILLS}
+\textbf{Languages:} TypeScript, JavaScript (ES6+), SQL, HTML5, CSS3.\\
+\textbf{Front-end / Frontend:} React, Next.js, Angular, RxJS, Vue.js, Tailwind CSS, SASS/SCSS.\\
+\textbf{Back-end / Backend:} Node.js, NestJS, REST/RESTful APIs, PostgreSQL, Prisma, Drizzle, ASP.NET MVC, microservices.\\
+\textbf{Cloud \& DevOps:} AWS (Amazon Web Services, S3), Docker, GitLab CI/CD, GitHub Actions, Vercel, Cloudflare, Git.\\
+\textbf{Engineering:} Design Systems, state management, web performance (Core Web Vitals), WCAG accessibility, technical SEO, test automation (Vitest, Playwright, axe), code review, Agile/Scrum.\\
+\textbf{AI \& Quality:} AI-assisted software development, LLM code review and test generation, schema validation with Zod.
+
+% ---------- Experience ----------
+\section*{PROFESSIONAL EXPERIENCE}
+
+\role{MarketData}{Aug 2024 -- Present}{Software Engineer (Front-end)}{S\~ao Paulo, Brazil}
+\begin{itemize}
+  \item Build and maintain \textbf{Angular and React SPAs} for enterprise clients across retail, energy, mobility and payments, including Natura, Nissan, Dexco, RecargaPay, Patri\'a and Visa network testers.
+  \item \textbf{Technical owner} for Dexco and RecargaPay: architecture decisions, delivery, production support and collaboration with product, design and back-end teams.
+  \item Integrate front-end with \textbf{REST APIs and ASP.NET MVC} back-ends; serve static assets from \textbf{AWS S3}.
+  \item Modernize legacy jQuery code, implement \textbf{WCAG}-accessible interfaces and technical SEO, and monitor \textbf{GitLab CI/CD} pipelines.
+  \item Build reusable components and Design System patterns with \textbf{Tailwind CSS and SASS} across multi-brand products.
+\end{itemize}
+
+\role{Banco do Brasil}{Oct 2022 -- Aug 2024}{Software Engineer Intern (Front-end)}{S\~ao Paulo, Brazil}
+\begin{itemize}
+  \item One of the main front-end developers on the internal portal of the International Business Unit, a critical system for the bank's international operations.
+  \item Rebuilt a legacy system in \textbf{Vue.js} with a reusable component architecture and an internal \textbf{Design System}.
+  \item Integrated \textbf{Node.js microservices} and handled complex data in the presentation layer.
+  \item Improved loading performance and cross-browser/device compatibility; participated in code reviews and Scrum ceremonies.
+\end{itemize}
+
+% ---------- Projects ----------
+\section*{SELECTED PROJECTS}
+
+\textbf{ATLAS} \textbar{} Open source \textbar{} \href{https://atlas-bellussi.pages.dev/}{atlas-bellussi.pages.dev} \textbar{} \href{https://github.com/bellussi1/ATLAS}{github.com/bellussi1/ATLAS}
+\begin{itemize}
+  \item Interactive encyclopedia of history, politics and society built on a typed knowledge graph: \textbf{896 entities, 7,918 sourced claims and 898 sources}.
+  \item \textbf{Angular 21} with Signals and prerendering, strict TypeScript and Zod-validated content; reproducible Wikimedia ingestion and static-first delivery on Cloudflare R2.
+  \item Accessibility and end-to-end testing with \textbf{Playwright and axe}; architecture boundaries enforced with ESLint.
+\end{itemize}
+
+\textbf{KOReader Ecosystem} \textbar{} Open source \textbar{} \href{https://github.com/bellussi1/koreader-ecosystem}{github.com/bellussi1/koreader-ecosystem}\\
+Local-first Windows companion for Calibre, KOReader and Hardcover; Electron, React, TypeScript and Python.
+
+\textbf{Developer CLIs} \textbar{} Open source \textbar{} Deploy Preflight, Local Webhook Recorder and Compose Doctor\\
+TypeScript and Node.js tools for deploy validation, webhook replay and Docker Compose diagnostics, with automated tests and CI.
+
+% ---------- Education ----------
+\section*{EDUCATION}
+\textbf{B.Sc. in Computer Science} \hfill Jan 2022 -- Dec 2025\\
+Universidade FAM \hfill S\~ao Paulo, Brazil
+
+% ---------- Languages ----------
+\section*{LANGUAGES}
+\textbf{Portuguese:} Native \hfill \textbf{English:} Professional working proficiency
+
+\end{document}
+
+
+

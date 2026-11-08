@@ -1,0 +1,135 @@
+﻿\documentclass[10pt,a4paper]{article}
+
+% ---------- Page, encoding and ATS ----------
+\usepackage[a4paper,left=1.35cm,right=1.35cm,top=1.05cm,bottom=1.05cm]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{cmap}
+  \usepackage{microtype}
+  \DisableLigatures{encoding=T1,family=*}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+  \setmainfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf,BoldItalicFont=lmsans10-boldoblique.otf,Ligatures={NoCommon,NoRequired},Kerning=Off]
+\fi
+\usepackage[brazil]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\hypersetup{
+  pdfauthor={Enzo Bellussi Cruz Souza},
+  pdftitle={Enzo Bellussi Cruz Souza - Engenheiro de Software - Curriculo},
+  pdfsubject={Engenheiro de Software, Arquitetura Front-end, Engenharia de Produto},
+  pdfkeywords={Engenheiro de Software, Desenvolvedor Front-end, TypeScript, JavaScript, React, Next.js, Angular, RxJS, Vue.js, Node.js, NestJS, PostgreSQL, APIs REST, AWS, Docker, CI/CD, Design Systems, Performance Web, Core Web Vitals, WCAG, SEO TÃ©cnico, Playwright, Testes Automatizados, Desenvolvimento assistido por IA}
+}
+
+% ---------- Layout ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\emergencystretch=2em
+\raggedright
+
+\titleformat{\section}
+  {\normalsize\bfseries}
+  {}{0pt}{}
+  [\vspace{0.5pt}\hrule height 0.4pt]
+\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+
+\setlist[itemize]{
+  leftmargin=1.05em,
+  label=\textbullet,
+  itemsep=0.35pt,
+  topsep=0.5pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\role}[4]{%
+  \textbf{#1}\hfill #2\\[1pt]
+  \textit{#3}\hfill #4\par\vspace{1.5pt}
+}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\fontsize{17}{19}\selectfont\textbf{Enzo Bellussi Cruz Souza}}\\[2pt]
+  \small\textbf{Engenheiro de Software} \textbar{} Arquitetura Front-end \& Engenharia de Produto\\[2pt]
+  \small
+  S\~ao Paulo, Brasil \textbar{} +55 (11) 99884-4666 \textbar{}
+  \href{mailto:enzobellussi3@gmail.com}{enzobellussi3@gmail.com}\\[1pt]
+  \small
+  \href{https://www.linkedin.com/in/enzo-bellussi/}{linkedin.com/in/enzo-bellussi} \textbar{}
+  \href{https://github.com/bellussi1}{github.com/bellussi1} \textbar{}
+  \href{https://bellussi.vercel.app/}{bellussi.vercel.app}
+\end{center}
+
+% ---------- Summary ----------
+\section*{RESUMO PROFISSIONAL}
+Engenheiro de Software com 3+ anos de experi\^encia no desenvolvimento e sustenta\c{c}\~ao de aplica\c{c}\~oes web em produ\c{c}\~ao para clientes corporativos de grande porte nos setores banc\'ario, varejo, energia, mobilidade e pagamentos. Forte dom\'inio de \textbf{TypeScript, React, Angular e Node.js}, com viv\^encia em \textbf{APIs REST, PostgreSQL, AWS, Docker e CI/CD}. Respons\'avel t\'ecnico por projetos multi-cliente, da arquitetura e code review \`a acessibilidade, performance e entrega. Mantenedor open source do \textbf{ATLAS}, produto de conhecimento no ar com 896 entidades, 7.900+ afirma\c{c}\~oes com fonte e 898 fontes.
+
+% ---------- Skills ----------
+\section*{COMPET\^ENCIAS T\'ECNICAS}
+\textbf{Linguagens:} TypeScript, JavaScript (ES6+), SQL, HTML5, CSS3.\\
+\textbf{Front-end / Frontend:} React, Next.js, Angular, RxJS, Vue.js, Tailwind CSS, SASS/SCSS.\\
+\textbf{Back-end / Backend:} Node.js, NestJS, APIs REST/RESTful, PostgreSQL, Prisma, Drizzle, ASP.NET MVC, microsservi\c{c}os.\\
+\textbf{Cloud e DevOps:} AWS (Amazon Web Services, S3), Docker, GitLab CI/CD, GitHub Actions, Vercel, Cloudflare, Git.\\
+\textbf{Engenharia:} Design Systems, gerenciamento de estado, performance web (Core Web Vitals), acessibilidade WCAG, SEO t\'ecnico, testes automatizados (Vitest, Playwright, axe), code review, Agile/Scrum.\\
+\textbf{IA e Qualidade:} desenvolvimento assistido por IA, revis\~ao de c\'odigo e gera\c{c}\~ao de testes com LLMs, valida\c{c}\~ao de schema com Zod.
+
+% ---------- Experience ----------
+\section*{EXPERI\^ENCIA PROFISSIONAL}
+
+\role{MarketData}{ago. 2024 -- atual}{Engenheiro de Software (Front-end)}{S\~ao Paulo, Brasil}
+\begin{itemize}
+  \item Desenvolvimento e sustenta\c{c}\~ao de \textbf{SPAs em Angular e React} para clientes corporativos de varejo, energia, mobilidade e pagamentos, incluindo Natura, Nissan, Dexco, RecargaPay, Patri\'a e testadores da rede Visa.
+  \item \textbf{Respons\'avel t\'ecnico} pelos projetos Dexco e RecargaPay: decis\~oes de arquitetura, entrega, suporte em produ\c{c}\~ao e colabora\c{c}\~ao com produto, design e back-end.
+  \item Integra\c{c}\~ao do front-end com \textbf{APIs REST e back-ends ASP.NET MVC}; armazenamento de assets est\'aticos no \textbf{AWS S3}.
+  \item Moderniza\c{c}\~ao de c\'odigo legado em jQuery, implementa\c{c}\~ao de interfaces acess\'iveis (\textbf{WCAG}) e SEO t\'ecnico, al\'em de acompanhamento de pipelines \textbf{GitLab CI/CD}.
+  \item Constru\c{c}\~ao de componentes reutiliz\'aveis e padr\~oes de Design System com \textbf{Tailwind CSS e SASS} em produtos multi-marca.
+\end{itemize}
+
+\role{Banco do Brasil}{out. 2022 -- ago. 2024}{Estagi\'ario em Engenharia de Software (Front-end)}{S\~ao Paulo, Brasil}
+\begin{itemize}
+  \item Um dos principais desenvolvedores front-end do portal interno da Unidade de Neg\'ocios Internacionais, sistema cr\'itico para as opera\c{c}\~oes internacionais do banco.
+  \item Refatora\c{c}\~ao completa de sistema legado em \textbf{Vue.js}, com arquitetura baseada em componentes reutiliz\'aveis e \textbf{Design System} interno.
+  \item Integra\c{c}\~ao com \textbf{microsservi\c{c}os Node.js} e tratamento de dados complexos na camada de apresenta\c{c}\~ao.
+  \item Otimiza\c{c}\~ao de performance de carregamento e compatibilidade cross-browser/device; participa\c{c}\~ao em code reviews e rituais Scrum.
+\end{itemize}
+
+% ---------- Projects ----------
+\section*{PROJETOS SELECIONADOS}
+
+\textbf{ATLAS} \textbar{} Open source \textbar{} \href{https://atlas-bellussi.pages.dev/}{atlas-bellussi.pages.dev} \textbar{} \href{https://github.com/bellussi1/ATLAS}{github.com/bellussi1/ATLAS}
+\begin{itemize}
+  \item Enciclop\'edia interativa de hist\'oria, pol\'itica e sociedade constru\'ida sobre um grafo de conhecimento tipado: \textbf{896 entidades, 7.918 afirma\c{c}\~oes com fonte e 898 fontes}.
+  \item \textbf{Angular 21} com Signals e prerender, TypeScript strict e conte\'udo validado com Zod; ingest\~ao reproduz\'ivel do Wikimedia e entrega static-first no Cloudflare R2.
+  \item Testes de acessibilidade e ponta a ponta com \textbf{Playwright e axe}; limites arquiteturais verificados com ESLint.
+\end{itemize}
+
+\textbf{KOReader Ecosystem} \textbar{} Open source \textbar{} \href{https://github.com/bellussi1/koreader-ecosystem}{github.com/bellussi1/koreader-ecosystem}\\
+Companion local-first para Windows que integra Calibre, KOReader e Hardcover; Electron, React, TypeScript e Python.
+
+\textbf{CLIs para desenvolvedores} \textbar{} Open source \textbar{} Deploy Preflight, Local Webhook Recorder e Compose Doctor\\
+Ferramentas em TypeScript e Node.js para valida\c{c}\~ao de deploy, replay de webhooks e diagn\'ostico de Docker Compose, com testes automatizados e CI.
+
+% ---------- Education ----------
+\section*{FORMA\c{C}\~AO ACAD\^EMICA}
+\textbf{Bacharelado em Ci\^encia da Computa\c{c}\~ao} \hfill jan. 2022 -- dez. 2025\\
+Universidade FAM \hfill S\~ao Paulo, Brasil
+
+% ---------- Languages ----------
+\section*{IDIOMAS}
+\textbf{Portugu\^es:} Nativo \hfill \textbf{Ingl\^es:} Profissional (B1+)
+
+\end{document}
+
+
+

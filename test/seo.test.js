@@ -21,13 +21,20 @@ function getMeta(attribute, value) {
   return content?.[1];
 }
 
-test("publishes complete canonical and social metadata", () => {
-  assert.match(html, /<html lang="pt-BR">/);
-  assert.match(html, /<title>Enzo Bellussi \| Software Engineer[^<]*<\/title>/);
+test("publishes English-first canonical and social metadata", () => {
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /<title>Enzo Bellussi — Software Engineer<\/title>/);
   assert.equal(getMeta("name", "author"), "Enzo Bellussi");
-  assert.match(getMeta("name", "description") ?? "", /Enzo Bellussi/);
+  assert.match(getMeta("name", "description") ?? "", /software engineer/i);
   assert.match(getMeta("name", "robots") ?? "", /index,\s*follow/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/bellussi\.vercel\.app\/"\s*\/>/);
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/bellussi\.vercel\.app\/"\s*\/>/,
+  );
+  assert.match(
+    html,
+    /<link rel="alternate" hreflang="pt-BR" href="https:\/\/bellussi\.vercel\.app\/\?lang=pt"\s*\/>/,
+  );
 
   for (const property of [
     "og:title",
@@ -47,6 +54,7 @@ test("publishes complete canonical and social metadata", () => {
 
   assert.equal(getMeta("property", "og:type"), "website");
   assert.equal(getMeta("property", "og:url"), "https://bellussi.vercel.app/");
+  assert.equal(getMeta("property", "og:locale"), "en_US");
   assert.equal(getMeta("property", "og:image:width"), "1200");
   assert.equal(getMeta("property", "og:image:height"), "630");
   assert.equal(getMeta("name", "twitter:card"), "summary_large_image");
@@ -59,7 +67,7 @@ test("publishes complete canonical and social metadata", () => {
   assert.ok(getMeta("name", "twitter:image:alt"));
 });
 
-test("provides factual profile structured data connected to public profiles", () => {
+test("provides factual profile and project structured data", () => {
   const script = html.match(
     /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
   );
@@ -70,13 +78,22 @@ test("provides factual profile structured data connected to public profiles", ()
   const profile = graph.find((entry) => entry["@type"] === "ProfilePage");
   const person = graph.find((entry) => entry["@type"] === "Person");
   const website = graph.find((entry) => entry["@type"] === "WebSite");
+  const projects = graph.find((entry) => entry["@type"] === "ItemList");
 
   assert.equal(profile.mainEntity["@id"], person["@id"]);
   assert.equal(person.name, "Enzo Bellussi");
-  assert.match(person.jobTitle, /Software Engineer/);
+  assert.equal(person.jobTitle, "Software Engineer");
+  assert.ok(person.knowsAbout.includes("Node.js"));
+  assert.ok(person.knowsAbout.includes("Web accessibility"));
   assert.ok(person.sameAs.includes("https://github.com/bellussi1"));
   assert.ok(person.sameAs.includes("https://www.linkedin.com/in/enzo-bellussi/"));
   assert.equal(website.url, "https://bellussi.vercel.app/");
+
+  const atlas = projects.itemListElement.find((entry) => entry.name === "ATLAS");
+  assert.ok(atlas, "missing ATLAS structured data");
+  assert.equal(atlas.url, "https://atlas-bellussi.pages.dev/");
+  assert.equal(atlas.codeRepository, "https://github.com/bellussi1/ATLAS");
+  assert.ok(atlas.programmingLanguage.includes("TypeScript"));
 });
 
 test("publishes an accessible 1200 by 630 PNG social image", async () => {
@@ -95,7 +112,10 @@ test("allows public crawlers and advertises the single-page sitemap", async () =
 
   assert.match(robots, /User-agent:\s*\*/i);
   assert.match(robots, /Allow:\s*\//i);
-  assert.match(robots, /Sitemap:\s*https:\/\/bellussi\.vercel\.app\/sitemap\.xml/i);
+  assert.match(
+    robots,
+    /Sitemap:\s*https:\/\/bellussi\.vercel\.app\/sitemap\.xml/i,
+  );
   assert.match(sitemap, /<loc>https:\/\/bellussi\.vercel\.app\/<\/loc>/);
   assert.doesNotMatch(sitemap, /#contact/);
 });
