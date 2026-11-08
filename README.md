@@ -28,7 +28,7 @@ Some deliberate choices behind those scores:
 - No UI framework and no animation library. The site ships a small amount of vanilla JavaScript.
 - Self-hosted, subsetted fonts with preload; no third-party font requests.
 - AVIF/WebP images with responsive `srcset`, explicit dimensions and lazy loading below the fold.
-- No scroll hijacking or heavy parallax. Motion is limited to short reveal transitions and respects `prefers-reduced-motion`.
+- No scroll hijacking or heavy parallax. Motion is limited to hover states, the language crossfade and short CSS transitions; `prefers-reduced-motion` is respected.
 - Semantic HTML, visible focus states, keyboard-friendly navigation, skip link and WCAG-minded contrast.
 - English-first metadata, canonical URL, hreflang alternates, Open Graph, Twitter cards, JSON-LD and sitemap.
 
@@ -58,7 +58,7 @@ npm run preview
 
 ```text
 index.html                 English content, semantics, metadata and page structure
-src/main.js                Language switch, navigation, reveal motion, contact copy
+src/main.js                Language switch, navigation, scroll progress, contact copy
 src/translations.js        Portuguese copy and UI strings
 src/utils/page-metadata.js Language-aware title, description and social metadata
 styles/style.css           Design tokens, layout, components, responsive rules and motion
