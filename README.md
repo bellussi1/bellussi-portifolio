@@ -22,12 +22,12 @@ Final production audit:
 
 | Category | Desktop | Mobile |
 | --- | --- | --- |
-| Performance | 100 | 97–100 |
+| Performance | 100 | 100 |
 | Accessibility | 100 | 100 |
 | Best practices | 100 | 100 |
 | SEO | 100 | 100 |
 
-Mobile performance varies with the run because the editorial layout has a large first render. Desktop is consistently 100. The remaining mobile variance is layout/style work, not JavaScript execution: the scripts are small and non-blocking.
+The production audit reaches 100 in all four categories on mobile and desktop. Mobile performance is sensitive to host CPU contention; the layout work is the main cost, while JavaScript execution stays small and non-blocking.
 
 Choices behind the result:
 
@@ -114,7 +114,7 @@ Portfólio profissional de **Enzo Bellussi**, engenheiro de software em São Pau
 - **No ar:** [bellussi.vercel.app](https://bellussi.vercel.app)
 - **Projeto principal:** [ATLAS](https://atlas-bellussi.pages.dev) — enciclopédia visual com grafo de conhecimento e fontes em cada afirmação.
 - **Currículos:** `public/curriculo-en.pdf` e `public/curriculo-pt.pdf`; fontes em `cv/`.
-- **Lighthouse:** 100 em acessibilidade, boas práticas e SEO; performance 100 no desktop e 97–100 no mobile.
+- **Lighthouse:** 100 em performance, acessibilidade, boas práticas e SEO no mobile e no desktop.
 
 Para rodar localmente, use Node.js 24:
 
