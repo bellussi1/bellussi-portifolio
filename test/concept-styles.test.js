@@ -66,7 +66,7 @@ test("mobile header controls keep 44px targets and reflow at 320px", () => {
   assert.match(controls, /\.concept-control button\s*\{[^}]*min-height:\s*44px/s);
   assert.match(base, /\.language-control button\s*\{[^}]*min-width:\s*44px/s);
   assert.match(base, /\.menu-toggle\s*\{[^}]*width:\s*44px[^}]*height:\s*44px/s);
-  assert.match(base, /@media\s*\(max-width:\s*380px\)[\s\S]*\.header-inner\s*\{[^}]*grid-template-columns/s);
+  assert.match(base, /@media\s*\(max-width:\s*380px\)[\s\S]*\.header-inner\s*\{[^}]*display:\s*flex[^}]*height:\s*64px/s);
 });
 
 test("mobile INDEX disclosures and contact/footer controls keep 44px targets", () => {

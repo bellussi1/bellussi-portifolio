@@ -1,7 +1,7 @@
 // Professional facts are sourced from the supplied resumes.
 export const english = {
-  navProducts: "Products",
-  navProjects: "Open source",
+  navProducts: "Case studies",
+  navProjects: "Tools",
   productsLabel: "PRODUCTS",
   productsTitle: "Products I built.<br />Real-world problems.",
   productsIntro:
@@ -82,13 +82,13 @@ export const english = {
     "I combine visual care with engineering decisions to build applications people can use and teams can continue to evolve.",
   approach1Title: "Architecture that keeps up.",
   approach1Description:
-    "Reusable components, Design Systems and state management. A consistent foundation for evolving interfaces without multiplying complexity.",
+    "Reusable components, Design Systems and state management. A consistent foundation for evolving interfaces without multiplying complexity. In ATLAS, every content record passes Zod schemas before it reaches the page.",
   approach2Title: "An experience that works.",
   approach2Description:
-    "Responsive design, accessibility, performance and technical SEO. Attention to how applications behave across screens and browsers.",
+    "Responsive design, accessibility, performance and technical SEO. Attention to how applications behave across screens and browsers. This page scores 100 in Lighthouse for performance, accessibility, best practices and SEO, on mobile and desktop.",
   approach3Title: "End-to-end integration.",
   approach3Description:
-    "REST APIs, microservices and data in the interface. Experience with Node.js, PostgreSQL, AWS S3 and delivery pipelines.",
+    "REST APIs, microservices and data in the interface. Experience with Node.js, PostgreSQL, AWS S3 and delivery pipelines. ATLAS ingests Wikipedia, Wikidata and Commons through a reproducible pipeline.",
   aboutLabel: "ABOUT ME",
   aboutTitle: "Meet",
   aboutLocation: "São Paulo, Brazil.<br />Curiosity as a starting point.",
@@ -110,7 +110,7 @@ export const english = {
   contactFirst: "Let’s build",
   contactAccent: "the next chapter.",
   contactDescription:
-    "If you are looking for someone who combines front-end engineering, attention to user experience and production experience, let’s talk.",
+    "Looking for a mid-level front-end role with Angular and TypeScript. Based in São Paulo; native Portuguese, English B2+. Let’s talk.",
   emailCta: "Get in touch",
   copyEmail: "Copy",
 };
@@ -118,8 +118,8 @@ export const english = {
 export const portuguese = {
   "skip": "Pular para o conteúdo",
   "navExperience": "Experiência",
-  "navProducts": "Produtos",
-  "navProjects": "Open source",
+  "navProducts": "Estudos de caso",
+  "navProjects": "Ferramentas",
   "navApproach": "Abordagem",
   "navAbout": "Sobre",
   "navContact": "Contato <span aria-hidden=\"true\">↗</span>",
@@ -150,11 +150,11 @@ export const portuguese = {
   "approachTitle": "\r\n                Uma boa interface<br>começa antes do CSS.\r\n              ",
   "approachIntro": "\r\n                Combino cuidado visual com decisões de engenharia para construir\r\n                aplicações que as pessoas consigam usar e os times consigam\r\n                evoluir.\r\n              ",
   "approach1Title": "Arquitetura que acompanha.",
-  "approach1Description": "\r\n                Componentes reutilizáveis, Design Systems e gerenciamento de\r\n                estado. Uma base consistente para evoluir interfaces sem\r\n                multiplicar complexidade.\r\n              ",
+  "approach1Description": "\r\n                Componentes reutilizáveis, Design Systems e gerenciamento de\r\n                estado. Uma base consistente para evoluir interfaces sem\r\n                multiplicar complexidade. No ATLAS, cada registro passa por schemas Zod antes de chegar à página.\r\n              ",
   "approach2Title": "Experiência que funciona.",
-  "approach2Description": "\r\n                Responsividade, acessibilidade, performance e SEO técnico.\r\n                Atenção ao comportamento real da aplicação, em diferentes telas\r\n                e navegadores.\r\n              ",
+  "approach2Description": "\r\n                Responsividade, acessibilidade, performance e SEO técnico.\r\n                Atenção ao comportamento real da aplicação, em diferentes telas\r\n                e navegadores. Esta página tem Lighthouse 100 em desempenho, acessibilidade, boas práticas e SEO, no mobile e no desktop.\r\n              ",
   "approach3Title": "Integração de ponta a ponta.",
-  "approach3Description": "\r\n                APIs REST, microsserviços e dados na interface. Vivência com\r\n                Node.js, PostgreSQL, AWS S3 e pipelines de entrega.\r\n              ",
+  "approach3Description": "\r\n                APIs REST, microsserviços e dados na interface. Vivência com\r\n                Node.js, PostgreSQL, AWS S3 e pipelines de entrega. No ATLAS, Wikipédia, Wikidata e Commons entram por um pipeline reproduzível.\r\n              ",
   "aboutLabel": "SOBRE MIM",
   "aboutTitle": "Prazer,",
   "aboutLocation": "\r\n            São Paulo, Brasil.<br>Curiosidade como ponto de partida.\r\n          ",
@@ -172,7 +172,7 @@ export const portuguese = {
   "contactNote": "Aberto a conversar sobre oportunidades.",
   "contactFirst": "Vamos construir",
   "contactAccent": "o próximo capítulo?",
-  "contactDescription": "\r\n          Se você procura alguém que combine desenvolvimento front-end, atenção\r\n          à experiência e vivência em produção, vamos conversar.\r\n        ",
+  "contactDescription": "Procuro vaga de front-end em nível pleno, com Angular e TypeScript. Baseado em São Paulo; português nativo e inglês B2+. Vamos conversar.",
   "emailCta": "Entre em contato",
   "copyEmail": "Copiar"
 };

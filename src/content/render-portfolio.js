@@ -103,7 +103,7 @@ function productImage(product, copy, language) {
 function renderExperienceDetails(copy) {
   if (!copy.details) return "";
   return (
-    '<details class="experience-details"><summary>' +
+    '<details class="experience-details" open><summary>' +
     escapeHtml(copy.detailsLabel) +
     '<span class="details-icon" aria-hidden="true">+</span></summary><p>' +
     escapeHtml(copy.details) +

@@ -115,7 +115,7 @@ ul {
   display: flex;
   gap: 24px;
   align-items: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
   line-height: 1.6;
@@ -238,7 +238,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .language-control button {
@@ -322,7 +322,7 @@ ul {
 }
 .hero-intro {
   margin-bottom: 30px;
-  font-size: 10px;
+  font-size: 12px;
   gap: 12px;
 }
 .status-dot {
@@ -359,7 +359,7 @@ ul {
   gap: 14px;
   margin-top: 56px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.03em;
 }
 .tiny-rule {
@@ -376,7 +376,7 @@ ul {
 }
 .credential-strip > p {
   max-width: 130px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.5;
 }
@@ -400,7 +400,7 @@ ul {
 .credential-note {
   margin-left: auto;
   max-width: 210px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.6;
 }
@@ -423,7 +423,7 @@ ul {
   right: 15px;
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--muted);
 }
@@ -482,7 +482,7 @@ ul {
   justify-content: space-between;
   padding-inline: 16px;
   font:
-    10px ui-monospace,
+    12px ui-monospace,
     monospace;
   color: var(--muted);
 }
@@ -605,7 +605,7 @@ ul {
   padding: 11px 16px;
   color: var(--muted);
   font:
-    9px ui-monospace,
+    12px ui-monospace,
     monospace;
 }
 .window-footer span:first-child {
@@ -630,7 +630,7 @@ ul {
   box-shadow: 0 16px 45px #0005;
   transform: rotate(3deg);
   font:
-    11px/1.9 ui-monospace,
+    12px/1.9 ui-monospace,
     monospace;
   color: var(--muted);
 }
@@ -655,7 +655,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
@@ -696,7 +696,7 @@ ul {
 .role-number {
   display: block;
   font:
-    10px ui-monospace,
+    12px ui-monospace,
     monospace;
   color: var(--accent);
   margin-bottom: 20px;
@@ -713,14 +713,14 @@ ul {
 .role-pill {
   display: inline-block;
   margin-top: 24px;
-  font-size: 10px;
+  font-size: 12px;
   border: 1px solid var(--line);
   padding: 5px 10px;
   border-radius: 2px;
   color: var(--muted);
 }
 .role-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--accent);
   margin-bottom: 16px;
@@ -750,7 +750,7 @@ ul {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 12px;
 }
 .tech-tags {
   display: flex;
@@ -761,7 +761,7 @@ ul {
   padding: 4px 9px;
   background: var(--raised);
   border: 1px solid #33332d;
-  font-size: 10px;
+  font-size: 12px;
   color: #cfcec3;
 }
 .experience-details {
@@ -798,7 +798,7 @@ ul {
   border-top: 1px solid var(--line);
   padding-top: 22px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   max-width: 650px;
   margin-left: auto;
 }
@@ -839,7 +839,7 @@ ul {
   top: 33px;
   right: 30px;
   font:
-    10px ui-monospace,
+    12px ui-monospace,
     monospace;
   color: var(--muted);
 }
@@ -857,7 +857,7 @@ ul {
   margin-top: 32px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 
@@ -907,7 +907,7 @@ ul {
   margin-block: 34px 24px;
 }
 .fact-label {
-  font-size: 9px;
+  font-size: 12px;
   color: var(--accent);
   letter-spacing: 0.12em;
 }
@@ -916,7 +916,7 @@ ul {
   margin-top: 12px;
 }
 .about-facts p {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 9px;
 }
@@ -943,7 +943,7 @@ ul {
   gap: 30px;
 }
 .contact-note {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .contact-section h2 {
@@ -969,7 +969,7 @@ ul {
   align-items: center;
   gap: 22px;
   margin-top: 32px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .email-line > a:hover {
@@ -983,7 +983,7 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--accent);
 }
 .site-footer {
@@ -993,14 +993,14 @@ ul {
   gap: 36px;
 }
 .site-footer p {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .footer-links {
   display: flex;
   gap: 24px;
   margin-left: auto;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .footer-links a {
@@ -1106,7 +1106,7 @@ html[data-motion="enabled"] .reveal.is-visible {
   .code-fragment {
     right: -12px;
     width: 245px;
-    font-size: 10px;
+    font-size: 12px;
     bottom: 30px;
   }
   .orbit-one {
@@ -1235,7 +1235,7 @@ html[data-motion="enabled"] .reveal.is-visible {
   }
   .hero-footnote {
     margin-top: 35px;
-    font-size: 9px;
+    font-size: 12px;
     gap: 10px;
   }
   .hero-actions {
@@ -1283,7 +1283,7 @@ html[data-motion="enabled"] .reveal.is-visible {
   .credential-strip > p {
     max-width: none;
     margin-bottom: 12px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .credential-strip > div {
     gap: 20px;
@@ -1330,7 +1330,7 @@ html[data-motion="enabled"] .reveal.is-visible {
   }
   .confidentiality-note {
     margin-left: 0;
-    font-size: 10px;
+    font-size: 12px;
   }
   .approach-section {
     padding-block: 78px;
@@ -1405,7 +1405,7 @@ html[data-motion="enabled"] .reveal.is-visible {
   .email-line {
     gap: 12px;
     flex-wrap: wrap;
-    font-size: 11px;
+    font-size: 12px;
   }
   .email-line > a {
     display: inline-flex;
@@ -1429,19 +1429,20 @@ html[data-motion="enabled"] .reveal.is-visible {
 }
 @media (max-width: 380px) {
   .header-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
     min-height: 0;
-    gap: 4px;
-    padding-block: 6px;
+    gap: 8px;
+    padding-block: 0;
   }
   .brand {
     min-height: 44px;
   }
   .header-controls {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    justify-content: flex-end;
     gap: 4px;
   }
   .language-control {
@@ -1532,7 +1533,7 @@ html[data-motion="enabled"] .reveal.is-visible {
 }
 .products-note > span:first-child {
   color: var(--accent);
-  font: 10px ui-monospace, monospace;
+  font: 12px ui-monospace, monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

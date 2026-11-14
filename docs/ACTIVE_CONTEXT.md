@@ -37,6 +37,17 @@ before acting on anything below.
   `test/portfolio-rendering.test.js` expects the new id list.
 - Verified: `npm test` 54/54, `npm run build` ok, visual check at 1280 and 320 px.
 - Committed as `72027dc` on `codex/portfolio-comandinha-visuals`. Not pushed.
+- Critique fixes, not committed (2026-11-14): font sizes raised to a 12px floor
+  in `styles/`; nav renamed to Case studies / Tools (PT: Estudos de caso /
+  Ferramentas); mobile header is one row at 380px and below (105 → 65px);
+  experience context disclosures open by default; Approach items cite facts
+  already on the site (Zod, Lighthouse 100, ATLAS pipeline); Contact states
+  role, São Paulo and language level.
+- `test/concept-styles.test.js` now expects the one-row header at ≤380px.
+- Open: Contact modality and availability (not in the repo); ATLAS card is still
+  about 1,035 px tall at 375 px because of copy length; detector reports
+  `flat-type-hierarchy` on index.html, likely a false positive because the scan
+  does not read the CSS sizes.
 
 ## Known divergence
 
