@@ -50,7 +50,7 @@ test("keeps project facts, image paths, and public links consistent across conce
   );
   assert.deepEqual(
     portfolioContent.openSourceProjects.map(({ id }) => id),
-    ["deploy-preflight", "local-webhook-recorder", "compose-doctor"],
+    ["deploy-preflight", "local-webhook-recorder", "compose-doctor", "scriptorium"],
   );
   for (const product of portfolioContent.products) {
     for (const section of [field.products, index.products]) {

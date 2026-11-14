@@ -87,7 +87,7 @@ export const portfolioContent = {
     {
       id: "atlas",
       name: "ATLAS",
-      image: { src: "/atlas-reading.webp", width: 1200, height: 1178 },
+      image: { src: "/atlas-home.webp", width: 1200, height: 716 },
       category: "OPEN KNOWLEDGE · DATA VISUALIZATION",
       technologies: ["Angular 21", "TypeScript", "Zod", "Wikidata", "Playwright"],
       links: [
@@ -101,8 +101,8 @@ export const portfolioContent = {
           "Enciclopédia visual e interativa de história, política e sociedade, com 896 entidades, 7.918 afirmações com fonte e 898 fontes. Pessoas, obras, conceitos e acontecimentos formam um grafo tipado, e cada trecho indica se é fato documentado, interpretação, controvérsia ou lacuna.",
         details:
           "Angular 21 com Signals e prerender, TypeScript strict, conteúdo validado com Zod e ingestão reproduzível da Wikipédia, Wikidata e Commons. Entrega static-first no Cloudflare R2, com testes de acessibilidade e E2E usando Playwright e axe.",
-        imageAlt: "Captura real da leitura sobre Marxismo no ATLAS, com índice visual e retrato licenciado.",
-        imageCaption: "Leitura sobre Marxismo · site publicado",
+        imageAlt: "Captura real da home do ATLAS, com a chamada principal, a busca no acervo e uma composição geométrica.",
+        imageCaption: "Home · site publicado",
         linkLabels: { live: "Ver o site ao vivo", repository: "Explorar repositório público" },
       },
       en: {
@@ -112,8 +112,8 @@ export const portfolioContent = {
           "A visual, interactive encyclopedia of history, politics and society with 896 entities, 7,918 sourced claims and 898 sources. People, works, concepts and events form a typed knowledge graph, and every statement shows whether it is documented fact, interpretation, controversy or an acknowledged gap.",
         details:
           "Angular 21 with Signals and prerendering, strict TypeScript, Zod-validated content and reproducible Wikipedia, Wikidata and Commons ingestion. Static-first delivery on Cloudflare R2, with accessibility and E2E tests using Playwright and axe.",
-        imageAlt: "Actual screenshot of the Marxism reading in ATLAS, with its visual index and licensed portrait.",
-        imageCaption: "Marxism reading · published site",
+        imageAlt: "Actual screenshot of the ATLAS home page, with the main headline, catalogue search and a geometric visual composition.",
+        imageCaption: "Home · published site",
         linkLabels: { live: "See the live site", repository: "Explore the public repository" },
       },
     },
@@ -292,6 +292,37 @@ export const portfolioContent = {
         testsLabel: "View tests and CI",
         exampleLabel: "USAGE EXAMPLE",
         demoLabel: "Run the demo",
+      },
+    },
+    {
+      id: "scriptorium",
+      name: "Scriptorium",
+      category: "TRANSLATION / LLM",
+      command:
+        "python translate.py -i book.epub -sl English -tl \"Portuguese (Brazil)\" --provider ollama -m qwen3:14b",
+      technologies: ["Python", "Ollama", "Docker Compose", "EPUB"],
+      links: [{ type: "code", href: "https://github.com/bellussi1/Scriptorium" }],
+      pt: {
+        headline: "Livros inteiros, traduzidos em partes e retomáveis.",
+        description:
+          "Fork pessoal de TranslateBooksWithLLMs voltado à tradução literária do inglês para o português do Brasil. Roda localmente, com modelos via Ollama, e processa um livro de cada vez.",
+        decision:
+          "Glossário e estilo por série, checkpoints para retomar e saída EPUB validada para KOReader e Calibre.",
+        demo:
+          "Interrompa um livro no meio e retome do ponto salvo, sem recomeçar do início.",
+        codeLabel: "Explorar código",
+        exampleLabel: "EXEMPLO DE USO",
+      },
+      en: {
+        headline: "Whole books, translated in parts and resumable.",
+        description:
+          "A personal fork of TranslateBooksWithLLMs for literary translation from English into Brazilian Portuguese. It runs locally, with models through Ollama, one book at a time.",
+        decision:
+          "Per-series glossary and style, checkpoints to resume, and validated EPUB output for KOReader and Calibre.",
+        demo:
+          "Stop a book midway and resume from the saved checkpoint, without starting over.",
+        codeLabel: "Explore code",
+        exampleLabel: "USAGE EXAMPLE",
       },
     },
   ],
