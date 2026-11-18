@@ -20,8 +20,8 @@ before acting on anything below.
 - https://bellussi.vercel.app serves the V2 editorial site, English by default,
   Portuguese through `?lang=pt`.
 - Lighthouse production audit: 100 in performance, accessibility, best practices
-  and SEO, on mobile and desktop (last recorded at `ddb7700`; re-verify after
-  the 2026-11-18 update).
+  and SEO, on mobile and desktop (re-verified on 2026-11-18 against
+  https://bellussi.vercel.app/ with Lighthouse 13.6.0).
 - Resumes updated to Pleno / B2+, in PT and EN, one page, ATS; PDFs in `cv/`,
   `public/` and `Documents\Curriculos`.
 
@@ -55,7 +55,6 @@ before acting on anything below.
 
 ## Open items
 
-- Re-run Lighthouse audit against production after the 2026-11-18 deploy.
 - Decide whether to keep `lenis` / `src/utils/smooth-scroll.js` wired or prune
   unused scroll/parallax utilities if not needed.
 - Contact modality and availability remain omitted from the repo; ATLAS card
