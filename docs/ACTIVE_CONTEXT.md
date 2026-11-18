@@ -27,9 +27,12 @@ before acting on anything below.
 
 ## Recent updates (2026-11-18)
 
-- **Hero ATLAS reading capture (`public/atlas-reading.webp`):** regenerated at
-  `1200x1178` WebP from the current `/leitura/marxismo` capture
-  (`ATLAS/docs/social/linkedin/assets/leitura-top.jpg`).
+- **ATLAS captures from live production (`https://atlas-bellussi.pages.dev/`):**
+  - `public/atlas-home.webp` (`1200x716` WebP) captured directly from
+    `https://atlas-bellussi.pages.dev/` and mirrored to
+    `github-profile-readme/assets/atlas-preview.webp`.
+  - `public/atlas-reading.webp` (`1200x1178` WebP) captured directly from
+    `https://atlas-bellussi.pages.dev/leitura/marxismo`.
 - **New projects (`src/content/portfolio.js`, `src/content/render-portfolio.js`, `index.html`):**
   - Added `dalibre-plugins` (Hardcover, ISBN Brasil, Open Library) and `dalibre`
     (fork + upstream Go/MyGo/SDK contributions and `dalibre-plugin-template`) to
@@ -46,7 +49,7 @@ before acting on anything below.
     `syncTouch: false` and `respectReducedMotion: true`, while `src/main.js` keeps
     native scrolling active).
 - **GitHub profile README (`github-profile-readme` / `bellussi1/bellussi1`):**
-  - Updated `assets/atlas-preview.webp` from `public/atlas-home.webp` (`1200x716`).
+  - Updated `assets/atlas-preview.webp` from the live `https://atlas-bellussi.pages.dev/` capture (`1200x716`).
   - Added Dalibre, Scriptorium, Dalibre Hardcover, Dalibre ISBN Brasil and
     Dalibre Open Library to `README.md` (both English and Portuguese sections).
 
