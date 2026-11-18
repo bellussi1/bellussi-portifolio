@@ -11,7 +11,7 @@ Personal site of **Enzo Bellussi**, a software engineer based in São Paulo, Bra
 - **Editorial V2 design** — Zilla Slab typography, a technical index grid, inline rules and a dark/light theme.
 - **ATLAS case study** — the flagship open-source project: an interactive encyclopedia built on a sourced knowledge graph with 896 entities, 7,918 sourced claims and 898 sources.
 - **Products** — ATLAS and KOReader Ecosystem, with real screenshots and current status.
-- **Open-source tools** — Deploy Preflight, Local Webhook Recorder and Compose Doctor.
+- **Open-source tools** — Deploy Preflight, Local Webhook Recorder, Compose Doctor, Scriptorium, Dalibre Plugins (Hardcover, ISBN Brasil, Open Library) and Dalibre contributions.
 - **Experience and approach** — enterprise work at MarketData and Banco do Brasil, plus the engineering principles behind the interface.
 - **Bilingual** — English is the default; Portuguese is available through the language switch and `?lang=pt`.
 - **Resumes** — ATS-oriented LaTeX resumes in English and Portuguese, linked from the hero, contact section and footer.
@@ -31,7 +31,7 @@ The production audit reaches 100 in all four categories on mobile and desktop. M
 
 Choices behind the result:
 
-- No UI framework and no animation library.
+- No UI framework; `lenis` is the only declared runtime dependency in `package.json` (`src/utils/smooth-scroll.js` configures `syncTouch: false` and `respectReducedMotion: true`, while `src/main.js` keeps native scrolling active).
 - Self-hosted, subsetted Zilla Slab fonts with preload; no third-party font requests.
 - AVIF/WebP assets, responsive sizes and explicit dimensions.
 - Smooth-scroll, parallax, cursor effects and reveal/observer motion are not required for the layout. The page keeps native scrolling and CSS transitions; touch devices skip decorative entrance animations.
@@ -42,7 +42,7 @@ Choices behind the result:
 
 ## Stack
 
-- **HTML, CSS and modern JavaScript** — no framework.
+- **HTML, CSS and modern JavaScript** — no UI framework (`lenis` is the only runtime dependency in `package.json`).
 - **Vite** for development and production builds.
 - **Node.js 24** and the committed lockfile.
 - **Vercel** for hosting.
@@ -113,6 +113,7 @@ Portfólio profissional de **Enzo Bellussi**, engenheiro de software em São Pau
 
 - **No ar:** [bellussi.vercel.app](https://bellussi.vercel.app)
 - **Projeto principal:** [ATLAS](https://atlas-bellussi.pages.dev) — enciclopédia visual com grafo de conhecimento e fontes em cada afirmação.
+- **Ferramentas e projetos open source:** Deploy Preflight, Local Webhook Recorder, Compose Doctor, Scriptorium, Dalibre Plugins (Hardcover, ISBN Brasil, Open Library) e contribuições ao Dalibre.
 - **Currículos:** `public/curriculo-en.pdf` e `public/curriculo-pt.pdf`; fontes em `cv/`.
 - **Lighthouse:** 100 em performance, acessibilidade, boas práticas e SEO no mobile e no desktop.
 

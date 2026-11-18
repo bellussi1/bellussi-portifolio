@@ -325,5 +325,112 @@ export const portfolioContent = {
         exampleLabel: "USAGE EXAMPLE",
       },
     },
+    {
+      id: "dalibre-plugins",
+      name: "Dalibre Plugins",
+      category: "E-BOOK / PLUGINS & SYNC",
+      command:
+        "dalibre-plugin identify . --isbn 9788535914849 --json",
+      technologies: [
+        "JavaScript",
+        "GraphQL",
+        "BrasilAPI",
+        "Open Library",
+        "Dalibre SDK",
+      ],
+      links: [
+        {
+          type: "hardcover",
+          href: "https://github.com/bellussi1/dalibre-hardcover",
+        },
+        {
+          type: "isbnBrasil",
+          href: "https://github.com/bellussi1/dalibre-isbn-brasil",
+        },
+        {
+          type: "openLibrary",
+          href: "https://github.com/bellussi1/dalibre-openlibrary",
+        },
+      ],
+      pt: {
+        headline: "Metadados brasileiros e sincronização com o Hardcover no Dalibre.",
+        description:
+          "Três plugins comunitários para o Dalibre: sincronização bidirecional de leitura e estantes com o Hardcover (alinhada ao KOReader via ISBN), busca de edições brasileiras na CBL/BrasilAPI e catálogo da Open Library.",
+        decision:
+          "Execução em sandbox Goja sem dependências externas, priorização de edições em português (978-65 / 978-85) e validação no CI com dalibre-plugin check.",
+        demo:
+          "Busca por ISBN ou título retorna metadados completos, capa e vínculo de edição pronto para sincronizar.",
+        exampleLabel: "EXEMPLO DE USO",
+        linkLabels: {
+          hardcover: "Plugin Hardcover",
+          isbnBrasil: "Plugin ISBN Brasil",
+          openLibrary: "Plugin Open Library",
+        },
+      },
+      en: {
+        headline: "Brazilian metadata and Hardcover reading sync for Dalibre.",
+        description:
+          "Three community plugins for Dalibre: two-way reading status and shelf sync with Hardcover (paired with KOReader via edition ISBNs), official Brazilian ISBN lookup via CBL/BrasilAPI, and Open Library metadata.",
+        decision:
+          "Zero-dependency plugins running in Dalibre's sandboxed Goja runtime, prioritizing Portuguese editions (978-65 / 978-85) and verified in CI with dalibre-plugin check.",
+        demo:
+          "ISBN or title lookup returns normalized metadata, cover and edition identifiers ready to sync.",
+        exampleLabel: "USAGE EXAMPLE",
+        linkLabels: {
+          hardcover: "Hardcover plugin",
+          isbnBrasil: "ISBN Brasil plugin",
+          openLibrary: "Open Library plugin",
+        },
+      },
+    },
+    {
+      id: "dalibre",
+      name: "Dalibre",
+      category: "DESKTOP / GO & UI",
+      command:
+        "go test ./internal/app ./internal/catalog",
+      technologies: [
+        "Go",
+        "MyGo UI",
+        "SQLite",
+        "ICU MessageFormat",
+        "JavaScript",
+      ],
+      links: [
+        { type: "code", href: "https://github.com/bellussi1/dalibre" },
+        {
+          type: "template",
+          href: "https://github.com/bellussi1/dalibre-plugin-template",
+        },
+      ],
+      pt: {
+        headline: "Biblioteca desktop leve para o Calibre, em Go nativo.",
+        description:
+          "Fork e contribuições upstream para o Dalibre, alternativa desktop ao Calibre escrita em Go com interface nativa MyGo (sem webview e sem cgo). Inclui localização completa para português do Brasil, livrarias lusófonas e melhorias na tabela e no SDK de plugins.",
+        decision:
+          "Tradução de 1.072 chaves ICU MessageFormat (pt-BR), ordenação por colunas de título e formato na listagem e sincronização de tipos/schema no template oficial de plugins.",
+        demo:
+          "Interface em pt-BR, colunas ordenáveis e testes de view sem precisar abrir janela.",
+        codeLabel: "Explorar fork",
+        exampleLabel: "EXEMPLO DE USO",
+        linkLabels: {
+          template: "Template de plugin",
+        },
+      },
+      en: {
+        headline: "A fast, native Go desktop library for Calibre.",
+        description:
+          "Fork and upstream contributions to Dalibre, a lightweight Calibre alternative written in Go with MyGo's native UI (no webview, no cgo). Includes full Brazilian Portuguese localization, Lusophone bookstores, list-view sorting and plugin SDK improvements.",
+        decision:
+          "1,072 ICU MessageFormat keys localized into pt-BR, Title and Formats column sorting in list view, and SDK type/schema synchronization in the official plugin template.",
+        demo:
+          "Localized pt-BR interface, sortable list columns and headless view tests passing.",
+        codeLabel: "Explore fork",
+        exampleLabel: "USAGE EXAMPLE",
+        linkLabels: {
+          template: "Plugin template",
+        },
+      },
+    },
   ],
 };

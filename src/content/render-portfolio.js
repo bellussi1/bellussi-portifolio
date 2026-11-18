@@ -313,6 +313,7 @@ function renderIndexProducts(language) {
 }
 
 function linkLabel(copy, type) {
+  if (copy.linkLabels?.[type]) return copy.linkLabels[type];
   if (type === "tests") return copy.testsLabel;
   if (type === "demo") return copy.demoLabel;
   return copy.codeLabel;
