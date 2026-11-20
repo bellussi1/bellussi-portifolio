@@ -32,6 +32,13 @@ pushed, not deployed**.
 - `cv/*.tex` updated to 1,320 / 12,146 / 1,482 / 3,025 in text only; PDFs in `cv/` and `public/` NOT rebuilt (no LaTeX here: use tectonic).
 - Not done: Lighthouse re-audit, rebuilding the PDFs, GitHub pins (web UI only).
 
+## Compact layout (2026-11-20, branch feat/compact-layout, unmerged)
+
+- True page height at 1440 px went from ~12.3k (inflated by stale `contain-intrinsic-size`) to ~6.9k; 375 px ~9.9k. Measure with `content-visibility: visible !important`, otherwise offscreen sections report placeholder heights.
+- ATLAS: copy beside a tabbed viewer (Home, Readings, Itineraries, Graph, Map; `src/utils/tabs.js`), clickable metrics, six chapters as exclusive `<details>`. Other work: two-column grid of whole-tile links.
+- Section subtitles and approach icons/numbers removed (unslop-ui U2, U3, U11). `#atlas` is a paper band (ATLAS pigments), `#work` a navy band, fixed in both themes (`styles/components/flagship.css`).
+- Tests 58/58, build OK. Not checked: Lighthouse, light theme of the bands.
+
 ## Repository
 
 - Previous branch: `codex/portfolio-comandinha-visuals`, synchronized with

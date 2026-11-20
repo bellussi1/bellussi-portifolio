@@ -40,13 +40,14 @@ test("renders ATLAS alone as the flagship case study", () => {
     const { atlas, work } = renderPortfolioSections({ concept: "index", language });
     assert.equal(atlas.match(/<article/g).length, 1);
         for (const image of Object.values(flagship.images)) assert.ok(atlas.includes(image.src));
-    assert.equal(atlas.match(/class="atlas-tour-item"/g).length, flagship.tour.length);
     for (const link of flagship.links) assert.ok(atlas.includes(link.href));
-    assert.equal(
-      atlas.match(/class="atlas-chapter /g).length,
-      flagship[language].chapters.length,
-    );
+    assert.equal(atlas.match(/<details class="atlas-chapter"/g).length, flagship[language].chapters.length);
     assert.equal(atlas.match(/<dt>/g).length, flagship.metrics.length);
+    for (const metric of flagship.metrics) assert.ok(atlas.includes(metric.href));
+    assert.equal(atlas.match(/role="tab"/g).length, flagship.tour.length);
+    assert.equal(atlas.match(/role="tabpanel"/g).length, flagship.tour.length);
+    assert.equal(atlas.match(/aria-selected="true"/g).length, 1);
+    assert.equal(atlas.match(/ hidden>/g).length, flagship.tour.length - 1);
     assert.doesNotMatch(work, /ATLAS/);
   }
 });
@@ -63,7 +64,7 @@ test("keeps claim classifications consistent with the claims metric", () => {
   assert.equal(total, toNumber(claims.value.en));
 });
 
-test("lists other work as a compact ledger without images", () => {
+test("lists other work as a grid of linked tiles without images", () => {
   assert.deepEqual(
     portfolioContent.otherWork.map(({ id }) => id),
     [
@@ -79,7 +80,8 @@ test("lists other work as a compact ledger without images", () => {
   );
   for (const language of ["pt", "en"]) {
     const { work } = renderPortfolioSections({ concept: "index", language });
-    assert.match(work, /<ol class="work-ledger">/);
+    assert.match(work, /<ul class="work-grid">/);
+    assert.equal(work.match(/class="work-tile /g).length, portfolioContent.otherWork.length);
     assert.doesNotMatch(work, /<img/);
     for (const project of portfolioContent.otherWork) {
       assert.ok(work.includes(project.name), "missing project " + project.id);

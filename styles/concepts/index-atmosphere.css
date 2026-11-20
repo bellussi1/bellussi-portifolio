@@ -1355,14 +1355,23 @@ html[data-concept="index"] .index-terminal pre code {
 
 
 
+/* Placeholder heights match the measured sections, so the scrollbar does not jump. */
 @supports (content-visibility: auto) {
-  #experience, #products, #projects, #approach, #about, #contact { content-visibility: auto; }
-  #experience { contain-intrinsic-size: auto 2000px; }
-  #products { contain-intrinsic-size: auto 1500px; }
-  #projects { contain-intrinsic-size: auto 1900px; }
-  #approach { contain-intrinsic-size: auto 1100px; }
-  #about { contain-intrinsic-size: auto 800px; }
-  #contact { contain-intrinsic-size: auto 600px; }
+  #atlas, #experience, #work, #approach, #about, #contact { content-visibility: auto; }
+  #atlas { contain-intrinsic-size: auto 1600px; }
+  #experience { contain-intrinsic-size: auto 1070px; }
+  #work { contain-intrinsic-size: auto 1250px; }
+  #approach { contain-intrinsic-size: auto 720px; }
+  #about { contain-intrinsic-size: auto 670px; }
+  #contact { contain-intrinsic-size: auto 580px; }
+  @media (max-width: 760px) {
+    #atlas { contain-intrinsic-size: auto 2100px; }
+    #experience { contain-intrinsic-size: auto 1750px; }
+    #work { contain-intrinsic-size: auto 1300px; }
+    #approach { contain-intrinsic-size: auto 1300px; }
+    #about { contain-intrinsic-size: auto 1000px; }
+    #contact { contain-intrinsic-size: auto 600px; }
+  }
 }
 /* Touch devices keep the editorial composition; decorative entrance motion is
    skipped to keep the first render cheap. */

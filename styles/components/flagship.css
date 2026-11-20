@@ -1,69 +1,177 @@
-/* ATLAS flagship case study and the compact "other work" ledger.
-   Colors come from the theme tokens so light and dark stay in step. */
-
-.atlas-case {
-  display: grid;
-  gap: clamp(40px, 5vw, 64px);
+/* Section palettes. The ATLAS band borrows the product's own pigments on paper
+   and "Other work" sits on its navy, so each block reads as its own place.
+   Values are fixed in both themes. Contrast: text on paper 16:1, accent on
+   paper 6.3:1, text on navy 12:1, yellow on navy 8:1. */
+html[data-concept="index"] #atlas,
+html[data-concept="index"] #work {
+  background: var(--band-bg);
+  box-shadow: 0 0 0 100vmax var(--band-bg);
+  clip-path: inset(0 -100vmax);
+  color: var(--text);
 }
 
-/* Lead: capture and product statement. */
-.atlas-lead {
+html[data-concept="index"] #atlas {
+  --band-bg: #fbf8f1;
+  --bg: #fbf8f1;
+  --surface: #f2ecdf;
+  --raised: #ebe3d1;
+  --text: #141211;
+  --muted: #4c473f;
+  --accent: #b81d16;
+  --line: #c9bfa9;
+  --index-black: #141211;
+  --technical: #363a5f;
+  --grid-line: rgb(20 18 17 / 0.07);
+  --grid-cross: #b81d16;
+}
+
+html[data-concept="index"] #work {
+  --band-bg: #262a44;
+  --bg: #262a44;
+  --surface: #2f3354;
+  --raised: #363a5f;
+  --text: #f5f0e4;
+  --muted: #c9c8d6;
+  --accent: #eec35a;
+  --line: #4b5078;
+  --index-black: #f5f0e4;
+  --technical: #7fbdb5;
+  --grid-line: rgb(245 240 228 / 0.07);
+  --grid-cross: #eec35a;
+}
+
+/* Tighter vertical rhythm for every section. */
+html[data-concept="index"] .section {
+  padding-block: 72px;
+}
+
+html[data-concept="index"] .section-heading {
+  margin-bottom: 36px;
+}
+
+/* ATLAS: copy next to a tabbed viewer of the real interface. */
+.atlas-case {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: clamp(28px, 4vw, 52px);
+  gap: 32px;
+}
+
+.atlas-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: clamp(24px, 3.5vw, 48px);
   align-items: start;
-  padding-top: 28px;
+  padding-top: 24px;
   border-top: 1px solid var(--index-black);
 }
 
 .atlas-lead-copy .project-category {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font: 12px ui-monospace, monospace;
   letter-spacing: 0.1em;
 }
 
-.atlas-lead-copy .product-status,
-.work-status {
-  display: inline-block;
-  padding: 3px 7px;
-  border: 1px solid var(--line);
-  color: var(--accent);
-  font: 12px ui-monospace, monospace;
-  letter-spacing: 0.04em;
-}
-
 .atlas-lead-copy h3 {
-  margin-top: 18px;
-  font: 600 clamp(48px, 6vw, 88px) / 0.95 var(--display);
+  font: 600 clamp(44px, 5vw, 72px) / 0.95 var(--display);
   letter-spacing: -0.04em;
 }
 
 .atlas-lead-copy h4 {
-  margin-block: 14px 16px;
+  margin-block: 12px;
   color: var(--text);
-  font: 400 clamp(21px, 1.8vw, 26px) / 1.25 var(--display);
+  font: 400 clamp(20px, 1.7vw, 24px) / 1.25 var(--display);
 }
 
-.atlas-lead-copy > p:not(.project-category, .product-status) {
-  max-width: 54ch;
+.atlas-lead-copy > p:not(.project-category) {
   color: var(--muted);
-  font-size: clamp(1rem, 0.97rem + 0.1vw, 1.0625rem);
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .atlas-lead-copy .product-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 22px;
+  gap: 20px;
+  margin-top: 16px;
 }
 
 .atlas-lead-copy .text-link,
-.work-copy .text-link {
+.atlas-panel .text-link,
+.work-tile .text-link {
   color: var(--accent);
 }
 
-/* Numbers as an inline ledger between rules, not tiles. */
+.atlas-lead-copy .tech-tags {
+  margin-top: 16px;
+}
+
+.atlas-viewer {
+  min-width: 0;
+}
+
+.atlas-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 1px solid var(--index-black);
+}
+
+.atlas-tab {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: 600 0.9375rem / 1 var(--font);
+  transition: color 150ms ease-out, background-color 150ms ease-out;
+}
+
+.atlas-tab:hover {
+  background: var(--raised);
+  color: var(--text);
+}
+
+.atlas-tab[aria-selected="true"] {
+  border-color: var(--index-black);
+  background: var(--index-black);
+  color: var(--bg);
+}
+
+.atlas-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.atlas-panel {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.atlas-panel[hidden] {
+  display: none;
+}
+
+.atlas-panel-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--index-black);
+  background: var(--raised);
+}
+
+.atlas-panel-caption {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.atlas-panel .text-link {
+  justify-self: start;
+}
+
+/* Numbers link to the place they count. */
 .atlas-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -72,24 +180,44 @@
 }
 
 .atlas-metrics > div {
+  position: relative;
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  gap: 6px;
-  padding: 20px 20px 20px 0;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 16px 16px 0;
+  transition: background-color 150ms ease-out;
 }
 
 .atlas-metrics > div + div {
-  padding-left: 20px;
+  padding-left: 16px;
   border-left: 1px solid var(--line);
+}
+
+.atlas-metrics > div:hover {
+  background: var(--raised);
 }
 
 .atlas-metrics dd {
   margin: 0;
-  color: var(--text);
-  font: 500 clamp(34px, 3.6vw, 52px) / 1 var(--display);
+  font: 500 clamp(32px, 3.2vw, 44px) / 1 var(--display);
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
+}
+
+.atlas-metrics dd a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.atlas-metrics dd a::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.atlas-metrics dd a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .atlas-metrics dt {
@@ -100,51 +228,82 @@
 }
 
 .atlas-metrics-note {
-  margin-top: 10px;
+  margin-top: 8px;
   color: var(--muted);
   font: 12px/1.4 ui-monospace, monospace;
 }
 
-/* Case study chapters share the section heading's label / content split. */
+/* Case study chapters: one open at a time. */
 .atlas-chapters {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   border-top: 1px solid var(--index-black);
 }
 
 .atlas-chapter {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-  gap: 20px;
-  padding-block: 30px;
   border-bottom: 1px solid var(--line);
+}
+
+.atlas-chapter summary {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(0, 3fr) 24px;
+  align-items: baseline;
+  gap: 16px;
+  min-height: 56px;
+  padding-block: 16px;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 150ms ease-out;
+}
+
+.atlas-chapter summary::-webkit-details-marker {
+  display: none;
+}
+
+.atlas-chapter summary:hover {
+  background: var(--raised);
+}
+
+.atlas-chapter summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .atlas-chapter-label {
   color: var(--technical);
-  font: 12px/1.6 ui-monospace, monospace;
+  font: 12px/1.4 ui-monospace, monospace;
   letter-spacing: 0.1em;
 }
 
-.atlas-chapter.has-figure .atlas-chapter-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: clamp(24px, 3vw, 40px);
-  align-items: start;
-}
-
-.atlas-chapter-text h4 {
+.atlas-chapter-title {
   color: var(--text);
-  font: 500 clamp(22px, 2vw, 28px) / 1.2 var(--display);
+  font: 500 clamp(19px, 1.7vw, 24px) / 1.25 var(--display);
   letter-spacing: -0.02em;
 }
 
-.atlas-chapter-text p {
+.atlas-chapter .details-icon {
+  color: var(--accent);
+  font: 400 22px/1 ui-monospace, monospace;
+  text-align: right;
+}
+
+.atlas-chapter[open] .details-icon {
+  rotate: 45deg;
+}
+
+.atlas-chapter-body {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(0, 3fr);
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.atlas-chapter-body > * {
+  grid-column: 2;
+}
+
+.atlas-chapter-body p {
   max-width: 64ch;
-  margin-top: 10px;
   color: var(--muted);
-  font-size: clamp(1rem, 0.97rem + 0.1vw, 1.0625rem);
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -152,7 +311,7 @@
   display: grid;
   gap: 6px;
   max-width: 64ch;
-  margin: 16px 0 0;
+  margin: 0;
   padding: 0 0 0 14px;
   list-style: none;
   border-left: 1px solid var(--accent);
@@ -160,91 +319,103 @@
   font: 13px/1.5 ui-monospace, monospace;
 }
 
-.atlas-chapter-figure {
-  margin: 0;
-}
-
-/* Other work: one row per project, no images. */
-.work-ledger {
+/* Other work: a grid of whole-tile links. */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;
   border-top: 1px solid var(--index-black);
 }
 
-.work-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
-  gap: 20px;
-  padding-block: 24px;
+.work-tile {
+  position: relative;
+  padding: 20px 24px 20px 0;
   border-bottom: 1px solid var(--line);
+  transition: background-color 150ms ease-out;
 }
 
-.work-title .project-category {
+.work-tile:nth-child(even) {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+
+.work-tile:hover {
+  background: var(--raised);
+}
+
+.work-tile .project-category {
   margin-bottom: 4px;
   font: 12px/1.4 ui-monospace, monospace;
   letter-spacing: 0.08em;
 }
 
-.work-title h3 {
-  font: 600 21px/1.2 var(--display);
+.work-tile h3 {
+  font: 600 22px/1.2 var(--display);
   letter-spacing: -0.02em;
 }
 
+.work-main {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.work-main::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.work-main:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
 .work-status {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font: 12px ui-monospace, monospace;
+}
+
+.work-tile h4 {
+  margin-top: 8px;
+  color: var(--text);
+  font: 400 17px/1.3 var(--display);
+}
+
+.work-description {
+  display: -webkit-box;
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.work-tile .project-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-top: 8px;
 }
 
-.work-copy h4 {
-  color: var(--text);
-  font: 400 19px/1.3 var(--display);
-}
-
-.work-copy > p {
-  max-width: 70ch;
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.work-copy > .work-command {
-  margin-top: 10px;
-}
-
-.work-command code {
-  display: inline-block;
-  max-width: 100%;
-  padding: 4px 8px;
-  border: 1px solid var(--line);
-  background: var(--raised);
-  color: var(--text);
-  font: 12px/1.5 ui-monospace, monospace;
-  overflow-wrap: anywhere;
-}
-
-.work-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 24px;
-  margin-top: 12px;
-}
-
-.work-row .work-meta .tech-tags,
-.work-row .work-meta .project-links {
-  margin-top: 0;
-}
-
-.work-row .work-meta .project-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+.work-stack {
+  margin-top: 8px;
+  color: var(--technical);
+  font: 12px/1.4 ui-monospace, monospace;
 }
 
 @media (max-width: 1000px) {
-  .atlas-lead {
+  .atlas-stage {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -263,58 +434,88 @@
 }
 
 @media (max-width: 760px) {
-  .atlas-chapter,
-  .atlas-chapter.has-figure .atlas-chapter-body {
+  html[data-concept="index"] .section {
+    padding-block: 48px;
+  }
+
+  html[data-concept="index"] .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .atlas-tablist {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .atlas-tab {
+    flex: none;
+    padding-inline: 12px;
+  }
+
+  .atlas-chapter summary,
+  .atlas-chapter-body {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .atlas-chapter {
-    gap: 10px;
-    padding-block: 24px;
+  .atlas-chapter summary {
+    position: relative;
+    gap: 4px;
+    padding-right: 32px;
   }
 
-  .work-row {
+  .atlas-chapter .details-icon {
+    position: absolute;
+    top: 16px;
+    right: 0;
+  }
+
+  .atlas-chapter-body > * {
+    grid-column: 1;
+  }
+
+  .work-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
   }
 
-  .work-copy > .work-command,
-  .work-row .work-meta .tech-tags {
+  .work-tile,
+  .work-tile:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .work-description,
+  .work-stack {
     display: none;
   }
 }
 
-/* Product tour: four captures of the real interface. */
-.atlas-tour h4 {
-  color: var(--text);
-  font: 500 clamp(22px, 2vw, 28px) / 1.2 var(--display);
-  letter-spacing: -0.02em;
+/* Compact rhythm for the sections around the case study. */
+html[data-concept="index"] .section-heading h2 {
+  font-size: clamp(28px, 2.8vw, 40px);
+  line-height: 1.15;
 }
 
-.atlas-tour-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 36px);
-  margin: 20px 0 0;
-  padding: 0;
-  list-style: none;
+html[data-concept="index"] .index-experience-entry > th,
+html[data-concept="index"] .index-experience-entry > td {
+  padding-block: 20px;
 }
 
-.atlas-tour-item p {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.55;
+html[data-concept="index"] .index-experience-contribution .outcome-list li {
+  margin-top: 6px;
 }
 
-.atlas-tour-item .text-link {
-  display: inline-block;
-  margin-top: 8px;
-  color: var(--accent);
+html[data-concept="index"] .approach-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-@media (max-width: 760px) {
-  .atlas-tour-grid {
+html[data-concept="index"] .approach-card:nth-child(n) {
+  grid-column: span 1;
+  min-height: 0;
+  padding: 24px;
+}
+
+@media (max-width: 1000px) {
+  html[data-concept="index"] .approach-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
