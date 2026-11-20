@@ -100,16 +100,17 @@ export const portfolioContent = {
       map: { src: "/atlas-map.webp", width: 1200, height: 704 },
     },
     tour: [
+      { key: "home", href: "https://atlas-bellussi.pages.dev" },
       { key: "reading", href: "https://atlas-bellussi.pages.dev/leitura/marxismo" },
       { key: "itineraries", href: "https://atlas-bellussi.pages.dev/itinerarios" },
       { key: "graph", href: "https://atlas-bellussi.pages.dev/grafos" },
       { key: "map", href: "https://atlas-bellussi.pages.dev/mapa" },
     ],
     metrics: [
-      { value: { en: "1,320", pt: "1.320" }, label: { en: "entities in one typed graph", pt: "entidades em um grafo tipado" } },
-      { value: { en: "12,146", pt: "12.146" }, label: { en: "claims, each with a citation", pt: "afirmações, todas com citação" } },
-      { value: { en: "1,482", pt: "1.482" }, label: { en: "sources", pt: "fontes" } },
-      { value: { en: "3,025", pt: "3.025" }, label: { en: "typed relations", pt: "relações tipadas" } },
+      { href: "https://atlas-bellussi.pages.dev/acervo/entidades", value: { en: "1,320", pt: "1.320" }, label: { en: "entities in one typed graph", pt: "entidades em um grafo tipado" } },
+      { href: "https://atlas-bellussi.pages.dev/leitura/marxismo", value: { en: "12,146", pt: "12.146" }, label: { en: "claims, each with a citation", pt: "afirmações, todas com citação" } },
+      { href: "https://atlas-bellussi.pages.dev/acervo/fontes", value: { en: "1,482", pt: "1.482" }, label: { en: "sources", pt: "fontes" } },
+      { href: "https://atlas-bellussi.pages.dev/grafos", value: { en: "3,025", pt: "3.025" }, label: { en: "typed relations", pt: "relações tipadas" } },
     ],
     pt: {
       headline: "História como uma rede navegável, com a fonte ao lado de cada afirmação.",
@@ -120,13 +121,12 @@ export const portfolioContent = {
       tourLabel: "Quatro telas do mesmo grafo",
       tourOpen: "Abrir",
       tour: {
+        home: { name: "Início", caption: "Entradas para leituras, grafo, mapa e itinerários, com busca no acervo.", alt: "Captura real da home do ATLAS, com a chamada principal, a busca no acervo e uma composição geométrica." },
         reading: { name: "Leituras", caption: "Texto contínuo em capítulos, com retratos, fontes e perguntas para começar.", alt: "Captura do ATLAS em desenvolvimento: leitura sobre marxismo, com retratos de Marx e Engels, o Manifesto Comunista e a Comuna de Paris." },
         itineraries: { name: "Itinerários", caption: "Roteiros em paradas sequenciais que ligam leituras, verbetes e nós do grafo.", alt: "Captura do ATLAS em desenvolvimento: página de itinerários, com filtros por tipo e cartões em forma de selo." },
         graph: { name: "Grafo", caption: "A rede inteira, com filtros por tipo de nó, busca e caminhos entre dois verbetes.", alt: "Captura do ATLAS em desenvolvimento: grafo do acervo com painel de tipos de nó e sugestões de por onde começar." },
         map: { name: "Mapa", caption: "Países, impérios e cidades num globo, com linha do tempo de 1750 a 2026.", alt: "Captura do ATLAS em desenvolvimento: mapa-múndi em globo com conexões históricas e linha do tempo." },
       },
-      imageAlt: "Captura real da home do ATLAS, com a chamada principal, a busca no acervo e uma composição geométrica.",
-      imageCaption: "Home · site publicado",
       linkLabels: { live: "Abrir o ATLAS", repository: "Ver o código" },
       chapters: [
         {
@@ -181,13 +181,12 @@ export const portfolioContent = {
       tourLabel: "Four views of the same graph",
       tourOpen: "Open",
       tour: {
+        home: { name: "Home", caption: "Entry points to readings, graph, map and itineraries, with search across the collection.", alt: "Actual screenshot of the ATLAS home page, with the main headline, catalogue search and a geometric visual composition." },
         reading: { name: "Readings", caption: "Continuous text in chapters, with portraits, sources and questions to start from.", alt: "Capture of ATLAS in development: the reading on Marxism, with portraits of Marx and Engels, the Communist Manifesto and the Paris Commune." },
         itineraries: { name: "Itineraries", caption: "Step-by-step routes that link readings, entries and graph nodes.", alt: "Capture of ATLAS in development: the itineraries page, with type filters and stamp-style cards." },
         graph: { name: "Graph", caption: "The whole network, with node-type filters, search and paths between two entries.", alt: "Capture of ATLAS in development: the collection graph with a node-type panel and suggested starting points." },
         map: { name: "Map", caption: "Countries, empires and cities on a globe, with a timeline from 1750 to 2026.", alt: "Capture of ATLAS in development: a world globe with historical connections and a timeline." },
       },
-      imageAlt: "Actual screenshot of the ATLAS home page, with the main headline, catalogue search and a geometric visual composition.",
-      imageCaption: "Home · published site",
       linkLabels: { live: "Open ATLAS", repository: "View the code" },
       chapters: [
         {

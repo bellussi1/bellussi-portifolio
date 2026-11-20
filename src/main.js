@@ -17,6 +17,7 @@ import {
   setMarkupInFrames,
 } from "./utils/content-update.js";
 import { renderScrollProgress } from "./utils/scroll-progress.js";
+import { initTabs } from "./utils/tabs.js";
 import {
   renderPortfolioSection,
   renderPortfolioSections,
@@ -94,6 +95,7 @@ function syncPortfolioContent({ frameByFrame = false } = {}) {
   complete();
 }
 
+initTabs(document);
 if (language !== "en") syncPortfolioContent({ frameByFrame: true });
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];

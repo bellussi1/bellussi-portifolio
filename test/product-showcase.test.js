@@ -16,9 +16,9 @@ test("renders the ATLAS captures as real WebP files with explicit dimensions", a
   }
   for (const language of ["pt", "en"]) {
     const { atlas } = renderPortfolioSections({ concept: "index", language });
-    assert.ok(atlas.includes(escape(flagship[language].imageAlt)));
     for (const entry of flagship.tour) assert.ok(atlas.includes(escape(flagship[language].tour[entry.key].alt)));
     assert.match(atlas, /width="1200" height="716"/);
+    assert.match(atlas, /loading="eager"/);
   }
 });
 

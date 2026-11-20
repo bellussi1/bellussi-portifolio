@@ -43,7 +43,7 @@ function anchor(link, label, className = "text-link") {
 function renderExperienceDetails(copy) {
   if (!copy.details) return "";
   return (
-    '<details class="experience-details" open><summary>' +
+    '<details class="experience-details"><summary>' +
     escapeHtml(copy.detailsLabel) +
     '<span class="details-icon" aria-hidden="true">+</span></summary><p>' +
     escapeHtml(copy.details) +
@@ -157,11 +157,11 @@ const defaultLinkLabels = {
   pt: { code: "Código", tests: "Testes e CI" },
 };
 
-function figure(image, alt, caption, className, loading = "lazy") {
+function figure(image, alt, className, loading = "lazy") {
   return (
-    '<figure class="portfolio-product-visual ' +
+    '<img class="' +
     className +
-    '"><img src="' +
+    '" src="' +
     escapeHtml(image.src) +
     '" alt="' +
     escapeHtml(alt) +
@@ -171,9 +171,7 @@ function figure(image, alt, caption, className, loading = "lazy") {
     image.height +
     '" loading="' +
     loading +
-    '" decoding="async"><figcaption><span>' +
-    escapeHtml(caption) +
-    "</span></figcaption></figure>"
+    '" decoding="async">'
   );
 }
 
@@ -185,11 +183,13 @@ function renderFlagshipMetrics(flagship, language, copy) {
     flagship.metrics
       .map(
         (metric) =>
-          "<div><dt>" +
-          escapeHtml(metric.label[language]) +
-          "</dt><dd>" +
+          '<div><dd><a href="' +
+          escapeHtml(metric.href) +
+          '" target="_blank" rel="noopener noreferrer">' +
           escapeHtml(metric.value[language]) +
-          "</dd></div>",
+          "</a></dd><dt>" +
+          escapeHtml(metric.label[language]) +
+          "</dt></div>",
       )
       .join("") +
     '</dl><p class="atlas-metrics-note">' +
@@ -198,45 +198,74 @@ function renderFlagshipMetrics(flagship, language, copy) {
   );
 }
 
-function renderFlagshipTour(flagship, copy) {
+function renderFlagshipViewer(flagship, copy) {
+  const tabs = flagship.tour
+    .map((entry, index) => {
+      const item = copy.tour[entry.key];
+      return (
+        '<button type="button" role="tab" class="atlas-tab" id="atlas-tab-' +
+        entry.key +
+        '" aria-controls="atlas-panel-' +
+        entry.key +
+        '" aria-selected="' +
+        (index === 0 ? "true" : "false") +
+        '"' +
+        (index === 0 ? "" : ' tabindex="-1"') +
+        ">" +
+        escapeHtml(item.name) +
+        "</button>"
+      );
+    })
+    .join("");
+  const panels = flagship.tour
+    .map((entry, index) => {
+      const item = copy.tour[entry.key];
+      return (
+        '<div role="tabpanel" class="atlas-panel" id="atlas-panel-' +
+        entry.key +
+        '" aria-labelledby="atlas-tab-' +
+        entry.key +
+        '"' +
+        (index === 0 ? "" : " hidden") +
+        ">" +
+        figure(flagship.images[entry.key], item.alt, "atlas-panel-image", index === 0 ? "eager" : "lazy") +
+        '<p class="atlas-panel-caption">' +
+        escapeHtml(item.caption) +
+        "</p>" +
+        anchor(entry, copy.tourOpen + " " + item.name, "text-link") +
+        "</div>"
+      );
+    })
+    .join("");
   return (
-    '<section class="atlas-tour reveal" aria-labelledby="atlas-tour-title"><h4 id="atlas-tour-title">' +
+    '<div class="atlas-viewer"><div class="atlas-tablist" role="tablist" aria-label="' +
     escapeHtml(copy.tourLabel) +
-    '</h4><ul class="atlas-tour-grid">' +
-    flagship.tour
-      .map((entry) => {
-        const item = copy.tour[entry.key];
-        return (
-          '<li class="atlas-tour-item">' +
-          figure(flagship.images[entry.key], item.alt, item.name, "atlas-tour-figure") +
-          "<p>" +
-          escapeHtml(item.caption) +
-          "</p>" +
-          anchor(entry, copy.tourOpen + " " + item.name, "text-link") +
-          "</li>"
-        );
-      })
-      .join("") +
-    "</ul></section>"
+    '">' +
+    tabs +
+    "</div>" +
+    panels +
+    "</div>"
   );
 }
 
-function renderFlagshipChapter(chapter) {
+function renderFlagshipChapter(chapter, index) {
   const points = chapter.points?.length
     ? '<ul class="atlas-chapter-points">' +
       chapter.points.map((point) => "<li>" + escapeHtml(point) + "</li>").join("") +
       "</ul>"
     : "";
   return (
-    '<li class="atlas-chapter reveal"><p class="atlas-chapter-label">' +
+    '<details class="atlas-chapter" name="atlas-chapters"' +
+    (index === 0 ? " open" : "") +
+    '><summary><span class="atlas-chapter-label">' +
     escapeHtml(chapter.label) +
-    '</p><div class="atlas-chapter-body"><div class="atlas-chapter-text"><h4>' +
+    '</span><span class="atlas-chapter-title">' +
     escapeHtml(chapter.title) +
-    "</h4><p>" +
+    '</span><span class="details-icon" aria-hidden="true">+</span></summary><div class="atlas-chapter-body"><p>' +
     escapeHtml(chapter.body) +
     "</p>" +
     points +
-    "</div></div></li>"
+    "</div></details>"
   );
 }
 
@@ -246,9 +275,7 @@ function renderFlagship(language) {
   return (
     '<article class="atlas-case" aria-labelledby="product-' +
     flagship.id +
-    '"><div class="atlas-lead reveal">' +
-    figure(flagship.images.home, copy.imageAlt, copy.imageCaption, "atlas-lead-figure") +
-    '<div class="atlas-lead-copy"><p class="project-category">' +
+    '"><div class="atlas-stage"><div class="atlas-lead-copy"><p class="project-category">' +
     escapeHtml(flagship.category) +
     '</p><h3 id="product-' +
     flagship.id +
@@ -258,62 +285,61 @@ function renderFlagship(language) {
     escapeHtml(copy.headline) +
     "</h4><p>" +
     escapeHtml(copy.description) +
-    "</p>" +
-    techTags(flagship.technologies) +
-    '<div class="product-links">' +
+    '</p><div class="product-links">' +
     flagship.links
       .map((link) => anchor(link, copy.linkLabels[link.type], "text-link product-repo-link"))
       .join("") +
-    "</div></div></div>" +
+    "</div>" +
+    techTags(flagship.technologies) +
+    "</div>" +
+    renderFlagshipViewer(flagship, copy) +
+    "</div>" +
     renderFlagshipMetrics(flagship, language, copy) +
-    renderFlagshipTour(flagship, copy) +
-    '<ol class="atlas-chapters">' +
-    copy.chapters
-      .map((chapter, index) => renderFlagshipChapter(chapter))
-      .join("") +
-    "</ol></article>"
+    '<div class="atlas-chapters">' +
+    copy.chapters.map((chapter, index) => renderFlagshipChapter(chapter, index)).join("") +
+    "</div></article>"
   );
 }
 
 function renderOtherWork(language) {
   return (
-    '<ol class="work-ledger">' +
+    '<ul class="work-grid">' +
     portfolioContent.otherWork
       .map((project) => {
         const copy = project[language];
-        const usage = project.command
-          ? '<p class="work-command"><code>' + escapeHtml(project.command) + "</code></p>"
-          : "";
+        const [main, ...rest] = project.links;
+        const mainLabel = copy.linkLabels?.[main.type] ?? defaultLinkLabels[language][main.type];
         return (
-          '<li class="work-row reveal" aria-labelledby="work-' +
-          project.id +
-          '"><div class="work-title"><p class="project-category">' +
+          '<li class="work-tile reveal"><p class="project-category">' +
           escapeHtml(project.category) +
-          '</p><h3 id="work-' +
-          project.id +
+          (copy.status ? '</p><p class="work-status">' + escapeHtml(copy.status) : "") +
+          '</p><h3><a class="work-main" href="' +
+          escapeHtml(main.href) +
+          '" target="_blank" rel="noopener noreferrer" aria-label="' +
+          escapeHtml(project.name + ": " + mainLabel) +
           '">' +
           escapeHtml(project.name) +
-          "</h3>" +
-          (copy.status ? '<p class="work-status">' + escapeHtml(copy.status) + "</p>" : "") +
-          '</div><div class="work-copy"><h4>' +
+          '</a></h3><h4>' +
           escapeHtml(copy.headline) +
-          "</h4><p>" +
+          "</h4><p class=\"work-description\">" +
           escapeHtml(copy.description) +
           "</p>" +
-          usage +
-          '<div class="work-meta">' +
-          techTags(project.technologies) +
-          '<div class="project-links">' +
-          project.links
-            .map((link) =>
-              anchor(link, copy.linkLabels?.[link.type] ?? defaultLinkLabels[language][link.type]),
-            )
-            .join("") +
-          "</div></div></div></li>"
+          (rest.length
+            ? '<div class="project-links">' +
+              rest
+                .map((link) =>
+                  anchor(link, copy.linkLabels?.[link.type] ?? defaultLinkLabels[language][link.type]),
+                )
+                .join("") +
+              "</div>"
+            : "") +
+          '<p class="work-stack">' +
+          escapeHtml(project.technologies.slice(0, 4).join(", ")) +
+          "</p></li>"
         );
       })
       .join("") +
-    "</ol>"
+    "</ul>"
   );
 }
 
