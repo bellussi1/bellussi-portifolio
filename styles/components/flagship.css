@@ -127,10 +127,6 @@
   letter-spacing: 0.1em;
 }
 
-.atlas-chapter-label span {
-  color: var(--accent);
-}
-
 .atlas-chapter.has-figure .atlas-chapter-body {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -178,16 +174,10 @@
 
 .work-row {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 2.4fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
   gap: 20px;
   padding-block: 24px;
   border-bottom: 1px solid var(--line);
-}
-
-.work-number {
-  padding-top: 2px;
-  color: var(--accent);
-  font: 12px ui-monospace, monospace;
 }
 
 .work-title .project-category {
@@ -284,12 +274,8 @@
   }
 
   .work-row {
-    grid-template-columns: 32px minmax(0, 1fr);
-    gap: 10px 12px;
-  }
-
-  .work-copy {
-    grid-column: 2;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
   }
 
   .work-copy > .work-command,

@@ -13,7 +13,7 @@ export const portfolioContent = {
         "GitLab CI/CD",
       ],
       pt: {
-        period: "Ago. 2024 — atual",
+        period: "Ago. 2024 – atual",
         pill: "Consultoria · múltiplos clientes",
         role: "ENGENHEIRO DE SOFTWARE PLENO (FRONT-END)",
         title: "Da interface à responsabilidade técnica.",
@@ -29,7 +29,7 @@ export const portfolioContent = {
           "Atuação em projetos para clientes de diferentes setores, incluindo Natura, Nissan e Dexco. Trabalho com Tailwind CSS e SASS, armazenamento de assets no AWS S3 e migração gradual de jQuery para frameworks modernos.",
       },
       en: {
-        period: "Aug. 2024 — present",
+        period: "Aug. 2024 – present",
         pill: "Consulting · multiple clients",
         role: "MID-LEVEL SOFTWARE ENGINEER (FRONT-END)",
         title: "From interface development to technical ownership.",
@@ -56,7 +56,7 @@ export const portfolioContent = {
         "Scrum",
       ],
       pt: {
-        period: "Out. 2022 — ago. 2024",
+        period: "Out. 2022 – ago. 2024",
         pill: "Tecnologia · operações internacionais",
         role: "ESTAGIÁRIO EM ENGENHARIA DE SOFTWARE (FRONT-END)",
         title: "Uma nova base para um sistema legado.",
@@ -69,7 +69,7 @@ export const portfolioContent = {
         ],
       },
       en: {
-        period: "Oct. 2022 — Aug. 2024",
+        period: "Oct. 2022 – Aug. 2024",
         pill: "Technology · international operations",
         role: "SOFTWARE ENGINEER INTERN (FRONT-END)",
         title: "A new foundation for a legacy system.",
@@ -112,14 +112,13 @@ export const portfolioContent = {
       { value: { en: "3,025", pt: "3.025" }, label: { en: "typed relations", pt: "relações tipadas" } },
     ],
     pt: {
-      status: "No ar · código aberto",
       headline: "História como uma rede navegável, com a fonte ao lado de cada afirmação.",
       description:
         "Enciclopédia visual e interativa de história, política, economia e sociedade. Pessoas, obras, conceitos e acontecimentos formam um único grafo tipado, reaproveitado por todas as telas: leituras longas, verbetes permanentes, linhas do tempo e redes.",
       metricsNote: "Contagem do release de conteúdo publicado em 18/11/2026.",
       metricsLabel: "ATLAS em números",
-      tourLabel: "Quatro formas de entrar no mesmo grafo",
-      tourOpen: "Abrir no site",
+      tourLabel: "Quatro telas do mesmo grafo",
+      tourOpen: "Abrir",
       tour: {
         reading: { name: "Leituras", caption: "Texto contínuo em capítulos, com retratos, fontes e perguntas para começar.", alt: "Captura do ATLAS em desenvolvimento: leitura sobre marxismo, com retratos de Marx e Engels, o Manifesto Comunista e a Comuna de Paris." },
         itineraries: { name: "Itinerários", caption: "Roteiros em paradas sequenciais que ligam leituras, verbetes e nós do grafo.", alt: "Captura do ATLAS em desenvolvimento: página de itinerários, com filtros por tipo e cartões em forma de selo." },
@@ -158,12 +157,12 @@ export const portfolioContent = {
         },
         {
           label: "IA COM TRAVAS",
-          title: "O modelo rascunha. Uma pessoa publica.",
+          title: "Uma pessoa publica o que o modelo rascunha.",
           body: "A ingestão lê capturas reproduzíveis da Wikipédia, do Wikidata e do Commons. A extração assistida por LLM só mantém citações encontradas literalmente na fonte, um pipeline RAG local (embeddings bge-m3 e reranker) sugere relações como rascunho, e a revisão de IA aparece rotulada como tal. Publicar continua sendo decisão humana.",
         },
         {
           label: "QUALIDADE",
-          title: "Testado como produto.",
+          title: "Testado no CI.",
           body: "Vitest nos componentes, Playwright nas jornadas, axe na acessibilidade automatizada e na estabilidade de layout, e node --test nos scripts de conteúdo e ingestão. Tudo roda no CI, junto com lint, typecheck, build e verificação de links.",
         },
         {
@@ -174,14 +173,13 @@ export const portfolioContent = {
       ],
     },
     en: {
-      status: "Live · open source",
       headline: "History as a navigable network, with the source beside every claim.",
       description:
         "A visual, interactive encyclopedia of history, politics, economics and society. People, works, concepts and events form one typed knowledge graph that every screen reuses: long-form readings, permanent entries, timelines and network views.",
       metricsNote: "Counted from the content release published on 18 Nov 2026.",
       metricsLabel: "ATLAS in numbers",
-      tourLabel: "Four ways into the same graph",
-      tourOpen: "Open on the site",
+      tourLabel: "Four views of the same graph",
+      tourOpen: "Open",
       tour: {
         reading: { name: "Readings", caption: "Continuous text in chapters, with portraits, sources and questions to start from.", alt: "Capture of ATLAS in development: the reading on Marxism, with portraits of Marx and Engels, the Communist Manifesto and the Paris Commune." },
         itineraries: { name: "Itineraries", caption: "Step-by-step routes that link readings, entries and graph nodes.", alt: "Capture of ATLAS in development: the itineraries page, with type filters and stamp-style cards." },
@@ -220,12 +218,12 @@ export const portfolioContent = {
         },
         {
           label: "AI WITH GUARDRAILS",
-          title: "The model drafts. A person publishes.",
+          title: "A person publishes what the model drafts.",
           body: "Ingestion reads reproducible Wikipedia, Wikidata and Commons snapshots. LLM-assisted extraction keeps only quotes found verbatim in the source, a local RAG pipeline (bge-m3 embeddings and a reranker) suggests relations as drafts, and AI review is labelled as such. Publishing stays a human decision.",
         },
         {
           label: "QUALITY",
-          title: "Tested like a product.",
+          title: "Tested in CI.",
           body: "Vitest for components, Playwright for user journeys, axe for automated accessibility and layout stability checks, and node --test for the content and ingestion scripts. All of it runs in CI alongside lint, typecheck, build and link checks.",
         },
         {

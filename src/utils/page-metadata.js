@@ -4,14 +4,14 @@ const metadataByLanguage = {
     ogLocale: "en_US",
     title: "Enzo Bellussi — Software Engineer",
     description:
-      "Software engineer with 3+ years building enterprise web products. TypeScript, React, Angular and Node.js — performance, accessibility and maintainable systems.",
+      "Software engineer with 3+ years building enterprise web products. TypeScript, React, Angular and Node.js. Performance, accessibility and maintainable systems.",
   },
   pt: {
     htmlLang: "pt-BR",
     ogLocale: "pt_BR",
     title: "Enzo Bellussi — Engenheiro de Software",
     description:
-      "Engenheiro de software com 3+ anos construindo produtos web corporativos. TypeScript, React, Angular e Node.js — performance, acessibilidade e sistemas sustentáveis.",
+      "Engenheiro de software com 3+ anos construindo produtos web corporativos. TypeScript, React, Angular e Node.js. Performance, acessibilidade e sistemas sustentáveis.",
   },
 };
 

@@ -212,7 +212,7 @@ function renderFlagshipTour(flagship, copy) {
           "<p>" +
           escapeHtml(item.caption) +
           "</p>" +
-          anchor(entry, copy.tourOpen + ": " + item.name, "text-link") +
+          anchor(entry, copy.tourOpen + " " + item.name, "text-link") +
           "</li>"
         );
       })
@@ -221,16 +221,14 @@ function renderFlagshipTour(flagship, copy) {
   );
 }
 
-function renderFlagshipChapter(chapter, index) {
+function renderFlagshipChapter(chapter) {
   const points = chapter.points?.length
     ? '<ul class="atlas-chapter-points">' +
       chapter.points.map((point) => "<li>" + escapeHtml(point) + "</li>").join("") +
       "</ul>"
     : "";
   return (
-    '<li class="atlas-chapter reveal"><p class="atlas-chapter-label"><span>0' +
-    (index + 1) +
-    "</span> " +
+    '<li class="atlas-chapter reveal"><p class="atlas-chapter-label">' +
     escapeHtml(chapter.label) +
     '</p><div class="atlas-chapter-body"><div class="atlas-chapter-text"><h4>' +
     escapeHtml(chapter.title) +
@@ -252,8 +250,6 @@ function renderFlagship(language) {
     figure(flagship.images.home, copy.imageAlt, copy.imageCaption, "atlas-lead-figure") +
     '<div class="atlas-lead-copy"><p class="project-category">' +
     escapeHtml(flagship.category) +
-    '</p><p class="product-status">' +
-    escapeHtml(copy.status) +
     '</p><h3 id="product-' +
     flagship.id +
     '">' +
@@ -273,7 +269,7 @@ function renderFlagship(language) {
     renderFlagshipTour(flagship, copy) +
     '<ol class="atlas-chapters">' +
     copy.chapters
-      .map((chapter, index) => renderFlagshipChapter(chapter, index))
+      .map((chapter, index) => renderFlagshipChapter(chapter))
       .join("") +
     "</ol></article>"
   );
@@ -283,7 +279,7 @@ function renderOtherWork(language) {
   return (
     '<ol class="work-ledger">' +
     portfolioContent.otherWork
-      .map((project, index) => {
+      .map((project) => {
         const copy = project[language];
         const usage = project.command
           ? '<p class="work-command"><code>' + escapeHtml(project.command) + "</code></p>"
@@ -291,9 +287,7 @@ function renderOtherWork(language) {
         return (
           '<li class="work-row reveal" aria-labelledby="work-' +
           project.id +
-          '"><span class="work-number">' +
-          String(index + 1).padStart(2, "0") +
-          '</span><div class="work-title"><p class="project-category">' +
+          '"><div class="work-title"><p class="project-category">' +
           escapeHtml(project.category) +
           '</p><h3 id="work-' +
           project.id +

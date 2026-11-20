@@ -32,7 +32,7 @@ test("keeps document and share metadata aligned with the selected language", () 
   assert.equal(document.title, "Enzo Bellussi — Software Engineer");
   assert.equal(
     document.metadata.get('meta[name="description"]').content,
-    "Software engineer with 3+ years building enterprise web products. TypeScript, React, Angular and Node.js — performance, accessibility and maintainable systems.",
+    "Software engineer with 3+ years building enterprise web products. TypeScript, React, Angular and Node.js. Performance, accessibility and maintainable systems.",
   );
   assert.equal(
     document.metadata.get('meta[property="og:description"]').content,
