@@ -9,9 +9,8 @@ Personal site of **Enzo Bellussi**, a software engineer based in São Paulo, Bra
 ## What is here
 
 - **Editorial V2 design** — Zilla Slab typography, a technical index grid, inline rules and a dark/light theme.
-- **ATLAS case study** — the flagship open-source project: an interactive encyclopedia built on a sourced knowledge graph with 896 entities, 7,918 sourced claims and 898 sources.
-- **Products** — ATLAS and KOReader Ecosystem, with real screenshots and current status.
-- **Open-source tools** — Deploy Preflight, Local Webhook Recorder, Compose Doctor, Scriptorium, Dalibre Plugins (Hardcover, ISBN Brasil, Open Library) and Dalibre contributions.
+- **ATLAS case study** — the flagship, first section after the hero: an open-source encyclopedia on a typed knowledge graph (1,320 entities, 12,146 claims with citations, 1,482 sources, 3,025 typed relations), told as problem, epistemic model, architecture, AI guardrails, quality and limits.
+- **Other work** — a compact ledger: KOReader Ecosystem, Black Market, Deploy Preflight, Compose Doctor, Local Webhook Recorder, Dalibre, Dalibre Plugins and Scriptorium.
 - **Experience and approach** — enterprise work at MarketData and Banco do Brasil, plus the engineering principles behind the interface.
 - **Bilingual** — English is the default; Portuguese is available through the language switch and `?lang=pt`.
 - **Resumes** — ATS-oriented LaTeX resumes in English and Portuguese, linked from the hero, contact section and footer.
@@ -85,11 +84,9 @@ test/                         Rendering, SEO, language, theme and content regres
 
 1. Edit bilingual facts in `src/content/portfolio.js`.
 2. Edit English static copy in `index.html` and the matching Portuguese keys in `src/translations.js`.
-3. Rebuild the pre-rendered English sections after changing product or experience data:
-   - run `node` with `renderPortfolioSections({ concept: "index", language: "en" })` and replace the three `data-portfolio-content` containers, or
-   - remove the pre-rendered content and let `src/main.js` render it on load.
+3. Run `npm run prerender:sync` after changing `portfolio.js`. It rewrites the three `data-portfolio-content` containers in `index.html`; `npm test` fails if they drift.
 4. Replace screenshots in `public/`, keeping the paths and alt text in `portfolio.js`.
-5. Update the ATLAS numbers only when they match the published build.
+5. Update the ATLAS numbers only from the published content release (the ATLAS repo's `content/content-pointer.json`). The epistemic breakdown must add up to the claims total; a test checks it.
 6. Rebuild the resumes from `cv/curriculo-en.tex` and `cv/curriculo-pt.tex`, then copy the PDFs to `public/`.
 7. Run `npm test` and `npm run build`.
 

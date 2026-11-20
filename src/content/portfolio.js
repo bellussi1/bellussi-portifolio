@@ -83,353 +83,321 @@ export const portfolioContent = {
       },
     },
   ],
-  products: [
-    {
-      id: "atlas",
-      name: "ATLAS",
-      image: { src: "/atlas-home.webp", width: 1200, height: 716 },
-      category: "OPEN KNOWLEDGE · DATA VISUALIZATION",
-      technologies: ["Angular 21", "TypeScript", "Zod", "Wikidata", "Playwright"],
-      links: [
-        { type: "live", href: "https://atlas-bellussi.pages.dev" },
-        { type: "repository", href: "https://github.com/bellussi1/ATLAS" },
-      ],
-      pt: {
-        status: "No ar · código aberto",
-        headline: "História como uma rede navegável — com fonte em cada afirmação.",
-        description:
-          "Enciclopédia visual e interativa de história, política e sociedade, com 896 entidades, 7.918 afirmações com fonte e 898 fontes. Pessoas, obras, conceitos e acontecimentos formam um grafo tipado, e cada trecho indica se é fato documentado, interpretação, controvérsia ou lacuna.",
-        details:
-          "Angular 21 com Signals e prerender, TypeScript strict, conteúdo validado com Zod e ingestão reproduzível da Wikipédia, Wikidata e Commons. Entrega static-first no Cloudflare R2, com testes de acessibilidade e E2E usando Playwright e axe.",
-        imageAlt: "Captura real da home do ATLAS, com a chamada principal, a busca no acervo e uma composição geométrica.",
-        imageCaption: "Home · site publicado",
-        linkLabels: { live: "Ver o site ao vivo", repository: "Explorar repositório público" },
-      },
-      en: {
-        status: "Live · open source",
-        headline: "History as a navigable network — with a source for every claim.",
-        description:
-          "A visual, interactive encyclopedia of history, politics and society with 896 entities, 7,918 sourced claims and 898 sources. People, works, concepts and events form a typed knowledge graph, and every statement shows whether it is documented fact, interpretation, controversy or an acknowledged gap.",
-        details:
-          "Angular 21 with Signals and prerendering, strict TypeScript, Zod-validated content and reproducible Wikipedia, Wikidata and Commons ingestion. Static-first delivery on Cloudflare R2, with accessibility and E2E tests using Playwright and axe.",
-        imageAlt: "Actual screenshot of the ATLAS home page, with the main headline, catalogue search and a geometric visual composition.",
-        imageCaption: "Home · published site",
-        linkLabels: { live: "See the live site", repository: "Explore the public repository" },
-      },
+  flagship: {
+    id: "atlas",
+    name: "ATLAS",
+    category: "OPEN KNOWLEDGE · KNOWLEDGE GRAPH",
+    technologies: ["Angular 21", "TypeScript", "Zod", "Cloudflare R2", "Playwright", "axe"],
+    links: [
+      { type: "live", href: "https://atlas-bellussi.pages.dev" },
+      { type: "repository", href: "https://github.com/bellussi1/ATLAS" },
+    ],
+    images: {
+      home: { src: "/atlas-home.webp", width: 1200, height: 716 },
+      reading: { src: "/atlas-reading.webp", width: 1200, height: 704 },
+      itineraries: { src: "/atlas-itineraries.webp", width: 1200, height: 704 },
+      graph: { src: "/atlas-graph.webp", width: 1200, height: 704 },
+      map: { src: "/atlas-map.webp", width: 1200, height: 704 },
     },
+    tour: [
+      { key: "reading", href: "https://atlas-bellussi.pages.dev/leitura/marxismo" },
+      { key: "itineraries", href: "https://atlas-bellussi.pages.dev/itinerarios" },
+      { key: "graph", href: "https://atlas-bellussi.pages.dev/grafos" },
+      { key: "map", href: "https://atlas-bellussi.pages.dev/mapa" },
+    ],
+    metrics: [
+      { value: { en: "1,320", pt: "1.320" }, label: { en: "entities in one typed graph", pt: "entidades em um grafo tipado" } },
+      { value: { en: "12,146", pt: "12.146" }, label: { en: "claims, each with a citation", pt: "afirmações, todas com citação" } },
+      { value: { en: "1,482", pt: "1.482" }, label: { en: "sources", pt: "fontes" } },
+      { value: { en: "3,025", pt: "3.025" }, label: { en: "typed relations", pt: "relações tipadas" } },
+    ],
+    pt: {
+      status: "No ar · código aberto",
+      headline: "História como uma rede navegável, com a fonte ao lado de cada afirmação.",
+      description:
+        "Enciclopédia visual e interativa de história, política, economia e sociedade. Pessoas, obras, conceitos e acontecimentos formam um único grafo tipado, reaproveitado por todas as telas: leituras longas, verbetes permanentes, linhas do tempo e redes.",
+      metricsNote: "Contagem do release de conteúdo publicado em 18/11/2026.",
+      metricsLabel: "ATLAS em números",
+      tourLabel: "Quatro formas de entrar no mesmo grafo",
+      tourOpen: "Abrir no site",
+      tour: {
+        reading: { name: "Leituras", caption: "Texto contínuo em capítulos, com retratos, fontes e perguntas para começar.", alt: "Captura do ATLAS em desenvolvimento: leitura sobre marxismo, com retratos de Marx e Engels, o Manifesto Comunista e a Comuna de Paris." },
+        itineraries: { name: "Itinerários", caption: "Roteiros em paradas sequenciais que ligam leituras, verbetes e nós do grafo.", alt: "Captura do ATLAS em desenvolvimento: página de itinerários, com filtros por tipo e cartões em forma de selo." },
+        graph: { name: "Grafo", caption: "A rede inteira, com filtros por tipo de nó, busca e caminhos entre dois verbetes.", alt: "Captura do ATLAS em desenvolvimento: grafo do acervo com painel de tipos de nó e sugestões de por onde começar." },
+        map: { name: "Mapa", caption: "Países, impérios e cidades num globo, com linha do tempo de 1750 a 2026.", alt: "Captura do ATLAS em desenvolvimento: mapa-múndi em globo com conexões históricas e linha do tempo." },
+      },
+      imageAlt: "Captura real da home do ATLAS, com a chamada principal, a busca no acervo e uma composição geométrica.",
+      imageCaption: "Home · site publicado",
+      linkLabels: { live: "Abrir o ATLAS", repository: "Ver o código" },
+      chapters: [
+        {
+          label: "PROBLEMA",
+          title: "Opinião apresentada como fato.",
+          body: "Texto enciclopédico costuma misturar fato documentado, tese atribuída e interpretação no mesmo parágrafo. Os grafos de conhecimento que separam essas coisas raramente são legíveis para quem não é especialista. O ATLAS tenta as duas coisas: uma leitura para estudantes e curiosos, apoiada em dados que um desenvolvedor consegue auditar.",
+        },
+        {
+          label: "MODELO EPISTÊMICO",
+          title: "Cada afirmação diz que tipo de afirmação é.",
+          body: "Afirmações são registros tipados, com citação própria, validados por um schema Zod. Lacunas conhecidas são declaradas no capítulo, em vez de preenchidas com texto genérico.",
+          points: [
+            "8.278 fatos documentados",
+            "1.544 afirmações controversas",
+            "1.171 teses atribuídas",
+            "1.153 interpretações",
+          ],
+        },
+        {
+          label: "ARQUITETURA",
+          title: "Static-first, endereçado por conteúdo.",
+          body: "O conteúdo versionado em JSON é validado e compilado em manifesto, índice de busca, adjacência e layouts, e publicado no Cloudflare R2 como objetos imutáveis nomeados pelo SHA-256. O build Angular 21 baixa o release fixado, confere tamanho e hash e faz prerender de cada rota publicada. Não há API em tempo de leitura.",
+          points: [
+            "Zod confere IDs, slugs, referências e licenças antes de compilar",
+            "Signals, componentes standalone e TransferState para não baixar duas vezes na hidratação",
+            "Regra ESLint própria impõe fronteiras entre features e bloqueia ciclos",
+          ],
+        },
+        {
+          label: "IA COM TRAVAS",
+          title: "O modelo rascunha. Uma pessoa publica.",
+          body: "A ingestão lê capturas reproduzíveis da Wikipédia, do Wikidata e do Commons. A extração assistida por LLM só mantém citações encontradas literalmente na fonte, um pipeline RAG local (embeddings bge-m3 e reranker) sugere relações como rascunho, e a revisão de IA aparece rotulada como tal. Publicar continua sendo decisão humana.",
+        },
+        {
+          label: "QUALIDADE",
+          title: "Testado como produto.",
+          body: "Vitest nos componentes, Playwright nas jornadas, axe na acessibilidade automatizada e na estabilidade de layout, e node --test nos scripts de conteúdo e ingestão. Tudo roda no CI, junto com lint, typecheck, build e verificação de links.",
+        },
+        {
+          label: "LIMITES",
+          title: "O que ainda falta.",
+          body: "Nenhuma afirmação concluiu revisão humana, e o site diz isso. A cobertura varia entre as tradições, e a interface está quase toda em português. Esses limites aparecem no produto, em vez de ficarem escondidos atrás dos números.",
+        },
+      ],
+    },
+    en: {
+      status: "Live · open source",
+      headline: "History as a navigable network, with the source beside every claim.",
+      description:
+        "A visual, interactive encyclopedia of history, politics, economics and society. People, works, concepts and events form one typed knowledge graph that every screen reuses: long-form readings, permanent entries, timelines and network views.",
+      metricsNote: "Counted from the content release published on 18 Nov 2026.",
+      metricsLabel: "ATLAS in numbers",
+      tourLabel: "Four ways into the same graph",
+      tourOpen: "Open on the site",
+      tour: {
+        reading: { name: "Readings", caption: "Continuous text in chapters, with portraits, sources and questions to start from.", alt: "Capture of ATLAS in development: the reading on Marxism, with portraits of Marx and Engels, the Communist Manifesto and the Paris Commune." },
+        itineraries: { name: "Itineraries", caption: "Step-by-step routes that link readings, entries and graph nodes.", alt: "Capture of ATLAS in development: the itineraries page, with type filters and stamp-style cards." },
+        graph: { name: "Graph", caption: "The whole network, with node-type filters, search and paths between two entries.", alt: "Capture of ATLAS in development: the collection graph with a node-type panel and suggested starting points." },
+        map: { name: "Map", caption: "Countries, empires and cities on a globe, with a timeline from 1750 to 2026.", alt: "Capture of ATLAS in development: a world globe with historical connections and a timeline." },
+      },
+      imageAlt: "Actual screenshot of the ATLAS home page, with the main headline, catalogue search and a geometric visual composition.",
+      imageCaption: "Home · published site",
+      linkLabels: { live: "Open ATLAS", repository: "View the code" },
+      chapters: [
+        {
+          label: "PROBLEM",
+          title: "Opinion presented as fact.",
+          body: "Encyclopedic text tends to blend documented fact, attributed thesis and interpretation in the same paragraph. Knowledge graphs that keep them apart are rarely readable by non-specialists. ATLAS tries to do both: a reading experience for students and curious readers, backed by data a developer can audit.",
+        },
+        {
+          label: "EPISTEMIC MODEL",
+          title: "Every claim says what kind of claim it is.",
+          body: "Claims are typed records with their own citation, validated by a Zod schema. Known gaps are declared at chapter level instead of being filled with generic text.",
+          points: [
+            "8,278 documented facts",
+            "1,544 contested claims",
+            "1,171 attributed theses",
+            "1,153 interpretations",
+          ],
+        },
+        {
+          label: "ARCHITECTURE",
+          title: "Static-first and content-addressed.",
+          body: "Versioned JSON content is validated, compiled into a manifest, search index, adjacency and layouts, and published to Cloudflare R2 as immutable objects named by their SHA-256. The Angular 21 build fetches the pinned release, checks size and hash, and prerenders every published route. There is no API at reading time.",
+          points: [
+            "Zod checks IDs, slugs, references and licenses before anything compiles",
+            "Signals, standalone components and TransferState to avoid double downloads during hydration",
+            "A custom ESLint rule enforces feature boundaries and blocks import cycles",
+          ],
+        },
+        {
+          label: "AI WITH GUARDRAILS",
+          title: "The model drafts. A person publishes.",
+          body: "Ingestion reads reproducible Wikipedia, Wikidata and Commons snapshots. LLM-assisted extraction keeps only quotes found verbatim in the source, a local RAG pipeline (bge-m3 embeddings and a reranker) suggests relations as drafts, and AI review is labelled as such. Publishing stays a human decision.",
+        },
+        {
+          label: "QUALITY",
+          title: "Tested like a product.",
+          body: "Vitest for components, Playwright for user journeys, axe for automated accessibility and layout stability checks, and node --test for the content and ingestion scripts. All of it runs in CI alongside lint, typecheck, build and link checks.",
+        },
+        {
+          label: "LIMITS",
+          title: "What is not done yet.",
+          body: "No claim has completed human review yet, and the site says so. Coverage is uneven across traditions, and the interface is mostly in Portuguese. These limits are shown in the product instead of being hidden behind the numbers.",
+        },
+      ],
+    },
+  },
+  otherWork: [
     {
       id: "koreader-ecosystem",
       name: "KOReader Ecosystem",
-      image: {
-        pt: { desktop: { src: "/koreader-library-pt.webp", width: 1200, height: 1179 } },
-        en: { desktop: { src: "/koreader-library-en.webp", width: 1200, height: 1179 } },
-      },
-      category: "READING TOOLS · OPEN SOURCE",
+      category: "DESKTOP · READING TOOLS",
       technologies: ["Electron", "React", "TypeScript", "Python", "SQLite"],
-      links: [{ type: "repository", href: "https://github.com/bellussi1/koreader-ecosystem" }],
+      links: [{ type: "code", href: "https://github.com/bellussi1/koreader-ecosystem" }],
       pt: {
-        status: "Open source · em desenvolvimento",
-        headline: "Sua biblioteca e seu progresso em um só lugar.",
+        status: "Em desenvolvimento",
+        headline: "Calibre, Hardcover e um Kindle com KOReader em um só app para Windows.",
         description:
-          "Aplicativo Windows que reúne a biblioteca Calibre e as estantes Hardcover, permite editar metadados e enviar ebooks ao Kindle com KOReader.",
-        details:
-          "Interface React e Electron com serviço Python local. O projeto inclui backups criptografados e integração de progresso de leitura; fluxos de sincronização ainda estão em validação no dispositivo.",
-        imageAlt: "Biblioteca do KOReader Ecosystem com capas reais, busca e filtros.",
-        imageCaption: "Biblioteca · captura do produto",
-        linkLabel: "Explorar repositório público",
+          "Interface React e Electron sobre um serviço Python local, com edição de metadados, backups criptografados e sincronização de progresso ainda em validação no dispositivo.",
       },
       en: {
-        status: "Open source · in development",
-        headline: "Your library and reading progress together.",
+        status: "In development",
+        headline: "Calibre, Hardcover and a Kindle running KOReader in one Windows app.",
         description:
-          "A Windows app for browsing a Calibre library and Hardcover shelves, editing metadata, and sending ebooks to a Kindle running KOReader.",
-        details:
-          "A React and Electron interface with a local Python service. It includes encrypted backups and reading-progress integration; device synchronization workflows are still being validated.",
-        imageAlt: "KOReader Ecosystem library with real book covers, search and filters.",
-        imageCaption: "Library · product capture",
-        linkLabel: "Explore the public repository",
+          "A React and Electron interface over a local Python service, with metadata editing, encrypted backups and reading-progress sync still being validated on device.",
       },
     },
-  ],
-  openSourceProjects: [
+    {
+      id: "black-market",
+      name: "Black Market",
+      category: "WEB · GAME TOOLS",
+      technologies: ["Angular SSR", "NestJS", "PostgreSQL", "Drizzle", "Docker"],
+      links: [{ type: "code", href: "https://github.com/bellussi1/Black-Market" }],
+      pt: {
+        status: "Em desenvolvimento",
+        headline: "Planejador de receitas, produção e mercado para Black Desert Online.",
+        description:
+          "Monorepo TypeScript para a comunidade brasileira: receitas aninhadas, custos de produção e dados de mercado, com as regras de cálculo compartilhadas entre navegador e API.",
+      },
+      en: {
+        status: "In development",
+        headline: "Recipe, production and market planner for Black Desert Online.",
+        description:
+          "A TypeScript monorepo for the Brazilian player community: nested recipes, production costs and market data, with calculation rules shared by the browser and the API.",
+      },
+    },
     {
       id: "deploy-preflight",
       name: "Deploy Preflight",
-      category: "DEPLOY / CI",
+      category: "CLI · DEPLOY / CI",
       command: "deploy-preflight check --env-file .env.local --json",
-      technologies: ["TypeScript", "Node.js", "HTTP", "GitHub Actions"],
+      technologies: ["TypeScript", "Node.js", "GitHub Actions"],
       links: [
         { type: "code", href: "https://github.com/bellussi1/deploy-preflight" },
-        {
-          type: "tests",
-          href: "https://github.com/bellussi1/deploy-preflight/actions",
-        },
-        {
-          type: "demo",
-          href: "https://github.com/bellussi1/deploy-preflight#runnable-example",
-        },
+        { type: "tests", href: "https://github.com/bellussi1/deploy-preflight/actions" },
       ],
       pt: {
         headline: "Configuração validada antes do deploy.",
         description:
-          "Variáveis ausentes, arquivos inacessíveis e URLs inválidas podem interromper uma entrega. Uma CLI que reúne essas verificações em um relatório para o terminal ou pipeline.",
-        decision:
-          "Validação tipada, probes HTTP opcionais e códigos de saída para CI. Valores de ambiente ficam fora dos relatórios.",
-        demo:
-          "Variável obrigatória ausente → exit 1. Configuração corrigida → exit 0.",
-        codeLabel: "Explorar código",
-        testsLabel: "Ver testes e CI",
-        exampleLabel: "EXEMPLO DE USO",
-        demoLabel: "Reproduzir a demo",
+          "Variáveis ausentes, artefatos ilegíveis e endpoints com falha em um só relatório, com códigos de saída para CI e valores de ambiente fora do output.",
       },
       en: {
         headline: "Validate configuration before deployment.",
         description:
-          "Missing variables, inaccessible files and invalid URLs can break a release. A CLI that brings these checks into one report for your terminal or pipeline.",
-        decision:
-          "Typed validation, optional HTTP probes and CI exit codes. Environment values stay out of reports.",
-        demo:
-          "Missing required variable → exit 1. Corrected configuration → exit 0.",
-        codeLabel: "Explore code",
-        testsLabel: "View tests and CI",
-        exampleLabel: "USAGE EXAMPLE",
-        demoLabel: "Run the demo",
-      },
-    },
-    {
-      id: "local-webhook-recorder",
-      name: "Local Webhook Recorder",
-      category: "BACKEND / INTEGRATIONS",
-      command:
-        "webhook-recorder replay EVENT_ID --to http://127.0.0.1:3000/webhooks --json",
-      technologies: ["TypeScript", "Node.js", "SQLite", "Webhooks"],
-      links: [
-        {
-          type: "code",
-          href: "https://github.com/bellussi1/local-webhook-recorder",
-        },
-        {
-          type: "tests",
-          href: "https://github.com/bellussi1/local-webhook-recorder/actions",
-        },
-        {
-          type: "demo",
-          href: "https://github.com/bellussi1/local-webhook-recorder#replay-and-idempotency-demo",
-        },
-      ],
-      pt: {
-        headline: "Um evento. Quantos testes precisar.",
-        description:
-          "Reproduzir uma integração não deveria depender de disparar o evento de novo. Captura webhooks locais, permite inspecionar o payload e reenviá-lo após ajustar o handler.",
-        decision:
-          "Persistência em SQLite, preservação dos bytes e replay explícito para endpoints locais. Limites de payload e retenção.",
-        demo:
-          "Capture um pedido e reproduza duas vezes: o handler de exemplo identifica a duplicata.",
-        codeLabel: "Explorar código",
-        testsLabel: "Ver testes e CI",
-        exampleLabel: "EXEMPLO DE USO",
-        demoLabel: "Reproduzir a demo",
-      },
-      en: {
-        headline: "One event. As many tests as you need.",
-        description:
-          "Reproducing an integration should not require triggering the event again. Capture local webhooks, inspect their payloads and replay them after changing your handler.",
-        decision:
-          "SQLite persistence, byte-preserving capture and explicit replay to local endpoints. Payload and retention limits.",
-        demo:
-          "Capture an order and replay it twice: the example handler identifies the duplicate.",
-        codeLabel: "Explore code",
-        testsLabel: "View tests and CI",
-        exampleLabel: "USAGE EXAMPLE",
-        demoLabel: "Run the demo",
+          "Missing variables, unreadable artifacts and failing endpoints in one report, with CI exit codes and environment values kept out of the output.",
       },
     },
     {
       id: "compose-doctor",
       name: "Compose Doctor",
-      category: "INFRA / DOCKER",
-      command:
-        "compose-doctor check --file examples/compose.yaml --file examples/compose.fixed.yaml --project-name doctor-demo --service api --json",
-      technologies: [
-        "TypeScript",
-        "Docker Compose",
-        "Healthchecks",
-        "CLI",
-      ],
+      category: "CLI · INFRA / DOCKER",
+      command: "compose-doctor check --file compose.yaml --service api --json",
+      technologies: ["TypeScript", "Docker Compose", "CLI"],
       links: [
         { type: "code", href: "https://github.com/bellussi1/compose-doctor" },
-        {
-          type: "tests",
-          href: "https://github.com/bellussi1/compose-doctor/actions",
-        },
-        {
-          type: "demo",
-          href: "https://github.com/bellussi1/compose-doctor#real-demo-unhealthy--ready",
-        },
+        { type: "tests", href: "https://github.com/bellussi1/compose-doctor/actions" },
       ],
       pt: {
-        headline: "Entenda o estado do seu ambiente.",
+        headline: "Entenda o estado do seu ambiente Compose.",
         description:
-          "Um container em execução pode ter um healthcheck falhando. Diagnóstico de serviços Docker Compose com estado, reinícios, portas e sugestões de investigação.",
-        decision:
-          "Consultas somente de leitura, subprocessos com limites e projeção de metadados. Relatórios em texto ou JSON.",
-        demo:
-          "API e banco saudáveis → ready · exit 0.",
-        codeLabel: "Explorar código",
-        testsLabel: "Ver testes e CI",
-        exampleLabel: "EXEMPLO DE USO",
-        demoLabel: "Reproduzir a demo",
+          "Diagnóstico somente leitura de healthchecks, reinícios e portas publicadas, em texto ou JSON.",
       },
       en: {
-        headline: "Understand the state of your environment.",
+        headline: "Understand the state of your Compose environment.",
         description:
-          "A running container can still have a failing healthcheck. Diagnose Docker Compose services with status, restarts, ports and investigation suggestions.",
-        decision:
-          "Read-only queries, bounded subprocesses and selected metadata. Reports in text or JSON.",
-        demo:
-          "API and database healthy → ready · exit 0.",
-        codeLabel: "Explore code",
-        testsLabel: "View tests and CI",
-        exampleLabel: "USAGE EXAMPLE",
-        demoLabel: "Run the demo",
+          "Read-only diagnostics for healthchecks, restarts and published ports, as text or JSON.",
       },
     },
     {
-      id: "scriptorium",
-      name: "Scriptorium",
-      category: "TRANSLATION / LLM",
-      command:
-        "python translate.py -i book.epub -sl English -tl \"Portuguese (Brazil)\" --provider ollama -m qwen3:14b",
-      technologies: ["Python", "Ollama", "Docker Compose", "EPUB"],
-      links: [{ type: "code", href: "https://github.com/bellussi1/Scriptorium" }],
-      pt: {
-        headline: "Livros inteiros, traduzidos em partes e retomáveis.",
-        description:
-          "Fork pessoal de TranslateBooksWithLLMs voltado à tradução literária do inglês para o português do Brasil. Roda localmente, com modelos via Ollama, e processa um livro de cada vez.",
-        decision:
-          "Glossário e estilo por série, checkpoints para retomar e saída EPUB validada para KOReader e Calibre.",
-        demo:
-          "Interrompa um livro no meio e retome do ponto salvo, sem recomeçar do início.",
-        codeLabel: "Explorar código",
-        exampleLabel: "EXEMPLO DE USO",
-      },
-      en: {
-        headline: "Whole books, translated in parts and resumable.",
-        description:
-          "A personal fork of TranslateBooksWithLLMs for literary translation from English into Brazilian Portuguese. It runs locally, with models through Ollama, one book at a time.",
-        decision:
-          "Per-series glossary and style, checkpoints to resume, and validated EPUB output for KOReader and Calibre.",
-        demo:
-          "Stop a book midway and resume from the saved checkpoint, without starting over.",
-        codeLabel: "Explore code",
-        exampleLabel: "USAGE EXAMPLE",
-      },
-    },
-    {
-      id: "dalibre-plugins",
-      name: "Dalibre Plugins",
-      category: "E-BOOK / PLUGINS & SYNC",
-      command:
-        "dalibre-plugin identify . --isbn 9788535914849 --json",
-      technologies: [
-        "JavaScript",
-        "GraphQL",
-        "BrasilAPI",
-        "Open Library",
-        "Dalibre SDK",
-      ],
+      id: "local-webhook-recorder",
+      name: "Local Webhook Recorder",
+      category: "CLI · INTEGRATIONS",
+      command: "webhook-recorder replay EVENT_ID --to http://127.0.0.1:3000/webhooks",
+      technologies: ["TypeScript", "Node.js", "SQLite"],
       links: [
-        {
-          type: "hardcover",
-          href: "https://github.com/bellussi1/dalibre-hardcover",
-        },
-        {
-          type: "isbnBrasil",
-          href: "https://github.com/bellussi1/dalibre-isbn-brasil",
-        },
-        {
-          type: "openLibrary",
-          href: "https://github.com/bellussi1/dalibre-openlibrary",
-        },
+        { type: "code", href: "https://github.com/bellussi1/local-webhook-recorder" },
+        { type: "tests", href: "https://github.com/bellussi1/local-webhook-recorder/actions" },
       ],
       pt: {
-        headline: "Metadados brasileiros e sincronização com o Hardcover no Dalibre.",
+        headline: "Um webhook, reproduzido quantas vezes precisar.",
         description:
-          "Três plugins comunitários para o Dalibre: sincronização bidirecional de leitura e estantes com o Hardcover (alinhada ao KOReader via ISBN), busca de edições brasileiras na CBL/BrasilAPI e catálogo da Open Library.",
-        decision:
-          "Execução em sandbox Goja sem dependências externas, priorização de edições em português (978-65 / 978-85) e validação no CI com dalibre-plugin check.",
-        demo:
-          "Busca por ISBN ou título retorna metadados completos, capa e vínculo de edição pronto para sincronizar.",
-        exampleLabel: "EXEMPLO DE USO",
-        linkLabels: {
-          hardcover: "Plugin Hardcover",
-          isbnBrasil: "Plugin ISBN Brasil",
-          openLibrary: "Plugin Open Library",
-        },
+          "Captura com bytes preservados em SQLite local e replay explícito para handlers em loopback.",
       },
       en: {
-        headline: "Brazilian metadata and Hardcover reading sync for Dalibre.",
+        headline: "One webhook, replayed as often as you need.",
         description:
-          "Three community plugins for Dalibre: two-way reading status and shelf sync with Hardcover (paired with KOReader via edition ISBNs), official Brazilian ISBN lookup via CBL/BrasilAPI, and Open Library metadata.",
-        decision:
-          "Zero-dependency plugins running in Dalibre's sandboxed Goja runtime, prioritizing Portuguese editions (978-65 / 978-85) and verified in CI with dalibre-plugin check.",
-        demo:
-          "ISBN or title lookup returns normalized metadata, cover and edition identifiers ready to sync.",
-        exampleLabel: "USAGE EXAMPLE",
-        linkLabels: {
-          hardcover: "Hardcover plugin",
-          isbnBrasil: "ISBN Brasil plugin",
-          openLibrary: "Open Library plugin",
-        },
+          "Byte-preserving capture in local SQLite and explicit replay to loopback handlers.",
       },
     },
     {
       id: "dalibre",
       name: "Dalibre",
-      category: "DESKTOP / GO & UI",
-      command:
-        "go test ./internal/app ./internal/catalog",
-      technologies: [
-        "Go",
-        "MyGo UI",
-        "SQLite",
-        "ICU MessageFormat",
-        "JavaScript",
-      ],
+      category: "OPEN SOURCE · GO",
+      technologies: ["Go", "MyGo UI", "SQLite", "ICU MessageFormat"],
       links: [
         { type: "code", href: "https://github.com/bellussi1/dalibre" },
-        {
-          type: "template",
-          href: "https://github.com/bellussi1/dalibre-plugin-template",
-        },
+        { type: "template", href: "https://github.com/bellussi1/dalibre-plugin-template" },
       ],
       pt: {
-        headline: "Biblioteca desktop leve para o Calibre, em Go nativo.",
+        headline: "Contribuições para uma alternativa nativa ao Calibre, em Go.",
         description:
-          "Fork e contribuições upstream para o Dalibre, alternativa desktop ao Calibre escrita em Go com interface nativa MyGo (sem webview e sem cgo). Inclui localização completa para português do Brasil, livrarias lusófonas e melhorias na tabela e no SDK de plugins.",
-        decision:
-          "Tradução de 1.072 chaves ICU MessageFormat (pt-BR), ordenação por colunas de título e formato na listagem e sincronização de tipos/schema no template oficial de plugins.",
-        demo:
-          "Interface em pt-BR, colunas ordenáveis e testes de view sem precisar abrir janela.",
-        codeLabel: "Explorar fork",
-        exampleLabel: "EXEMPLO DE USO",
-        linkLabels: {
-          template: "Template de plugin",
-        },
+          "Localização completa para pt-BR (1.072 chaves ICU), ordenação de colunas na listagem e sincronização de tipos no SDK de plugins.",
+        linkLabels: { code: "Ver o fork", template: "Template de plugin" },
       },
       en: {
-        headline: "A fast, native Go desktop library for Calibre.",
+        headline: "Contributions to a native Go alternative to Calibre.",
         description:
-          "Fork and upstream contributions to Dalibre, a lightweight Calibre alternative written in Go with MyGo's native UI (no webview, no cgo). Includes full Brazilian Portuguese localization, Lusophone bookstores, list-view sorting and plugin SDK improvements.",
-        decision:
-          "1,072 ICU MessageFormat keys localized into pt-BR, Title and Formats column sorting in list view, and SDK type/schema synchronization in the official plugin template.",
-        demo:
-          "Localized pt-BR interface, sortable list columns and headless view tests passing.",
-        codeLabel: "Explore fork",
-        exampleLabel: "USAGE EXAMPLE",
-        linkLabels: {
-          template: "Plugin template",
-        },
+          "Full pt-BR localization (1,072 ICU keys), list-view column sorting and type sync in the plugin SDK.",
+        linkLabels: { code: "View the fork", template: "Plugin template" },
+      },
+    },
+    {
+      id: "dalibre-plugins",
+      name: "Dalibre Plugins",
+      category: "PLUGINS · E-BOOK METADATA",
+      technologies: ["JavaScript", "GraphQL", "BrasilAPI", "Open Library"],
+      links: [
+        { type: "hardcover", href: "https://github.com/bellussi1/dalibre-hardcover" },
+        { type: "isbnBrasil", href: "https://github.com/bellussi1/dalibre-isbn-brasil" },
+        { type: "openLibrary", href: "https://github.com/bellussi1/dalibre-openlibrary" },
+      ],
+      pt: {
+        headline: "Sincronização com o Hardcover e metadados brasileiros para o Dalibre.",
+        description:
+          "Três plugins sem dependências: leitura sincronizada nos dois sentidos com o Hardcover, ISBN brasileiro via CBL/BrasilAPI e Open Library.",
+        linkLabels: { hardcover: "Hardcover", isbnBrasil: "ISBN Brasil", openLibrary: "Open Library" },
+      },
+      en: {
+        headline: "Hardcover sync and Brazilian metadata for Dalibre.",
+        description:
+          "Three zero-dependency plugins: two-way Hardcover reading sync, Brazilian ISBN lookup via CBL/BrasilAPI, and Open Library.",
+        linkLabels: { hardcover: "Hardcover", isbnBrasil: "ISBN Brasil", openLibrary: "Open Library" },
+      },
+    },
+    {
+      id: "scriptorium",
+      name: "Scriptorium",
+      category: "PYTHON · LOCAL LLM",
+      technologies: ["Python", "Ollama", "EPUB"],
+      links: [{ type: "code", href: "https://github.com/bellussi1/Scriptorium" }],
+      pt: {
+        headline: "Tradução literária retomável com modelos locais.",
+        description:
+          "Fork pessoal de TranslateBooksWithLLMs com glossário por série, checkpoints e saída EPUB, rodando no Ollama.",
+      },
+      en: {
+        headline: "Resumable literary translation with local models.",
+        description:
+          "A personal fork of TranslateBooksWithLLMs with per-series glossaries, checkpoints and EPUB output, running on Ollama.",
       },
     },
   ],

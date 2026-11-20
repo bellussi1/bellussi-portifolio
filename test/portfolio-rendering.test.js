@@ -6,6 +6,7 @@ import {
   renderPortfolioSection,
   renderPortfolioSections,
 } from "../src/content/render-portfolio.js";
+import { syncPrerenderedSections } from "../scripts/sync-prerender.mjs";
 
 function escapeHtml(value) {
   return String(value)
@@ -16,15 +17,14 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-function allRecords() {
-  return [
-    ...portfolioContent.experiences,
-    ...portfolioContent.products,
-    ...portfolioContent.openSourceProjects,
-  ];
+function strings(value) {
+  if (typeof value === "string") return [value];
+  if (Array.isArray(value)) return value.flatMap(strings);
+  if (value && typeof value === "object") return Object.values(value).flatMap(strings);
+  return [];
 }
 
-test("renders distinct experience and product structures for FIELD and INDEX", () => {
+test("renders distinct experience structures for FIELD and INDEX", () => {
   const field = renderPortfolioSections({ concept: "field", language: "pt" });
   const index = renderPortfolioSections({ concept: "index", language: "pt" });
 
@@ -32,66 +32,84 @@ test("renders distinct experience and product structures for FIELD and INDEX", (
   assert.doesNotMatch(field.experience, /index-experience-table/);
   assert.match(index.experience, /index-experience-table/);
   assert.match(index.experience, /<table/);
-  assert.match(field.products, /field-product-case/);
-  assert.match(index.products, /index-product-grid/);
-  assert.match(index.products, /index-product-card/);
-  assert.match(field.projects, /field-open-source-row/);
-  assert.match(index.projects, /index-tool-row/);
-  assert.notEqual(field.products, index.products);
 });
 
-test("keeps project facts, image paths, and public links consistent across concepts", () => {
-  const field = renderPortfolioSections({ concept: "field", language: "pt" });
-  const index = renderPortfolioSections({ concept: "index", language: "pt" });
-
-  assert.deepEqual(
-    portfolioContent.products.map(({ id }) => id),
-    ["atlas", "koreader-ecosystem"],
-  );
-  assert.deepEqual(
-    portfolioContent.openSourceProjects.map(({ id }) => id),
-    ["deploy-preflight", "local-webhook-recorder", "compose-doctor", "scriptorium", "dalibre-plugins", "dalibre"],
-  );
-  for (const product of portfolioContent.products) {
-    for (const section of [field.products, index.products]) {
-      if (product.id === "koreader-ecosystem") {
-        assert.match(section, /<picture>/);
-        assert.ok(section.includes(product.image.pt.desktop.src));
-        assert.ok(section.includes(escapeHtml(product.pt.imageAlt)));
-      } else {
-        assert.ok(section.includes(product.image.src), "missing image " + product.id);
-      }
-      assert.ok(section.includes(product.name), "missing product " + product.id);
-      for (const link of product.links) assert.ok(section.includes(link.href));
-    }
+test("renders ATLAS alone as the flagship case study", () => {
+  const { flagship } = portfolioContent;
+  for (const language of ["pt", "en"]) {
+    const { atlas, work } = renderPortfolioSections({ concept: "index", language });
+    assert.equal(atlas.match(/<article/g).length, 1);
+        for (const image of Object.values(flagship.images)) assert.ok(atlas.includes(image.src));
+    assert.equal(atlas.match(/class="atlas-tour-item"/g).length, flagship.tour.length);
+    for (const link of flagship.links) assert.ok(atlas.includes(link.href));
+    assert.equal(
+      atlas.match(/class="atlas-chapter /g).length,
+      flagship[language].chapters.length,
+    );
+    assert.equal(atlas.match(/<dt>/g).length, flagship.metrics.length);
+    assert.doesNotMatch(work, /ATLAS/);
   }
-  for (const project of portfolioContent.openSourceProjects) {
-    for (const section of [field.projects, index.projects]) {
-      assert.ok(section.includes(project.name), "missing project " + project.id);
-      for (const link of project.links) assert.ok(section.includes(link.href));
+});
+
+test("keeps claim classifications consistent with the claims metric", () => {
+  const toNumber = (text) => Number(text.match(/^[\d,]+/)[0].replaceAll(",", ""));
+  const claims = portfolioContent.flagship.metrics.find(({ label }) =>
+    label.en.startsWith("claims"),
+  );
+  const epistemic = portfolioContent.flagship.en.chapters.find(
+    ({ label }) => label === "EPISTEMIC MODEL",
+  );
+  const total = epistemic.points.reduce((sum, point) => sum + toNumber(point), 0);
+  assert.equal(total, toNumber(claims.value.en));
+});
+
+test("lists other work as a compact ledger without images", () => {
+  assert.deepEqual(
+    portfolioContent.otherWork.map(({ id }) => id),
+    [
+      "koreader-ecosystem",
+      "black-market",
+      "deploy-preflight",
+      "compose-doctor",
+      "local-webhook-recorder",
+      "dalibre",
+      "dalibre-plugins",
+      "scriptorium",
+    ],
+  );
+  for (const language of ["pt", "en"]) {
+    const { work } = renderPortfolioSections({ concept: "index", language });
+    assert.match(work, /<ol class="work-ledger">/);
+    assert.doesNotMatch(work, /<img/);
+    for (const project of portfolioContent.otherWork) {
+      assert.ok(work.includes(project.name), "missing project " + project.id);
+      for (const link of project.links) assert.ok(work.includes(link.href));
     }
   }
 });
 
 test("renders PT and EN copy for every record", () => {
+  const records = [
+    ...portfolioContent.experiences,
+    portfolioContent.flagship,
+    ...portfolioContent.otherWork,
+  ];
   for (const language of ["pt", "en"]) {
     const rendered = ["field", "index"]
-      .map((concept) => renderPortfolioSections({ concept, language }))
-      .flatMap((sections) => [sections.experience, sections.products, sections.projects])
+      .map((concept) => Object.values(renderPortfolioSections({ concept, language })).join("\n"))
       .join("\n");
-
-    for (const record of allRecords()) {
+    for (const record of records) {
       assert.ok(rendered.includes(record.name), "missing " + record.id);
-      for (const value of Object.values(record[language])) {
-        const values = Array.isArray(value) ? value : [value];
-        for (const text of values) {
-          if (typeof text === "string")
-            assert.ok(
-              rendered.includes(escapeHtml(text)),
-              "missing " + language + " copy for " + record.id + ": " + text,
-            );
-        }
+      for (const text of strings(record[language])) {
+        assert.ok(
+          rendered.includes(escapeHtml(text)),
+          "missing " + language + " copy for " + record.id + ": " + text,
+        );
       }
+    }
+    for (const metric of portfolioContent.flagship.metrics) {
+      assert.ok(rendered.includes(escapeHtml(metric.value[language])));
+      assert.ok(rendered.includes(escapeHtml(metric.label[language])));
     }
   }
 });
@@ -101,23 +119,18 @@ test("renders each portfolio section independently without changing its markup",
     for (const language of ["pt", "en"]) {
       const sections = renderPortfolioSections({ concept, language });
       for (const key of Object.keys(sections)) {
-        assert.equal(
-          renderPortfolioSection(key, { concept, language }),
-          sections[key],
-        );
+        assert.equal(renderPortfolioSection(key, { concept, language }), sections[key]);
       }
     }
   }
 });
 
-test("cites Black Market as a single line without a product card", async () => {
-  assert.ok(!portfolioContent.products.some(({ id }) => id === "black-market"));
+test("keeps the pre-rendered English markup in index.html in sync with the data", async () => {
   const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
-  assert.ok(html.includes("products-note"));
-  assert.ok(html.includes("https://github.com/bellussi1/Black-Market"));
-  for (const concept of ["field", "index"]) {
-    for (const language of ["pt", "en"]) {
-      assert.doesNotMatch(renderPortfolioSections({ concept, language }).products, /Black Market/i);
-    }
-  }
+  const sections = renderPortfolioSections({ concept: "index", language: "en" });
+  assert.equal(
+    syncPrerenderedSections(html, sections),
+    html,
+    "run npm run prerender:sync",
+  );
 });

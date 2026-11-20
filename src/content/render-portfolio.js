@@ -1,9 +1,5 @@
 import { portfolioContent } from "./portfolio.js";
 
-const desktopImageSizes =
-  "(min-width: 1360px) 583px, (min-width: 1101px) calc(50vw - 93px), (min-width: 761px) calc(50vw - 65px), calc(100vw - 66px)";
-const mobileImageSizes = "calc(100vw - 66px)";
-
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -41,62 +37,6 @@ function anchor(link, label, className = "text-link") {
     '" target="_blank" rel="noopener noreferrer">' +
     escapeHtml(label) +
     '<span aria-hidden="true">↗</span></a>'
-  );
-}
-
-function webpSource(image, sizes, media = "") {
-  if (!image?.webp?.length) return "";
-  const mediaAttribute = media ? 'media="' + media + '" ' : "";
-  const candidates = image.webp
-    .map(
-      (candidate) =>
-        escapeHtml(candidate.src) + " " + candidate.width + "w",
-    )
-    .join(", ");
-  return (
-    "<source " +
-    mediaAttribute +
-    'type="image/webp" srcset="' +
-    candidates +
-    '" sizes="' +
-    sizes +
-    '">'
-  );
-}
-
-function productImage(product, copy, language) {
-  const localizedImage = product.image[language];
-  const desktopImage = localizedImage?.desktop ?? product.image;
-  const mobileImage = localizedImage?.mobile;
-
-  return (
-    '<figure class="portfolio-product-visual">' +
-    "<picture>" +
-    (mobileImage
-      ? webpSource(
-          mobileImage,
-          mobileImageSizes,
-          "(max-width: 760px)",
-        )
-      : "") +
-    (mobileImage
-      ? '<source media="(max-width: 760px)" srcset="' +
-        escapeHtml(mobileImage.src) +
-        '" type="image/png">'
-      : "") +
-    webpSource(desktopImage, desktopImageSizes) +
-    '<img src="' +
-    escapeHtml(desktopImage.src) +
-    '" alt="' +
-    escapeHtml(copy.imageAlt) +
-    '" width="' +
-    desktopImage.width +
-    '" height="' +
-    desktopImage.height +
-    '" loading="lazy" decoding="async"></picture>' +
-    '<figcaption><span>' +
-    escapeHtml(copy.imageCaption) +
-    "</span></figcaption></figure>"
   );
 }
 
@@ -212,233 +152,174 @@ function renderIndexExperience(language) {
   );
 }
 
-function renderProductCopy(product, language, concept, index) {
-  const copy = product[language];
-  const links =
-    '<div class="product-links">' +
-    product.links
-      .map((link) =>
-        anchor(link, copy.linkLabels?.[link.type] ?? copy.linkLabel, "text-link product-repo-link"),
+const defaultLinkLabels = {
+  en: { code: "Code", tests: "Tests and CI" },
+  pt: { code: "Código", tests: "Testes e CI" },
+};
+
+function figure(image, alt, caption, className, loading = "lazy") {
+  return (
+    '<figure class="portfolio-product-visual ' +
+    className +
+    '"><img src="' +
+    escapeHtml(image.src) +
+    '" alt="' +
+    escapeHtml(alt) +
+    '" width="' +
+    image.width +
+    '" height="' +
+    image.height +
+    '" loading="' +
+    loading +
+    '" decoding="async"><figcaption><span>' +
+    escapeHtml(caption) +
+    "</span></figcaption></figure>"
+  );
+}
+
+function renderFlagshipMetrics(flagship, language, copy) {
+  return (
+    '<div class="atlas-metrics-block"><dl class="atlas-metrics" aria-label="' +
+    escapeHtml(copy.metricsLabel) +
+    '">' +
+    flagship.metrics
+      .map(
+        (metric) =>
+          "<div><dt>" +
+          escapeHtml(metric.label[language]) +
+          "</dt><dd>" +
+          escapeHtml(metric.value[language]) +
+          "</dd></div>",
       )
       .join("") +
-    "</div>";
-  const privateNote = copy.privateNote
-    ? '<p class="private-project-note">' + escapeHtml(copy.privateNote) + "</p>"
-    : "";
-  const identity =
-    concept === "field"
-      ? '<p class="project-category"><span>0' +
-        (index + 1) +
-        " /</span> " +
-        escapeHtml(product.category) +
-        '</p><span class="product-status">' +
-        escapeHtml(copy.status) +
-        "</span>"
-      : '<p class="project-category"><span>0' +
-        (index + 1) +
-        " /</span> " +
-        escapeHtml(product.category) +
-        '</p><p class="product-status">' +
-        escapeHtml(copy.status) +
-        "</p>";
+    '</dl><p class="atlas-metrics-note">' +
+    escapeHtml(copy.metricsNote) +
+    "</p></div>"
+  );
+}
+
+function renderFlagshipTour(flagship, copy) {
   return (
-    '<div class="product-copy ' +
-    (concept === "field" ? "field-product-copy" : "index-product-copy") +
+    '<section class="atlas-tour reveal" aria-labelledby="atlas-tour-title"><h4 id="atlas-tour-title">' +
+    escapeHtml(copy.tourLabel) +
+    '</h4><ul class="atlas-tour-grid">' +
+    flagship.tour
+      .map((entry) => {
+        const item = copy.tour[entry.key];
+        return (
+          '<li class="atlas-tour-item">' +
+          figure(flagship.images[entry.key], item.alt, item.name, "atlas-tour-figure") +
+          "<p>" +
+          escapeHtml(item.caption) +
+          "</p>" +
+          anchor(entry, copy.tourOpen + ": " + item.name, "text-link") +
+          "</li>"
+        );
+      })
+      .join("") +
+    "</ul></section>"
+  );
+}
+
+function renderFlagshipChapter(chapter, index) {
+  const points = chapter.points?.length
+    ? '<ul class="atlas-chapter-points">' +
+      chapter.points.map((point) => "<li>" + escapeHtml(point) + "</li>").join("") +
+      "</ul>"
+    : "";
+  return (
+    '<li class="atlas-chapter reveal"><p class="atlas-chapter-label"><span>0' +
+    (index + 1) +
+    "</span> " +
+    escapeHtml(chapter.label) +
+    '</p><div class="atlas-chapter-body"><div class="atlas-chapter-text"><h4>' +
+    escapeHtml(chapter.title) +
+    "</h4><p>" +
+    escapeHtml(chapter.body) +
+    "</p>" +
+    points +
+    "</div></div></li>"
+  );
+}
+
+function renderFlagship(language) {
+  const flagship = portfolioContent.flagship;
+  const copy = flagship[language];
+  return (
+    '<article class="atlas-case" aria-labelledby="product-' +
+    flagship.id +
+    '"><div class="atlas-lead reveal">' +
+    figure(flagship.images.home, copy.imageAlt, copy.imageCaption, "atlas-lead-figure") +
+    '<div class="atlas-lead-copy"><p class="project-category">' +
+    escapeHtml(flagship.category) +
+    '</p><p class="product-status">' +
+    escapeHtml(copy.status) +
+    '</p><h3 id="product-' +
+    flagship.id +
     '">' +
-    identity +
-    '<h3 id="product-' +
-    product.id +
-    '">' +
-    escapeHtml(product.name) +
+    escapeHtml(flagship.name) +
     "</h3><h4>" +
     escapeHtml(copy.headline) +
     "</h4><p>" +
     escapeHtml(copy.description) +
-    '</p><p class="product-detail">' +
-    escapeHtml(copy.details) +
     "</p>" +
-    techTags(product.technologies) +
-    links +
-    privateNote +
-    "</div>"
+    techTags(flagship.technologies) +
+    '<div class="product-links">' +
+    flagship.links
+      .map((link) => anchor(link, copy.linkLabels[link.type], "text-link product-repo-link"))
+      .join("") +
+    "</div></div></div>" +
+    renderFlagshipMetrics(flagship, language, copy) +
+    renderFlagshipTour(flagship, copy) +
+    '<ol class="atlas-chapters">' +
+    copy.chapters
+      .map((chapter, index) => renderFlagshipChapter(chapter, index))
+      .join("") +
+    "</ol></article>"
   );
 }
 
-function renderFieldProducts(language) {
+function renderOtherWork(language) {
   return (
-    '<div class="field-product-list">' +
-    portfolioContent.products
-      .map(
-        (product, index) =>
-          '<article class="field-product-case reveal' +
-          (index % 2 ? " is-reversed" : "") +
-          '" data-reveal="' +
-          (index % 2 ? "right" : "left") +
-          '" style="--reveal-delay:' +
-          index * 110 +
-          'ms" aria-labelledby="product-' +
-          product.id +
+    '<ol class="work-ledger">' +
+    portfolioContent.otherWork
+      .map((project, index) => {
+        const copy = project[language];
+        const usage = project.command
+          ? '<p class="work-command"><code>' + escapeHtml(project.command) + "</code></p>"
+          : "";
+        return (
+          '<li class="work-row reveal" aria-labelledby="work-' +
+          project.id +
+          '"><span class="work-number">' +
+          String(index + 1).padStart(2, "0") +
+          '</span><div class="work-title"><p class="project-category">' +
+          escapeHtml(project.category) +
+          '</p><h3 id="work-' +
+          project.id +
           '">' +
-          renderProductCopy(product, language, "field", index) +
-          productImage(product, product[language], language) +
-          "</article>",
-      )
-      .join("") +
-    "</div>"
-  );
-}
-
-function renderIndexProducts(language) {
-  return (
-    '<div class="index-product-grid">' +
-    portfolioContent.products
-      .map(
-        (product, index) =>
-          '<article class="index-product-card reveal" data-reveal="' +
-          (index % 2 ? "right" : "left") +
-          '" style="--reveal-delay:' +
-          index * 110 +
-          'ms" aria-labelledby="product-' +
-          product.id +
-          '"><span class="index-card-number">0' +
-          (index + 1) +
-          "</span>" +
-          productImage(product, product[language], language) +
-          renderProductCopy(product, language, "index", index) +
-          "</article>",
-      )
-      .join("") +
-    "</div>"
-  );
-}
-
-function linkLabel(copy, type) {
-  if (copy.linkLabels?.[type]) return copy.linkLabels[type];
-  if (type === "tests") return copy.testsLabel;
-  if (type === "demo") return copy.demoLabel;
-  return copy.codeLabel;
-}
-
-function renderFieldTools(language) {
-  const copy = language === "en" ? "en" : "pt";
-  return (
-    '<div class="field-open-source-ledger">' +
-    portfolioContent.openSourceProjects
-      .map((project, index) => {
-        const localized = project[copy];
-        const standardLinks = project.links
-          .filter(({ type }) => type !== "demo")
-          .map((link) => anchor(link, linkLabel(localized, link.type)))
-          .join("");
-        const demoLink = project.links.find(({ type }) => type === "demo");
-        return (
-          '<article class="field-open-source-row reveal"><span class="field-entry-number">0' +
-          (index + 1) +
-          '</span><div class="field-tool-copy"><p class="project-category">' +
-          escapeHtml(project.category) +
-          "</p><h3>" +
           escapeHtml(project.name) +
-          "</h3><h4>" +
-          escapeHtml(localized.headline) +
+          "</h3>" +
+          (copy.status ? '<p class="work-status">' + escapeHtml(copy.status) + "</p>" : "") +
+          '</div><div class="work-copy"><h4>' +
+          escapeHtml(copy.headline) +
           "</h4><p>" +
-          escapeHtml(localized.description) +
-          '</p><p class="project-decision">' +
-          escapeHtml(localized.decision) +
+          escapeHtml(copy.description) +
           "</p>" +
+          usage +
+          '<div class="work-meta">' +
           techTags(project.technologies) +
-          '<details class="field-tool-demo"><summary>' +
-          escapeHtml(localized.exampleLabel) +
-          "</summary><pre><code>" +
-          escapeHtml(project.command) +
-          "</code></pre><p>" +
-          escapeHtml(localized.demo) +
-          "</p>" +
-          (demoLink
-            ? anchor(demoLink, localized.demoLabel)
-            : "") +
-          "</details><div class=\"project-links\">" +
-          standardLinks +
-          "</div></div></article>"
-        );
-      })
-      .join("") +
-    "</div>"
-  );
-}
-
-function renderIndexTools(language) {
-  const copy = language === "en" ? "en" : "pt";
-  return (
-    '<div class="index-tool-list">' +
-    '<span class="index-grid-cross index-grid-cross--half" aria-hidden="true"></span>' +
-    portfolioContent.openSourceProjects
-      .map((project, index) => {
-        const localized = project[copy];
-        const [executable, ...commandArguments] = project.command.split(/\s+/);
-        const terminalCommand =
-          '<span class="terminal-executable">' +
-          escapeHtml(executable) +
-          "</span> " +
-          commandArguments
-            .map(
-              (argument) =>
-                '<span class="' +
-                (argument.startsWith("--")
-                  ? "terminal-flag"
-                  : "terminal-argument") +
-                '">' +
-                escapeHtml(argument) +
-                "</span>",
-            )
-            .join(" ");
-        const terminalMarkup =
-          '<div class="index-terminal" role="group" aria-label="' +
-          escapeHtml(
-            language === "en"
-              ? "Usage example for " + project.name
-              : "Exemplo de uso de " + project.name,
-          ) +
-          '"><div class="index-terminal-head"><span><i aria-hidden="true"></i>' +
-          "TERMINAL" +
-          "</span><span>" +
-          escapeHtml(project.category) +
-          '</span></div><pre><code><span class="terminal-prompt" aria-hidden="true">$</span> ' +
-          terminalCommand +
-          '</code></pre><div class="index-terminal-flow"><span>' +
-          (language === "en" ? "EXPECTED FLOW" : "FLUXO ESPERADO") +
-          "</span><p>" +
-          escapeHtml(localized.demo) +
-          "</p></div></div>";
-        return (
-          '<article class="index-tool-row reveal" data-reveal="' +
-          (index === 2 ? "scale" : index === 0 ? "left" : "right") +
-          '" style="--reveal-delay:' +
-          index * 95 +
-          'ms">' +
-          '<span class="index-card-number">0' +
-          (index + 1) +
-          '</span><div class="index-tool-title"><p class="project-category">' +
-          escapeHtml(project.category) +
-          "</p><h3>" +
-          escapeHtml(project.name) +
-          "</h3></div><div class=\"index-tool-description\"><h4>" +
-          escapeHtml(localized.headline) +
-          "</h4><p>" +
-          escapeHtml(localized.description) +
-          '</p><p class="project-decision">' +
-          escapeHtml(localized.decision) +
-          "</p>" +
-          techTags(project.technologies) +
-          terminalMarkup +
           '<div class="project-links">' +
           project.links
-            .map((link) => anchor(link, linkLabel(localized, link.type)))
+            .map((link) =>
+              anchor(link, copy.linkLabels?.[link.type] ?? defaultLinkLabels[language][link.type]),
+            )
             .join("") +
-          "</div></div></article>"
+          "</div></div></div></li>"
         );
       })
       .join("") +
-    "</div>"
+    "</ol>"
   );
 }
 
@@ -450,21 +331,15 @@ export function renderPortfolioSection(section, { concept, language }) {
     return selectedConcept === "field"
       ? renderFieldExperience(selectedLanguage)
       : renderIndexExperience(selectedLanguage);
-  if (section === "products")
-    return selectedConcept === "field"
-      ? renderFieldProducts(selectedLanguage)
-      : renderIndexProducts(selectedLanguage);
-  if (section === "projects")
-    return selectedConcept === "field"
-      ? renderFieldTools(selectedLanguage)
-      : renderIndexTools(selectedLanguage);
+  if (section === "atlas") return renderFlagship(selectedLanguage);
+  if (section === "work") return renderOtherWork(selectedLanguage);
   return "";
 }
 
 export function renderPortfolioSections(parameters) {
   return {
     experience: renderPortfolioSection("experience", parameters),
-    products: renderPortfolioSection("products", parameters),
-    projects: renderPortfolioSection("projects", parameters),
+    atlas: renderPortfolioSection("atlas", parameters),
+    work: renderPortfolioSection("work", parameters),
   };
 }

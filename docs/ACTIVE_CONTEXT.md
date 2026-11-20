@@ -4,12 +4,37 @@ Handoff between sessions. Read this first; update it before you stop. This file
 is the shared state for both Claude Code and OpenCode, so it must describe the
 real repository, not a plan.
 
-Status: current as of 2026-11-18. Revalidate with `git status` and `git log`
+Status: current as of 2026-11-20. Revalidate with `git status` and `git log`
 before acting on anything below.
+
+## In progress (2026-11-20): ATLAS as the absolute flagship
+
+Branch `feat/atlas-flagship` (from `main` at `badc6db`), **uncommitted, not
+pushed, not deployed**.
+
+- Order is now Hero → `01 ATLAS` (flagship case study) → `02 Experience` →
+  `03 Other work` → Approach → About → Contact. Nav: ATLAS · Experience · Work.
+- Hero CTA points to `#atlas` ("Read the ATLAS case study"); hero copy mentions
+  ATLAS in EN and PT.
+- `portfolio.js` now has `flagship` (ATLAS: metrics, six chapters, two
+  captures) and `otherWork` (8 compact rows, no images). `products` and
+  `openSourceProjects` were removed; Black Market became a row.
+- ATLAS numbers come from the ATLAS release `5974a46` (graph of 2026-11-18):
+  1,320 entities, 12,146 claims (all cited, none human-reviewed yet), 1,482
+  sources, 3,025 relations; the claim classes add up to 12,146.
+- New `styles/components/flagship.css`; removed the global 1425/1400 crop on
+  product captures (nothing is paired any more).
+- New `npm run prerender:sync` (`scripts/sync-prerender.mjs`) plus a test that
+  fails when `index.html` drifts from `portfolio.js`.
+- Verified: `npm test` 56/56, `npm run build` OK, visual check at 1440, 375 and
+  320 px, PT and EN, light and dark, 200% text without overflow.
+- Captures of the local ATLAS (rebranding, 2026-11-20): `public/atlas-{home,reading,itineraries,graph,map}.webp`; the flagship has a four-page tour (readings, itineraries, graph, map).
+- `cv/*.tex` updated to 1,320 / 12,146 / 1,482 / 3,025 in text only; PDFs in `cv/` and `public/` NOT rebuilt (no LaTeX here: use tectonic).
+- Not done: Lighthouse re-audit, rebuilding the PDFs, GitHub pins (web UI only).
 
 ## Repository
 
-- Current branch: `codex/portfolio-comandinha-visuals`, synchronized with
+- Previous branch: `codex/portfolio-comandinha-visuals`, synchronized with
   `main` (`origin/main` and `origin/codex/portfolio-comandinha-visuals`).
 - Sibling repository updated alongside this work:
   `C:\Users\Bellussi\Documents\Workspace\Portifolio\github-profile-readme`

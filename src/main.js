@@ -7,6 +7,7 @@ import "../styles/concepts/index-atmosphere.css";
 import "../styles/variants/zilla.css";
 import "../styles/variants/typography.css";
 import "../styles/components/wordmark.css";
+import "../styles/components/flagship.css";
 import { initialLanguage } from "./utils/language.js";
 import { portuguese } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
@@ -70,8 +71,8 @@ function syncPortfolioContent({ frameByFrame = false } = {}) {
   };
   const targets = [
     ["experience", document.querySelector('[data-portfolio-content="experience"]')],
-    ["products", document.querySelector('[data-portfolio-content="products"]')],
-    ["projects", document.querySelector('[data-portfolio-content="projects"]')],
+    ["atlas", document.querySelector('[data-portfolio-content="atlas"]')],
+    ["work", document.querySelector('[data-portfolio-content="work"]')],
   ];
   function complete() {}
   if (frameByFrame) {
