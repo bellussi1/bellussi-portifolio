@@ -1,0 +1,274 @@
+/* Type scale, touch targets, motion and spacing polish for the index concept.
+   Order matters: this file loads after the concept styles. */
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+/* ---------- Type ---------- */
+
+/* Mono labels never go under 13px. The old 11 to 12px labels were the main
+   readability complaint on phones. */
+html[data-concept="index"] :is(
+  .eyebrow,
+  .project-category,
+  .product-status,
+  .work-status,
+  .work-stack,
+  .atlas-chapter-label,
+  .atlas-metrics dt,
+  .atlas-metrics-note,
+  .card-bottom,
+  .tech-tags li,
+  .confidentiality-note,
+  .index-hero-meta span,
+  .index-experience-table thead th,
+  .index-experience-entry > th,
+  .index-experience-organization .role-pill,
+  .index-experience-organization .role-label
+) {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+html[data-concept="index"] .outcome-list li,
+html[data-concept="index"] .experience-details p,
+html[data-concept="index"] .atlas-chapter-points {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+html[data-concept="index"] :is(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+
+html[data-concept="index"] :is(p, li) {
+  text-wrap: pretty;
+}
+
+html[data-concept="index"] :is(.atlas-metrics dd, .atlas-metrics dd a) {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+html[data-concept="index"] .section-heading h2 {
+  max-width: 22ch;
+}
+
+/* Links and buttons share one readable size. */
+html[data-concept="index"] :is(.text-link, .button, .navigation a) {
+  font-size: 0.9375rem;
+}
+
+/* ---------- Touch targets ---------- */
+
+@media (hover: none), (pointer: coarse) {
+  html[data-concept="index"] :is(
+    .text-link,
+    .project-links a,
+    .language-control button,
+    .header-controls button,
+    .atlas-tab,
+    .atlas-chapter summary
+  ) {
+    min-height: 44px;
+  }
+
+  html[data-concept="index"] :is(.text-link, .project-links a) {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ---------- Press feedback ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .atlas-tab,
+  .work-tile,
+  .atlas-metrics > div,
+  .atlas-chapter summary {
+    transition: scale 120ms var(--ease-out);
+  }
+
+  .atlas-tab:active,
+  .atlas-metrics > div:active,
+  .atlas-chapter summary:active {
+    scale: 0.98;
+  }
+
+  html[data-concept="index"] .work-tile.is-visible:active {
+    transform: scale(0.98);
+  }
+
+  /* Scroll reveals use one transform. The earlier rules mixed the individual
+     translate and scale properties, and the build rewrote them in a way that
+     left the directional offset stuck. */
+  html[data-motion="enabled"][data-concept="index"] .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    translate: none;
+    scale: none;
+    transition:
+      opacity 560ms var(--ease-out),
+      transform 560ms var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html[data-motion="enabled"][data-concept="index"] .reveal[data-reveal] {
+    translate: none;
+    scale: none;
+  }
+
+  html[data-motion="enabled"][data-concept="index"] .reveal[data-reveal="down"] {
+    transform: translateY(-20px);
+  }
+
+  html[data-motion="enabled"][data-concept="index"] .reveal[data-reveal="scale"] {
+    transform: scale(0.96);
+  }
+
+  html[data-motion="enabled"][data-concept="index"] .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    translate: none;
+    scale: none;
+  }
+
+  /* Once a tile has revealed, only the press scale still animates. */
+  html[data-motion="enabled"][data-concept="index"] .work-tile.is-visible {
+    transition: transform 120ms var(--ease-out);
+  }
+
+  /* Tile arrow: appears where the pointer is heading. */
+  .work-tile h3 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .work-tile h3::after {
+    color: var(--accent);
+    content: "\2197";
+    opacity: 0;
+    transform: translate(-6px, 6px);
+    transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out);
+  }
+
+  .work-tile:hover h3::after,
+  .work-tile:focus-within h3::after {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  /* Tab panels fade in. Hiding stays instant so layout never holds two. */
+  .atlas-panel {
+    transition: opacity 160ms var(--ease-out);
+  }
+
+  @starting-style {
+    .atlas-panel {
+      opacity: 0;
+    }
+  }
+
+  /* Chapters open and close smoothly where the browser can animate height. */
+  .atlas-chapter {
+    interpolate-size: allow-keywords;
+  }
+
+  .atlas-chapter::details-content {
+    height: 0;
+    overflow: clip;
+    opacity: 0;
+    transition:
+      height 150ms var(--ease-out),
+      opacity 120ms var(--ease-out),
+      content-visibility 150ms allow-discrete;
+  }
+
+  .atlas-chapter[open]::details-content {
+    height: auto;
+    opacity: 1;
+    transition-duration: 240ms, 200ms, 240ms;
+  }
+
+  .atlas-chapter .details-icon {
+    transition: rotate 180ms var(--ease-out);
+  }
+
+  /* Staggered entrance for the project tiles: under 50ms per step. */
+  .work-tile:nth-child(even) {
+    --reveal-delay: 40ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-panel,
+  .atlas-chapter::details-content {
+    transition: opacity 120ms linear;
+  }
+
+  .atlas-chapter .details-icon {
+    transition: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+/* The tab bar scrolls on narrow screens and hints that there is more. */
+@media (max-width: 760px) {
+  .atlas-tablist {
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+
+  .atlas-tablist::-webkit-scrollbar {
+    display: none;
+  }
+
+  .atlas-tab {
+    scroll-snap-align: start;
+  }
+
+  html[data-concept="index"] .section-heading h2 {
+    max-width: none;
+  }
+}
+
+/* A phone held sideways: shorter hero and tighter sections. */
+@media (max-height: 480px) and (orientation: landscape) {
+  html[data-concept="index"] .hero {
+    min-height: 0;
+    padding-block: 24px 40px;
+  }
+
+  html[data-concept="index"] .section {
+    padding-block: 40px;
+  }
+}
+
+/* Wide screens keep the measure readable. */
+@media (min-width: 1600px) {
+  html[data-concept="index"] .atlas-chapter-body p,
+  html[data-concept="index"] .work-description {
+    max-width: 68ch;
+  }
+}
+
+/* Large text: the header wraps instead of pushing the page sideways. */
+html[data-concept="index"] .header-inner {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+html[data-concept="index"] .navigation {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 4px;
+}

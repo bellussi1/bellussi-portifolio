@@ -4,7 +4,7 @@ html[data-concept="index"] {
   --grid-line: rgb(77 64 51 / .055);
   --grid-cross: rgb(126 65 47 / .34);
   --geometry-line: rgb(126 65 47 / .19);
-  --button-accent: #7e412f;
+  --button-accent: #b02a1a;
 }
 
 html[data-concept="index"] body::before {
@@ -547,12 +547,12 @@ html[data-theme="light"][data-concept="index"] .engineering-visual.index-hero-vi
   border-color: #938b79;
   background: #ddd8ca;
   box-shadow: 10px 10px 0 #c3bcad;
-  --accent: #884a35;
-  --line: #aaa291;
-  --muted: #5c594f;
-  --raised: #eeeae0;
-  --technical: #76684f;
-  --text: #2d2b25;
+  --accent: #b02a1a;
+  --line: #b9ae96;
+  --muted: #4a443a;
+  --raised: #efe9d9;
+  --technical: #3a3f6b;
+  --text: #1c1915;
 }
 
 html[data-theme="light"][data-concept="index"] .engineering-visual.index-hero-visual::before {
@@ -619,19 +619,19 @@ html[data-theme="light"][data-concept="index"] .index-hero-visual .code-fragment
 /* Dark mode keeps the same warm paper-and-ink character with clear text contrast. */
 html[data-theme="dark"][data-concept="index"] {
   color-scheme: dark;
-  --bg: #1d1c19;
-  --surface: #25231f;
-  --raised: #302d27;
-  --text: #eeeae1;
-  --muted: #c5beb1;
-  --accent: #d18b69;
-  --line: #5a554c;
-  --technical: #d2ad98;
-  --index-black: #48433c;
-  --grid-line: rgb(238 234 225 / .055);
-  --grid-cross: rgb(229 161 132 / .44);
-  --geometry-line: rgb(199 126 91 / .22);
-  --button-accent: #82412f;
+  --bg: #14120f;
+  --surface: #1d1a16;
+  --raised: #29241e;
+  --text: #f4efe3;
+  --muted: #c8bfae;
+  --accent: #f08a5d;
+  --line: #4d463b;
+  --technical: #8fcfc5;
+  --index-black: #5a5245;
+  --grid-line: rgb(244 239 227 / .055);
+  --grid-cross: rgb(240 138 93 / .5);
+  --geometry-line: rgb(240 138 93 / .22);
+  --button-accent: #b83a1d;
 }
 
 html[data-theme="dark"][data-concept="index"] body,

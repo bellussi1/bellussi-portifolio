@@ -32,6 +32,14 @@ pushed, not deployed**.
 - `cv/*.tex` updated to 1,320 / 12,146 / 1,482 / 3,025 in text only; PDFs in `cv/` and `public/` NOT rebuilt (no LaTeX here: use tectonic).
 - Not done: Lighthouse re-audit, rebuilding the PDFs, GitHub pins (web UI only).
 
+## UI polish (2026-11-20, branch feat/ui-polish, unmerged)
+
+- New palettes: dark `#14120f` with coral accent `#f08a5d`; light `#f2ede0` with ATLAS red `#b02a1a`. Mono labels now 13px minimum, secondary text 15px, `text-wrap` balance/pretty.
+- The scroll-reveal CSS had no observer (nothing set `data-motion` or `.is-visible`). `src/utils/reveal.js` now does, and `polish.css` owns the reveal as one `transform` because the build rewrote the individual `translate`/`scale` properties and left the offset stuck.
+- Motion follows the motion skill: no hover colour transitions, press scale 0.98, arrow on tile hover, tab panel fade, animated accordion via `::details-content`, metric count-up (`src/utils/count-up.js`), all under `prefers-reduced-motion`.
+- Header wraps at large text (200% no longer overflows at 1024 or 812x375). 44px targets on touch.
+- Tests 62/62; contrast audit clean (one false positive: closed `<details>`); no sideways overflow at 320 to 1440.
+
 ## Compact layout (2026-11-20, branch feat/compact-layout, unmerged)
 
 - True page height at 1440 px went from ~12.3k (inflated by stale `contain-intrinsic-size`) to ~6.9k; 375 px ~9.9k. Measure with `content-visibility: visible !important`, otherwise offscreen sections report placeholder heights.

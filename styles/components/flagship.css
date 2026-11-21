@@ -124,7 +124,6 @@ html[data-concept="index"] .section-heading {
   color: var(--muted);
   cursor: pointer;
   font: 600 0.9375rem / 1 var(--font);
-  transition: color 150ms ease-out, background-color 150ms ease-out;
 }
 
 .atlas-tab:hover {
@@ -185,7 +184,6 @@ html[data-concept="index"] .section-heading {
   flex-direction: column;
   gap: 4px;
   padding: 16px 16px 16px 0;
-  transition: background-color 150ms ease-out;
 }
 
 .atlas-metrics > div + div {
@@ -251,7 +249,6 @@ html[data-concept="index"] .section-heading {
   padding-block: 16px;
   cursor: pointer;
   list-style: none;
-  transition: background-color 150ms ease-out;
 }
 
 .atlas-chapter summary::-webkit-details-marker {
@@ -333,7 +330,6 @@ html[data-concept="index"] .section-heading {
   position: relative;
   padding: 20px 24px 20px 0;
   border-bottom: 1px solid var(--line);
-  transition: background-color 150ms ease-out;
 }
 
 .work-tile:nth-child(even) {

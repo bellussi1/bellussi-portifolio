@@ -8,6 +8,7 @@ import "../styles/variants/zilla.css";
 import "../styles/variants/typography.css";
 import "../styles/components/wordmark.css";
 import "../styles/components/flagship.css";
+import "../styles/components/polish.css";
 import { initialLanguage } from "./utils/language.js";
 import { portuguese } from "./translations.js";
 import { syncPageMetadata } from "./utils/page-metadata.js";
@@ -18,6 +19,8 @@ import {
 } from "./utils/content-update.js";
 import { renderScrollProgress } from "./utils/scroll-progress.js";
 import { initTabs } from "./utils/tabs.js";
+import { initReveal } from "./utils/reveal.js";
+import { initCountUp } from "./utils/count-up.js";
 import {
   renderPortfolioSection,
   renderPortfolioSections,
@@ -96,6 +99,8 @@ function syncPortfolioContent({ frameByFrame = false } = {}) {
 }
 
 initTabs(document);
+initReveal();
+initCountUp();
 if (language !== "en") syncPortfolioContent({ frameByFrame: true });
 const translatedElements = [...document.querySelectorAll("[data-i18n]")];
 const translatedAltElements = [...document.querySelectorAll("[data-i18n-alt]")];
