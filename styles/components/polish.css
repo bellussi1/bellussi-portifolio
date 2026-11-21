@@ -272,3 +272,98 @@ html[data-concept="index"] .navigation {
   justify-content: center;
   row-gap: 4px;
 }
+
+/* ---------- Motion tokens ---------- */
+
+:root {
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 440ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Theme switch: the browser cross-fades two snapshots of the page, so
+     colours never pass through an in-between state and nothing flashes. */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--dur-base);
+    animation-timing-function: var(--ease-out);
+    mix-blend-mode: normal;
+  }
+
+  /* Navigation: an underline grows from the left on hover and stays on the
+     current section. Only transform animates. */
+  html[data-concept="index"] .navigation a {
+    position: relative;
+  }
+
+  html[data-concept="index"] .navigation a::after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    height: 1px;
+    background: var(--accent);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  html[data-concept="index"] .navigation a:is(:hover, :focus-visible)::after,
+  html[data-concept="index"] .navigation a[aria-current="location"]::after {
+    transform: scaleX(1);
+  }
+
+  /* Text links: the rule under them is a bar that scales in place. */
+  html[data-concept="index"] .text-link {
+    position: relative;
+    border-bottom-color: transparent;
+  }
+
+  html[data-concept="index"] .text-link::before {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    background: var(--line-strong);
+    content: "";
+  }
+
+  html[data-concept="index"] .text-link::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    background: var(--accent-hover);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  html[data-concept="index"] .text-link:is(:hover, :focus-visible)::after {
+    transform: scaleX(1);
+  }
+
+  /* Tiles lift a few pixels under a fine pointer. */
+  @media (hover: hover) and (pointer: fine) {
+    html[data-motion="enabled"][data-concept="index"] .work-tile.is-visible:hover {
+      transform: translateY(-3px);
+      transition: transform var(--dur-fast) var(--ease-out);
+    }
+
+    html[data-motion="enabled"][data-concept="index"] .work-tile.is-visible:active {
+      transform: translateY(-3px) scale(0.98);
+    }
+  }
+}
+
+/* One timing for every reveal: 440 ms instead of 560 ms. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion="enabled"][data-concept="index"] .reveal {
+    transition-duration: var(--dur-slow), var(--dur-slow);
+  }
+}

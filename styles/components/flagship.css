@@ -19,6 +19,9 @@ html[data-concept="index"] #atlas {
   --muted: #4c473f;
   --accent: #b81d16;
   --line: #c9bfa9;
+  --line-strong: #857a63;
+  --accent-hover: #7a1410;
+  --focus: #b81d16;
   --index-black: #141211;
   --technical: #363a5f;
   --grid-line: rgb(20 18 17 / 0.07);
@@ -34,6 +37,9 @@ html[data-concept="index"] #work {
   --muted: #c9c8d6;
   --accent: #eec35a;
   --line: #4b5078;
+  --line-strong: #7f86b8;
+  --accent-hover: #f6d68a;
+  --focus: #eec35a;
   --index-black: #f5f0e4;
   --technical: #7fbdb5;
   --grid-line: rgb(245 240 228 / 0.07);
@@ -372,7 +378,7 @@ html[data-concept="index"] .section-heading {
   display: inline-block;
   margin-bottom: 6px;
   padding: 2px 6px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   color: var(--accent);
   font: 12px ui-monospace, monospace;
 }
