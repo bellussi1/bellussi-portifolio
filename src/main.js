@@ -1,5 +1,6 @@
 import "../styles/modern-normalize.css";
 import "../styles/style.css";
+import "../styles/tokens.css";
 import "../styles/components/projects.css";
 import "../styles/components/premium.css";
 import "../styles/concepts/pixel-index.css";
@@ -56,7 +57,7 @@ function updateThemeControl() {
   if (themeColor) themeColor.content = dark ? "#1d1c19" : "#e9e5da";
 }
 
-themeToggle.addEventListener("click", () => {
+function applyTheme() {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
   try {
     localStorage.setItem("portfolio-theme", root.dataset.theme);
@@ -64,6 +65,19 @@ themeToggle.addEventListener("click", () => {
     /* Theme switching still works when storage is unavailable. */
   }
   updateThemeControl();
+}
+
+themeToggle.addEventListener("click", () => {
+  // A view transition cross-fades the whole page, so no element repaints in a
+  // half-switched state. Without support, or under reduced motion, it is instant.
+  if (
+    typeof document.startViewTransition === "function" &&
+    !matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    document.startViewTransition(applyTheme);
+  } else {
+    applyTheme();
+  }
 });
 updateThemeControl();
 
@@ -199,10 +213,13 @@ function setLanguage(nextLanguage, { persist = true } = {}) {
   ) {
     languageTransition = document
       .querySelector("main")
-      .animate?.([{ opacity: 0.45 }, { opacity: 1 }], {
-        duration: 220,
-        easing: "ease-out",
-      });
+      .animate?.(
+        [
+          { opacity: 0.4, transform: "translateY(6px)" },
+          { opacity: 1, transform: "none" },
+        ],
+        { duration: 280, easing: "cubic-bezier(0.23, 1, 0.32, 1)" },
+      );
   }
   if (persist) {
     try {

@@ -1,0 +1,81 @@
+/* Colour tokens in two layers.
+   1. Primitives (--p-*): raw values, no meaning, never used in components.
+   2. Semantic roles: what components read. Each theme maps roles to primitives,
+      so dark is its own palette (warm black, coral, teal), not an inversion.
+
+   Measured contrast (WCAG 2.x, relative luminance):
+     text on bg ................ dark 16.3  light 15.0   (needs 4.5)
+     muted on raised ........... dark  8.4  light  7.2   (needs 4.5)
+     accent on raised .......... dark  6.2  light  4.9   (needs 4.5)
+     technical on bg ........... dark 10.6  light  8.5   (needs 4.5)
+     on-accent on button ....... dark  5.5  light  6.6   (needs 4.5)
+     line-strong on bg ......... dark  3.7  light  3.6   (needs 3 for UI)
+     line on bg ................ dark  2.0  light  1.9   (decorative rules only) */
+
+:root {
+  /* paper and ink (light theme) */
+  --p-paper-100: #faf6ec;
+  --p-paper-200: #f2ede0;
+  --p-paper-300: #e6dec9;
+  --p-ink-900: #1c1915;
+  --p-ink-700: #4a443a;
+  --p-sand-300: #b9ae96;
+  --p-sand-500: #857a63;
+  --p-clay-600: #b02a1a;
+  --p-clay-800: #713a2c;
+  --p-indigo-600: #3a3f6b;
+
+  /* warm black and bone (dark theme) */
+  --p-night-950: #14120f;
+  --p-night-900: #1d1a16;
+  --p-night-800: #29241e;
+  --p-bone-50: #f4efe3;
+  --p-bone-200: #c8bfae;
+  --p-umber-700: #4d463b;
+  --p-umber-500: #766d5f;
+  --p-coral-400: #f08a5d;
+  --p-coral-300: #e5a184;
+  --p-rust-600: #b83a1d;
+  --p-rust-700: #9b533a;
+  --p-teal-300: #8fcfc5;
+
+  --p-cream: #fffaf1;
+}
+
+html[data-theme="light"][data-concept="index"] {
+  color-scheme: light;
+  --bg: var(--p-paper-200);
+  --surface: var(--p-paper-100);
+  --raised: var(--p-paper-300);
+  --text: var(--p-ink-900);
+  --muted: var(--p-ink-700);
+  --accent: var(--p-clay-600);
+  --accent-hover: var(--p-clay-800);
+  --line: var(--p-sand-300);
+  --line-strong: var(--p-sand-500);
+  --technical: var(--p-indigo-600);
+  --index-black: var(--p-ink-900);
+  --on-accent: var(--p-cream);
+  --button-accent: var(--p-clay-600);
+  --button-accent-hover: var(--p-clay-800);
+  --focus: var(--p-clay-600);
+}
+
+html[data-theme="dark"][data-concept="index"] {
+  color-scheme: dark;
+  --bg: var(--p-night-950);
+  --surface: var(--p-night-900);
+  --raised: var(--p-night-800);
+  --text: var(--p-bone-50);
+  --muted: var(--p-bone-200);
+  --accent: var(--p-coral-400);
+  --accent-hover: var(--p-coral-300);
+  --line: var(--p-umber-700);
+  --line-strong: var(--p-umber-500);
+  --technical: var(--p-teal-300);
+  --index-black: #5a5245;
+  --on-accent: var(--p-cream);
+  --button-accent: var(--p-rust-600);
+  --button-accent-hover: var(--p-rust-700);
+  --focus: var(--p-coral-400);
+}

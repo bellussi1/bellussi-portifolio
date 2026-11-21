@@ -7,6 +7,14 @@ real repository, not a plan.
 Status: current as of 2026-11-20. Revalidate with `git status` and `git log`
 before acting on anything below.
 
+## Palette tokens and motion pass (2026-11-21, branch feat/ui-polish, local commit, not pushed)
+
+- `styles/tokens.css` (imported right after `style.css`) is now the only place that defines theme colours: primitives `--p-*`, then semantic roles per theme. Added `--line-strong` (3:1 for interactive borders; `--line` stays decorative at ~2:1), `--accent-hover`, `--on-accent`, `--button-accent(-hover)`, `--focus`. The old token blocks in `pixel-index.css` and `index-atmosphere.css` were removed; `#atlas`/`#work` bands in `flagship.css` set their own `--line-strong`, `--accent-hover`, `--focus`.
+- Audit (computed styles, 146 text nodes per theme, transitions disabled): 0 text failures in both themes, min 5.44 dark / 5.63 light. Real gaps found: `--line` 2.01 dark / 1.88 light used for text-link underline and status pills; fixed with `--line-strong` (3.6 to 4.0). Earlier "failures" were reveal opacity and stalled colour transitions, not palette bugs.
+- `test/palette-contrast.test.js` guards the token pairs (68/68 tests).
+- Motion: theme switch uses `document.startViewTransition` (280 ms cross-fade, instant under reduced motion or without support); nav and text-link underlines scale in (transform only); tiles lift 3 px on fine pointers; language switch fades and rises 6 px; durations are `--dur-fast/base/slow` (160/280/440). Anchor jumps land 88 px below the top (header is 65 px).
+- Not run: Lighthouse (not installed; `npx -y lighthouse` was blocked by the permission classifier). Run it before publishing.
+
 ## In progress (2026-11-20): ATLAS as the absolute flagship
 
 Branch `feat/atlas-flagship` (from `main` at `badc6db`), **uncommitted, not

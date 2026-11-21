@@ -618,20 +618,9 @@ html[data-theme="light"][data-concept="index"] .index-hero-visual .code-fragment
 
 /* Dark mode keeps the same warm paper-and-ink character with clear text contrast. */
 html[data-theme="dark"][data-concept="index"] {
-  color-scheme: dark;
-  --bg: #14120f;
-  --surface: #1d1a16;
-  --raised: #29241e;
-  --text: #f4efe3;
-  --muted: #c8bfae;
-  --accent: #f08a5d;
-  --line: #4d463b;
-  --technical: #8fcfc5;
-  --index-black: #5a5245;
   --grid-line: rgb(244 239 227 / .055);
   --grid-cross: rgb(240 138 93 / .5);
   --geometry-line: rgb(240 138 93 / .22);
-  --button-accent: #b83a1d;
 }
 
 html[data-theme="dark"][data-concept="index"] body,
@@ -734,7 +723,7 @@ html[data-theme="dark"][data-concept="index"] .footer-links {
 html[data-theme="dark"][data-concept="index"] .contact-section .copy-email,
 html[data-theme="dark"][data-concept="index"] .contact-section .email-line > a:hover,
 html[data-theme="dark"][data-concept="index"] .contact-section .email-line > a:focus-visible {
-  color: #e5a184;
+  color: var(--accent-hover);
 }
 
 html[data-theme="dark"][data-concept="index"] .contact-section .button-primary,
@@ -748,12 +737,12 @@ html[data-theme="dark"][data-concept="index"] .contact-section .button-primary:h
 html[data-theme="dark"][data-concept="index"] .contact-section .button-primary:focus-visible,
 html[data-theme="dark"][data-concept="index"] .button-primary:hover,
 html[data-theme="dark"][data-concept="index"] .button-primary:focus-visible {
-  background-color: #9b533a;
+  background-color: var(--button-accent-hover);
 }
 
 html[data-theme="dark"][data-concept="index"] .text-link:hover {
-  color: #e5a184;
-  border-color: #e5a184;
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 html[data-theme="dark"][data-concept="index"] .pixel-cursor span {
