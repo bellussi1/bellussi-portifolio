@@ -1,20 +1,20 @@
 /* INDEX — a warm printed catalogue with clear columns and a clay-red register. */
 html[data-concept="index"] {
   color-scheme: light;
-  --bg: #e9e5da;
-  --surface: #f3f0e7;
-  --raised: #ded9cc;
-  --text: #24241f;
-  --muted: #41423c;
-  --accent: #7e412f;
-  --line: #aaa598;
-  --technical: #604033;
-  --index-black: #24241f;
+  --bg: #f2ede0;
+  --surface: #faf6ec;
+  --raised: #e6dec9;
+  --text: #1c1915;
+  --muted: #4a443a;
+  --accent: #b02a1a;
+  --line: #b9ae96;
+  --technical: #3a3f6b;
+  --index-black: #1c1915;
 }
 html[data-concept="index"] body { background: var(--bg); color: var(--text); }
 html[data-concept="index"] body::before { opacity: 0; }
-html[data-concept="index"] .site-header { border-color: #24241f45; background: rgb(233 229 218 / .96); color: var(--text); }
-html[data-concept="index"] .site-header.is-scrolled { background: rgb(233 229 218 / .98); }
+html[data-concept="index"] .site-header { border-color: #24241f45; background: rgb(242 237 224 / .96); color: var(--text); }
+html[data-concept="index"] .site-header.is-scrolled { background: rgb(242 237 224 / .98); }
 html[data-concept="index"] .brand,
 html[data-concept="index"] .navigation a,
 html[data-concept="index"] .header-controls button { color: var(--text); }

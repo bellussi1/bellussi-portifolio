@@ -177,7 +177,7 @@ function figure(image, alt, className, loading = "lazy") {
 
 function renderFlagshipMetrics(flagship, language, copy) {
   return (
-    '<div class="atlas-metrics-block"><dl class="atlas-metrics" aria-label="' +
+    '<div class="atlas-metrics-block reveal" data-reveal="up"><dl class="atlas-metrics" aria-label="' +
     escapeHtml(copy.metricsLabel) +
     '">' +
     flagship.metrics
@@ -275,7 +275,7 @@ function renderFlagship(language) {
   return (
     '<article class="atlas-case" aria-labelledby="product-' +
     flagship.id +
-    '"><div class="atlas-stage"><div class="atlas-lead-copy"><p class="project-category">' +
+    '"><div class="atlas-stage reveal" data-reveal="up"><div class="atlas-lead-copy"><p class="project-category">' +
     escapeHtml(flagship.category) +
     '</p><h3 id="product-' +
     flagship.id +
@@ -295,7 +295,7 @@ function renderFlagship(language) {
     renderFlagshipViewer(flagship, copy) +
     "</div>" +
     renderFlagshipMetrics(flagship, language, copy) +
-    '<div class="atlas-chapters">' +
+    '<div class="atlas-chapters reveal" data-reveal="up">' +
     copy.chapters.map((chapter, index) => renderFlagshipChapter(chapter, index)).join("") +
     "</div></article>"
   );
